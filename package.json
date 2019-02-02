@@ -1,5 +1,5 @@
 {
-  "name": "ada",
+  "name": "ada-ui",
   "version": "1.0.0",
   "scripts": {
     "dev": "node-sass scss/ada.scss css/ada.css --source-map-embed -w",
