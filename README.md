@@ -1,4 +1,4 @@
-# Ada
+# Ada-UI
 
 [![npm version](https://badge.fury.io/js/ada-ui.svg)](https://badge.fury.io/js/ada-ui)
 
