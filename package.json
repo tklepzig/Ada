@@ -1,0 +1,19 @@
+{
+  "name": "ada",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "node-sass scss/ada.scss css/ada.css --source-map-embed -w",
+    "build": "rm -rf css && node-sass scss/ada.scss css/ada.min.css --output-style compressed"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tklepzig/Ada.git"
+  },
+  "author": "Thomas Klepzig",
+  "bugs": {
+    "url": "https://github.com/tklepzig/Ada/issues"
+  },
+  "devDependencies": {
+    "node-sass": "^4.11.0"
+  }
+}
