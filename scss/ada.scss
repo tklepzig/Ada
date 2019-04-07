@@ -15,7 +15,7 @@ $primary-active-border: rgba($primary, 0.4) !default;
 $accent: #cc6e06 !default;
 $accent-light: lighten($accent, 38) !default;
 $accent-border: rgba($accent-light, 0.4) !default;
-$accent-foreground: #000 !default;
+$accent-foreground: $background !default;
 $accent-focus-border: rgba($accent-light, 0.8) !default;
 $accent-active-background: rgba($accent-light, 0.8) !default;
 $accent-active-border: rgba($accent, 0.4) !default;
@@ -267,11 +267,11 @@ button {
   > header {
     position: relative;
     text-align: left;
-    padding: 0.5rem 1rem;
+    padding: 0.6rem 0.8rem;
     @extend %h3;
     @extend %header.m-0;
     @include tablet {
-      padding: 0.25rem 0.5rem;
+      padding: 0.4rem 0.6rem;
     }
     &:before {
       @extend %corner;
@@ -290,9 +290,9 @@ button {
   }
   > article {
     z-index: 1;
-    padding: 0 1rem;
+    padding: 0 0.8rem;
     @include tablet {
-      padding: 0 0.5rem;
+      padding: 0 0.6rem;
     }
     flex: 1;
     overflow: auto;
@@ -316,12 +316,12 @@ button {
   > footer {
     position: relative;
     text-align: right;
-    padding: 0.5rem 1rem;
+    padding: 0.6rem 0.8rem;
     @include tablet {
-      padding: 0.25rem 0.5rem;
+      padding: 0.4rem 0.6rem;
     }
     font-size: 0.75rem;
-    opacity: 0.6;
+    color: rgba($foreground, 0.6);
     &:before {
       @extend %corner;
       border-width: 0 0 2px 2px;
