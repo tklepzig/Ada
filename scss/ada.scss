@@ -238,13 +238,9 @@ button {
   margin: 0.5rem;
   &.p-0 {
     > header,
-    > footer {
-      padding-top: 0;
-      padding-bottom: 0;
-    }
+    > footer,
     > article {
-      padding-top: 0;
-      padding-bottom: 0;
+      padding: 0;
     }
   }
   > header {
