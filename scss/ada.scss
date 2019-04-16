@@ -115,20 +115,16 @@ body {
   font-size: 1rem;
   -webkit-tap-highlight-color: transparent;
   box-sizing: border-box;
-  padding: 1rem;
+  padding: 0.5rem;
 }
 
 %corner {
   content: "";
-  height: 2rem;
-  width: 2rem;
   border-style: solid;
   border-color: $primary;
   position: absolute;
-  @include tablet {
-    height: 1rem;
-    width: 1rem;
-  }
+  height: 1rem;
+  width: 1rem;
 }
 
 button {
@@ -140,10 +136,6 @@ button {
   outline: none;
   border: 1px solid $primary-border;
   color: $primary-foreground;
-  font-size: 1.2rem;
-  min-width: 10rem;
-  padding: 1rem 2rem;
-  margin: 1rem;
   text-shadow: 0 0 4px rgba($primary-light, 0.4);
   font-family: inherit;
   cursor: pointer;
@@ -152,29 +144,18 @@ button {
   vertical-align: middle;
   transition: border-color 0.15s ease-in-out, background-color 0.15s ease-in-out;
   min-height: min-content;
-  @include tablet {
-    min-width: 8rem;
-    padding: 0.8rem 1.6rem;
-    margin: 0.8rem;
-    font-size: 1rem;
-  }
+  min-width: 8rem;
+  padding: 0.8rem 1.6rem;
+  margin: 0.8rem;
+  font-size: 1rem;
   &.small {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    border-radius: 0.5rem;
-    padding: 1rem;
     min-width: 0;
-
+    padding: 0.8rem;
     > i.material-icons {
-      font-size: 1.6rem;
-    }
-    @include tablet {
-      padding: 0.8rem;
-      margin: 0.5rem;
-      > i.material-icons {
-        font-size: 1.4rem;
-      }
+      font-size: 1.4rem;
     }
   }
   &.icon {
@@ -242,37 +223,27 @@ button {
   background: rgba($primary, 0.1);
   box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.4);
   border-radius: 4px;
-  margin: 1rem;
   display: flex;
   flex-direction: column;
   overflow: auto;
-  @include tablet {
-    margin: 0.5rem;
-  }
+  margin: 0.5rem;
   &.p-0 {
     > header,
     > footer {
-      padding: 0 1rem;
-      @include tablet {
-        padding: 0 0.5rem;
-      }
+      padding-top: 0;
+      padding-bottom: 0;
     }
     > article {
-      padding: 0 1rem;
-      @include tablet {
-        padding: 0 0.5rem;
-      }
+      padding-top: 0;
+      padding-bottom: 0;
     }
   }
   > header {
     position: relative;
     text-align: left;
-    padding: 0.6rem 0.8rem;
     @extend %h3;
     @extend %header.m-0;
-    @include tablet {
-      padding: 0.4rem 0.6rem;
-    }
+    padding: 0.4rem 0.6rem;
     &:before {
       @extend %corner;
       border-width: 2px 0 0 2px;
@@ -290,10 +261,7 @@ button {
   }
   > article {
     z-index: 1;
-    padding: 0 0.8rem;
-    @include tablet {
-      padding: 0 0.6rem;
-    }
+    padding: 0 0.6rem;
     flex: 1;
     overflow: auto;
     display: flex;
@@ -316,10 +284,7 @@ button {
   > footer {
     position: relative;
     text-align: right;
-    padding: 0.6rem 0.8rem;
-    @include tablet {
-      padding: 0.4rem 0.6rem;
-    }
+    padding: 0.4rem 0.6rem;
     font-size: 0.75rem;
     color: rgba($foreground, 0.6);
     &:before {
