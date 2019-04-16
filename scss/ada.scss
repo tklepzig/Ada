@@ -1,9 +1,18 @@
+// phoenix
+// $background: #1c1f23;
+// $foreground: #ededed;
+// $primary: #9d3907;
+// $warn: #8a0f00;
+// $accent: #cc6e06;
+// $accent-foreground: $background;
+
 $font-family: "Open Sans", sans-serif !default;
-$background: #1c1f23 !default;
-$foreground: #ededed !default;
+$background: #07131d !default;
+$foreground: #c6eeff !default;
 
 //primary
-$primary: #9d3907 !default;
+$primary: #0c436a !default;
+
 $primary-light: lighten($primary, 38) !default;
 $primary-border: rgba($primary-light, 0.4) !default;
 $primary-foreground: $foreground !default;
@@ -12,16 +21,16 @@ $primary-active-background: rgba($primary-light, 0.7) !default;
 $primary-active-border: rgba($primary, 0.4) !default;
 
 //accent
-$accent: #cc6e06 !default;
+$accent: #165230 !default;
 $accent-light: lighten($accent, 38) !default;
 $accent-border: rgba($accent-light, 0.4) !default;
-$accent-foreground: $background !default;
+$accent-foreground: $foreground !default;
 $accent-focus-border: rgba($accent-light, 0.8) !default;
 $accent-active-background: rgba($accent-light, 0.8) !default;
 $accent-active-border: rgba($accent, 0.4) !default;
 
 //warn
-$warn: #8a0f00 !default;
+$warn: #801212 !default;
 $warn-light: lighten($warn, 38) !default;
 $warn-border: rgba($warn-light, 0.4) !default;
 $warn-foreground: $foreground !default;
