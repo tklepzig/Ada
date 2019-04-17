@@ -149,7 +149,7 @@ button {
   font-family: inherit;
   cursor: pointer;
   user-select: none;
-  background-color: $primary;
+  background-color: transparent;
   vertical-align: middle;
   transition: border-color 0.15s ease-in-out, background-color 0.15s ease-in-out;
   min-height: min-content;
@@ -163,9 +163,6 @@ button {
     align-items: center;
     min-width: 0;
     padding: 0.8rem;
-    > i.material-icons {
-      font-size: 1.4rem;
-    }
   }
   &.icon {
     @extend button.small;
@@ -173,9 +170,12 @@ button {
     box-shadow: none;
     background: none;
     margin: 0.4rem;
+    > i.material-icons {
+      font-size: 1.4rem;
+    }
   }
-  &.outline {
-    background-color: transparent;
+  &.fill {
+    background-color: $primary;
   }
   &:focus {
     border: 1px solid $primary-focus-border;
@@ -196,12 +196,11 @@ button {
     color: rgba($foreground, 0.8);
   }
   &.accent {
-    background-color: $accent;
     border: 1px solid $accent-border;
     color: $accent-foreground;
 
-    &.outline {
-      background-color: transparent;
+    &.fill {
+      background-color: $accent;
     }
     &:focus {
       border: 1px solid $accent-focus-border;
@@ -212,12 +211,11 @@ button {
     }
   }
   &.warn {
-    background-color: $warn;
     border: 1px solid $warn-border;
     color: $warn-foreground;
 
-    &.outline {
-      background-color: transparent;
+    &.fill {
+      background-color: $warn;
     }
     &:focus {
       border: 1px solid $warn-focus-border;
