@@ -172,6 +172,7 @@ button {
     border: 1px solid transparent;
     box-shadow: none;
     background: none;
+    margin: 0.4rem;
   }
   &.outline {
     background-color: transparent;
@@ -236,11 +237,11 @@ button {
   flex-direction: column;
   overflow: auto;
   margin: 0.5rem;
-  &.p-0 {
+  &.small {
     > header,
-    > footer,
-    > article {
-      padding: 0;
+    > footer {
+      padding-top: 0.2rem;
+      padding-bottom: 0.2rem;
     }
   }
   > header {
