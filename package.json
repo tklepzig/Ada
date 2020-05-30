@@ -2,8 +2,8 @@
   "name": "ada-ui",
   "version": "2.1.0",
   "scripts": {
-    "dev": "node-sass scss/ada.scss css/ada.css --source-map-embed -w",
-    "build": "rm -rf css && node-sass scss/ada.scss css/ada.min.css --output-style compressed"
+    "dev": "sass scss/ada.scss:css/ada.css --watch",
+    "build": "rm -rf css && sass scss/ada.scss:css/ada.min.css -s compressed --no-source-map"
   },
   "repository": {
     "type": "git",
@@ -14,6 +14,6 @@
     "url": "https://github.com/tklepzig/Ada/issues"
   },
   "devDependencies": {
-    "node-sass": "^4.11.0"
+    "sass": "^1.26.7"
   }
 }
