@@ -227,6 +227,57 @@ button {
   }
 }
 
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="number"],
+input[type="text"] {
+  border-radius: 0.3rem;
+  box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.4);
+  outline: none;
+  border: 1px solid $primary-border;
+  color: $primary-foreground;
+  text-shadow: 0 0 4px rgba($primary-light, 0.4);
+  font-family: inherit;
+  background-color: transparent;
+  transition: border-color 0.15s ease-in-out;
+  padding: 0.8rem 1.6rem;
+  margin: 0.8rem;
+  font-size: 1.1rem;
+
+  &:focus {
+    border: 1px solid $primary-focus-border;
+  }
+  &:disabled {
+    opacity: 0.4;
+    filter: saturate(0.6);
+    cursor: default;
+    color: rgba($foreground, 0.8);
+  }
+  &.accent {
+    border: 1px solid $accent-border;
+    color: $accent-foreground;
+
+    &:focus {
+      border: 1px solid $accent-focus-border;
+    }
+    &:active {
+      border: 1px solid $accent-active-border;
+    }
+  }
+  &.warn {
+    border: 1px solid $warn-border;
+    color: $warn-foreground;
+
+    &:focus {
+      border: 1px solid $warn-focus-border;
+    }
+    &:active {
+      border: 1px solid $warn-active-border;
+    }
+  }
+}
+
 .panel {
   background: rgba($primary, 0.1);
   box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.4);
