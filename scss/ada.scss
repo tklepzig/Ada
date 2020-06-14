@@ -51,7 +51,7 @@ $warn-active-color: $foreground !default;
   }
 }
 
-html:not(.raw) {
+html {
   font-size: 14px;
   font-family: $font-family;
   font-weight: 400;
@@ -60,8 +60,8 @@ html:not(.raw) {
   }
 }
 
-html:not(.raw),
-body:not(.raw) {
+html,
+body {
   height: 100%;
   min-height: 100%;
   margin: 0;
@@ -104,23 +104,23 @@ body:not(.raw) {
   }
 }
 
-h1:not(.raw) {
+h1 {
   @extend %h1;
 }
 
-h2:not(.raw) {
+h2 {
   @extend %h2;
 }
 
-h3:not(.raw) {
+h3 {
   @extend %h3;
 }
 
-h4:not(.raw) {
+h4 {
   @extend %h4;
 }
 
-body:not(.raw) {
+body {
   font-size: 1rem;
   -webkit-tap-highlight-color: transparent;
   box-sizing: border-box;
@@ -136,7 +136,7 @@ body:not(.raw) {
   width: 1rem;
 }
 
-button:not(.raw) {
+.button {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -165,7 +165,7 @@ button:not(.raw) {
     padding: 0.8rem;
   }
   &.icon {
-    @extend button, .small;
+    @extend .button, .small;
     border: 1px solid transparent;
     box-shadow: none;
     background: none;
@@ -227,11 +227,7 @@ button:not(.raw) {
   }
 }
 
-input[type="password"]:not(.raw),
-input[type="search"]:not(.raw),
-input[type="tel"]:not(.raw),
-input[type="number"]:not(.raw),
-input[type="text"]:not(.raw) {
+.input {
   border-radius: 0.3rem;
   box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.4);
   outline: none;
