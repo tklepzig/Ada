@@ -51,7 +51,7 @@ $warn-active-color: $foreground !default;
   }
 }
 
-html {
+html:not(.raw) {
   font-size: 14px;
   font-family: $font-family;
   font-weight: 400;
@@ -60,8 +60,8 @@ html {
   }
 }
 
-html,
-body {
+html:not(.raw),
+body:not(.raw) {
   height: 100%;
   min-height: 100%;
   margin: 0;
@@ -104,23 +104,23 @@ body {
   }
 }
 
-h1 {
+h1:not(.raw) {
   @extend %h1;
 }
 
-h2 {
+h2:not(.raw) {
   @extend %h2;
 }
 
-h3 {
+h3:not(.raw) {
   @extend %h3;
 }
 
-h4 {
+h4:not(.raw) {
   @extend %h4;
 }
 
-body {
+body:not(.raw) {
   font-size: 1rem;
   -webkit-tap-highlight-color: transparent;
   box-sizing: border-box;
@@ -136,7 +136,7 @@ body {
   width: 1rem;
 }
 
-button {
+button:not(.raw) {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -227,11 +227,11 @@ button {
   }
 }
 
-input[type="password"],
-input[type="search"],
-input[type="tel"],
-input[type="number"],
-input[type="text"] {
+input[type="password"]:not(.raw),
+input[type="search"]:not(.raw),
+input[type="tel"]:not(.raw),
+input[type="number"]:not(.raw),
+input[type="text"]:not(.raw) {
   border-radius: 0.3rem;
   box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.4);
   outline: none;
