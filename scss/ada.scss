@@ -6,19 +6,43 @@
 // $accent: #cc6e06;
 // $accent-foreground: $background;
 
+:root {
+  --h: 205;
+  --s: 80%;
+  --l: 23%;
+
+  --l-dark: calc(var(--l) - 16%);
+  --l-light: calc(var(--l) + 38%);
+  --bg: hsl(var(--h), var(--s), var(--l-dark));
+  --fg: hsl(var(--h), 100%, 89%);
+
+  // TODO: Reduce number of variables
+  --primary: hsl(var(--h), var(--s), var(--l));
+  --primary-light: hsl(var(--h), var(--s), var(--l-light));
+  --primary-text-shadow: hsla(var(--h), var(--s), var(--l-light), 0.4);
+  --primary-border: hsla(var(--h), var(--s), var(--l-light), 0.4);
+  --primary-panel-background: hsla(var(--h), var(--s), var(--l), 0.1);
+  --primary-fg: var(--fg);
+  --primary-focus-border: hsla(var(--h), var(--s), var(--l-light), 0.8);
+  --primary-active-background: hsla(var(--h), var(--s), var(--l-light), 0.7);
+  --primary-active-border: hsla(var(--h), var(--s), var(--l), 0.4);
+}
+
+//.accent {
+  //--h: 146;
+  //--s: 58%;
+  //--l: 20%;
+//}
+
+//.warn {
+  //--h: 0;
+  //--s: 75%;
+  //--l: 29%;
+//}
+
 $font-family: "Open Sans", sans-serif !default;
-$background: #07131d !default;
-$foreground: #c6eeff !default;
-
-//primary
-$primary: #0c436a !default;
-
-$primary-light: lighten($primary, 38) !default;
-$primary-border: rgba($primary-light, 0.4) !default;
-$primary-foreground: $foreground !default;
-$primary-focus-border: rgba($primary-light, 0.8) !default;
-$primary-active-background: rgba($primary-light, 0.7) !default;
-$primary-active-border: rgba($primary, 0.4) !default;
+$background: var(--bg);
+$foreground: var(--fg);
 
 //accent
 $accent: #165230 !default;
@@ -37,7 +61,6 @@ $warn-foreground: $foreground !default;
 $warn-focus-border: rgba($warn-light, 0.8) !default;
 $warn-active-background: rgba($warn-light, 0.6) !default;
 $warn-active-border: rgba($warn, 0.4) !default;
-$warn-active-color: $foreground !default;
 
 @mixin desktop() {
   @media screen and (min-width: 1200px) {
@@ -97,7 +120,7 @@ body {
 
 %header {
   font-weight: 300;
-  text-shadow: 0 0 4px rgba($primary-light, 0.4);
+  text-shadow: 0 0 4px var(--primary-text-shadow);
   color: $foreground;
   &.m-0 {
     margin: 0;
@@ -130,7 +153,7 @@ body {
 %corner {
   content: "";
   border-style: solid;
-  border-color: $primary;
+  border-color: var(--primary);
   position: absolute;
   height: 1rem;
   width: 1rem;
@@ -143,9 +166,9 @@ body {
   border-radius: 0.3rem;
   box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.4);
   outline: none;
-  border: 1px solid $primary-border;
-  color: $primary-foreground;
-  text-shadow: 0 0 4px rgba($primary-light, 0.4);
+  border: 1px solid var(--primary-border);
+  color: var(--primary-foreground);
+  text-shadow: 0 0 4px var(--primary-text-shadow);
   font-family: inherit;
   cursor: pointer;
   user-select: none;
@@ -175,10 +198,10 @@ body {
     }
   }
   &.fill {
-    background-color: $primary;
+    background-color: var(--primary);
   }
   &:focus {
-    border: 1px solid $primary-focus-border;
+    border: 1px solid var(--primary-focus-border);
   }
   &:hover {
     // stays after click on touch devices
@@ -186,8 +209,8 @@ body {
     // /*background-color: rgba($primary-light, 0.4);*/
   }
   &:active {
-    background-color: $primary-active-background;
-    border: 1px solid $primary-active-border;
+    background-color: var(--primary-active-background);
+    border: 1px solid var(--primary-active-border);
   }
   &:disabled {
     opacity: 0.4;
@@ -231,9 +254,9 @@ body {
   border-radius: 0.3rem;
   box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.4);
   outline: none;
-  border: 1px solid $primary-border;
-  color: $primary-foreground;
-  text-shadow: 0 0 4px rgba($primary-light, 0.4);
+  border: 1px solid var(--primary-border);
+  color: var(--primary-foreground);
+  text-shadow: 0 0 4px var(--primary-text-shadow);
   font-family: inherit;
   background-color: transparent;
   transition: border-color 0.15s ease-in-out;
@@ -242,7 +265,7 @@ body {
   font-size: 1.1rem;
 
   &:focus {
-    border: 1px solid $primary-focus-border;
+    border: 1px solid var(--primary-focus-border);
   }
   &:disabled {
     opacity: 0.4;
@@ -275,7 +298,7 @@ body {
 }
 
 .panel {
-  background: rgba($primary, 0.1);
+  background: var(--primary-panel-background);
   box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.4);
   border-radius: 4px;
   display: flex;
@@ -327,7 +350,7 @@ body {
       border-style: solid;
       border-color: transparent;
       border-width: 2px 2px 1px 2px;
-      background: $primary;
+      background: var(--primary);
       box-sizing: border-box;
       background-clip: padding-box;
     }
