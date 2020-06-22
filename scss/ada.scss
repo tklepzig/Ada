@@ -1,66 +1,43 @@
-// phoenix
-// $background: #1c1f23;
-// $foreground: #ededed;
-// $primary: #9d3907;
-// $warn: #8a0f00;
-// $accent: #cc6e06;
-// $accent-foreground: $background;
-
 :root {
   --h: 205;
   --s: 80%;
   --l: 23%;
-
-  --l-dark: calc(var(--l) - 16%);
-  --l-light: calc(var(--l) + 38%);
-  --bg: hsl(var(--h), var(--s), var(--l-dark));
-  --fg: hsl(var(--h), 100%, 89%);
-
-  // TODO: Reduce number of variables
-  --primary: hsl(var(--h), var(--s), var(--l));
-  --primary-light: hsl(var(--h), var(--s), var(--l-light));
-  --primary-text-shadow: hsla(var(--h), var(--s), var(--l-light), 0.4);
-  --primary-border: hsla(var(--h), var(--s), var(--l-light), 0.4);
-  --primary-panel-background: hsla(var(--h), var(--s), var(--l), 0.1);
-  --primary-fg: var(--fg);
-  --primary-focus-border: hsla(var(--h), var(--s), var(--l-light), 0.8);
-  --primary-active-background: hsla(var(--h), var(--s), var(--l-light), 0.7);
-  --primary-active-border: hsla(var(--h), var(--s), var(--l), 0.4);
 }
 
-//.accent {
-  //--h: 146;
-  //--s: 58%;
-  //--l: 20%;
-//}
+.accent {
+  --h: 146;
+  --s: 58%;
+  --l: 20%;
+}
 
-//.warn {
-  //--h: 0;
-  //--s: 75%;
-  //--l: 29%;
-//}
+.warn {
+  --h: 0;
+  --s: 75%;
+  --l: 29%;
+}
+
+* {
+  --l-dark: calc(var(--l) - 16%);
+  --l-light: calc(var(--l) + 38%);
+  --s-fg: 100%;
+  --l-fg: 89%;
+
+  --bg: hsl(var(--h), var(--s), var(--l-dark));
+
+  --fg: hsl(var(--h), var(--s-fg), var(--l-fg));
+  --fg-alpha60: hsla(var(--h), var(--s-fg), var(--l-fg), 0.6);
+  --fg-alpha80: hsla(var(--h), var(--s-fg), var(--l-fg), 0.8);
+
+  --default: hsl(var(--h), var(--s), var(--l));
+  --default-alpha10: hsla(var(--h), var(--s), var(--l), 0.1);
+  --default-alpha40: hsla(var(--h), var(--s), var(--l), 0.4);
+
+  --light: hsl(var(--h), var(--s), var(--l-light));
+  --light-alpha40: hsla(var(--h), var(--s), var(--l-light), 0.4);
+  --light-alpha70: hsla(var(--h), var(--s), var(--l-light), 0.7);
+}
 
 $font-family: "Open Sans", sans-serif !default;
-$background: var(--bg);
-$foreground: var(--fg);
-
-//accent
-$accent: #165230 !default;
-$accent-light: lighten($accent, 38) !default;
-$accent-border: rgba($accent-light, 0.4) !default;
-$accent-foreground: $foreground !default;
-$accent-focus-border: rgba($accent-light, 0.8) !default;
-$accent-active-background: rgba($accent-light, 0.8) !default;
-$accent-active-border: rgba($accent, 0.4) !default;
-
-//warn
-$warn: #801212 !default;
-$warn-light: lighten($warn, 38) !default;
-$warn-border: rgba($warn-light, 0.4) !default;
-$warn-foreground: $foreground !default;
-$warn-focus-border: rgba($warn-light, 0.8) !default;
-$warn-active-background: rgba($warn-light, 0.6) !default;
-$warn-active-border: rgba($warn, 0.4) !default;
 
 @mixin desktop() {
   @media screen and (min-width: 1200px) {
@@ -89,8 +66,8 @@ body {
   min-height: 100%;
   margin: 0;
   padding: 0;
-  background: $background;
-  color: $foreground;
+  background: var(--bg);
+  color: var(--fg);
 }
 
 %h1 {
@@ -120,8 +97,8 @@ body {
 
 %header {
   font-weight: 300;
-  text-shadow: 0 0 4px var(--primary-text-shadow);
-  color: $foreground;
+  text-shadow: 0 0 4px var(--light-alpha40);
+  color: var(--fg);
   &.m-0 {
     margin: 0;
   }
@@ -153,7 +130,7 @@ body {
 %corner {
   content: "";
   border-style: solid;
-  border-color: var(--primary);
+  border-color: var(--default);
   position: absolute;
   height: 1rem;
   width: 1rem;
@@ -166,9 +143,9 @@ body {
   border-radius: 0.3rem;
   box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.4);
   outline: none;
-  border: 1px solid var(--primary-border);
+  border: 1px solid var(--light-alpha40);
   color: var(--primary-foreground);
-  text-shadow: 0 0 4px var(--primary-text-shadow);
+  text-shadow: 0 0 4px var(--light-alpha40);
   font-family: inherit;
   cursor: pointer;
   user-select: none;
@@ -198,55 +175,25 @@ body {
     }
   }
   &.fill {
-    background-color: var(--primary);
+    background-color: var(--default);
   }
   &:focus {
-    border: 1px solid var(--primary-focus-border);
+    border: 1px solid var(--light-alpha70);
   }
   &:hover {
     // stays after click on touch devices
     // TODO: only for non-touch devices
-    // /*background-color: rgba($primary-light, 0.4);*/
+    // /*background-color: var(--light-alpha40);*/
   }
   &:active {
-    background-color: var(--primary-active-background);
-    border: 1px solid var(--primary-active-border);
+    background-color: var(--light-alpha70);
+    border: 1px solid var(--default-alpha40);
   }
   &:disabled {
     opacity: 0.4;
     filter: saturate(0.6);
     cursor: default;
-    color: rgba($foreground, 0.8);
-  }
-  &.accent {
-    border: 1px solid $accent-border;
-    color: $accent-foreground;
-
-    &.fill {
-      background-color: $accent;
-    }
-    &:focus {
-      border: 1px solid $accent-focus-border;
-    }
-    &:active {
-      background-color: $accent-active-background;
-      border: 1px solid $accent-active-border;
-    }
-  }
-  &.warn {
-    border: 1px solid $warn-border;
-    color: $warn-foreground;
-
-    &.fill {
-      background-color: $warn;
-    }
-    &:focus {
-      border: 1px solid $warn-focus-border;
-    }
-    &:active {
-      background-color: $warn-active-background;
-      border: 1px solid $warn-active-border;
-    }
+    color: var(--fg-alpha80);
   }
 }
 
@@ -254,9 +201,9 @@ body {
   border-radius: 0.3rem;
   box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.4);
   outline: none;
-  border: 1px solid var(--primary-border);
+  border: 1px solid var(--light-alpha40);
   color: var(--primary-foreground);
-  text-shadow: 0 0 4px var(--primary-text-shadow);
+  text-shadow: 0 0 4px var(--light-alpha40);
   font-family: inherit;
   background-color: transparent;
   transition: border-color 0.15s ease-in-out;
@@ -265,40 +212,18 @@ body {
   font-size: 1.1rem;
 
   &:focus {
-    border: 1px solid var(--primary-focus-border);
+    border: 1px solid var(--light-alpha70);
   }
   &:disabled {
     opacity: 0.4;
     filter: saturate(0.6);
     cursor: default;
-    color: rgba($foreground, 0.8);
-  }
-  &.accent {
-    border: 1px solid $accent-border;
-    color: $accent-foreground;
-
-    &:focus {
-      border: 1px solid $accent-focus-border;
-    }
-    &:active {
-      border: 1px solid $accent-active-border;
-    }
-  }
-  &.warn {
-    border: 1px solid $warn-border;
-    color: $warn-foreground;
-
-    &:focus {
-      border: 1px solid $warn-focus-border;
-    }
-    &:active {
-      border: 1px solid $warn-active-border;
-    }
+    color: var(--fg-alpha80);
   }
 }
 
 .panel {
-  background: var(--primary-panel-background);
+  background: var(--default-alpha10);
   box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.4);
   border-radius: 4px;
   display: flex;
@@ -350,7 +275,7 @@ body {
       border-style: solid;
       border-color: transparent;
       border-width: 2px 2px 1px 2px;
-      background: var(--primary);
+      background: var(--default);
       box-sizing: border-box;
       background-clip: padding-box;
     }
@@ -360,7 +285,7 @@ body {
     text-align: right;
     padding: 0.4rem 0.6rem;
     font-size: 0.75rem;
-    color: rgba($foreground, 0.6);
+    color: var(--fg-alpha60);
     &:before {
       @extend %corner;
       border-width: 0 0 2px 2px;
