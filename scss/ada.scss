@@ -2,31 +2,41 @@
   --h: 205;
   --s: 80%;
   --l: 23%;
+
+  --h-fg: var(--h);
+  --s-fg: 100%;
+  --l-fg: 89%;
 }
 
 .accent {
   --h: 146;
   --s: 58%;
   --l: 20%;
+
+  --h-fg: var(--h);
+  --s-fg: 100%;
+  --l-fg: 89%;
 }
 
 .warn {
   --h: 0;
   --s: 75%;
   --l: 29%;
+
+  --h-fg: var(--h);
+  --s-fg: 100%;
+  --l-fg: 89%;
 }
 
 * {
   --l-dark: calc(var(--l) - 16%);
   --l-light: calc(var(--l) + 38%);
-  --s-fg: 100%;
-  --l-fg: 89%;
 
   --bg: hsl(var(--h), var(--s), var(--l-dark));
 
-  --fg: hsl(var(--h), var(--s-fg), var(--l-fg));
-  --fg-alpha60: hsla(var(--h), var(--s-fg), var(--l-fg), 0.6);
-  --fg-alpha80: hsla(var(--h), var(--s-fg), var(--l-fg), 0.8);
+  --fg: hsl(var(--h-fg), var(--s-fg), var(--l-fg));
+  --fg-alpha60: hsla(var(--h-fg), var(--s-fg), var(--l-fg), 0.6);
+  --fg-alpha80: hsla(var(--h-fg), var(--s-fg), var(--l-fg), 0.8);
 
   --default: hsl(var(--h), var(--s), var(--l));
   --default-alpha10: hsla(var(--h), var(--s), var(--l), 0.1);
@@ -144,7 +154,7 @@ body {
   box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.4);
   outline: none;
   border: 1px solid var(--light-alpha40);
-  color: var(--primary-foreground);
+  color: var(--fg);
   text-shadow: 0 0 4px var(--light-alpha40);
   font-family: inherit;
   cursor: pointer;
@@ -202,7 +212,7 @@ body {
   box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.4);
   outline: none;
   border: 1px solid var(--light-alpha40);
-  color: var(--primary-foreground);
+  color: var(--fg);
   text-shadow: 0 0 4px var(--light-alpha40);
   font-family: inherit;
   background-color: transparent;
