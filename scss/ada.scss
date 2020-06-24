@@ -28,7 +28,7 @@
   --l-fg: 89%;
 }
 
-* {
+:root, .accent, .warn {
   --l-dark: calc(var(--l) - 16%);
   --l-light: calc(var(--l) + 38%);
 
