@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <title>Ada</title>
     <link rel="stylesheet" href="css/ada.css" />
+    <meta
+      name="viewport"
+      content="user-scalable=yes, initial-scale=1.0, maximum-scale=10.0, width=device-width"
+    />
     <link
       href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600"
       rel="stylesheet"
@@ -14,72 +18,149 @@
     />
   </head>
 
-  <body style="display: grid; grid-template-rows: auto 1fr;">
-    <div class="panel p-0">
+  <body style="display: grid; grid-template-rows: 1fr 0 0">
+    <div class="panel">
       <header></header>
       <article>
-        <div style="display: flex; align-items: center;">
-          <button class="button icon">
-            <i class="material-icons">arrow_back</i>
-          </button>
-          <h3 class="m-0" style="flex: 1; text-align: center;">
-            Folder Name
-          </h3>
-          <button class="button icon"><i class="material-icons">check</i>
-          </button>
-          <button class="button icon"><i class="material-icons">menu</i>
-          </button>
+        <div style="display: grid; flex: 1; align-content: start">
+          <div class="button-group">
+            <button class="button icon">
+              <i class="material-icons">arrow_upward</i>
+            </button>
+            <button class="button icon">
+              <i class="material-icons">arrow_upward</i>
+            </button>
+          </div>
+          <div class="tile">
+            <header></header>
+            <article>ToDo Text</article>
+            <footer></footer>
+          </div>
+          <div class="tile">
+            <header></header>
+            <article>ToDo Text</article>
+            <footer></footer>
+          </div>
+          <div class="tile">
+            <header></header>
+            <article>ToDo Text</article>
+            <footer></footer>
+          </div>
+          <div class="tile">
+            <header></header>
+            <article>
+              <div
+                style="
+                  display: grid;
+                  grid-template-columns: 1fr auto auto;
+                  align-items: center;
+                "
+              >
+                ToDo Title
+                <div class="button-group">
+                  <button class="button icon">
+                    <i class="material-icons">check</i>
+                  </button>
+                  <button class="button icon">
+                    <i class="material-icons">arrow_upward</i>
+                  </button>
+                </div>
+              </div>
+              <button class="button icon">
+                <i class="material-icons">check</i>
+              </button>
+            </article>
+            <footer>47</footer>
+          </div>
         </div>
       </article>
       <footer></footer>
     </div>
     <div class="panel">
-      <header>Header</header>
+      <header>Tiles</header>
       <article>
         <div
-          style="display: grid; grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr))"
+          style="
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(45vw, 1fr));
+            grid-template-rows: repeat(auto-fill, minmax(15vh, 1fr));
+            flex: 1;
+          "
         >
-          <button class="outline button">Document</button>
-          <button class="outline button">Document</button>
-          <button class="outline button">Document</button>
-          <button class="outline button">Document</button>
-          <button class="outline button">Document</button>
-          <button class="outline button">Document</button>
-          <button class="outline button">Document</button>
-          <button class="outline button">Document</button>
-          <button class="outline button">Document</button>
-          <button class="outline button">Document</button>
-          <button class="outline button">Document</button>
-          <button class="outline button">Document</button>
-          <button class="outline button">Document</button>
-          <button class="outline button">Document</button>
-          <button class="outline button">Document</button>
-          <button class="outline button">Document</button>
-          <button class="outline button">Document</button>
-          <button class="outline button">Document</button>
-          <button class="outline button">Document</button>
-          <button class="outline button">Document</button>
-          <button class="outline button">Document</button>
-          <button class="outline button">Document</button>
-          <button class="outline button">Document</button>
-          <button class="outline button">Document</button>
-          <button class="outline button">Document</button>
-          <button class="outline button">Document</button>
-          <button class="outline button">Document</button>
-          <button class="outline button">Document</button>
-          <button class="outline button">Document</button>
-          <button class="outline button">Document</button>
-          <button class="outline button">Document</button>
-          <button class="outline button">Document</button>
-          <button class="outline button">Document</button>
-          <button class="outline button">Document</button>
-          <button class="outline button">Document</button>
-          <button class="outline button">Document</button>
-          <button class="outline button">Document</button>
-          <button class="outline button">Document</button>
-          <button class="outline button">Document</button>
-          <button class="outline button">Document</button>
-          <button class="outline button">Document</button>
+          <div class="tile">
+            <header>Header</header>
+            <article>Tile</article>
+            <footer>Footer</footer>
+          </div>
+          <div class="tile">
+            <header></header>
+            <article>Tile</article>
+            <footer></footer>
+          </div>
+          <div class="tile">
+            <header></header>
+            <article>Tile</article>
+            <footer></footer>
+          </div>
+          <div class="tile">
+            <header></header>
+            <article>Tile</article>
+            <footer></footer>
+          </div>
+        </div>
+      </article>
+      <footer></footer>
+    </div>
+    <div class="panel">
+      <header>Buttons</header>
+      <article>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr));
+          "
+        >
+          <button class="outline button">Button</button>
+          <button class="outline button">Button</button>
+          <button class="outline button">Button</button>
+          <button class="outline button">Button</button>
+          <button class="outline button">Button</button>
+          <button class="outline button">Button</button>
+          <button class="outline button">Button</button>
+          <button class="outline button">Button</button>
+          <button class="outline button">Button</button>
+          <button class="outline button">Button</button>
+          <button class="outline button">Button</button>
+          <button class="outline button">Button</button>
+          <button class="outline button">Button</button>
+          <button class="outline button">Button</button>
+          <button class="outline button">Button</button>
+          <button class="outline button">Button</button>
+          <button class="outline button">Button</button>
+          <button class="outline button">Button</button>
+          <button class="outline button">Button</button>
+          <button class="outline button">Button</button>
+          <button class="outline button">Button</button>
+          <button class="outline button">Button</button>
+          <button class="outline button">Button</button>
+          <button class="outline button">Button</button>
+          <button class="outline button">Button</button>
+          <button class="outline button">Button</button>
+          <button class="outline button">Button</button>
+          <button class="outline button">Button</button>
+          <button class="outline button">Button</button>
+          <button class="outline button">Button</button>
+          <button class="outline button">Button</button>
+          <button class="outline button">Button</button>
+          <button class="outline button">Button</button>
+          <button class="outline button">Button</button>
+          <button class="outline button">Button</button>
+          <button class="outline button">Button</button>
+          <button class="outline button">Button</button>
+          <button class="outline button">Button</button>
+          <button class="outline button">Button</button>
+          <button class="outline button">Button</button>
+          <button class="outline button">Button</button>
         </div>
       </article>
       <footer>Footer</footer>

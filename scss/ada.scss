@@ -28,7 +28,9 @@
   --l-fg: 89%;
 }
 
-:root, .accent, .warn {
+:root,
+.accent,
+.warn {
   --l-dark: calc(var(--l) - 16%);
   --l-light: calc(var(--l) + 38%);
 
@@ -146,6 +148,17 @@ body {
   width: 1rem;
 }
 
+//@mixin buildCorner(position, borderWidth) {
+//@extend %corner;
+//border-width: 2px 2px 0 0;
+//border-radius: 0 0.3rem 0 0;
+//right: 0;
+//top: 0;
+//}
+
+.button-group {
+  margin: 0.8rem;
+}
 .button {
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -179,9 +192,11 @@ body {
     border: 1px solid transparent;
     box-shadow: none;
     background: none;
-    margin: 1px;
     > i.material-icons {
       font-size: 20px;
+    }
+    .button-group > & {
+      margin: 1px;
     }
   }
   &.fill {
@@ -235,23 +250,15 @@ body {
 .panel {
   background: var(--default-alpha10);
   box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.4);
-  border-radius: 4px;
+  border-radius: 0.3rem;
   display: flex;
   flex-direction: column;
   overflow: auto;
   margin: 0.5rem;
-  &.small {
-    > header,
-    > footer {
-      padding-top: 0.2rem;
-      padding-bottom: 0.2rem;
-    }
-  }
   > header {
     position: relative;
     text-align: left;
-    @extend %h3;
-    @extend %header, .m-0;
+    @extend %h3, .m-0;
     padding: 0.4rem 0.6rem;
     &:before {
       @extend %corner;
@@ -267,7 +274,11 @@ body {
       right: 0;
       top: 0;
     }
+    &:empty {
+      padding: 0.2rem;
+    }
   }
+
   > article {
     z-index: 1;
     padding: 0 0.6rem;
@@ -309,6 +320,41 @@ body {
       border-radius: 0 0 0.3rem 0;
       right: 0;
       bottom: 0;
+    }
+    &:empty {
+      padding: 0.2rem;
+    }
+  }
+}
+
+.tile {
+  @extend .panel;
+  margin: 0.8rem;
+  box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.4);
+
+  > header {
+    @extend %h4, .m-0;
+    &:before {
+      border-width: 1px 0 0 1px;
+    }
+    &:after {
+      border-width: 1px 1px 0 0;
+    }
+  }
+  > article {
+    display: grid;
+    color: var(--fg);
+    text-shadow: 0 0 4px var(--light-alpha40);
+    font-family: inherit;
+    font-size: 1.1rem;
+  }
+
+  > footer {
+    &:before {
+      border-width: 0 0 1px 1px;
+    }
+    &:after {
+      border-width: 0 1px 1px 0;
     }
   }
 }
