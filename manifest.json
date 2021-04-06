@@ -1,0 +1,9 @@
+{
+  "name": "Ada",
+  "short_name": "Ada",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "theme_color": "#07131d",
+  "background_color": "#07131d"
+}
