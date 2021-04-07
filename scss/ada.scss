@@ -179,9 +179,10 @@ body {
   margin: 0.8rem;
   font-size: 1.1rem;
   &.small {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
+    // Still necessary? If yes, use grid instead...
+    //display: inline-flex;
+    //justify-content: center;
+    //align-items: center;
     min-width: 0;
     padding: 0.8rem;
   }
@@ -249,8 +250,8 @@ body {
   background: var(--default-alpha10);
   box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.4);
   border-radius: 0.3rem;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
   overflow: auto;
   margin: 0.5rem;
   > header {
@@ -278,15 +279,15 @@ body {
   }
 
   > article {
+    display: grid;
+    align-items: start;
+    align-content: start;
     z-index: 1;
     padding: 0 0.6rem;
-    flex: 1;
     overflow: auto;
-    display: flex;
-    flex-direction: column;
+
     &::-webkit-scrollbar {
-      width: 5px;
-      height: 5px;
+      width: 2px;
       background: transparent;
     }
     &::-webkit-scrollbar-thumb {
