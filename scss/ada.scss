@@ -146,11 +146,14 @@ body {
   position: absolute;
   height: 1rem;
   width: 1rem;
+  z-index: 2;
 }
 
 %corner-light {
   @extend %corner;
   border-color: var(--light-alpha40);
+  height: 0.75rem;
+  width: 0.75rem;
 }
 
 .button-group {
