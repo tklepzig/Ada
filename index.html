@@ -22,111 +22,95 @@
     <link rel="manifest" href="manifest.json" />
   </head>
 
-  <body style="display: grid; grid-template-rows: 1fr 0 0">
-    <div class="panel">
-      <header></header>
-      <article>
-        <div style="display: grid; flex: 1; align-content: start">
-          <input class="input" type="text" />
-          <div class="tile">
-            <header></header>
-            <article>
-              <div style="font-size: 1.1rem; padding: 0.4rem">ToDo Text</div>
-            </article>
-            <footer></footer>
-          </div>
-        </div>
-      </article>
-      <footer></footer>
-    </div>
-    <div class="panel">
-      <header>Tiles</header>
-      <article>
-        <div
-          style="
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(45vw, 1fr));
-            grid-template-rows: repeat(auto-fill, minmax(15vh, 1fr));
-            flex: 1;
-          "
-        >
-          <div class="tile">
-            <header>Header</header>
-            <article>Tile</article>
-            <footer>Footer</footer>
-          </div>
-          <div class="tile">
-            <header></header>
-            <article>Tile</article>
-            <footer></footer>
-          </div>
-          <div class="tile">
-            <header></header>
-            <article>Tile</article>
-            <footer></footer>
-          </div>
-          <div class="tile">
-            <header></header>
-            <article>Tile</article>
-            <footer></footer>
-          </div>
-        </div>
-      </article>
-      <footer></footer>
-    </div>
-    <div class="panel">
+  <body
+    style="
+      display: grid;
+      grid-auto-flow: column;
+      grid-template-rows: repeat(2, auto);
+      grid-template-columns: 1fr auto 1fr;
+    "
+  >
+    <div class="panel" style="grid-column: 2">
       <header>Buttons</header>
       <article>
         <div
           style="
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr));
+            grid-template-columns: 1fr repeat(3, auto);
+            justify-items: center;
+            align-items: start;
+            justify-content: start;
+            align-items: center;
+            font-size: 14pt;
           "
         >
-          <button class="outline button">Button</button>
-          <button class="outline button">Button</button>
-          <button class="outline button">Button</button>
-          <button class="outline button">Button</button>
-          <button class="outline button">Button</button>
-          <button class="outline button">Button</button>
-          <button class="outline button">Button</button>
-          <button class="outline button">Button</button>
-          <button class="outline button">Button</button>
-          <button class="outline button">Button</button>
-          <button class="outline button">Button</button>
-          <button class="outline button">Button</button>
-          <button class="outline button">Button</button>
-          <button class="outline button">Button</button>
-          <button class="outline button">Button</button>
-          <button class="outline button">Button</button>
-          <button class="outline button">Button</button>
-          <button class="outline button">Button</button>
-          <button class="outline button">Button</button>
-          <button class="outline button">Button</button>
-          <button class="outline button">Button</button>
-          <button class="outline button">Button</button>
-          <button class="outline button">Button</button>
-          <button class="outline button">Button</button>
-          <button class="outline button">Button</button>
-          <button class="outline button">Button</button>
-          <button class="outline button">Button</button>
-          <button class="outline button">Button</button>
-          <button class="outline button">Button</button>
-          <button class="outline button">Button</button>
-          <button class="outline button">Button</button>
-          <button class="outline button">Button</button>
-          <button class="outline button">Button</button>
-          <button class="outline button">Button</button>
-          <button class="outline button">Button</button>
-          <button class="outline button">Button</button>
-          <button class="outline button">Button</button>
-          <button class="outline button">Button</button>
-          <button class="outline button">Button</button>
-          <button class="outline button">Button</button>
-          <button class="outline button">Button</button>
+          Default
+          <button class="button">Button</button>
+          <button class="button accent">Button</button>
+          <button class="button warn">Button</button>
+          Small
+          <button class="button small">Button</button>
+          <button class="button small accent">Button</button>
+          <button class="button small warn">Button</button>
+          Fill
+          <button class="button fill">Button</button>
+          <button class="button fill accent">Button</button>
+          <button class="button fill warn">Button</button>
+          Icon
+          <button class="button icon">
+            <i class="material-icons">check</i>
+          </button>
+          <button class="button icon accent">
+            <i class="material-icons">check</i>
+          </button>
+          <button class="button icon warn">
+            <i class="material-icons">check</i>
+          </button>
+          Icon Fill
+          <button class="button icon fill">
+            <i class="material-icons">check</i>
+          </button>
+          <button class="button icon fill accent">
+            <i class="material-icons">check</i>
+          </button>
+          <button class="button icon fill warn">
+            <i class="material-icons">check</i>
+          </button>
         </div>
       </article>
-      <footer>Footer</footer>
+      <footer></footer>
+    </div>
+    <div class="panel" style="grid-column: 2">
+      <header>Tiles</header>
+      <article
+        style="
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-template-rows: 1fr 1fr;
+        "
+      >
+        <div class="tile">
+          <header>Header</header>
+          <article>Tile</article>
+          <footer>Footer</footer>
+        </div>
+        <div class="tile">
+          <header></header>
+          <article>Tile</article>
+          <footer></footer>
+        </div>
+        <div class="tile">
+          <header></header>
+          <article>Tile</article>
+          <footer></footer>
+        </div>
+        <div class="tile">
+          <header></header>
+          <article>Tile</article>
+          <footer></footer>
+        </div>
+      </article>
+      <footer></footer>
     </div>
   </body>
 </html>
