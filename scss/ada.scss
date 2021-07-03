@@ -367,6 +367,7 @@ body {
   border-radius: 50%;
   border-color: transparent var(--default);
   animation: 4s rotateOuter linear infinite;
+  box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.4) inset;
 
   &:before {
     content: "";
@@ -380,6 +381,7 @@ body {
     border-color: transparent var(--light-alpha70);
     border-radius: inherit;
     animation: 2s rotateInner linear infinite;
+    box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.6) inset;
   }
   &:after {
     content: "";
