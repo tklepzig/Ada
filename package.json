@@ -1,6 +1,6 @@
 {
   "name": "ada-ui",
-  "version": "2.9.1",
+  "version": "2.9.2",
   "scripts": {
     "dev": "sass scss/ada.scss:css/ada.css --watch",
     "build": "rm -rf css && sass scss/ada.scss:css/ada.min.css -s compressed --no-source-map"
