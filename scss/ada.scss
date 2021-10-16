@@ -211,15 +211,15 @@ body {
   &.fill {
     background-color: var(--default);
   }
-  &:focus:not(:disabled) {
+  &:focus {
     border: 1px solid var(--light-alpha70);
   }
-  &:hover:not(:disabled) {
+  &:hover {
     // stays after click on touch devices
     // TODO: only for non-touch devices
     // /*background-color: var(--light-alpha40);*/
   }
-  &:active:not(:disabled) {
+  &:active {
     background-color: var(--light-alpha70);
     border: 1px solid var(--default-alpha40);
   }
@@ -247,7 +247,7 @@ body {
   margin: 0.8rem;
   font-size: 1.1rem;
 
-  &:focus:not(:disabled) {
+  &:focus {
     border: 1px solid var(--light-alpha70);
   }
   &:disabled {
