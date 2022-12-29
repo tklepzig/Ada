@@ -1,0 +1,50 @@
+@import "ada.theme-base";
+
+:root {
+  @extend %colourShades;
+
+  --h: 132;
+  --s: 92%;
+  --l: 22%;
+
+  --h-fg: var(--h);
+  --s-fg: 100%;
+  --l-fg: 89%;
+}
+
+.accent {
+  @extend %colourShades;
+
+  //TODO which accent color???
+
+  //another green tone
+  --h: 64;
+  --s: 87%;
+  --l: 25%;
+
+  //orange
+  //--h: 32;
+  //--s: 85%;
+  //--l: 34%;
+
+  //blue
+  //--h: 212;
+  //--s: 50%;
+  //--l: 19%;
+
+  --h-fg: var(--h);
+  --s-fg: 100%;
+  --l-fg: 89%;
+}
+
+.warn {
+  @extend %colourShades;
+
+  --h: 0;
+  --s: 75%;
+  --l: 29%;
+
+  --h-fg: var(--h);
+  --s-fg: 100%;
+  --l-fg: 89%;
+}
