@@ -1,9 +1,4 @@
 %colourShades {
-  --l-dark: calc(var(--l) - 16%);
-  --l-light: calc(var(--l) + 38%);
-
-  --bg: hsl(var(--h), var(--s), var(--l-dark));
-
   --fg: hsl(var(--h-fg), var(--s-fg), var(--l-fg));
   --fg-alpha60: hsla(var(--h-fg), var(--s-fg), var(--l-fg), 0.6);
   --fg-alpha80: hsla(var(--h-fg), var(--s-fg), var(--l-fg), 0.8);
