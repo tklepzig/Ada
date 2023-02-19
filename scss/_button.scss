@@ -1,0 +1,73 @@
+.button-group {
+  margin: 0.8rem;
+}
+
+%button {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  outline: none;
+  color: var(--fg);
+  text-shadow: 0 0 4px var(--light-alpha40);
+  font-family: inherit;
+  cursor: pointer;
+  user-select: none;
+  vertical-align: middle;
+  transition: border-color 0.15s ease-in-out, background-color 0.15s ease-in-out;
+
+  &:disabled {
+    opacity: 0.4;
+    filter: saturate(0.6);
+    cursor: default;
+    color: var(--fg-alpha80);
+    pointer-events: none;
+  }
+}
+
+.button {
+  @extend %button;
+  border-radius: 0.3rem;
+  box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.4);
+  border: 1px solid var(--light-alpha40);
+  background-color: transparent;
+  min-height: min-content;
+  min-width: 8rem;
+  padding: 0.8rem 1.6rem;
+  margin: 0.8rem;
+  font-size: 1.1rem;
+
+  &.small {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    min-width: 0;
+    padding: 0.8rem;
+  }
+  &.icon {
+    @extend .button, .small;
+    border: 1px solid transparent;
+    box-shadow: none;
+    background: none;
+    > i.material-icons {
+      font-size: 20px;
+    }
+    .button-group > & {
+      margin: 1px;
+    }
+  }
+  &.fill {
+    background-color: var(--default);
+  }
+  &:focus {
+    border: 1px solid var(--light-alpha70);
+  }
+  &:hover {
+    // stays after click on touch devices
+    // TODO: only for non-touch devices
+    // /*background-color: var(--light-alpha40);*/
+  }
+  &:active {
+    background-color: var(--light-alpha70);
+    border: 1px solid var(--default-alpha40);
+  }
+}

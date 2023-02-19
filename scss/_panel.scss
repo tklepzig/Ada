@@ -1,0 +1,118 @@
+@import "corner";
+
+.panel {
+  background: var(--default-alpha10);
+  box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.4);
+  border-radius: 0.3rem;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  overflow: auto;
+  margin: 0.5rem;
+  > header {
+    position: relative;
+    text-align: left;
+    @extend %h3, .m-0;
+    padding: 0.4rem 0.6rem;
+    &:before {
+      @extend %corner;
+      border-width: 2px 0 0 2px;
+      border-radius: 0.3rem 0 0 0;
+      left: 0;
+      top: 0;
+    }
+    &:after {
+      @extend %corner;
+      border-width: 2px 2px 0 0;
+      border-radius: 0 0.3rem 0 0;
+      right: 0;
+      top: 0;
+    }
+    &:empty {
+      padding: 0.2rem;
+    }
+  }
+
+  > article {
+    z-index: 1;
+    padding: 0 0.6rem;
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+      width: 2px;
+      background: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+      min-width: 1rem;
+      border-style: solid;
+      border-color: transparent;
+      border-width: 2px 2px 1px 2px;
+      background: var(--default);
+      box-sizing: border-box;
+      background-clip: padding-box;
+    }
+  }
+  > footer {
+    position: relative;
+    color: var(--fg-alpha60);
+
+    &:not(.commands) {
+      padding: 0.4rem 0.6rem;
+      font-size: 0.75rem;
+      text-align: right;
+    }
+
+    &:not(.commands):before {
+      @extend %corner;
+      border-width: 0 0 2px 2px;
+      border-radius: 0 0 0 0.3rem;
+      left: 0;
+      bottom: 0;
+    }
+    &:not(.commands):after {
+      @extend %corner;
+      border-width: 0 2px 2px 0;
+      border-radius: 0 0 0.3rem 0;
+      right: 0;
+      bottom: 0;
+    }
+    &:empty {
+      padding: 0.2rem;
+    }
+
+    &.commands {
+      @extend %h4, .m-0;
+      display: grid;
+      grid-auto-flow: column;
+      gap: 0.5rem;
+      align-items: center;
+      line-height: 2rem;
+      height: 2rem;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+      &:before {
+        position: absolute;
+        content: "";
+        width: 1rem;
+        border-radius: 0 0 0 0.3rem;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        background: var(--default);
+      }
+      &:after {
+        position: absolute;
+        content: "";
+        width: 1rem;
+        border-radius: 0 0 0.3rem 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background: var(--default);
+      }
+
+      & > .command {
+        height: 2rem;
+      }
+    }
+  }
+}

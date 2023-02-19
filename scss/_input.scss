@@ -1,0 +1,25 @@
+.input {
+  border-radius: 0.3rem;
+  box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.4);
+  outline: none;
+  border: 1px solid var(--light-alpha40);
+  color: var(--fg);
+  text-shadow: 0 0 4px var(--light-alpha40);
+  font-family: inherit;
+  background-color: transparent;
+  transition: border-color 0.15s ease-in-out;
+  padding: 0.8rem 1.6rem;
+  margin: 0.8rem;
+  font-size: 1.1rem;
+
+  &:focus {
+    border: 1px solid var(--light-alpha70);
+  }
+  &:disabled {
+    opacity: 0.4;
+    filter: saturate(0.6);
+    cursor: default;
+    color: var(--fg-alpha80);
+    pointer-events: none;
+  }
+}

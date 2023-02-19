@@ -1,0 +1,67 @@
+.spinner {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  position: relative;
+  border-style: solid;
+  border-width: 0.3em;
+  border-radius: 50%;
+  border-color: transparent var(--default);
+  animation: 4s rotateOuter linear infinite;
+  box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.4) inset;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0.2em;
+    left: 0.2em;
+    right: 0.2em;
+    bottom: 0.2em;
+    border-style: inherit;
+    border-width: inherit;
+    border-color: transparent var(--light-alpha70);
+    border-radius: inherit;
+    animation: 2s rotateInner linear infinite;
+    box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.6) inset;
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0.7em;
+    left: 0.7em;
+    right: 0.7em;
+    bottom: 0.7em;
+    border-style: inherit;
+    border-width: inherit;
+    border-color: transparent var(--light-alpha40);
+    border-radius: inherit;
+    animation: 4s rotateCenter linear infinite;
+  }
+}
+
+@keyframes rotateOuter {
+  0% {
+    transform: rotate(45deg);
+  }
+  100% {
+    transform: rotate(225deg);
+  }
+}
+
+@keyframes rotateInner {
+  0% {
+    transform: rotate(-90deg);
+  }
+  100% {
+    transform: rotate(-270deg);
+  }
+}
+
+@keyframes rotateCenter {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(180deg);
+  }
+}
