@@ -24,9 +24,13 @@
   </head>
 
   <body
-    style="display: grid; grid-auto-flow: row; grid-template-columns: 2fr 1fr"
+    style="
+      display: grid;
+      grid-template-areas: 'a b' 'c c';
+      grid-template-rows: 1fr auto;
+    "
   >
-    <div class="panel">
+    <div class="panel" style="grid-area: a">
       <header>Buttons</header>
       <article>
         <div
@@ -110,11 +114,11 @@
         <button class="command">Command</button>
         <button class="command secondary">Second Command</button>
         <button disabled class="command secondaryDim">Third Command</button>
-        <div class="command space"></div>
+        <button class="command">Blubb</button>
         Footer
       </footer>
     </div>
-    <div class="panel">
+    <div class="panel" style="grid-area: b">
       <header>Tiles</header>
       <article
         style="
@@ -145,6 +149,10 @@
         </div>
       </article>
       <footer></footer>
+    </div>
+    <div class="blubb-commands" style="grid-area: c">
+      <button class="command">Blubb</button>
+      <button class="secondary command">Blubb</button>
     </div>
   </body>
 </html>

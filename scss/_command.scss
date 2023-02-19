@@ -1,22 +1,23 @@
 .command {
-  background-color: var(--default);
+  background-color: var(--default-alpha40);
   min-width: 1rem;
 
   &:not(.space) {
     @extend %button;
+    text-align: right;
     font-size: 1.1rem;
     border-style: solid;
     border-color: transparent;
-    border-width: 0 1px 0 1px;
+    border-width: 0 2px 0 0;
     transition: background-color 0.15s ease-in-out;
-    padding: 0 0.8rem;
+    padding: 0 0.4rem;
 
     &:focus {
       border-color: var(--light-alpha70);
     }
 
     &:active {
-      background-color: var(--light-alpha70);
+      background-color: var(--light-alpha40);
     }
   }
 }
