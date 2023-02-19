@@ -28,6 +28,30 @@
   --l-fg: 89%;
 }
 
+.secondary {
+  @extend %colourShades;
+  --h: 74;
+  --s: 87%;
+  --l: 25%;
+  --l-light: 45%;
+
+  --h-fg: var(--h);
+  --s-fg: 100%;
+  --l-fg: 89%;
+}
+
+.secondaryDim {
+  @extend %colourShades;
+  --h: 55;
+  --s: 37%;
+  --l: 31%;
+  --l-light: 50%;
+
+  --h-fg: var(--h);
+  --s-fg: 100%;
+  --l-fg: 89%;
+}
+
 .warn {
   @extend %colourShades;
 
