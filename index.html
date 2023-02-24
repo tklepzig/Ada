@@ -45,20 +45,20 @@
         >
           Default
           <button class="button">Button</button>
-          <button class="button secondary">Button</button>
-          <button class="button secondaryDim">Button</button>
+          <button class="button primary-shade-1">Button</button>
+          <button class="button primary-shade-2">Button</button>
           <button class="button accent">Button</button>
           <button class="button warn">Button</button>
           Small
           <button class="button small">Button</button>
-          <button class="button small secondary">Button</button>
-          <button class="button small secondaryDim">Button</button>
+          <button class="button small primary-shade-1">Button</button>
+          <button class="button small primary-shade-2">Button</button>
           <button class="button small accent">Button</button>
           <button class="button small warn">Button</button>
           Fill
           <button class="button fill">Button</button>
-          <button class="button fill secondary">Button</button>
-          <button class="button fill secondaryDim">Button</button>
+          <button class="button fill primary-shade-1">Button</button>
+          <button class="button fill primary-shade-2">Button</button>
           <button class="button fill accent">Button</button>
           <button class="button fill warn">Button</button>
           Icon
@@ -91,8 +91,8 @@
           <button disabled class="button icon">
             <i class="material-icons">check</i>
           </button>
-          <button disabled class="button fill secondary">Button</button>
-          <button disabled class="button fill secondaryDim">Button</button>
+          <button disabled class="button fill primary-shade-1">Button</button>
+          <button disabled class="button fill primary-shade-2">Button</button>
           <button disabled class="button fill accent">Button</button>
           <button disabled class="button fill warn">Button</button>
           Spinner
@@ -107,14 +107,13 @@
           </div>
         </div>
       </article>
-      <footer
-        class="commands"
-        style="grid-template-columns: auto auto auto 1fr auto"
-      >
+      <footer class="commands" style="grid-auto-flow: column">
         <button class="command">Command</button>
-        <button class="command secondary">Second Command</button>
-        <button disabled class="command secondaryDim">Third Command</button>
-        <button class="command">Blubb</button>
+        <button class="command primary-shade-1">Second Command</button>
+        <button class="command primary-shade-2">Third Command</button>
+        <button class="command"></button>
+        <button class="command primary-shade-1"></button>
+        <button class="command primary-shade-2"></button>
         Footer
       </footer>
     </div>
@@ -152,7 +151,8 @@
     </div>
     <div class="blubb-commands" style="grid-area: c">
       <button class="command">Blubb</button>
-      <button class="secondary command">Blubb</button>
+      <button class="primary-shade-1 command">Blubb</button>
+      <button class="primary-shade-2 command">Blubb</button>
     </div>
   </body>
 </html>
