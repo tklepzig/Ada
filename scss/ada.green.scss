@@ -3,10 +3,10 @@
 :root {
   @extend %colourShades;
 
-  --h: 132;
-  --s: 92%;
-  --l: 21%;
-  --l-light: 40%;
+  --h: 135;
+  --s: 100%;
+  --l: 19%;
+  --l-light: 36%;
 
   --bg: hsl(var(--h), 20%, 15%);
 
@@ -18,9 +18,9 @@
 .accent {
   @extend %colourShades;
 
-  --h: 24;
-  --s: 91%;
-  --l: 34%;
+  --h: 16;
+  --s: 81%;
+  --l: 38%;
   --l-light: 60%;
 
   --h-fg: var(--h);
@@ -28,24 +28,24 @@
   --l-fg: 89%;
 }
 
-.secondary {
+.primary-shade-1 {
   @extend %colourShades;
-  --h: 74;
-  --s: 87%;
-  --l: 25%;
-  --l-light: 45%;
+  --h: 96;
+  --s: 89%;
+  --l: 23%;
+  --l-light: 40%;
 
   --h-fg: var(--h);
   --s-fg: 100%;
   --l-fg: 89%;
 }
 
-.secondaryDim {
+.primary-shade-2 {
   @extend %colourShades;
-  --h: 55;
-  --s: 37%;
-  --l: 31%;
-  --l-light: 50%;
+  --h: 169;
+  --s: 90%;
+  --l: 22%;
+  --l-light: 40%;
 
   --h-fg: var(--h);
   --s-fg: 100%;
@@ -55,9 +55,9 @@
 .warn {
   @extend %colourShades;
 
-  --h: 0;
-  --s: 75%;
-  --l: 29%;
+  --h: 356;
+  --s: 95%;
+  --l: 30%;
   --l-light: 60%;
 
   --h-fg: var(--h);
