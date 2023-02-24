@@ -6,6 +6,7 @@
   --default: hsl(var(--h), var(--s), var(--l));
   --default-alpha10: hsla(var(--h), var(--s), var(--l), 0.1);
   --default-alpha40: hsla(var(--h), var(--s), var(--l), 0.4);
+  --default-alpha60: hsla(var(--h), var(--s), var(--l), 0.6);
 
   --light: hsl(var(--h), var(--s), var(--l-light));
   --light-alpha40: hsla(var(--h), var(--s), var(--l-light), 0.4);

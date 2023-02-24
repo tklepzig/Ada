@@ -15,19 +15,6 @@
   --l-fg: 89%;
 }
 
-.accent {
-  @extend %colourShades;
-
-  --h: 16;
-  --s: 81%;
-  --l: 38%;
-  --l-light: 60%;
-
-  --h-fg: var(--h);
-  --s-fg: 100%;
-  --l-fg: 89%;
-}
-
 .primary-shade-1 {
   @extend %colourShades;
   --h: 96;
@@ -46,6 +33,19 @@
   --s: 90%;
   --l: 22%;
   --l-light: 40%;
+
+  --h-fg: var(--h);
+  --s-fg: 100%;
+  --l-fg: 89%;
+}
+
+.accent {
+  @extend %colourShades;
+
+  --h: 16;
+  --s: 81%;
+  --l: 38%;
+  --l-light: 60%;
 
   --h-fg: var(--h);
   --s-fg: 100%;
