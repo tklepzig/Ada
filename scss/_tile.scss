@@ -5,13 +5,25 @@
   margin: 0.8rem;
 
   > header {
-    &:before {
-      @extend %corner-light;
-      border-width: 1px 0 0 1px;
+    &:not(.command-bar) {
+      &:before {
+        @extend %corner-light;
+        border-width: 1px 0 0 1px;
+      }
+      &:after {
+        @extend %corner-light;
+        border-width: 1px 1px 0 0;
+      }
     }
-    &:after {
-      @extend %corner-light;
-      border-width: 1px 1px 0 0;
+
+    &.command-bar {
+      @extend %h4, .m-0;
+      line-height: 2rem;
+      height: 2rem;
+
+      & > .command {
+        height: 2rem;
+      }
     }
   }
 
@@ -20,18 +32,20 @@
   }
 
   > footer {
-    &:before {
-      @extend %corner-light;
-      border-width: 0 0 1px 1px;
-    }
-    &:after {
-      @extend %corner-light;
-      border-width: 0 1px 1px 0;
+    &:not(.command-bar) {
+      &:before {
+        @extend %corner-light;
+        border-width: 0 0 1px 1px;
+      }
+      &:after {
+        @extend %corner-light;
+        border-width: 0 1px 1px 0;
+      }
     }
   }
 
   &.inset {
-    box-shadow: inset 0 0 20px 1px rgba(0, 0, 0, 0.4);
+    box-shadow: inset 0 0 10px 0px rgba(0, 0, 0, 0.4);
 
     > header {
       color: var(--fg-alpha80);

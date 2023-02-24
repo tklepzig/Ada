@@ -3,8 +3,6 @@
 }
 
 %button {
-  white-space: nowrap;
-  text-overflow: ellipsis;
   overflow: hidden;
   outline: none;
   color: var(--fg);
@@ -25,6 +23,8 @@
 
 .button {
   @extend %button;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   border-radius: 0.3rem;
   box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.4);
   border: 1px solid var(--light-alpha40);

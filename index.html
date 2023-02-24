@@ -23,15 +23,20 @@
     <link rel="manifest" href="manifest.json" />
   </head>
 
-  <body
-    style="
-      display: grid;
-      grid-template-areas: 'a b' 'c c';
-      grid-template-rows: 1fr auto;
-    "
-  >
+  <body style="display: grid; grid: 'a b' 1fr 'c c' auto / 1fr 1fr">
     <div class="panel" style="grid-area: a">
-      <header>Buttons</header>
+      <header
+        class="command-bar"
+        style="grid-template-columns: repeat(7, auto)"
+      >
+        <button class="command">Command</button>
+        <button class="command primary-shade-1">Second Command</button>
+        <button class="command primary-shade-2">Third Command</button>
+        <button class="command"></button>
+        <button class="command primary-shade-1"></button>
+        <button class="command primary-shade-2"></button>
+        Header
+      </header>
       <article>
         <div
           style="
@@ -107,7 +112,10 @@
           </div>
         </div>
       </article>
-      <footer class="commands" style="grid-auto-flow: column">
+      <footer
+        class="command-bar"
+        style="grid-template-columns: repeat(7, auto)"
+      >
         <button class="command">Command</button>
         <button class="command primary-shade-1">Second Command</button>
         <button class="command primary-shade-2">Third Command</button>
@@ -127,9 +135,13 @@
         "
       >
         <div class="tile">
-          <header>Header</header>
+          <header class="command-bar">
+            <button class="command">Comand</button>
+          </header>
           <article>Tile</article>
-          <footer>Footer</footer>
+          <footer class="command-bar">
+            <button class="command">Comand</button>
+          </footer>
         </div>
         <div class="tile inset">
           <header>Header</header>
@@ -150,14 +162,22 @@
       <footer></footer>
     </div>
     <div
-      class="blubb-commands"
-      style="grid-area: c; grid-template-columns: repeat(3, auto) 1fr auto"
+      class="command-bar"
+      style="
+        grid-area: c;
+        grid-template-columns: repeat(2, auto) 12rem auto 1fr auto 1fr auto;
+      "
     >
-      <button class="primary-shade-1 command">Blubb</button>
-      <button class="primary-shade-2 command">Blubb</button>
-      <button class="accent command">Blubb</button>
-      <button class="command"></button>
-      <button class="warn command">Blubb</button>
+      <button class="command">Command</button>
+      <button class="primary-shade-1 command">Command</button>
+      <button class="primary-shade-2 command">
+        Command and sth more looong
+      </button>
+      <button class="accent command"></button>
+      <div class="command space"></div>
+      <button class="warn command"></button>
+      <div class="command space"></div>
+      Commands
     </div>
   </body>
 </html>
