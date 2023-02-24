@@ -14,7 +14,7 @@
 
   &:before,
   &:after {
-    box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.4);
+    box-shadow: $box-shadow;
     position: absolute;
     content: "";
     width: 1rem;
@@ -40,7 +40,7 @@
 .command {
   box-sizing: border-box;
   background-color: var(--default-alpha60);
-  box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.4);
+  box-shadow: $box-shadow;
 
   &:not(.space) {
     @extend %button;
