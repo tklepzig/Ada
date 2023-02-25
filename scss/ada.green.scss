@@ -15,7 +15,7 @@
   --l-fg: 89%;
 }
 
-.primary-shade-1 {
+.shade1 {
   @extend %colourShades;
   --h: 96;
   --s: 89%;
@@ -27,7 +27,7 @@
   --l-fg: 89%;
 }
 
-.primary-shade-2 {
+.shade2 {
   @extend %colourShades;
   --h: 169;
   --s: 90%;
