@@ -2,7 +2,8 @@
   "name": "ada-ui",
   "version": "3.0.3",
   "scripts": {
-    "dev": "sass scss:css --watch",
+    "start:dev": "alive-server .",
+    "build:dev": "sass scss:css --watch",
     "build": "rm -rf css && sass scss:css -s compressed --no-source-map"
   },
   "repository": {
@@ -14,6 +15,7 @@
     "url": "https://github.com/tklepzig/Ada/issues"
   },
   "devDependencies": {
+    "alive-server": "^1.2.9",
     "sass": "^1.42.1"
   }
 }
