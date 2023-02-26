@@ -23,7 +23,17 @@
     <link rel="manifest" href="manifest.json" />
   </head>
 
-  <body style="display: grid; grid: 'a b' 1fr 'c c' auto / 1fr 1fr">
+  <body
+    style="display: grid; grid: 'test a b' 1fr 'c c c' auto / auto 1fr 100px"
+  >
+    <div
+      class="command-bar-v"
+      style="grid-area: test; grid-template-rows: auto auto 1fr"
+    >
+      <button class="command">Command</button>
+      <button class="command shade1">Second Command</button>
+      <button class="command shade2">Third Command</button>
+    </div>
     <div class="panel" style="grid-area: a">
       <header
         class="command-bar"
@@ -170,13 +180,11 @@
     >
       <button class="command">Command</button>
       <button class="shade1 command">Command</button>
-      <button class="shade2 command">
-        Command and sth more looong
-      </button>
+      <button class="shade2 command">Command and sth more looong</button>
       <button class="accent command"></button>
-      <div class="command space"></div>
+      <div class="command spacer"></div>
       <button class="warn command"></button>
-      <div class="command space"></div>
+      <div class="command spacer"></div>
       Commands
     </div>
   </body>
