@@ -33,21 +33,28 @@
         style="grid-template-columns: repeat(3, 1fr) auto"
       >
         <button class="command">Command</button>
-        <button class="command shade1">Second Command</button>
+        <button
+          class="command shade1"
+          style="justify-items: center; align-items: center"
+        >
+          <div class="spinner2" style="font-size: 30px"></div>
+        </button>
         <button class="command shade2">Third Command</button>
         Header
       </header>
       <article
         style="
           display: grid;
-          grid: 'buttons tiles' 1fr 'spinner tiles' auto / 1fr 1fr;
+          grid: 'buttons tiles' 1fr 'spinner tiles' auto / 3fr 1fr;
         "
       >
         <div class="panel" style="grid-area: buttons">
           <header>Buttons</header>
           <article>
             <h3>Default</h3>
-            <button class="button">Button</button>
+            <button class="button">
+              <div class="spinner" style="font-size: 1.1rem"></div>
+            </button>
             <button class="button shade1">Button</button>
             <button class="button shade2">Button</button>
             <button class="button accent">Button</button>
@@ -86,23 +93,22 @@
             "
           >
             <div style="width: 48px; height: 48px; font-size: 10px">
-              <div class="spinner"></div>
+              <div class="spinner-old"></div>
             </div>
             <div style="width: 32px; height: 32px; font-size: 8px">
-              <div class="spinner"></div>
+              <div class="spinner-old"></div>
             </div>
-            <div style="width: 32px; height: 32px; font-size: 8px">
-              <div class="spinner shade1"></div>
+            <div style="width: 16px; height: 16px; font-size: 4px">
+              <div class="spinner-old shade1"></div>
             </div>
-            <div style="width: 60px; height: 60px; font-size: 12px">
-              <div class="spinner shade2"></div>
-            </div>
-            <div style="width: 32px; height: 32px; font-size: 8px">
-              <div class="spinner accent"></div>
-            </div>
-            <div style="width: 32px; height: 32px; font-size: 8px">
-              <div class="spinner warn"></div>
-            </div>
+            <div class="spinner2" style="font-size: 120px"></div>
+            <div class="spinner2 shade2" style="font-size: 32px"></div>
+            <div class="spinner2 accent" style="font-size: 16px"></div>
+            <div class="spinner" style="font-size: 40px"></div>
+            <div class="spinner shade2" style="font-size: 32px"></div>
+            <div class="spinner accent" style="font-size: 16px"></div>
+            <div class="spinner2" style="font-size: 1.75rem"></div>
+            <div class="spinner2 accent" style="font-size: 16px"></div>
           </article>
           <footer></footer>
         </div>
@@ -166,7 +172,12 @@
       <button class="shade2 command">Command and sth more looong</button>
       <button class="accent command">Special Command</button>
       <div class="command spacer"></div>
-      <button class="warn command">Delete</button>
+      <button
+        class="warn command"
+        style="justify-items: center; align-items: center"
+      >
+        <div class="spinner2" style="font-size: 1.4rem"></div>
+      </button>
       <div class="command spacer"></div>
       Commands
     </div>
