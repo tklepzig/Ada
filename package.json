@@ -1,6 +1,6 @@
 {
   "name": "ada-ui",
-  "version": "4.0.0",
+  "version": "4.1.0",
   "scripts": {
     "start:dev": "alive-server .",
     "build:dev": "sass scss:css --watch",
