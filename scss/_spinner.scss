@@ -1,3 +1,45 @@
+.spinner-test {
+  margin: 0.3rem;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  width: 1em;
+  height: 1em;
+  position: relative;
+  box-sizing: border-box;
+  animation: 8s 0.5s rotate ease-in-out infinite;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-style: solid;
+    border-width: 0.05em;
+    border-radius: 50%;
+    border-color: var(--light-alpha40) transparent;
+    animation: 6s 0.5s inset1-test ease-in-out infinite;
+    box-shadow: 0px 12px 10px -12px #000a, 0px -12px 10px -12px #000a;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-style: solid;
+    border-width: 0.05em;
+    border-radius: 50%;
+    border-color: transparent var(--light-alpha70);
+    animation: 6s 0.5s inset2-test ease-in-out infinite;
+    box-shadow: 12px 0px 10px -12px #000a, -12px 0px 10px -12px #000a;
+  }
+}
+
 .spinner2 {
   margin: 0.3rem;
   display: grid;
@@ -7,8 +49,7 @@
   height: 1em;
   position: relative;
   box-sizing: border-box;
-  animation: 6s 0.5s rotate ease-in-out alternate-reverse infinite;
-
+  animation: 6s 0.5s rotate ease-in-out alternate infinite;
 
   &:before {
     content: "";
@@ -59,14 +100,14 @@ $amount: 0.2em;
     bottom: 0;
     transform: rotate(0);
   }
-  12.5%{
+  12.5% {
     top: $amount;
     left: $amount;
     right: $amount;
     bottom: $amount;
     transform: rotate(0);
   }
-  37.5%{
+  37.5% {
     top: $amount;
     left: $amount;
     right: $amount;
@@ -104,14 +145,14 @@ $amount: 0.2em;
     bottom: 0;
     transform: rotate(0);
   }
-  62.5%{
+  62.5% {
     top: $amount;
     left: $amount;
     right: $amount;
     bottom: $amount;
     transform: rotate(0);
   }
-  87.5%{
+  87.5% {
     top: $amount;
     left: $amount;
     right: $amount;
@@ -124,6 +165,110 @@ $amount: 0.2em;
     right: 0;
     bottom: 0;
     transform: rotate(180deg);
+  }
+}
+
+@keyframes inset1-test {
+  0% {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: rotate(0);
+  }
+  12.5% {
+    top: $amount;
+    left: $amount;
+    right: $amount;
+    bottom: $amount;
+    transform: rotate(0);
+  }
+  25% {
+    top: $amount;
+    left: $amount;
+    right: $amount;
+    bottom: $amount;
+    transform: rotate(180deg);
+  }
+  37.5% {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: rotate(180deg);
+  }
+  50% {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: rotate(270deg);
+  }
+  87.5% {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: rotate(270deg);
+  }
+  100% {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes inset2-test {
+  0% {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: rotate(0);
+  }
+  37.5% {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: rotate(0);
+  }
+  50% {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: rotate(90deg);
+  }
+  62.5% {
+    top: $amount;
+    left: $amount;
+    right: $amount;
+    bottom: $amount;
+    transform: rotate(90deg);
+  }
+  75% {
+    top: $amount;
+    left: $amount;
+    right: $amount;
+    bottom: $amount;
+    transform: rotate(270deg);
+  }
+  87.5% {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: rotate(270deg);
+  }
+  100% {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: rotate(360deg);
   }
 }
 
@@ -238,4 +383,3 @@ $amount: 0.2em;
     transform: rotate(180deg);
   }
 }
-
