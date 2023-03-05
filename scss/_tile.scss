@@ -17,7 +17,7 @@
     }
 
     &.command-bar {
-      @extend %h4, .m-0;
+      @extend %h4;
       line-height: 2rem;
       height: 2rem;
 

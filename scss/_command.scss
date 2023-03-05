@@ -13,7 +13,7 @@
   }
 
   &:not(.vertical) {
-    @extend %h2, .m-0;
+    @extend %h2;
     grid-auto-flow: column;
     text-align: center;
     align-items: center;
