@@ -94,12 +94,23 @@
       min-width: 0;
     }
 
+    &.flash {
+      animation: flash 1s ease-in-out infinite;
+    }
+
     &:focus {
       border-color: var(--light-alpha70);
     }
 
     &:active {
       background-color: var(--light-alpha40);
+      animation-play-state: paused;
     }
+  }
+}
+
+@keyframes flash {
+  50% {
+    background-color: var(--light-alpha70);
   }
 }

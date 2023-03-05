@@ -165,7 +165,7 @@
       class="command-bar"
       style="
         grid-area: c;
-        grid-template-columns: repeat(2, auto) 12rem auto 1fr auto 1fr auto;
+        grid-template-columns: repeat(2, auto) 12rem auto 1fr auto auto 1fr auto;
       "
     >
       <button class="command">Command</button>
@@ -173,11 +173,13 @@
       <button class="shade2 command">Command and sth more looong</button>
       <button class="accent command">Special Command</button>
       <div class="command spacer"></div>
+      <button class="warn command flash">Confirm Deletion</button>
       <button
+        disabled
         class="warn command"
         style="justify-items: center; align-items: center"
       >
-        <div class="spinner2" style="font-size: 1.4rem"></div>
+        <div class="spinner2 accent" style="font-size: 2.4rem"></div>
       </button>
       <div class="command spacer"></div>
       Commands
