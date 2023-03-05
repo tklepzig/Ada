@@ -1,51 +1,7 @@
-.command-bar-v {
-  position: relative;
-  display: grid;
-  grid-auto-flow: row;
-  gap: 0.5rem;
-  width: 12rem;
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
-  margin: 0.5rem;
-
-  &:before,
-  &:after {
-    box-shadow: $box-shadow;
-    position: absolute;
-    content: "";
-    height: 1rem;
-    left: 0;
-    right: 0;
-    background: var(--default-alpha60);
-  }
-
-  &:before {
-    border-radius: 0.3rem 0.3rem 0 0;
-    top: 0;
-  }
-  &:after {
-    border-radius: 0 0 0.3rem 0.3rem;
-    bottom: 0;
-  }
-
-  & > .command {
-    min-height: 3.6rem;
-    width: 12rem;
-  }
-}
-
 .command-bar {
   position: relative;
-  @extend %h2, .m-0;
   display: grid;
-  grid-auto-flow: column;
-  text-align: center;
   gap: 0.5rem;
-  align-items: center;
-  line-height: 3.6rem;
-  height: 3.6rem;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
   margin: 0.5rem;
 
   &:before,
@@ -53,23 +9,66 @@
     box-shadow: $box-shadow;
     position: absolute;
     content: "";
-    width: 1rem;
-    top: 0;
-    bottom: 0;
     background: var(--default-alpha60);
   }
 
-  &:before {
-    border-radius: 0.3rem 0 0 0.3rem;
-    left: 0;
-  }
-  &:after {
-    border-radius: 0 0.3rem 0.3rem 0;
-    right: 0;
+  &:not(.vertical) {
+    @extend %h2, .m-0;
+    grid-auto-flow: column;
+    text-align: center;
+    align-items: center;
+    line-height: 3.6rem;
+    height: 3.6rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+
+    &:before,
+    &:after {
+      width: 1rem;
+      top: 0;
+      bottom: 0;
+    }
+
+    &:before {
+      border-radius: 0.3rem 0 0 0.3rem;
+      left: 0;
+    }
+    &:after {
+      border-radius: 0 0.3rem 0.3rem 0;
+      right: 0;
+    }
+
+    & > .command {
+      height: 3.6rem;
+    }
   }
 
-  & > .command {
-    height: 3.6rem;
+  &.vertical {
+    grid-auto-flow: row;
+    width: 12rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+
+    &:before,
+    &:after {
+      height: 1rem;
+      left: 0;
+      right: 0;
+    }
+
+    &:before {
+      border-radius: 0.3rem 0.3rem 0 0;
+      top: 0;
+    }
+    &:after {
+      border-radius: 0 0 0.3rem 0.3rem;
+      bottom: 0;
+    }
+
+    & > .command {
+      min-height: 3.6rem;
+      width: 12rem;
+    }
   }
 }
 
