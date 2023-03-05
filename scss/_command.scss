@@ -79,7 +79,7 @@
 
   &:not(.spacer) {
     @extend %button;
-    min-width: 8rem;
+    min-width: 6rem;
     display: grid;
     align-items: end;
     justify-items: end;
@@ -91,7 +91,7 @@
     padding: 0.4rem;
 
     &.small {
-      min-width: 0;
+      min-width: 0.5rem;
     }
 
     &.flash {
@@ -106,6 +106,10 @@
       background-color: var(--light-alpha40);
       animation-play-state: paused;
     }
+  }
+
+  &.spacer {
+    min-width: 0.5rem;
   }
 }
 
