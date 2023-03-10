@@ -37,7 +37,7 @@
           class="command shade1"
           style="justify-items: center; align-items: center"
         >
-          <div class="spinner2" style="font-size: 30px"></div>
+          <div class="spinner" style="font-size: 30px"></div>
         </button>
         <button class="command shade2">Third Command</button>
         Header
@@ -45,31 +45,31 @@
       <article
         style="
           display: grid;
-          grid: 'buttons tiles' 1fr 'spinner tiles' auto / 3fr 1fr;
+          grid: 'buttons tiles' 1fr 'spinner tiles' auto / 2fr 1fr;
         "
       >
         <div class="panel" style="grid-area: buttons">
           <header>Buttons</header>
           <article>
-            <h3>Default</h3>
+            <h4>Default</h4>
             <button class="button">Button</button>
             <button class="button shade1">Button</button>
             <button class="button shade2">Button</button>
             <button class="button accent">Button</button>
             <button class="button warn">Button</button>
-            <h3>Small</h3>
+            <h4>Small</h4>
             <button class="button small">Button</button>
             <button class="button small shade1">Button</button>
             <button class="button small shade2">Button</button>
             <button class="button small accent">Button</button>
             <button class="button small warn">Button</button>
-            <h3>Fill</h3>
+            <h4>Fill</h4>
             <button class="button fill">Button</button>
             <button class="button fill shade1">Button</button>
             <button class="button fill shade2">Button</button>
             <button class="button fill accent">Button</button>
             <button class="button fill warn">Button</button>
-            <h3>Disabled</h3>
+            <h4>Disabled</h4>
             <button disabled class="button">Button</button>
             <button disabled class="button fill">Button</button>
             <button disabled class="button fill shade1">Button</button>
@@ -84,30 +84,30 @@
           <article
             style="
               display: grid;
-              grid-auto-flow: column;
-              justify-content: start;
+              grid-template-columns: repeat(5, 1fr);
+              justify-content: center;
               align-items: center;
+              justify-items: center;
               gap: 2rem;
             "
           >
-            <div style="width: 48px; height: 48px; font-size: 10px">
-              <div class="spinner-old"></div>
-            </div>
-            <div style="width: 32px; height: 32px; font-size: 8px">
-              <div class="spinner-old"></div>
-            </div>
-            <div style="width: 16px; height: 16px; font-size: 4px">
-              <div class="spinner-old shade1"></div>
-            </div>
-            <div class="spinner2" style="font-size: 120px"></div>
-            <div class="spinner2 shade1" style="font-size: 120px"></div>
-            <div class="spinner2 shade2" style="font-size: 32px"></div>
-            <div class="spinner2 accent" style="font-size: 16px"></div>
-            <div class="spinner" style="font-size: 40px"></div>
+            <div class="spinner" style="font-size: 80px"></div>
+            <div class="spinner shade1" style="font-size: 80px"></div>
+            <div class="spinner shade2" style="font-size: 80px"></div>
+            <div class="spinner accent" style="font-size: 80px"></div>
+            <div class="spinner warn" style="font-size: 80px"></div>
+
+            <div class="spinner" style="font-size: 32px"></div>
+            <div class="spinner shade1" style="font-size: 32px"></div>
             <div class="spinner shade2" style="font-size: 32px"></div>
+            <div class="spinner accent" style="font-size: 32px"></div>
+            <div class="spinner warn" style="font-size: 32px"></div>
+
+            <div class="spinner" style="font-size: 16px"></div>
+            <div class="spinner shade1" style="font-size: 16px"></div>
+            <div class="spinner shade2" style="font-size: 16px"></div>
             <div class="spinner accent" style="font-size: 16px"></div>
-            <div class="spinner2" style="font-size: 1.75rem"></div>
-            <div class="spinner2 accent" style="font-size: 16px"></div>
+            <div class="spinner warn" style="font-size: 16px"></div>
           </article>
           <footer></footer>
         </div>
@@ -117,6 +117,8 @@
             style="
               display: grid;
               grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+              align-content: start;
+              align-items: start;
             "
           >
             <div class="tile">
@@ -124,26 +126,46 @@
                 <button class="command small shade2">Comand</button>
                 <div class="command spacer"></div>
               </header>
-              <article>Tile</article>
+              <article>With command header</article>
+              <footer>Footer</footer>
+            </div>
+            <div class="tile">
+              <header>Header</header>
+              <article>With command footer</article>
               <footer class="command-bar">
                 <div class="command spacer"></div>
                 <button class="command small warn">Comand</button>
               </footer>
             </div>
             <div class="tile inset">
-              <header>Inset Tile</header>
-              <article></article>
+              <header>Header</header>
+              <article>Inset</article>
+              <footer>Footer</footer>
+            </div>
+            <div class="tile shade1">
+              <header>Header</header>
+              <article>Shade1</article>
+              <footer>Footer</footer>
+            </div>
+            <div class="tile shade2">
+              <header>Header</header>
+              <article>Shade2</article>
               <footer>Footer</footer>
             </div>
             <div class="tile accent">
-              <header>Tile Accent</header>
-              <article></article>
-              <footer></footer>
+              <header>Header</header>
+              <article>Accent</article>
+              <footer>Footer</footer>
+            </div>
+            <div class="tile warn">
+              <header>Header</header>
+              <article>Warn</article>
+              <footer>Footer</footer>
             </div>
             <div class="tile">
-              <header>Header</header>
-              <article></article>
-              <footer>Footer</footer>
+              <header></header>
+              <article>Without header or footer</article>
+              <footer></footer>
             </div>
           </article>
           <footer></footer>
@@ -172,13 +194,7 @@
       <button class="accent command">Special Command</button>
       <div class="command spacer"></div>
       <button class="warn command flash">Confirm Deletion</button>
-      <button
-        disabled
-        class="warn command"
-        style="justify-items: center; align-items: center"
-      >
-        <div class="spinner2 accent" style="font-size: 2.4rem"></div>
-      </button>
+      <button disabled class="warn command">Disabled</button>
       <div class="command spacer"></div>
       Commands
     </div>
