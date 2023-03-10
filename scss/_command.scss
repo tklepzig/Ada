@@ -74,7 +74,7 @@
 
 .command {
   box-sizing: border-box;
-  background-color: var(--default-alpha60);
+  background-color: var(--default-alpha70);
   box-shadow: $box-shadow;
 
   &:not(.spacer) {
@@ -103,7 +103,7 @@
     }
 
     &:active {
-      background-color: var(--light-alpha40);
+      background-color: var(--light-alpha70);
       animation-play-state: paused;
     }
   }
