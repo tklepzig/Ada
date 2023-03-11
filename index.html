@@ -18,16 +18,16 @@
     />
   </head>
 
-  <body style="display: grid; grid: 'test a' 1fr 'c c' auto / auto 1fr">
+  <body style="display: grid; grid: 'cmd-v main' 1fr 'cmd cmd' auto / auto 1fr">
     <div
       class="command-bar vertical"
-      style="grid-area: test; grid-template-rows: auto auto 1fr"
+      style="grid-area: cmd-v; grid-template-rows: auto auto 1fr"
     >
       <button class="command">Command</button>
       <button class="command shade1">Second Command</button>
       <button class="command shade2">Third Command</button>
     </div>
-    <div class="panel" style="grid-area: a">
+    <div class="panel" style="grid-area: main">
       <header
         class="command-bar"
         style="grid-template-columns: repeat(3, 1fr) auto"
@@ -180,7 +180,7 @@
     <div
       class="command-bar"
       style="
-        grid-area: c;
+        grid-area: cmd;
         grid-template-columns: repeat(2, auto) 12rem auto 1fr auto auto 1fr auto;
       "
     >

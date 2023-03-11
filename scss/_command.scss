@@ -45,7 +45,7 @@
 
   &.vertical {
     grid-auto-flow: row;
-    width: 12rem;
+    min-width: 12rem;
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
 
@@ -67,7 +67,6 @@
 
     & > .command {
       min-height: 3.6rem;
-      width: 12rem;
     }
   }
 }
