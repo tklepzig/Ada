@@ -1,6 +1,6 @@
 @import "ada.theme-base";
 
-:root {
+.primary {
   @extend %colourShades;
 
   --h: 105;
@@ -12,11 +12,14 @@
   //--l-light: 49%;
   --l-light: 34%;
 
-  --bg: hsl(135, 34%, 12%);
-
   --h-fg: var(--h);
   --s-fg: 100%;
   --l-fg: 89%;
+}
+
+:root {
+  @extend .primary;
+  --bg: hsl(135, 34%, 12%);
 }
 
 .shade1 {

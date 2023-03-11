@@ -45,7 +45,7 @@
       <article
         style="
           display: grid;
-          grid: 'buttons tiles' 1fr 'spinner tiles' auto / 2fr 1fr;
+          grid: 'buttons tiles' 2fr 'spinner tiles' 1fr / 2fr 1fr;
         "
       >
         <div class="panel" style="grid-area: buttons">
@@ -81,91 +81,87 @@
         </div>
         <div class="panel" style="grid-area: spinner">
           <header>Spinner</header>
-          <article
-            style="
-              display: grid;
-              grid-template-columns: repeat(5, 1fr);
-              justify-content: center;
-              align-items: center;
-              justify-items: center;
-              gap: 2rem;
-            "
-          >
-            <div class="spinner" style="font-size: 80px"></div>
-            <div class="spinner shade1" style="font-size: 80px"></div>
-            <div class="spinner shade2" style="font-size: 80px"></div>
-            <div class="spinner accent" style="font-size: 80px"></div>
-            <div class="spinner warn" style="font-size: 80px"></div>
-
-            <div class="spinner" style="font-size: 32px"></div>
-            <div class="spinner shade1" style="font-size: 32px"></div>
-            <div class="spinner shade2" style="font-size: 32px"></div>
-            <div class="spinner accent" style="font-size: 32px"></div>
-            <div class="spinner warn" style="font-size: 32px"></div>
-
-            <div class="spinner" style="font-size: 16px"></div>
-            <div class="spinner shade1" style="font-size: 16px"></div>
-            <div class="spinner shade2" style="font-size: 16px"></div>
-            <div class="spinner accent" style="font-size: 16px"></div>
-            <div class="spinner warn" style="font-size: 16px"></div>
+          <article>
+            <div>
+              <h4>Large</h4>
+              <div class="spinner" style="font-size: 80px"></div>
+              <div class="spinner shade1" style="font-size: 80px"></div>
+              <div class="spinner shade2" style="font-size: 80px"></div>
+              <div class="spinner accent" style="font-size: 80px"></div>
+              <div class="spinner warn" style="font-size: 80px"></div>
+              <h4>Medium</h4>
+              <div class="spinner" style="font-size: 32px"></div>
+              <div class="spinner shade1" style="font-size: 32px"></div>
+              <div class="spinner shade2" style="font-size: 32px"></div>
+              <div class="spinner accent" style="font-size: 32px"></div>
+              <div class="spinner warn" style="font-size: 32px"></div>
+              <h4>Small</h4>
+              <div class="spinner" style="font-size: 16px"></div>
+              <div class="spinner shade1" style="font-size: 16px"></div>
+              <div class="spinner shade2" style="font-size: 16px"></div>
+              <div class="spinner accent" style="font-size: 16px"></div>
+              <div class="spinner warn" style="font-size: 16px"></div>
+            </div>
           </article>
           <footer></footer>
         </div>
         <div class="panel" style="grid-area: tiles">
           <header>Tiles</header>
-          <article
-            style="
-              display: grid;
-              grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
-              align-content: start;
-              align-items: start;
-            "
-          >
-            <div class="tile">
-              <header class="command-bar">
-                <button class="command small shade2">Comand</button>
-                <div class="command spacer"></div>
-              </header>
-              <article>With command header</article>
-              <footer>Footer</footer>
-            </div>
-            <div class="tile">
-              <header>Header</header>
-              <article>With command footer</article>
-              <footer class="command-bar">
-                <div class="command spacer"></div>
-                <button class="command small warn">Comand</button>
-              </footer>
-            </div>
-            <div class="tile inset">
-              <header>Header</header>
-              <article>Inset</article>
-              <footer>Footer</footer>
-            </div>
-            <div class="tile shade1">
-              <header>Header</header>
-              <article>Shade1</article>
-              <footer>Footer</footer>
-            </div>
-            <div class="tile shade2">
-              <header>Header</header>
-              <article>Shade2</article>
-              <footer>Footer</footer>
-            </div>
-            <div class="tile accent">
-              <header>Header</header>
-              <article>Accent</article>
-              <footer>Footer</footer>
-            </div>
-            <div class="tile warn">
-              <header>Header</header>
-              <article>Warn</article>
-              <footer>Footer</footer>
-            </div>
-            <div class="tile">
-              <header></header>
-              <article>Without header or footer</article>
-              <footer></footer>
+          <article>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+                align-content: start;
+                align-items: start;
+              "
+            >
+              <div class="tile">
+                <header class="command-bar">
+                  <button class="command small shade2">Comand</button>
+                  <div class="command spacer"></div>
+                </header>
+                <article>With command header</article>
+                <footer>Footer</footer>
+              </div>
+              <div class="tile">
+                <header>Header</header>
+                <article>With command footer</article>
+                <footer class="command-bar">
+                  <div class="command spacer"></div>
+                  <button class="command small warn">Comand</button>
+                </footer>
+              </div>
+              <div class="tile inset">
+                <header>Header</header>
+                <article>Inset</article>
+                <footer>Footer</footer>
+              </div>
+              <div class="tile shade1">
+                <header>Header</header>
+                <article>Shade1</article>
+                <footer>Footer</footer>
+              </div>
+              <div class="tile shade2">
+                <header>Header</header>
+                <article>Shade2</article>
+                <footer>Footer</footer>
+              </div>
+              <div class="tile accent">
+                <header>Header</header>
+                <article>Accent</article>
+                <footer>Footer</footer>
+              </div>
+              <div class="tile warn">
+                <header>Header</header>
+                <article>Warn</article>
+                <footer>Footer</footer>
+              </div>
+              <div class="tile">
+                <header></header>
+                <article>Without header or footer</article>
+                <footer></footer>
+              </div>
             </div>
           </article>
           <footer></footer>

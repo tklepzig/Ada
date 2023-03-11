@@ -1,18 +1,23 @@
 @import "ada.theme-base";
 
-:root {
+.primary {
   @extend %colourShades;
 
   --h: 197;
   --s: 100%;
   --l: 19%;
+  --h-light: 197;
+  --s-light: 100%;
   --l-light: 40%;
-
-  --bg: hsl(var(--h), 80%, 7%);
 
   --h-fg: var(--h);
   --s-fg: 100%;
   --l-fg: 89%;
+}
+
+:root {
+  @extend .primary;
+  --bg: hsl(var(--h), 80%, 7%);
 }
 
 .shade1 {
@@ -21,6 +26,8 @@
   --h: 198;
   --s: 90%;
   --l: 30%;
+  --h-light: 198;
+  --s-light: 90%;
   --l-light: 58%;
 
   --h-fg: var(--h);
@@ -34,6 +41,8 @@
   --h: 165;
   --s: 90%;
   --l: 20%;
+  --h-light: 165;
+  --s-light: 90%;
   --l-light: 40%;
 
   --h-fg: var(--h);
@@ -47,6 +56,8 @@
   --h: 14;
   --s: 81%;
   --l: 38%;
+  --h-light: 14;
+  --s-light: 81%;
   --l-light: 60%;
 
   --h-fg: var(--h);
@@ -60,6 +71,8 @@
   --h: 0;
   --s: 75%;
   --l: 29%;
+  --h-light: 0;
+  --s-light: 75%;
   --l-light: 67%;
 
   --h-fg: var(--h);
