@@ -42,13 +42,8 @@
         <button class="command shade2">Third Command</button>
         Header
       </header>
-      <article
-        style="
-          display: grid;
-          grid: 'buttons tiles' 2fr 'spinner tiles' 1fr / 2fr 1fr;
-        "
-      >
-        <div class="panel" style="grid-area: buttons">
+      <article style="display: grid; grid-auto-rows: max-content">
+        <div class="panel">
           <header>Buttons</header>
           <article>
             <h4>Default</h4>
@@ -79,7 +74,7 @@
           </article>
           <footer></footer>
         </div>
-        <div class="panel" style="grid-area: spinner">
+        <div class="panel">
           <header>Spinner</header>
           <article>
             <div>
@@ -105,7 +100,7 @@
           </article>
           <footer></footer>
         </div>
-        <div class="panel" style="grid-area: tiles">
+        <div class="panel">
           <header>Tiles</header>
           <article>
             <div
