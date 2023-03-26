@@ -6,7 +6,6 @@
   --fg-alpha80: hsla(var(--h-fg), var(--s-fg), var(--l-fg), 0.8);
 
   --default: hsl(var(--h), var(--s), var(--l));
-  --default-alpha10: hsla(var(--h), var(--s), var(--l), 0.1);
   --default-alpha40: hsla(var(--h), var(--s), var(--l), 0.4);
   --default-alpha60: hsla(var(--h), var(--s), var(--l), 0.6);
   --default-alpha70: hsla(var(--h), var(--s), var(--l), 0.7);
@@ -14,4 +13,6 @@
   --light: hsl(var(--h-light), var(--s-light), var(--l-light));
   --light-alpha40: hsla(var(--h-light), var(--s-light), var(--l-light), 0.4);
   --light-alpha70: hsla(var(--h-light), var(--s-light), var(--l-light), 0.7);
+
+  --panel-background: hsla(var(--h), var(--s), var(--l), 0.1);
 }

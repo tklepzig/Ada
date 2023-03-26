@@ -1,7 +1,7 @@
 @import "corner";
 
 .panel {
-  background: var(--default-alpha10);
+  background: var(--panel-background);
   box-shadow: $box-shadow;
   border-radius: 0.3rem;
   display: grid;
