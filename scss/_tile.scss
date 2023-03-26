@@ -49,15 +49,11 @@
     box-shadow: inset $box-shadow;
 
     > header {
-      color: var(--fg-alpha80);
+      text-shadow: none;
       &:before,
       &:after {
         opacity: 0.6;
       }
-    }
-
-    > article {
-      color: var(--fg-alpha80);
     }
 
     footer {
