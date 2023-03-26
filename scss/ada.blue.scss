@@ -53,12 +53,12 @@
 .accent {
   @extend %colourShades;
 
-  --h: 14;
-  --s: 81%;
-  --l: 38%;
-  --h-light: 14;
-  --s-light: 81%;
-  --l-light: 60%;
+  --h: 11;
+  --s: 74%;
+  --l: 45%;
+  --h-light: 10;
+  --s-light: 89%;
+  --l-light: 56%;
 
   --h-fg: var(--h);
   --s-fg: 100%;
@@ -69,11 +69,11 @@
   @extend %colourShades;
 
   --h: 0;
-  --s: 75%;
-  --l: 29%;
+  --s: 100%;
+  --l: 28%;
   --h-light: 0;
-  --s-light: 75%;
-  --l-light: 67%;
+  --s-light: 85%;
+  --l-light: 48%;
 
   --h-fg: var(--h);
   --s-fg: 100%;

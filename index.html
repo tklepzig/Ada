@@ -16,6 +16,20 @@
       href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600"
       rel="stylesheet"
     />
+    <style>
+      .color-box {
+        display: inline-grid;
+        align-items: center;
+        justify-items: center;
+        width: 92px;
+        height: 48px;
+        margin: 1rem;
+        color: var(--fg);
+        background: var(--default);
+        border-right: 24px solid var(--light);
+        box-sizing: border-box;
+      }
+    </style>
   </head>
 
   <body style="display: grid; grid: 'cmd-v main' 1fr 'cmd cmd' auto / auto 1fr">
@@ -43,6 +57,17 @@
         Header
       </header>
       <article style="display: grid; grid-auto-rows: max-content">
+        <div class="panel">
+          <header>Colors</header>
+          <article>
+            <div class="color-box primary">Primary</div>
+            <div class="color-box shade1">Shade 1</div>
+            <div class="color-box shade2">Shade 2</div>
+            <div class="color-box accent">Accent</div>
+            <div class="color-box warn">Warn</div>
+          </article>
+          <footer></footer>
+        </div>
         <div class="panel">
           <header>Buttons</header>
           <article>
