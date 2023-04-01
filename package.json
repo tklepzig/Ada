@@ -2,6 +2,7 @@
   "name": "ada-ui",
   "version": "4.4.0",
   "scripts": {
+    "dev": "tmux splitw -d npm run build:dev && tmux splitw -d npm run start:dev",
     "start:dev": "alive-server .",
     "build:dev": "sass scss:css --watch",
     "build": "rm -rf css && sass scss:css -s compressed --no-source-map"
