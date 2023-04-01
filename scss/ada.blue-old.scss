@@ -3,11 +3,11 @@
 .primary {
   @extend %colourShades;
 
-  --h: 205;
-  --s: 80%;
-  --l: 23%;
-  --h-light: 205;
-  --s-light: 80%;
+  --h: 197;
+  --s: 100%;
+  --l: 19%;
+  --h-light: 197;
+  --s-light: 100%;
   --l-light: 40%;
 
   --h-fg: var(--h);
@@ -17,7 +17,7 @@
 
 :root {
   @extend .primary;
-  --bg: hsl(207, 61%, 7%);
+  --bg: hsl(var(--h), 80%, 7%);
 }
 
 .shade1 {
@@ -38,12 +38,12 @@
 .shade2 {
   @extend %colourShades;
 
-  --h: 185;
-  --s: 50%;
-  --l: 30%;
-  --h-light: 185;
-  --s-light: 50%;
-  --l-light: 50%;
+  --h: 165;
+  --s: 90%;
+  --l: 20%;
+  --h-light: 165;
+  --s-light: 90%;
+  --l-light: 40%;
 
   --h-fg: var(--h);
   --s-fg: 100%;
@@ -53,12 +53,12 @@
 .accent {
   @extend %colourShades;
 
-  --h: 146;
-  --s: 58%;
-  --l: 20%;
-  --h-light: 146;
-  --s-light: 58%;
-  --l-light: 48%;
+  --h: 11;
+  --s: 74%;
+  --l: 45%;
+  --h-light: 10;
+  --s-light: 89%;
+  --l-light: 56%;
 
   --h-fg: var(--h);
   --s-fg: 100%;

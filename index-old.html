@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ada</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta
+      name="viewport"
+      content="user-scalable=yes, initial-scale=1.0, maximum-scale=10.0, width=device-width"
+    />
+    <link rel="stylesheet" href="css/ada.blue-old.css" />
+    <link rel="stylesheet" href="css/ada.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600"
+      rel="stylesheet"
+    />
+    <style>
+      .color-box {
+        display: inline-grid;
+        align-items: center;
+        justify-items: center;
+        width: 92px;
+        height: 48px;
+        margin: 1rem;
+        box-sizing: border-box;
+        color: var(--fg);
+        background: var(--default);
+        border-top: 8px solid var(--light);
+      }
+
+      .color-box.alpha40 {
+        color: var(--fg-alpha40);
+        background: var(--default-alpha40);
+        border-top: 8px solid var(--light-alpha40);
+      }
+
+      .color-box.alpha70 {
+        color: var(--fg-alpha70);
+        background: var(--default-alpha70);
+        border-top: 8px solid var(--light-alpha70);
+      }
+    </style>
+  </head>
+
+  <body style="display: grid; grid: 'cmd-v main' 1fr 'cmd cmd' auto / auto 1fr">
+    <div
+      class="command-bar vertical"
+      style="grid-area: cmd-v; grid-template-rows: auto auto 1fr"
+    >
+      <button class="command">Command</button>
+      <button class="command shade1">Second Command</button>
+      <button class="command shade2">Third Command</button>
+    </div>
+    <div class="panel" style="grid-area: main">
+      <header
+        class="command-bar"
+        style="grid-template-columns: repeat(3, 1fr) auto"
+      >
+        <button class="command">Command</button>
+        <button
+          class="command shade1"
+          style="justify-items: center; align-items: center"
+        >
+          <div class="spinner" style="font-size: 30px"></div>
+        </button>
+        <button class="command shade2">Third Command</button>
+        Header
+      </header>
+      <article style="display: grid; grid-auto-rows: max-content">
+        <div class="panel">
+          <header>Colors</header>
+          <article>
+            <h4>Default</h4>
+            <div class="color-box primary">Primary</div>
+            <div class="color-box shade1">Shade 1</div>
+            <div class="color-box shade2">Shade 2</div>
+            <div class="color-box accent">Accent</div>
+            <div class="color-box warn">Warn</div>
+            <h4>Alpha 70</h4>
+            <div class="color-box alpha70 primary">Primary</div>
+            <div class="color-box alpha70 shade1">Shade 1</div>
+            <div class="color-box alpha70 shade2">Shade 2</div>
+            <div class="color-box alpha70 accent">Accent</div>
+            <div class="color-box alpha70 warn">Warn</div>
+            <h4>Alpha 40</h4>
+            <div class="color-box alpha40 primary">Primary</div>
+            <div class="color-box alpha40 shade1">Shade 1</div>
+            <div class="color-box alpha40 shade2">Shade 2</div>
+            <div class="color-box alpha40 accent">Accent</div>
+            <div class="color-box alpha40 warn">Warn</div>
+          </article>
+          <footer></footer>
+        </div>
+        <div class="panel">
+          <header>Buttons</header>
+          <article>
+            <h4>Default</h4>
+            <button class="button">Button</button>
+            <button class="button shade1">Button</button>
+            <button class="button shade2">Button</button>
+            <button class="button accent">Button</button>
+            <button class="button warn">Button</button>
+            <h4>Small</h4>
+            <button class="button small">Button</button>
+            <button class="button small shade1">Button</button>
+            <button class="button small shade2">Button</button>
+            <button class="button small accent">Button</button>
+            <button class="button small warn">Button</button>
+            <h4>Fill</h4>
+            <button class="button fill">Button</button>
+            <button class="button fill shade1">Button</button>
+            <button class="button fill shade2">Button</button>
+            <button class="button fill accent">Button</button>
+            <button class="button fill warn">Button</button>
+            <h4>Disabled</h4>
+            <button disabled class="button">Button</button>
+            <button disabled class="button fill">Button</button>
+            <button disabled class="button fill shade1">Button</button>
+            <button disabled class="button fill shade2">Button</button>
+            <button disabled class="button fill accent">Button</button>
+            <button disabled class="button fill warn">Button</button>
+          </article>
+          <footer></footer>
+        </div>
+        <div class="panel">
+          <header>Spinner</header>
+          <article>
+            <div>
+              <h4>Large</h4>
+              <div class="spinner" style="font-size: 80px"></div>
+              <div class="spinner shade1" style="font-size: 80px"></div>
+              <div class="spinner shade2" style="font-size: 80px"></div>
+              <div class="spinner accent" style="font-size: 80px"></div>
+              <div class="spinner warn" style="font-size: 80px"></div>
+              <h4>Medium</h4>
+              <div class="spinner" style="font-size: 32px"></div>
+              <div class="spinner shade1" style="font-size: 32px"></div>
+              <div class="spinner shade2" style="font-size: 32px"></div>
+              <div class="spinner accent" style="font-size: 32px"></div>
+              <div class="spinner warn" style="font-size: 32px"></div>
+              <h4>Small</h4>
+              <div class="spinner" style="font-size: 16px"></div>
+              <div class="spinner shade1" style="font-size: 16px"></div>
+              <div class="spinner shade2" style="font-size: 16px"></div>
+              <div class="spinner accent" style="font-size: 16px"></div>
+              <div class="spinner warn" style="font-size: 16px"></div>
+            </div>
+          </article>
+          <footer></footer>
+        </div>
+        <div class="panel">
+          <header>Tiles</header>
+          <article
+            style="
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+              align-content: start;
+              align-items: start;
+            "
+          >
+            <div class="tile">
+              <header class="command-bar">
+                <button class="command small shade2">Comand</button>
+                <div class="command spacer"></div>
+              </header>
+              <article>With command header</article>
+              <footer>Footer</footer>
+            </div>
+            <div class="tile">
+              <header>Header</header>
+              <article>With command footer</article>
+              <footer class="command-bar">
+                <div class="command spacer"></div>
+                <button class="command small warn">Comand</button>
+              </footer>
+            </div>
+            <div class="tile inset">
+              <header>Header</header>
+              <article>Inset</article>
+              <footer>Footer</footer>
+            </div>
+            <div class="tile shade1">
+              <header>Header</header>
+              <article>Shade1</article>
+              <footer>Footer</footer>
+            </div>
+            <div class="tile shade2">
+              <header>Header</header>
+              <article>Shade2</article>
+              <footer>Footer</footer>
+            </div>
+            <div class="tile accent">
+              <header>Header</header>
+              <article>Accent</article>
+              <footer>Footer</footer>
+            </div>
+            <div class="tile warn">
+              <header>Header</header>
+              <article>Warn</article>
+              <footer>Footer</footer>
+            </div>
+            <div class="tile">
+              <header></header>
+              <article>Without header or footer</article>
+              <footer></footer>
+            </div>
+          </article>
+          <footer></footer>
+        </div>
+      </article>
+      <footer
+        class="command-bar"
+        style="grid-template-columns: repeat(3, 1fr) auto"
+      >
+        <button class="command">Command</button>
+        <button class="command shade1">Second Command</button>
+        <button class="command shade2">Third Command</button>
+        Footer
+      </footer>
+    </div>
+    <div
+      class="command-bar"
+      style="
+        grid-area: cmd;
+        grid-template-columns: repeat(2, auto) 12rem auto 1fr auto auto 1fr auto;
+      "
+    >
+      <button class="command">Command</button>
+      <button class="shade1 command">Command</button>
+      <button class="shade2 command">Command and sth more looong</button>
+      <button class="accent command">Special Command</button>
+      <div class="command spacer"></div>
+      <button class="warn command flash">Confirm Deletion</button>
+      <button disabled class="warn command">Disabled</button>
+      <div class="command spacer"></div>
+      Commands
+    </div>
+  </body>
+</html>
