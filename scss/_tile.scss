@@ -1,7 +1,7 @@
 @import "corner";
 
 .tile {
-  @extend .panel;
+  @extend %panel-tile-common;
   margin: 0.8rem;
 
   > header {
@@ -13,17 +13,6 @@
       &:after {
         @extend %corner-light;
         border-width: 1px 1px 0 0;
-      }
-    }
-
-    &.command-bar {
-      @extend %h4;
-      line-height: 2rem;
-      height: 2rem;
-
-      & > .command {
-        height: 2rem;
-        font-size: 0.9rem;
       }
     }
   }

@@ -1,6 +1,6 @@
 @import "corner";
 
-.panel {
+%panel-tile-common {
   background: var(--panel-background);
   box-shadow: $box-shadow;
   border-radius: 0.3rem;
@@ -35,18 +35,6 @@
 
     &:empty {
       padding: 0.2rem;
-    }
-
-    &.command-bar {
-      margin: 0;
-      margin-bottom: 1rem;
-
-      &:before {
-        border-radius: 0.3rem 0 0 0;
-      }
-      &:after {
-        border-radius: 0 0.3rem 0 0;
-      }
     }
   }
 
@@ -97,7 +85,26 @@
     &:empty {
       padding: 0.2rem;
     }
+  }
+}
 
+.panel {
+  @extend %panel-tile-common;
+
+  > header {
+    &.command-bar {
+      margin: 0;
+      margin-bottom: 1rem;
+
+      &:before {
+        border-radius: 0.3rem 0 0 0;
+      }
+      &:after {
+        border-radius: 0 0.3rem 0 0;
+      }
+    }
+  }
+  > footer {
     &.command-bar {
       @extend %h4;
       margin: 0;
