@@ -5,15 +5,13 @@
   margin: 0.8rem;
 
   > header {
-    &:not(.command-bar) {
-      &:before {
-        @extend %corner-light;
-        border-width: 1px 0 0 1px;
-      }
-      &:after {
-        @extend %corner-light;
-        border-width: 1px 1px 0 0;
-      }
+    &:before {
+      @extend %corner-light;
+      border-width: 1px 0 0 1px;
+    }
+    &:after {
+      @extend %corner-light;
+      border-width: 1px 1px 0 0;
     }
   }
 
@@ -22,15 +20,13 @@
   }
 
   > footer {
-    &:not(.command-bar) {
-      &:before {
-        @extend %corner-light;
-        border-width: 0 0 1px 1px;
-      }
-      &:after {
-        @extend %corner-light;
-        border-width: 0 1px 1px 0;
-      }
+    &:before {
+      @extend %corner-light;
+      border-width: 0 0 1px 1px;
+    }
+    &:after {
+      @extend %corner-light;
+      border-width: 0 1px 1px 0;
     }
   }
 
