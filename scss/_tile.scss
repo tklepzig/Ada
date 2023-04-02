@@ -1,7 +1,7 @@
 @import "corner";
 
 .tile {
-  @extend %panel-tile-common;
+  @extend %panel;
   margin: 0.8rem;
 
   > header {
@@ -45,6 +45,53 @@
       &:before,
       &:after {
         opacity: 0.6;
+      }
+    }
+  }
+}
+
+.blubb {
+  display: inline-grid;
+  grid-template-columns: 1fr;
+  grid-auto-columns: auto;
+  margin: 0.8rem;
+  grid-auto-flow: column;
+  align-items: stretch;
+  column-gap: 0.25rem;
+
+  > .tile {
+    margin: 0;
+    border-radius: 0.3rem 0 0 0.3rem;
+
+    > header {
+      &:after {
+        border: none;
+      }
+    }
+
+    > article {
+      padding: 0.6rem 1.2rem;
+      font-size: 1.2rem;
+    }
+
+    > footer {
+      &:after {
+        border: none;
+      }
+    }
+  }
+
+  > aside {
+    display: grid;
+    grid-auto-flow: column;
+    column-gap: 0.25rem;
+
+    > .command {
+      background-color: var(--default-alpha40);
+      min-width: 2.5rem;
+
+      &:last-of-type {
+        border-radius: 0 0.3rem 0.3rem 0;
       }
     }
   }

@@ -1,6 +1,6 @@
 @import "corner";
 
-%panel-tile-common {
+%panel {
   background: var(--panel-background);
   box-shadow: $box-shadow;
   border-radius: 0.3rem;
@@ -83,7 +83,7 @@
 }
 
 .panel {
-  @extend %panel-tile-common;
+  @extend %panel;
 
   > header {
     &.command-bar {
