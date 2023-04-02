@@ -2,6 +2,7 @@
 
 .tile {
   @extend %panel;
+  background: var(--tile-background);
   margin: 0.8rem;
 
   > header {
@@ -52,12 +53,11 @@
 
 .blubb {
   display: inline-grid;
-  grid-template-columns: 1fr;
-  grid-auto-columns: auto;
+  grid-template-columns: 1fr auto;
   margin: 0.8rem;
   grid-auto-flow: column;
   align-items: stretch;
-  column-gap: 0.25rem;
+  column-gap: 0.3rem;
 
   > .tile {
     margin: 0;
@@ -70,7 +70,7 @@
     }
 
     > article {
-      padding: 0.6rem 1.2rem;
+      padding: 0.4rem 0.8rem;
       font-size: 1.2rem;
     }
 
@@ -84,7 +84,7 @@
   > aside {
     display: grid;
     grid-auto-flow: column;
-    column-gap: 0.25rem;
+    column-gap: 0.3rem;
 
     > .command {
       background-color: var(--default-alpha40);
