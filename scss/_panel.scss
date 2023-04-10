@@ -15,18 +15,10 @@
     padding: 0.4rem 0.6rem;
 
     &:before {
-      @extend %corner;
-      border-width: 2px 0 0 2px;
-      border-radius: 0.3rem 0 0 0;
-      left: 0;
-      top: 0;
+      @extend %corner, .top-left;
     }
     &:after {
-      @extend %corner;
-      border-width: 2px 2px 0 0;
-      border-radius: 0 0.3rem 0 0;
-      right: 0;
-      top: 0;
+      @extend %corner, .top-right;
     }
 
     &:empty {
@@ -62,18 +54,10 @@
     text-align: right;
 
     &:before {
-      @extend %corner;
-      border-width: 0 0 2px 2px;
-      border-radius: 0 0 0 0.3rem;
-      left: 0;
-      bottom: 0;
+      @extend %corner, .bottom-left;
     }
     &:after {
-      @extend %corner;
-      border-width: 0 2px 2px 0;
-      border-radius: 0 0 0.3rem 0;
-      right: 0;
-      bottom: 0;
+      @extend %corner, .bottom-right;
     }
 
     &:empty {

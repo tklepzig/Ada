@@ -7,12 +7,10 @@
 
   > header {
     &:before {
-      @extend %corner-light;
-      border-width: 1px 0 0 1px;
+      @extend .light;
     }
     &:after {
-      @extend %corner-light;
-      border-width: 1px 1px 0 0;
+      @extend .light;
     }
   }
 
@@ -22,12 +20,10 @@
 
   > footer {
     &:before {
-      @extend %corner-light;
-      border-width: 0 0 1px 1px;
+      @extend .light;
     }
     &:after {
-      @extend %corner-light;
-      border-width: 0 1px 1px 0;
+      @extend .light;
     }
   }
 
@@ -52,46 +48,37 @@
 }
 
 .blubb {
-  display: inline-grid;
-  grid-template-columns: 1fr auto;
-  margin: 0.8rem;
-  grid-auto-flow: column;
-  align-items: stretch;
-  column-gap: 0.3rem;
+  &.tile {
+    display: inline-grid;
+    align-items: stretch;
+    grid-template-columns: 1fr auto;
+    position: relative;
 
-  > .tile {
-    margin: 0;
-    border-radius: 0.3rem 0 0 0.3rem;
+    &:before {
+      @extend %corner, .light, .top-left;
+    }
 
-    > header {
-      &:after {
-        border: none;
-      }
+    &:after {
+      @extend %corner, .light, .bottom-left;
     }
 
     > article {
-      padding: 0.4rem 0.8rem;
+      padding: 0.8rem;
       font-size: 1.2rem;
     }
 
-    > footer {
-      &:after {
-        border: none;
-      }
-    }
-  }
+    > aside {
+      display: grid;
+      grid-auto-flow: column;
+      column-gap: 0.5rem;
 
-  > aside {
-    display: grid;
-    grid-auto-flow: column;
-    column-gap: 0.3rem;
+      > .command {
+        //background-color: var(--default-alpha40);
+        min-width: 2.5rem;
 
-    > .command {
-      background-color: var(--default-alpha40);
-      min-width: 2.5rem;
-
-      &:last-of-type {
-        border-radius: 0 0.3rem 0.3rem 0;
+        &:last-of-type {
+          border-radius: 0 0.3rem 0.3rem 0;
+        }
       }
     }
   }
