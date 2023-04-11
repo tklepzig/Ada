@@ -76,7 +76,8 @@
     grid-auto-flow: column;
     column-gap: 4px;
 
-    > .command {
+    > button {
+      @include command;
       background-color: var(--default-alpha40);
       min-width: 2.5rem;
 
@@ -92,5 +93,12 @@
         border-radius: 0 0.3rem 0.3rem 0;
       }
     }
+  }
+}
+
+.tile.blubb2 {
+  > article {
+    padding: 0.4rem 0.8rem;
+    font-size: 1.2rem;
   }
 }

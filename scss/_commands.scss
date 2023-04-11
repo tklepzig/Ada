@@ -1,4 +1,31 @@
-.command-bar {
+@mixin command {
+  @extend %button;
+  min-width: 6rem;
+  display: grid;
+  align-items: end;
+  justify-items: end;
+  text-align: end;
+  font-size: 1.1rem;
+  border-style: solid;
+  border-color: transparent;
+  border-width: 0 0 0 2px;
+  padding: 0.2rem 0.4rem;
+
+  &.flash {
+    animation: flash 1s ease-in-out infinite;
+  }
+
+  &:focus {
+    border-color: var(--light-alpha70);
+  }
+
+  &:active {
+    background-color: var(--light-alpha70);
+    animation-play-state: paused;
+  }
+}
+
+.commands {
   position: relative;
   display: grid;
   gap: 6px;
@@ -38,7 +65,8 @@
       right: 0;
     }
 
-    & > .command {
+    > button,
+    > div {
       height: 3.6rem;
     }
   }
@@ -65,49 +93,24 @@
       bottom: 0;
     }
 
-    & > .command {
+    > button,
+    > div {
       min-height: 3.6rem;
     }
   }
-}
 
-.command {
-  box-sizing: border-box;
-  background-color: var(--default-alpha70);
-  box-shadow: $box-shadow;
-
-  &:not(.spacer) {
-    @extend %button;
-    min-width: 6rem;
-    display: grid;
-    align-items: end;
-    justify-items: end;
-    text-align: end;
-    font-size: 1.1rem;
-    border-style: solid;
-    border-color: transparent;
-    border-width: 0 0 0 2px;
-    padding: 0.2rem 0.4rem;
-
-    &.small {
-      min-width: 0.5rem;
-    }
-
-    &.flash {
-      animation: flash 1s ease-in-out infinite;
-    }
-
-    &:focus {
-      border-color: var(--light-alpha70);
-    }
-
-    &:active {
-      background-color: var(--light-alpha70);
-      animation-play-state: paused;
-    }
+  > button,
+  > div {
+    box-sizing: border-box;
+    background-color: var(--default-alpha70);
+    box-shadow: $box-shadow;
   }
 
-  &.spacer {
+  > button {
+    @include command;
+  }
+
+  > div {
     min-width: 0.5rem;
   }
 }
