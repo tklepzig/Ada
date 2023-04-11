@@ -48,37 +48,48 @@
 }
 
 .blubb {
-  &.tile {
-    display: inline-grid;
-    align-items: stretch;
-    grid-template-columns: 1fr auto;
-    position: relative;
+  display: inline-grid;
+  grid-template-columns: 1fr auto;
+  align-items: stretch;
+  column-gap: 4px;
+  position: relative;
+  margin: 0.8rem;
 
-    &:before {
-      @extend %corner, .light, .top-left;
-    }
+  &:before {
+    @extend %corner, .light, .top-left;
+  }
 
-    &:after {
-      @extend %corner, .light, .bottom-left;
-    }
+  &:after {
+    @extend %corner, .light, .bottom-left;
+  }
 
-    > article {
-      padding: 0.8rem;
-      font-size: 1.2rem;
-    }
+  > article {
+    @extend .tile;
+    margin: 0;
+    border-radius: 0.3rem 0 0 0.3rem;
+    padding: 0.8rem;
+    font-size: 1.2rem;
+  }
 
-    > aside {
-      display: grid;
-      grid-auto-flow: column;
-      column-gap: 0.5rem;
+  > aside {
+    display: grid;
+    grid-auto-flow: column;
+    column-gap: 4px;
 
-      > .command {
-        //background-color: var(--default-alpha40);
-        min-width: 2.5rem;
+    > .command {
+      background-color: var(--default-alpha40);
+      min-width: 2.5rem;
 
-        &:last-of-type {
-          border-radius: 0 0.3rem 0.3rem 0;
-        }
+      &:focus {
+        border-color: var(--light-alpha40);
+      }
+
+      &:active {
+        background-color: var(--light-alpha40);
+      }
+
+      &:last-of-type {
+        border-radius: 0 0.3rem 0.3rem 0;
       }
     }
   }

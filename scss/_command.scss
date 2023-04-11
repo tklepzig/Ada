@@ -1,7 +1,7 @@
 .command-bar {
   position: relative;
   display: grid;
-  gap: 0.5rem;
+  gap: 6px;
   margin: 0.5rem;
 
   &:before,
@@ -76,6 +76,7 @@
   background-color: var(--default-alpha70);
   box-shadow: $box-shadow;
 
+  //TODO: real command, spacer, label --> wieder "area"?
   &:not(.spacer) {
     @extend %button;
     min-width: 6rem;
