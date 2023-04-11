@@ -1,4 +1,4 @@
-%corner {
+@mixin corner($location, $style: "default") {
   --border-width: 2px;
 
   content: "";
@@ -9,7 +9,7 @@
   width: 1rem;
   z-index: 2;
 
-  &.light {
+  @if $style == "light" {
     --border-width: 1px;
 
     border-color: var(--light-alpha40);
@@ -17,28 +17,28 @@
     width: 0.75rem;
   }
 
-  &.top-left {
+  @if $location == "top-left" {
     border-width: var(--border-width) 0 0 var(--border-width);
     border-radius: 0.3rem 0 0 0;
     left: 0;
     top: 0;
   }
 
-  &.top-right {
+  @if $location == "top-right" {
     border-width: var(--border-width) var(--border-width) 0 0;
     border-radius: 0 0.3rem 0 0;
     right: 0;
     top: 0;
   }
 
-  &.bottom-left {
+  @if $location == "bottom-left" {
     border-width: 0 0 var(--border-width) var(--border-width);
     border-radius: 0 0 0 0.3rem;
     left: 0;
     bottom: 0;
   }
 
-  &.bottom-right {
+  @if $location == "bottom-right" {
     border-width: 0 var(--border-width) var(--border-width) 0;
     border-radius: 0 0 0.3rem 0;
     right: 0;

@@ -1,16 +1,16 @@
 @import "corner";
 
 .tile {
-  @extend %panel;
+  @extend .panel;
   background: var(--tile-background);
   margin: 0.8rem;
 
   > header {
     &:before {
-      @extend .light;
+      @include corner("top-left", "light");
     }
     &:after {
-      @extend .light;
+      @include corner("top-right", "light");
     }
   }
 
@@ -20,10 +20,10 @@
 
   > footer {
     &:before {
-      @extend .light;
+      @include corner("bottom-left", "light");
     }
     &:after {
-      @extend .light;
+      @include corner("bottom-right", "light");
     }
   }
 
@@ -56,11 +56,11 @@
   margin: 0.8rem;
 
   &:before {
-    @extend %corner, .light, .top-left;
+    @include corner("top-left", "light");
   }
 
   &:after {
-    @extend %corner, .light, .bottom-left;
+    @include corner("bottom-left", "light");
   }
 
   > article {

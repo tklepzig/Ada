@@ -1,5 +1,5 @@
 @mixin command {
-  @extend %button;
+  @include button;
   min-width: 6rem;
   display: grid;
   align-items: end;

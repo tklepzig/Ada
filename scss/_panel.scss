@@ -1,6 +1,6 @@
 @import "corner";
 
-%panel {
+.panel {
   background: var(--panel-background);
   box-shadow: $box-shadow;
   border-radius: 0.3rem;
@@ -15,10 +15,10 @@
     padding: 0.4rem 0.6rem;
 
     &:before {
-      @extend %corner, .top-left;
+      @include corner("top-left");
     }
     &:after {
-      @extend %corner, .top-right;
+      @include corner("top-right");
     }
 
     &:empty {
@@ -54,18 +54,14 @@
     text-align: right;
 
     &:before {
-      @extend %corner, .bottom-left;
+      @include corner("bottom-left");
     }
     &:after {
-      @extend %corner, .bottom-right;
+      @include corner("bottom-right");
     }
 
     &:empty {
       padding: 0.2rem;
     }
   }
-}
-
-.panel {
-  @extend %panel;
 }
