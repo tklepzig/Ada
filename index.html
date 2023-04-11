@@ -52,22 +52,11 @@
       <button class="command">Command</button>
       <button class="command shade1">Second Command</button>
       <button class="command shade2">Third Command</button>
+      <button class="command accent">Special</button>
+      <button class="command warn">Warn</button>
     </div>
     <div class="panel" style="grid-area: main">
-      <header
-        class="command-bar"
-        style="grid-template-columns: repeat(3, 1fr) auto"
-      >
-        <button class="command">Command</button>
-        <button
-          class="command shade1"
-          style="justify-items: center; align-items: center"
-        >
-          <div class="spinner" style="font-size: 30px"></div>
-        </button>
-        <button class="command shade2">Third Command</button>
-        Header
-      </header>
+      <header>Header</header>
       <article style="display: grid; grid-auto-rows: max-content">
         <div class="panel">
           <header>Lab</header>
@@ -221,28 +210,22 @@
           <footer></footer>
         </div>
       </article>
-      <footer
-        class="command-bar"
-        style="grid-template-columns: repeat(3, 1fr) auto"
-      >
-        <button class="command">Command</button>
-        <button class="command shade1">Second Command</button>
-        <button class="command shade2">Third Command</button>
-        Footer
-      </footer>
+      <footer>Footer</footer>
     </div>
     <div
       class="command-bar"
       style="
         grid-area: cmd;
-        grid-template-columns: repeat(2, auto) 12rem auto 1fr auto auto 1fr auto;
+        grid-template-columns: auto 12rem auto auto 1fr auto;
       "
     >
-      <button class="command">Command</button>
-      <button class="shade1 command">Command</button>
+      <button
+        class="command"
+        style="justify-items: center; align-items: center"
+      >
+        <div class="spinner" style="font-size: 30px"></div>
+      </button>
       <button class="shade2 command">Command and sth more looong</button>
-      <button class="accent command">Special Command</button>
-      <div class="command spacer"></div>
       <button class="warn command flash">Confirm Deletion</button>
       <button disabled class="warn command">Disabled</button>
       <div class="command spacer"></div>

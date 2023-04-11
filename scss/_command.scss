@@ -76,7 +76,6 @@
   background-color: var(--default-alpha70);
   box-shadow: $box-shadow;
 
-  //TODO: real command, spacer, label --> wieder "area"?
   &:not(.spacer) {
     @extend %button;
     min-width: 6rem;
