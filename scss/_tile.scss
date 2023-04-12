@@ -74,12 +74,13 @@
   > aside {
     display: grid;
     grid-auto-flow: column;
-    column-gap: 4px;
+    gap: 4px;
 
     > button {
       @include command;
+      font-size: 0.9rem;
       background-color: var(--default-alpha40);
-      min-width: 2.5rem;
+      min-width: 3rem;
 
       &:focus {
         border-color: var(--light-alpha40);
@@ -93,12 +94,21 @@
         border-radius: 0 0.3rem 0.3rem 0;
       }
     }
-  }
-}
 
-.tile.blubb2 {
-  > article {
-    padding: 0.4rem 0.8rem;
-    font-size: 1.2rem;
+    &.vertical {
+      grid-auto-flow: row;
+
+      > button {
+        min-width: 4.5rem;
+        min-height: 3rem;
+
+        &:first-of-type {
+          border-radius: 0 0.3rem 0 0;
+        }
+        &:last-of-type {
+          border-radius: 0 0 0.3rem 0;
+        }
+      }
+    }
   }
 }
