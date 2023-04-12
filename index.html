@@ -46,29 +46,55 @@
 
   <body style="display: grid; grid: 'cmd-v main' 1fr 'cmd cmd' auto / auto 1fr">
     <div
-      class="command-bar vertical"
+      class="commands vertical"
       style="grid-area: cmd-v; grid-template-rows: auto auto 1fr"
     >
-      <button class="command">Command</button>
-      <button class="command shade1">Second Command</button>
-      <button class="command shade2">Third Command</button>
+      <button>Command</button>
+      <button class="shade1">Second Command</button>
+      <button class="shade2">Third Command</button>
+      <button class="accent">Special</button>
+      <button class="warn">Warn</button>
     </div>
     <div class="panel" style="grid-area: main">
-      <header
-        class="command-bar"
-        style="grid-template-columns: repeat(3, 1fr) auto"
-      >
-        <button class="command">Command</button>
-        <button
-          class="command shade1"
-          style="justify-items: center; align-items: center"
-        >
-          <div class="spinner" style="font-size: 30px"></div>
-        </button>
-        <button class="command shade2">Third Command</button>
-        Header
-      </header>
+      <header>Header</header>
       <article style="display: grid; grid-auto-rows: max-content">
+        <div class="panel">
+          <header>Lab</header>
+          <article
+            style="
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+              align-content: start;
+              align-items: start;
+            "
+          >
+            <div class="tile-with-commands">
+              <div class="tile">
+                <header></header>
+                <article>Tile Content</article>
+                <footer></footer>
+              </div>
+              <aside class="vertical">
+                <button></button>
+                <button class="shade2"></button>
+                <button>Top</button>
+                <button>Cut</button>
+              </aside>
+            </div>
+            <div class="tile-with-commands">
+              <div class="tile">
+                <header></header>
+                <article>Tile Content</article>
+                <footer></footer>
+              </div>
+              <aside>
+                <button class="shade2"></button>
+                <button style="width: 4rem"></button>
+              </aside>
+            </div>
+          </article>
+          <footer></footer>
+        </div>
         <div class="panel">
           <header>Colors</header>
           <article>
@@ -194,31 +220,22 @@
           <footer></footer>
         </div>
       </article>
-      <footer
-        class="command-bar"
-        style="grid-template-columns: repeat(3, 1fr) auto"
-      >
-        <button class="command">Command</button>
-        <button class="command shade1">Second Command</button>
-        <button class="command shade2">Third Command</button>
-        Footer
-      </footer>
+      <footer>Footer</footer>
     </div>
     <div
-      class="command-bar"
+      class="commands"
       style="
         grid-area: cmd;
-        grid-template-columns: repeat(2, auto) 12rem auto 1fr auto auto 1fr auto;
+        grid-template-columns: auto 12rem auto auto 1fr auto;
       "
     >
-      <button class="command">Command</button>
-      <button class="shade1 command">Command</button>
-      <button class="shade2 command">Command and sth more looong</button>
-      <button class="accent command">Special Command</button>
-      <div class="command spacer"></div>
-      <button class="warn command flash">Confirm Deletion</button>
-      <button disabled class="warn command">Disabled</button>
-      <div class="command spacer"></div>
+      <button style="justify-items: center; align-items: center">
+        <div class="spinner" style="font-size: 30px"></div>
+      </button>
+      <button class="shade2">Command and sth more looong</button>
+      <button class="warn flash">Confirm Deletion</button>
+      <button disabled class="warn">Disabled</button>
+      <div></div>
       Commands
     </div>
   </body>

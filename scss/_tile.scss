@@ -1,32 +1,29 @@
 @import "corner";
 
 .tile {
-  @extend %panel-tile-common;
+  @extend .panel;
+  background: var(--tile-background);
   margin: 0.8rem;
 
   > header {
     &:before {
-      @extend %corner-light;
-      border-width: 1px 0 0 1px;
+      @include corner("top-left", "light");
     }
     &:after {
-      @extend %corner-light;
-      border-width: 1px 1px 0 0;
+      @include corner("top-right", "light");
     }
   }
 
   > article {
-    color: var(--fg);
+    padding: 0.4rem 0.8rem;
   }
 
   > footer {
     &:before {
-      @extend %corner-light;
-      border-width: 0 0 1px 1px;
+      @include corner("bottom-left", "light");
     }
     &:after {
-      @extend %corner-light;
-      border-width: 0 1px 1px 0;
+      @include corner("bottom-right", "light");
     }
   }
 
@@ -45,6 +42,76 @@
       &:before,
       &:after {
         opacity: 0.6;
+      }
+    }
+  }
+}
+
+.tile-with-commands {
+  display: inline-grid;
+  grid-template-columns: 1fr auto;
+  align-items: stretch;
+  column-gap: 4px;
+  position: relative;
+  margin: 0.8rem;
+
+  > .tile {
+    margin: 0;
+    border-radius: 0.3rem 0 0 0.3rem;
+
+    > header {
+      &:after {
+        border: none;
+      }
+    }
+
+    > article {
+      font-size: 1.2rem;
+    }
+
+    > footer {
+      &:after {
+        border: none;
+      }
+    }
+  }
+  > aside {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 4px;
+
+    > button {
+      @include command;
+      font-size: 0.9rem;
+      background-color: var(--default-alpha40);
+      min-width: 3rem;
+
+      &:focus {
+        border-color: var(--light-alpha40);
+      }
+
+      &:active {
+        background-color: var(--light-alpha40);
+      }
+
+      &:last-of-type {
+        border-radius: 0 0.3rem 0.3rem 0;
+      }
+    }
+
+    &.vertical {
+      grid-auto-flow: row;
+
+      > button {
+        min-width: 4.5rem;
+        min-height: 3rem;
+
+        &:first-of-type {
+          border-radius: 0 0.3rem 0 0;
+        }
+        &:last-of-type {
+          border-radius: 0 0 0.3rem 0;
+        }
       }
     }
   }

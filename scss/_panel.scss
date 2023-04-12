@@ -1,6 +1,6 @@
 @import "corner";
 
-%panel-tile-common {
+.panel {
   background: var(--panel-background);
   box-shadow: $box-shadow;
   border-radius: 0.3rem;
@@ -15,18 +15,10 @@
     padding: 0.4rem 0.6rem;
 
     &:before {
-      @extend %corner;
-      border-width: 2px 0 0 2px;
-      border-radius: 0.3rem 0 0 0;
-      left: 0;
-      top: 0;
+      @include corner("top-left");
     }
     &:after {
-      @extend %corner;
-      border-width: 2px 2px 0 0;
-      border-radius: 0 0.3rem 0 0;
-      right: 0;
-      top: 0;
+      @include corner("top-right");
     }
 
     &:empty {
@@ -62,77 +54,14 @@
     text-align: right;
 
     &:before {
-      @extend %corner;
-      border-width: 0 0 2px 2px;
-      border-radius: 0 0 0 0.3rem;
-      left: 0;
-      bottom: 0;
+      @include corner("bottom-left");
     }
     &:after {
-      @extend %corner;
-      border-width: 0 2px 2px 0;
-      border-radius: 0 0 0.3rem 0;
-      right: 0;
-      bottom: 0;
+      @include corner("bottom-right");
     }
 
     &:empty {
       padding: 0.2rem;
-    }
-  }
-}
-
-.panel {
-  @extend %panel-tile-common;
-
-  > header {
-    &.command-bar {
-      margin: 0;
-      margin-bottom: 1rem;
-      padding-top: 0;
-      padding-bottom: 0;
-
-      &:before,
-      &:after {
-        border: none;
-        height: auto;
-      }
-
-      &:before {
-        border-radius: 0.3rem 0 0 0;
-      }
-      &:after {
-        border-radius: 0 0.3rem 0 0;
-      }
-    }
-  }
-  > footer {
-    &.command-bar {
-      @extend %h4;
-      margin: 0;
-      margin-top: 1rem;
-      padding-top: 0;
-      padding-bottom: 0;
-      line-height: 2rem;
-      height: 2rem;
-
-      &:before,
-      &:after {
-        border: none;
-        height: auto;
-      }
-
-      &:before {
-        border-radius: 0 0 0 0.3rem;
-      }
-      &:after {
-        border-radius: 0 0 0.3rem 0;
-      }
-
-      & > .command {
-        height: 2rem;
-        font-size: 0.9rem;
-      }
     }
   }
 }
