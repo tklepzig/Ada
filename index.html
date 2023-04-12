@@ -59,43 +59,6 @@
       <header>Header</header>
       <article style="display: grid; grid-auto-rows: max-content">
         <div class="panel">
-          <header>Lab</header>
-          <article
-            style="
-              display: grid;
-              grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
-              align-content: start;
-              align-items: start;
-            "
-          >
-            <div class="tile-with-commands">
-              <div class="tile">
-                <header></header>
-                <article>Tile Content</article>
-                <footer></footer>
-              </div>
-              <aside class="vertical">
-                <button></button>
-                <button class="shade2"></button>
-                <button>Top</button>
-                <button>Cut</button>
-              </aside>
-            </div>
-            <div class="tile-with-commands">
-              <div class="tile">
-                <header></header>
-                <article>Tile Content</article>
-                <footer></footer>
-              </div>
-              <aside>
-                <button class="shade2"></button>
-                <button style="width: 4rem"></button>
-              </aside>
-            </div>
-          </article>
-          <footer></footer>
-        </div>
-        <div class="panel">
           <header>Colors</header>
           <article>
             <h4>Default</h4>
@@ -215,6 +178,30 @@
               <header></header>
               <article>Without header or footer</article>
               <footer></footer>
+            </div>
+            <div class="tile-with-commands" style="grid-column: span 2">
+              <div class="tile">
+                <header></header>
+                <article>Tile with commands</article>
+                <footer></footer>
+              </div>
+              <aside>
+                <button class="shade1"></button>
+                <button></button>
+              </aside>
+            </div>
+            <div class="tile-with-commands" style="grid-column: span 2">
+              <div class="tile">
+                <header></header>
+                <article>Tile with vertical commands</article>
+                <footer></footer>
+              </div>
+              <aside class="vertical">
+                <button></button>
+                <button class="shade1"></button>
+                <button class="shade2"></button>
+                <button></button>
+              </aside>
             </div>
           </article>
           <footer></footer>
