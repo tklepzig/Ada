@@ -15,7 +15,7 @@
   }
 
   > article {
-    color: var(--fg);
+    padding: 0.4rem 0.8rem;
   }
 
   > footer {
@@ -47,7 +47,7 @@
   }
 }
 
-.blubb {
+.tile-with-commands {
   display: inline-grid;
   grid-template-columns: 1fr auto;
   align-items: stretch;
@@ -55,22 +55,26 @@
   position: relative;
   margin: 0.8rem;
 
-  &:before {
-    @include corner("top-left", "light");
-  }
-
-  &:after {
-    @include corner("bottom-left", "light");
-  }
-
-  > article {
-    @extend .tile;
+  > .tile {
     margin: 0;
     border-radius: 0.3rem 0 0 0.3rem;
-    padding: 0.8rem;
-    font-size: 1.2rem;
-  }
 
+    > header {
+      &:after {
+        border: none;
+      }
+    }
+
+    > article {
+      font-size: 1.2rem;
+    }
+
+    > footer {
+      &:after {
+        border: none;
+      }
+    }
+  }
   > aside {
     display: grid;
     grid-auto-flow: column;
