@@ -13,6 +13,12 @@ $box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
   }
 }
 
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
 html {
   font-size: 14px;
   font-family: $font-family;
@@ -35,7 +41,6 @@ body {
 body {
   font-size: 1rem;
   -webkit-tap-highlight-color: transparent;
-  box-sizing: border-box;
   padding: 0.5rem;
 }
 
