@@ -9,3 +9,8 @@
 ### Patch Changes
 
 - 3802546: Set box-sizing to border-box on global level
+- d03c0d7: Add Changesets for managing changelog
+
+## < 4.6.0
+
+- No changelog was maintained, sorry...
