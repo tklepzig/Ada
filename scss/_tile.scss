@@ -6,6 +6,7 @@
   margin: 0.8rem;
 
   > header {
+    @extend %h4;
     &:before {
       @include corner("top-left", "light");
     }
