@@ -5,6 +5,7 @@
 - Add tokens to tailwind config
 - Only one disabled style for all colors?
 - headlines w/ or w/o margin?
+- Tile vs clickable tile vs. split button vs. ...
 - Fixed color tokens instead of math
 - Improve colors, stop using HSL?
   - https://www.colorbox.io/
