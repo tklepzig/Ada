@@ -1,5 +1,11 @@
 # ada-ui
 
+## 4.7.0
+
+### Minor Changes
+
+- b03f4b1: Add exports for base and theme styles
+
 ## 4.6.0
 
 ### Minor Changes
