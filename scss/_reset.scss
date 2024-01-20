@@ -8,14 +8,12 @@
 }
 
 html {
-  line-height: 1.5;
   -webkit-text-size-adjust: 100%; // Prevent adjustments of font size after orientation changes in iOS.
   -webkit-tap-highlight-color: transparent; // Disable tap highlights on iOS
 }
 
 body {
   margin: 0;
-  line-height: inherit;
 }
 
 h1,
@@ -45,7 +43,6 @@ textarea {
   font-variation-settings: inherit;
   font-size: 100%;
   font-weight: inherit;
-  line-height: inherit;
   color: inherit;
   margin: 0;
   padding: 0;
