@@ -7,7 +7,8 @@
     "changeset": "changeset",
     "snapshot": "f(){ if [ -z \"$1\" ]; then echo \"Error: No tag name specified, exiting.\"; exit 1; fi; npm run build && changeset version --snapshot $1 && changeset publish --no-git-tag --tag; }; f",
     "remove-snapshot": "f(){ if [ -z \"$1\" ]; then echo \"Error: No tag name specified, exiting.\"; exit 1; fi; npm dist-tag rm ada-ui $1; }; f",
-    "release": "npm run build && changeset publish"
+    "version": "npm run build && changeset version",
+    "publish": "changeset publish"
   },
   "license": "MIT",
   "exports": {
