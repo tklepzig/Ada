@@ -29,7 +29,7 @@
   }
 
   &.inset {
-    box-shadow: inset $box-shadow;
+    box-shadow: inset var(--box-shadow);
 
     > header {
       text-shadow: none;

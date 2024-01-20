@@ -170,7 +170,7 @@ $amount: 0.2em;
     width: 1em;
     height: 1em;
     border-radius: 50%;
-    box-shadow: $box-shadow;
+    box-shadow: var(--box-shadow);
     border: 0.1em solid var(--light-alpha70);
     animation: 1.5s swing ease-in-out infinite;
     box-sizing: border-box;
@@ -199,7 +199,7 @@ $amount: 0.2em;
   border-radius: 50%;
   border-color: transparent var(--default);
   animation: 4s rotateOuter linear infinite;
-  box-shadow: inset $box-shadow;
+  box-shadow: inset var(--box-shadow);
 
   &:before {
     content: "";
@@ -213,7 +213,7 @@ $amount: 0.2em;
     border-color: transparent var(--light-alpha70);
     border-radius: inherit;
     animation: 2s rotateInner linear infinite;
-    box-shadow: inset $box-shadow;
+    box-shadow: inset var(--box-shadow);
   }
   &:after {
     content: "";

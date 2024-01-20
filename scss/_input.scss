@@ -1,6 +1,6 @@
 .input {
   border-radius: 0.3rem;
-  box-shadow: $box-shadow;
+  box-shadow: var(--box-shadow);
   outline: none;
   border: 1px solid var(--light-alpha40);
   color: var(--fg);
