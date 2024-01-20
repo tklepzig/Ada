@@ -8,7 +8,7 @@
   font-size: 1.1rem;
   border-style: solid;
   border-color: transparent;
-  border-width: 0 0 0 2px;
+  border-width: 0 0 0 var(--border-width);
   padding: 0.2rem 0.4rem 0.2rem 1rem;
 
   &.flash {

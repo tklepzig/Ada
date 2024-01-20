@@ -33,14 +33,14 @@
     overflow: auto;
 
     &::-webkit-scrollbar {
-      width: 2px;
+      width: var(--border-width);
       background: transparent;
     }
     &::-webkit-scrollbar-thumb {
       min-width: 1rem;
       border-style: solid;
       border-color: transparent;
-      border-width: 2px 2px 1px 2px;
+      border-width: var(--border-width);
       background: var(--default);
       box-sizing: border-box;
       background-clip: border-box;

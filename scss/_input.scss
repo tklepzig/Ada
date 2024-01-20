@@ -2,7 +2,7 @@
   border-radius: 0.3rem;
   box-shadow: var(--box-shadow);
   outline: none;
-  border: 1px solid var(--light-alpha40);
+  border: var(--border-width-sm) solid var(--light-alpha40);
   color: var(--fg);
   font-family: inherit;
   background-color: transparent;
@@ -11,7 +11,7 @@
   font-size: 1.1rem;
 
   &:focus {
-    border: 1px solid var(--light-alpha70);
+    border: var(--border-width-sm) solid var(--light-alpha70);
   }
   &:disabled {
     opacity: 0.4;
