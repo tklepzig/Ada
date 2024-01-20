@@ -1,0 +1,6 @@
+fixed color tokens instead of math
+add tokens to tailwind config
+only one disabled style for all colors?
+spacings als token
+font sizes als token
+headlines w/ or w/o margin?
