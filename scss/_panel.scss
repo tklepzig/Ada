@@ -11,6 +11,7 @@
   > header {
     position: relative;
     //@extend %h3; --> TODO use font-size token
+    @extend %header;
     font-size: 1.5rem;
 
     padding: 0.4rem 0.6rem;
