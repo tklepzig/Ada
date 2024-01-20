@@ -9,6 +9,12 @@
     "release": "npm run build && changeset publish"
   },
   "license": "MIT",
+  "exports": {
+    ".": "./css/ada.css",
+    "./blue": "./css/ada.blue.css",
+    "./green": "./css/ada.green.css",
+    "./tailwind": "./tailwind.config.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tklepzig/Ada.git"
