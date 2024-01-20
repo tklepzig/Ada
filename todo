@@ -1,6 +1,12 @@
-fixed color tokens instead of math
-add tokens to tailwind config
-only one disabled style for all colors?
-spacings als token
-font sizes als token
-headlines w/ or w/o margin?
+- Introduce tokens
+  - Colors (see below)
+  - Spacing
+  - Font Sizes
+- Add tokens to tailwind config
+- Only one disabled style for all colors?
+- headlines w/ or w/o margin?
+- Fixed color tokens instead of math
+- Improve colors, stop using HSL?
+  - https://www.colorbox.io/
+  - https://accessiblepalette.com/
+  - https://wildbit.com/blog/accessible-palette-stop-using-hsl-for-color-systems
