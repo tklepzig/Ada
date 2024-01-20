@@ -2,6 +2,7 @@
   --font-family: "Open Sans", sans-serif;
   --font-size: 14px;
   --box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
+  --spacing: 0.8rem;
 
   @include tablet {
     --font-size: 16px;
@@ -21,7 +22,7 @@ body {
 }
 
 body {
-  padding: 0.5rem;
+  padding: var(--spacing);
   background: var(--bg);
   color: var(--fg);
 }

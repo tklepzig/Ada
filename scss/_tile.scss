@@ -3,7 +3,6 @@
 .tile {
   @extend .panel;
   background: var(--tile-background);
-  margin: 0.8rem;
 
   > header {
     //@extend %h4; --> TODO use font-size token
@@ -57,10 +56,8 @@
   align-items: stretch;
   column-gap: 4px;
   position: relative;
-  margin: 0.8rem;
 
   > .tile {
-    margin: 0;
     border-radius: 0.3rem 0 0 0.3rem;
 
     > header {
