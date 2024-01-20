@@ -40,7 +40,9 @@
   }
 
   &:not(.vertical) {
-    @extend %h2;
+    //@extend %h2; --> use font-size token
+    font-size: 2rem;
+
     grid-auto-flow: column;
     text-align: center;
     align-items: center;

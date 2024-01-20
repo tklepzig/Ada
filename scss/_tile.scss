@@ -6,7 +6,10 @@
   margin: 0.8rem;
 
   > header {
-    @extend %h4;
+    //@extend %h4; --> TODO use font-size token
+    font-weight: 400;
+    font-size: 1.2rem;
+
     &:before {
       @include corner("top-left", "light");
     }
