@@ -2,6 +2,7 @@
   - Colors (see below)
   - Spacing
   - Font Sizes
+- Correctly put `:` for pseudo classes and `::` for pseudo elements
 - Add tokens to tailwind config
 - Only one disabled style for all colors?
 - headlines w/ or w/o margin?
