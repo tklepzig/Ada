@@ -25,14 +25,9 @@
   border: var(--border-width-sm) solid var(--light-alpha40);
   background-color: transparent;
   min-height: min-content;
-  min-width: 8rem;
   padding: 0.8rem;
   font-size: 1.1rem;
 
-  &.small {
-    min-width: 0;
-    padding: 0.8rem;
-  }
   &.fill {
     background-color: var(--default);
   }
