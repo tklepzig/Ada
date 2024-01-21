@@ -28,7 +28,7 @@
 .commands {
   position: relative;
   display: grid;
-  gap: 0.5rem;
+  gap: var(--gap);
 
   &:before,
   &:after {

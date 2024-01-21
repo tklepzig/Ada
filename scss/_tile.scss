@@ -55,7 +55,7 @@
   display: inline-grid;
   grid-template-columns: 1fr auto;
   align-items: stretch;
-  column-gap: 0.3rem;
+  column-gap: var(--gap-sm);
   position: relative;
 
   > .tile {
@@ -80,7 +80,7 @@
   > aside {
     display: grid;
     grid-auto-flow: column;
-    gap: 0.3rem;
+    gap: var(--gap-sm);
 
     > button {
       @include command;
