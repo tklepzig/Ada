@@ -106,10 +106,6 @@
   grid-column: span 5 / span 5
 }
 
-.tw-row-span-2 {
-  grid-row: span 2 / span 2
-}
-
 .tw-grid {
   display: grid
 }
@@ -122,16 +118,8 @@
   grid-template-columns: auto 1fr
 }
 
-.tw-grid-cols-\[1fr_1fr\] {
-  grid-template-columns: 1fr 1fr
-}
-
 .tw-grid-rows-\[1fr_auto\] {
   grid-template-rows: 1fr auto
-}
-
-.tw-grid-rows-\[1fr_1fr\] {
-  grid-template-rows: 1fr 1fr
 }
 
 .tw-grid-rows-\[auto_auto_1fr\] {
@@ -152,8 +140,4 @@
 
 .tw-gap-3 {
   gap: 0.75rem
-}
-
-.tw-gap-4 {
-  gap: 1rem
 }
