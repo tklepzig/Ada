@@ -114,6 +114,10 @@
   display: inline-grid
 }
 
+.tw-auto-rows-max {
+  grid-auto-rows: max-content
+}
+
 .tw-grid-cols-\[auto_1fr\] {
   grid-template-columns: auto 1fr
 }
@@ -140,4 +144,8 @@
 
 .tw-gap-3 {
   gap: 0.75rem
+}
+
+.tw-gap-4 {
+  gap: 1rem
 }

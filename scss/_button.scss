@@ -54,6 +54,18 @@
     @extend .fill;
     box-shadow: none;
 
+    // Use color level from new lch palette instead of alpha
+    //&.dim {
+    //background-color: var(--default-alpha40);
+    //&:focus {
+    //border-color: var(--light-alpha40);
+    //}
+
+    //&:active {
+    //background-color: var(--light-alpha40);
+    //}
+    //}
+
     &:empty {
       width: 3rem;
     }
