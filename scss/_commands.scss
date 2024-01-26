@@ -48,8 +48,8 @@
     align-items: center;
     line-height: 3.6rem;
     height: 3.6rem;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    padding-left: calc(1rem + var(--gap));
+    padding-right: calc(1rem + var(--gap));
 
     &:before,
     &:after {
@@ -76,8 +76,8 @@
   &.vertical {
     grid-auto-flow: row;
     min-width: 12rem;
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
+    padding-top: calc(1rem + var(--gap));
+    padding-bottom: calc(1rem + var(--gap));
 
     &:before,
     &:after {
