@@ -5,4 +5,11 @@ module.exports = {
   corePlugins: {
     preflight: false,
   },
+  theme: {
+    extend: {
+      gap: {
+        command: "6px",
+      },
+    },
+  },
 };

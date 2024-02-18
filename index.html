@@ -48,12 +48,14 @@
   <body
     class="tw-grid tw-gap-2 tw-grid-cols-[auto_1fr] tw-grid-rows-[1fr_auto]"
   >
-    <div class="commands vertical tw-grid-rows-[auto_auto_1fr]">
-      <button>Command</button>
-      <button class="shade1">Second Command</button>
-      <button class="shade2">Third Command</button>
-      <button class="accent">Special</button>
-      <button class="warn">Warn</button>
+    <div
+      class="command-bar vertical tw-grid tw-gap-command tw-grid-rows-[auto_auto_1fr_auto_auto]"
+    >
+      <button class="command">Command</button>
+      <button class="command shade1">Second Command</button>
+      <button class="command shade2">Third Command</button>
+      <button class="command accent">Special</button>
+      <button class="command warn">Warn</button>
     </div>
     <div class="panel">
       <header>Header</header>
@@ -219,16 +221,18 @@
       <footer>Footer</footer>
     </div>
     <div
-      class="commands tw-col-span-2"
-      style="grid-template-columns: auto 12rem auto auto 1fr"
+      class="command-bar tw-col-span-2 tw-grid tw-gap-command tw-grid-cols-[auto_12rem_auto_auto_1fr]"
     >
-      <button style="justify-items: center; align-items: center">
+      <button
+        class="command"
+        style="justify-items: center; align-items: center"
+      >
         <div class="spinner" style="font-size: 30px"></div>
       </button>
-      <button class="shade2">Command and sth more looong</button>
-      <button class="warn flash">Blinking</button>
-      <button disabled class="warn">Disabled</button>
-      <div></div>
+      <button class="command shade2">Command and sth more looong</button>
+      <button class="command warn flash">Blinking</button>
+      <button disabled class="command warn">Disabled</button>
+      <div class="spacer"></div>
     </div>
   </body>
 </html>

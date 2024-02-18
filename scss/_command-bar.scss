@@ -1,0 +1,89 @@
+.command {
+  @include button;
+  background-color: var(--default-alpha70);
+  box-shadow: var(--box-shadow);
+  display: grid;
+  align-items: end;
+  justify-items: end;
+  text-align: end;
+  font-size: 1.1rem;
+  border-style: solid;
+  border-color: transparent;
+  border-width: 0 0 0 var(--border-width);
+  padding: 0.25rem 0.5rem;
+  min-height: 3rem;
+
+  &.flash {
+    animation: flash 1s ease-in-out infinite;
+  }
+
+  &:focus {
+    border-color: var(--light-alpha70);
+  }
+
+  &:active {
+    background-color: var(--light-alpha70);
+    animation-play-state: paused;
+  }
+}
+
+.command-bar {
+  position: relative;
+  padding: 0 calc(1rem + var(--gap));
+
+  &::before,
+  &::after {
+    position: absolute;
+    content: "";
+    box-shadow: var(--box-shadow);
+    background: var(--default-alpha70);
+    width: 1rem;
+    top: 0;
+    bottom: 0;
+  }
+
+  &::before {
+    border-radius: 0.3rem 0 0 0.3rem;
+    left: 0;
+  }
+
+  &::after {
+    border-radius: 0 0.3rem 0.3rem 0;
+    right: 0;
+  }
+
+  &.vertical {
+    padding: calc(1rem + var(--gap)) 0;
+
+    &::before,
+    &::after {
+      width: auto;
+      height: 1rem;
+      left: 0;
+      right: 0;
+    }
+
+    &::before {
+      border-radius: 0.3rem 0.3rem 0 0;
+      top: 0;
+      bottom: auto;
+    }
+
+    &::after {
+      border-radius: 0 0 0.3rem 0.3rem;
+      top: auto;
+      bottom: 0;
+    }
+  }
+
+  & > .spacer {
+    background-color: var(--default-alpha70);
+    box-shadow: var(--box-shadow);
+  }
+}
+
+@keyframes flash {
+  50% {
+    background-color: var(--light-alpha70);
+  }
+}
