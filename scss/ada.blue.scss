@@ -21,6 +21,9 @@
   --h-fg: var(--h);
   --s-fg: 100%;
   --l-fg: 89%;
+
+  --default: lch(26 29 260);
+  --default-alpha70: lch(18 20 260);
 }
 
 :root {
