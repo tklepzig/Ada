@@ -12,7 +12,6 @@
     />
     <link rel="stylesheet" href="css/ada.blue.css" />
     <link rel="stylesheet" href="css/ada.css" />
-    <link rel="stylesheet" href="output.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600"
       rel="stylesheet"
@@ -46,10 +45,20 @@
   </head>
 
   <body
-    class="tw-grid tw-gap-2 tw-grid-cols-[auto_1fr] tw-grid-rows-[1fr_auto]"
+    style="
+      display: grid;
+      grid-template-columns: auto 1fr;
+      grid-template-rows: 1fr auto;
+      gap: 0.5rem;
+    "
   >
     <div
-      class="command-bar vertical tw-grid tw-gap-command tw-grid-rows-[auto_auto_1fr_auto_auto]"
+      class="command-bar vertical"
+      style="
+        display: grid;
+        grid-template-rows: auto auto 1fr auto auto;
+        gap: 6px;
+      "
     >
       <button class="command">Command</button>
       <button class="command shade1">Second Command</button>
@@ -59,7 +68,7 @@
     </div>
     <div class="panel">
       <header>Header</header>
-      <article class="tw-grid tw-auto-rows-max tw-gap-4">
+      <article style="display: grid; grid-auto-rows: max-content; gap: 1.5rem">
         <div class="panel">
           <header>Colors</header>
           <article>
@@ -87,27 +96,32 @@
         <div class="panel">
           <header>Buttons</header>
           <article
-            class="tw-inline-grid tw-justify-start tw-justify-items-start tw-gap-3"
+            style="
+              display: inline-grid;
+              justify-content: start;
+              justify-items: start;
+              gap: 1rem;
+            "
           >
-            <h4 class="tw-col-span-5">Default</h4>
+            <h4 style="grid-column: span 5">Default</h4>
             <button class="button">Button</button>
             <button class="button shade1">Button</button>
             <button class="button shade2">Button</button>
             <button class="button accent">Button</button>
             <button class="button warn">Button</button>
-            <h4 class="tw-col-span-5">Fill</h4>
+            <h4 style="grid-column: span 5">Fill</h4>
             <button class="button fill">Button</button>
             <button class="button fill shade1">Button</button>
             <button class="button fill shade2">Button</button>
             <button class="button fill accent">Button</button>
             <button class="button fill warn">Button</button>
-            <h4 class="tw-col-span-5">Compound Button</h4>
-            <div class="button-compound tw-col-span-5">
+            <h4 style="grid-column: span 5">Compound Button</h4>
+            <div class="button-compound" style="grid-column: span 5">
               <button class="button">Button</button>
               <button class="button"></button>
               <button class="button"></button>
             </div>
-            <h4 class="tw-col-span-5">Disabled</h4>
+            <h4 style="grid-column: span 5">Disabled</h4>
             <button disabled class="button">Button</button>
             <button disabled class="button fill">Button</button>
             <button disabled class="button fill shade1">Button</button>
@@ -221,7 +235,13 @@
       <footer>Footer</footer>
     </div>
     <div
-      class="command-bar tw-col-span-2 tw-grid tw-gap-command tw-grid-cols-[auto_12rem_auto_auto_1fr]"
+      class="command-bar"
+      style="
+        display: grid;
+        grid-template-columns: auto 12rem auto auto 1fr;
+        gap: 6px;
+        grid-column: span 2;
+      "
     >
       <button
         class="command"

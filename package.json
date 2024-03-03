@@ -2,8 +2,8 @@
   "name": "ada-ui",
   "version": "4.7.0",
   "scripts": {
-    "dev": "concurrently -n scss,tailwind,serve 'sass scss:css --watch' 'tailwindcss -i input.css -o output.css --watch' 'alive-server .'",
-    "build": "rm -rf css && sass scss:css -s compressed --no-source-map && tailwindcss -i input.css -o output.css",
+    "dev": "concurrently -n scss,serve 'sass scss:css --watch' 'alive-server .'",
+    "build": "rm -rf css && sass scss:css -s compressed --no-source-map",
     "changeset": "changeset",
     "snapshot": "f(){ if [ -z \"$1\" ]; then echo \"Error: No tag name specified, exiting.\"; exit 1; fi; npm run build && changeset version --snapshot $1 && changeset publish --no-git-tag --tag; }; f",
     "remove-snapshot": "f(){ if [ -z \"$1\" ]; then echo \"Error: No tag name specified, exiting.\"; exit 1; fi; npm dist-tag rm ada-ui $1; }; f",
@@ -14,8 +14,7 @@
   "exports": {
     ".": "./css/ada.css",
     "./blue": "./css/ada.blue.css",
-    "./green": "./css/ada.green.css",
-    "./tailwind": "./tailwind.config.export.js"
+    "./green": "./css/ada.green.css"
   },
   "repository": {
     "type": "git",
@@ -29,7 +28,6 @@
     "@changesets/cli": "^2.27.1",
     "alive-server": "^1.2.9",
     "concurrently": "^8.2.2",
-    "sass": "^1.42.1",
-    "tailwindcss": "^3.4.1"
+    "sass": "^1.42.1"
   }
 }
