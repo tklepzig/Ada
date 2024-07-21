@@ -53,48 +53,20 @@
     "
   >
     <div
-      class="command-bar vertical"
-      style="
-        display: grid;
-        grid-template-rows: auto auto 1fr auto auto;
-        gap: 6px;
-      "
+      class="compound-command vertical"
+      style="grid-template-rows: auto auto 1fr auto auto"
     >
-      <button class="command">Command</button>
-      <button class="command shade1">Second Command</button>
-      <button class="command shade2">Third Command</button>
-      <button class="command accent">Special</button>
-      <button class="command warn">Warn</button>
+      <button>Command</button>
+      <button class="shade1">Second Command</button>
+      <button class="shade2">Third Command</button>
+      <button class="accent">Special</button>
+      <button class="warn">Warn</button>
     </div>
     <div class="panel">
       <header>Header</header>
       <article style="display: grid; grid-auto-rows: max-content; gap: 1.5rem">
         <div class="panel">
-          <header>Colors</header>
-          <article>
-            <h4>Default</h4>
-            <div class="color-box primary">Primary</div>
-            <div class="color-box shade1">Shade 1</div>
-            <div class="color-box shade2">Shade 2</div>
-            <div class="color-box accent">Accent</div>
-            <div class="color-box warn">Warn</div>
-            <h4>Alpha 70</h4>
-            <div class="color-box alpha70 primary">Primary</div>
-            <div class="color-box alpha70 shade1">Shade 1</div>
-            <div class="color-box alpha70 shade2">Shade 2</div>
-            <div class="color-box alpha70 accent">Accent</div>
-            <div class="color-box alpha70 warn">Warn</div>
-            <h4>Alpha 40</h4>
-            <div class="color-box alpha40 primary">Primary</div>
-            <div class="color-box alpha40 shade1">Shade 1</div>
-            <div class="color-box alpha40 shade2">Shade 2</div>
-            <div class="color-box alpha40 accent">Accent</div>
-            <div class="color-box alpha40 warn">Warn</div>
-          </article>
-          <footer></footer>
-        </div>
-        <div class="panel">
-          <header>Buttons</header>
+          <header>Commands</header>
           <article
             style="
               display: inline-grid;
@@ -104,30 +76,40 @@
             "
           >
             <h4 style="grid-column: span 5">Default</h4>
-            <button class="button">Button</button>
-            <button class="button shade1">Button</button>
-            <button class="button shade2">Button</button>
-            <button class="button accent">Button</button>
-            <button class="button warn">Button</button>
-            <h4 style="grid-column: span 5">Fill</h4>
-            <button class="button fill">Button</button>
-            <button class="button fill shade1">Button</button>
-            <button class="button fill shade2">Button</button>
-            <button class="button fill accent">Button</button>
-            <button class="button fill warn">Button</button>
-            <h4 style="grid-column: span 5">Compound Button</h4>
-            <div class="button-compound" style="grid-column: span 5">
-              <button class="button">Button</button>
-              <button class="button"></button>
-              <button class="button"></button>
+            <button class="command">Command</button>
+            <button class="command shade1">Command</button>
+            <button class="command shade2">Command</button>
+            <button class="command accent">Command</button>
+            <button class="command warn">Command</button>
+            <h4 style="grid-column: span 5">Compound</h4>
+            <div style="grid-column: span 5" class="compound-command">
+              <button>Any command</button>
+              <button class="shade1"></button>
+              <div class="spacer"></div>
             </div>
+            <div style="grid-column: span 5" class="compound-command">
+              <button>Command</button>
+              <div class="text">47</div>
+              <div class="spacer"></div>
+            </div>
+            <h4 style="grid-column: span 5">Compound Vertical</h4>
+            <div class="compound-command vertical">
+              <button>Command</button>
+              <div class="text">47</div>
+              <div class="spacer"></div>
+            </div>
+            <h4 style="grid-column: span 5">Flashing</h4>
+            <button class="command flash">Command</button>
+            <button class="command flash shade1">Command</button>
+            <button class="command flash shade2">Command</button>
+            <button class="command flash accent">Command</button>
+            <button class="command flash warn">Command</button>
             <h4 style="grid-column: span 5">Disabled</h4>
-            <button disabled class="button">Button</button>
-            <button disabled class="button fill">Button</button>
-            <button disabled class="button fill shade1">Button</button>
-            <button disabled class="button fill shade2">Button</button>
-            <button disabled class="button fill accent">Button</button>
-            <button disabled class="button fill warn">Button</button>
+            <button disabled class="command">Command</button>
+            <button disabled class="command shade1">Command</button>
+            <button disabled class="command shade2">Command</button>
+            <button disabled class="command accent">Command</button>
+            <button disabled class="command warn">Command</button>
           </article>
           <footer></footer>
         </div>
@@ -165,7 +147,7 @@
           <footer></footer>
         </div>
         <div class="panel">
-          <header>Tiles</header>
+          <header>Tiles (WIP)</header>
           <article
             style="
               display: grid;
@@ -235,23 +217,21 @@
       <footer>Footer</footer>
     </div>
     <div
-      class="command-bar"
+      class="compound-command"
       style="
-        display: grid;
-        grid-template-columns: auto 12rem auto auto 1fr;
-        gap: 6px;
+        grid-template-columns: auto auto 12rem auto auto 1fr auto auto;
         grid-column: span 2;
       "
     >
-      <button
-        class="command"
-        style="justify-items: center; align-items: center"
-      >
+      <div class="spacer"></div>
+      <button style="justify-items: center; align-items: center">
         <div class="spinner" style="font-size: 30px"></div>
       </button>
-      <button class="command shade2">Command and sth more looong</button>
-      <button class="command warn flash">Blinking</button>
-      <button disabled class="command warn">Disabled</button>
+      <button class="shade2">Command and sth more looong</button>
+      <button class="warn flash">Flashing</button>
+      <button disabled class="warn">Disabled</button>
+      <div class="spacer"></div>
+      <div class="text">Ada</div>
       <div class="spacer"></div>
     </div>
   </body>

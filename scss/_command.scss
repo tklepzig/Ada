@@ -1,0 +1,118 @@
+@mixin button {
+  overflow: hidden;
+  outline: none;
+  color: var(--fg);
+  font-family: inherit;
+  cursor: pointer;
+  user-select: none;
+  vertical-align: middle;
+  transition: border-color 0.15s ease-in-out, background-color 0.15s ease-in-out;
+
+  &:disabled {
+    opacity: 0.4;
+    filter: saturate(0.6);
+    cursor: default;
+    pointer-events: none;
+  }
+}
+
+.command {
+  @include button;
+  background-color: var(--default-alpha70);
+  box-shadow: var(--box-shadow);
+  display: grid;
+  align-items: end;
+  justify-items: end;
+  text-align: end;
+  font-size: 1.1rem;
+  border-style: solid;
+  border-color: transparent;
+  border-width: 0 0 0 var(--border-width);
+  padding: 0.25rem 0.6rem;
+  min-height: 3rem;
+  border-radius: 0.3rem;
+
+  &.flash {
+    animation: flash 1s ease-in-out infinite;
+  }
+
+  &:focus {
+    border-color: var(--light-alpha70);
+  }
+
+  &:active {
+    background-color: var(--light-alpha70);
+    animation-play-state: paused;
+  }
+}
+
+.compound-command {
+  display: inline-grid;
+  grid-auto-flow: column;
+  gap: var(--gap);
+
+  > button {
+    @extend .command;
+
+    &:empty {
+      min-width: 3rem;
+    }
+  }
+
+  > .spacer {
+    background-color: var(--default-alpha70);
+    box-shadow: var(--box-shadow);
+    min-width: 1rem;
+    min-height: 1rem;
+  }
+
+  > .text {
+    font-size: 2rem;
+    line-height: 2rem;
+    align-self: center;
+    padding: 0.25rem;
+    //TODO allow white for normal color but also accent or shade colors
+    //--> get rid of super duper dynamic color thingy, see todo file
+    //color: var(--default);
+  }
+
+  > button,
+  .spacer {
+    &:first-child {
+      border-radius: 0.3rem 0 0 0.3rem;
+    }
+
+    &:not(:first-child):not(:last-child) {
+      border-radius: 0;
+    }
+
+    &:last-child {
+      border-radius: 0 0.3rem 0.3rem 0;
+    }
+  }
+
+  &.vertical {
+    grid-auto-flow: row;
+
+    > .text {
+      justify-self: center;
+    }
+
+    > button,
+    .spacer {
+      &:first-child {
+        border-radius: 0.3rem 0.3rem 0 0;
+      }
+
+      &:last-child {
+        border-radius: 0 0 0.3rem 0.3rem;
+      }
+    }
+  }
+}
+
+@keyframes flash {
+  50% {
+    background-color: var(--light-alpha70);
+  }
+}

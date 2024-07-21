@@ -1,20 +1,21 @@
-@mixin button {
-  overflow: hidden;
-  outline: none;
-  color: var(--fg);
-  font-family: inherit;
-  cursor: pointer;
-  user-select: none;
-  vertical-align: middle;
-  transition: border-color 0.15s ease-in-out, background-color 0.15s ease-in-out;
+//Moved to commands
+//@mixin button {
+//overflow: hidden;
+//outline: none;
+//color: var(--fg);
+//font-family: inherit;
+//cursor: pointer;
+//user-select: none;
+//vertical-align: middle;
+//transition: border-color 0.15s ease-in-out, background-color 0.15s ease-in-out;
 
-  &:disabled {
-    opacity: 0.4;
-    filter: saturate(0.6);
-    cursor: default;
-    pointer-events: none;
-  }
-}
+//&:disabled {
+//opacity: 0.4;
+//filter: saturate(0.6);
+//cursor: default;
+//pointer-events: none;
+//}
+//}
 
 .button {
   @include button;
