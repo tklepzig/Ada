@@ -72,8 +72,8 @@
       style="grid-template-rows: auto auto 1fr auto auto"
     >
       <button class="command">Command</button>
-      <button class="command shade1">Second Command</button>
-      <button class="command shade2">Third Command</button>
+      <button class="command primary-alt">Second Command</button>
+      <button class="command accent-alt">Third Command</button>
       <button class="command accent">Special</button>
       <button class="command warn">Warn</button>
     </div>
@@ -99,6 +99,42 @@
               <div class="bg800">BG 800</div>
               <div class="bg900">BG 900</div>
             </div>
+            <div class="color-shades">
+              <h4>Primary Alt</h4>
+              <div class="fg100 primary-alt">FG 100</div>
+              <div class="fg200 primary-alt">FG 200</div>
+              <div class="bg600 primary-alt">BG 600</div>
+              <div class="bg700 primary-alt">BG 700</div>
+              <div class="bg800 primary-alt">BG 800</div>
+              <div class="bg900 primary-alt">BG 900</div>
+            </div>
+            <div class="color-shades">
+              <h4>Accent</h4>
+              <div class="fg100 accent">FG 100</div>
+              <div class="fg200 accent">FG 200</div>
+              <div class="bg600 accent">BG 600</div>
+              <div class="bg700 accent">BG 700</div>
+              <div class="bg800 accent">BG 800</div>
+              <div class="bg900 accent">BG 900</div>
+            </div>
+            <div class="color-shades">
+              <h4>Accent Alt</h4>
+              <div class="fg100 accent-alt">FG 100</div>
+              <div class="fg200 accent-alt">FG 200</div>
+              <div class="bg600 accent-alt">BG 600</div>
+              <div class="bg700 accent-alt">BG 700</div>
+              <div class="bg800 accent-alt">BG 800</div>
+              <div class="bg900 accent-alt">BG 900</div>
+            </div>
+            <div class="color-shades">
+              <h4>Warn</h4>
+              <div class="fg100 warn">FG 100</div>
+              <div class="fg200 warn">FG 200</div>
+              <div class="bg600 warn">BG 600</div>
+              <div class="bg700 warn">BG 700</div>
+              <div class="bg800 warn">BG 800</div>
+              <div class="bg900 warn">BG 900</div>
+            </div>
           </article>
           <footer>Footer</footer>
         </div>
@@ -114,8 +150,8 @@
           >
             <h4 style="grid-column: span 5">Default</h4>
             <button class="command">Command</button>
-            <button class="command shade1">Command</button>
-            <button class="command shade2">Command</button>
+            <button class="command primary-alt">Command</button>
+            <button class="command accent-alt">Command</button>
             <button class="command accent">Command</button>
             <button class="command warn">Command</button>
             <h4 style="grid-column: span 5">Default - Wrapping</h4>
@@ -134,36 +170,38 @@
             </button>
             <h4 style="grid-column: span 5">Outline</h4>
             <button class="command outline">Command</button>
-            <button class="command outline shade1">Command</button>
-            <button class="command outline shade2">Command</button>
+            <button class="command outline primary-alt">Command</button>
+            <button class="command outline accent-alt">Command</button>
             <button class="command outline accent">Command</button>
             <button class="command outline warn">Command</button>
             <h4 style="grid-column: span 5">Flashing</h4>
             <button class="command flash">Command</button>
-            <button class="command flash shade1">Command</button>
-            <button class="command flash shade2">Command</button>
+            <button class="command flash primary-alt">Command</button>
+            <button class="command flash accent-alt">Command</button>
             <button class="command flash accent">Command</button>
             <button class="command flash warn">Command</button>
             <button class="command flash outline">Command</button>
-            <button class="command flash outline shade1">Command</button>
-            <button class="command flash outline shade2">Command</button>
+            <button class="command flash outline primary-alt">Command</button>
+            <button class="command flash outline accent-alt">Command</button>
             <button class="command flash outline accent">Command</button>
             <button class="command flash outline warn">Command</button>
             <h4 style="grid-column: span 5">Disabled</h4>
             <button disabled class="command">Command</button>
-            <button disabled class="command shade1">Command</button>
-            <button disabled class="command shade2">Command</button>
+            <button disabled class="command primary-alt">Command</button>
+            <button disabled class="command accent-alt">Command</button>
             <button disabled class="command accent">Command</button>
             <button disabled class="command warn">Command</button>
             <button disabled class="command outline">Command</button>
-            <button disabled class="command outline shade1">Command</button>
-            <button disabled class="command outline shade2">Command</button>
+            <button disabled class="command outline primary-alt">
+              Command
+            </button>
+            <button disabled class="command outline accent-alt">Command</button>
             <button disabled class="command outline accent">Command</button>
             <button disabled class="command outline warn">Command</button>
             <h4 style="grid-column: span 5">Compound</h4>
             <div style="grid-column: span 5" class="compound-command">
               <button class="command outline">Any command</button>
-              <button class="command shade1 outline"></button>
+              <button class="command primary-alt outline"></button>
               <div class="spacer outline"></div>
             </div>
             <div style="grid-column: span 5" class="compound-command">
@@ -193,20 +231,20 @@
             <div>
               <h4>80px</h4>
               <div class="spinner" style="font-size: 80px"></div>
-              <div class="spinner shade1" style="font-size: 80px"></div>
-              <div class="spinner shade2" style="font-size: 80px"></div>
+              <div class="spinner primary-alt" style="font-size: 80px"></div>
+              <div class="spinner accent-alt" style="font-size: 80px"></div>
               <div class="spinner accent" style="font-size: 80px"></div>
               <div class="spinner warn" style="font-size: 80px"></div>
               <h4>32px</h4>
               <div class="spinner" style="font-size: 32px"></div>
-              <div class="spinner shade1" style="font-size: 32px"></div>
-              <div class="spinner shade2" style="font-size: 32px"></div>
+              <div class="spinner primary-alt" style="font-size: 32px"></div>
+              <div class="spinner accent-alt" style="font-size: 32px"></div>
               <div class="spinner accent" style="font-size: 32px"></div>
               <div class="spinner warn" style="font-size: 32px"></div>
               <h4>16px</h4>
               <div class="spinner" style="font-size: 16px"></div>
-              <div class="spinner shade1" style="font-size: 16px"></div>
-              <div class="spinner shade2" style="font-size: 16px"></div>
+              <div class="spinner primary-alt" style="font-size: 16px"></div>
+              <div class="spinner accent-alt" style="font-size: 16px"></div>
               <div class="spinner accent" style="font-size: 16px"></div>
               <div class="spinner warn" style="font-size: 16px"></div>
             </div>
@@ -230,7 +268,7 @@
       >
         <div class="spinner" style="font-size: 30px"></div>
       </button>
-      <button class="command shade2">Command and sth more looong</button>
+      <button class="command accent-alt">Command and sth more looong</button>
       <button class="command warn flash">Flashing</button>
       <button disabled class="command warn">Disabled</button>
       <div class="spacer"></div>
