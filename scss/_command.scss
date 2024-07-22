@@ -27,20 +27,39 @@
   font-size: 1.1rem;
   border-style: solid;
   border-color: transparent;
-  border-width: 0 0 0 var(--border-width);
+  border-width: 0 0 0 var(--focus-border-width);
   padding: 0.25rem 0.6rem;
   min-height: 3rem;
+  min-width: 3rem;
   border-radius: 0.3rem;
 
+  &.single-line {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+  }
+
   &.flash {
-    animation: flash 1s ease-in-out infinite;
+    animation: flash-background 1s ease-in-out infinite;
+  }
+
+  &.outline {
+    background-color: transparent;
+    border-color: var(--default);
+    border-width: var(--border-width);
+
+    &.flash {
+      animation-name: flash-border;
+    }
   }
 
   &:focus {
-    border-color: var(--light-alpha70);
+    border-left-color: var(--light-alpha70);
   }
 
   &:active {
+    border-color: var(--light-alpha70);
     background-color: var(--light-alpha70);
     animation-play-state: paused;
   }
@@ -51,19 +70,16 @@
   grid-auto-flow: column;
   gap: var(--gap);
 
-  > button {
-    @extend .command;
-
-    &:empty {
-      min-width: 3rem;
-    }
-  }
-
   > .spacer {
     background-color: var(--default-alpha70);
     box-shadow: var(--box-shadow);
     min-width: 1rem;
     min-height: 1rem;
+
+    &.outline {
+      background-color: transparent;
+      border: var(--border-width) solid var(--default);
+    }
   }
 
   > .text {
@@ -111,8 +127,14 @@
   }
 }
 
-@keyframes flash {
+@keyframes flash-background {
   50% {
     background-color: var(--light-alpha70);
+  }
+}
+
+@keyframes flash-border {
+  50% {
+    border-color: var(--light-alpha70);
   }
 }

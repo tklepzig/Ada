@@ -22,10 +22,6 @@
     &:after {
       @include corner("top-right");
     }
-
-    &:empty {
-      height: 0.4rem;
-    }
   }
 
   > article {
@@ -60,10 +56,6 @@
     }
     &:after {
       @include corner("bottom-right");
-    }
-
-    &:empty {
-      height: 0.4rem;
     }
   }
 }

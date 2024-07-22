@@ -120,8 +120,9 @@
   }
 }
 
-@keyframes flash {
-  50% {
-    background-color: var(--light-alpha70);
-  }
-}
+//Old, has been moved to _command.scss
+//@keyframes flash {
+//50% {
+//background-color: var(--light-alpha70);
+//}
+//}
