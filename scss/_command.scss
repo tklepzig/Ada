@@ -9,8 +9,8 @@
   transition: border-color 0.15s ease-in-out, background-color 0.15s ease-in-out;
 
   &:disabled {
-    opacity: 0.4;
-    filter: saturate(0.6);
+    opacity: 0.6;
+    filter: saturate(0.2);
     cursor: default;
     pointer-events: none;
   }
