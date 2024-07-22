@@ -1,7 +1,7 @@
 @mixin button {
   overflow: hidden;
   outline: none;
-  color: var(--fg);
+  color: var(--fg100);
   font-family: inherit;
   cursor: pointer;
   user-select: none;
@@ -18,7 +18,7 @@
 
 .command {
   @include button;
-  background-color: var(--default-alpha70);
+  background-color: var(--bg900);
   box-shadow: var(--box-shadow);
   display: grid;
   align-items: end;
@@ -46,7 +46,7 @@
 
   &.outline {
     background-color: transparent;
-    border-color: var(--default);
+    border-color: var(--bg800);
     border-width: var(--border-width);
 
     &.flash {
@@ -55,12 +55,12 @@
   }
 
   &:focus {
-    border-left-color: var(--light-alpha70);
+    border-left-color: var(--bg600);
   }
 
   &:active {
-    border-color: var(--light-alpha70);
-    background-color: var(--light-alpha70);
+    border-color: var(--bg600);
+    background-color: var(--bg600);
     animation-play-state: paused;
   }
 }
@@ -71,14 +71,14 @@
   gap: var(--gap);
 
   > .spacer {
-    background-color: var(--default-alpha70);
+    background-color: var(--bg900);
     box-shadow: var(--box-shadow);
     min-width: 1rem;
     min-height: 1rem;
 
     &.outline {
       background-color: transparent;
-      border: var(--border-width) solid var(--default);
+      border: var(--border-width) solid var(--bg800);
     }
   }
 
@@ -87,9 +87,6 @@
     line-height: 2rem;
     align-self: center;
     padding: 0.25rem;
-    //TODO allow white for normal color but also accent or shade colors
-    //--> get rid of super duper dynamic color thingy, see todo file
-    //color: var(--default);
   }
 
   > button,
@@ -129,12 +126,12 @@
 
 @keyframes flash-background {
   50% {
-    background-color: var(--light-alpha70);
+    background-color: var(--bg700);
   }
 }
 
 @keyframes flash-border {
   50% {
-    border-color: var(--light-alpha70);
+    border-color: var(--bg600);
   }
 }

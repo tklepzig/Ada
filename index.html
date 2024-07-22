@@ -10,36 +10,51 @@
       name="viewport"
       content="user-scalable=yes, initial-scale=1.0, maximum-scale=10.0, width=device-width"
     />
-    <link rel="stylesheet" href="css/ada.blue.css" />
+    <link rel="stylesheet" href="css/ada.blue-new.css" />
     <link rel="stylesheet" href="css/ada.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600"
       rel="stylesheet"
     />
     <style>
-      .color-box {
+      .color-shades {
+        display: grid;
+      }
+
+      .color-shades > div {
         display: inline-grid;
         align-items: center;
         justify-items: center;
-        width: 92px;
-        height: 48px;
-        margin: 1rem;
+        width: 8rem;
+        height: 3rem;
         box-sizing: border-box;
-        color: var(--fg);
-        background: var(--default);
-        border-top: 8px solid var(--light);
+        color: var(--fg100);
       }
 
-      .color-box.alpha40 {
-        color: var(--fg-alpha40);
-        background: var(--default-alpha40);
-        border-top: 8px solid var(--light-alpha40);
+      .color-shades > div.bg900 {
+        background: var(--bg900);
       }
 
-      .color-box.alpha70 {
-        color: var(--fg-alpha70);
-        background: var(--default-alpha70);
-        border-top: 8px solid var(--light-alpha70);
+      .color-shades > div.bg800 {
+        background: var(--bg800);
+      }
+
+      .color-shades > div.bg700 {
+        background: var(--bg700);
+      }
+
+      .color-shades > div.bg600 {
+        background: var(--bg600);
+      }
+
+      .color-shades > div.fg200 {
+        background: var(--fg200);
+        color: var(--bg900);
+      }
+
+      .color-shades > div.fg100 {
+        background: var(--fg100);
+        color: var(--bg900);
       }
     </style>
   </head>
@@ -64,30 +79,28 @@
     </div>
     <div class="panel">
       <header>Header</header>
-      <article style="display: grid; grid-auto-rows: max-content; gap: 1.5rem">
+      <article style="display: grid; grid-auto-rows: max-content">
         <div class="panel">
           <header>Colors</header>
-          <article>
-            <h4>Default</h4>
-            <div class="color-box primary">Primary</div>
-            <div class="color-box shade1">Shade 1</div>
-            <div class="color-box shade2">Shade 2</div>
-            <div class="color-box accent">Accent</div>
-            <div class="color-box warn">Warn</div>
-            <h4>Alpha 70</h4>
-            <div class="color-box alpha70 primary">Primary</div>
-            <div class="color-box alpha70 shade1">Shade 1</div>
-            <div class="color-box alpha70 shade2">Shade 2</div>
-            <div class="color-box alpha70 accent">Accent</div>
-            <div class="color-box alpha70 warn">Warn</div>
-            <h4>Alpha 40</h4>
-            <div class="color-box alpha40 primary">Primary</div>
-            <div class="color-box alpha40 shade1">Shade 1</div>
-            <div class="color-box alpha40 shade2">Shade 2</div>
-            <div class="color-box alpha40 accent">Accent</div>
-            <div class="color-box alpha40 warn">Warn</div>
+          <article
+            style="
+              display: grid;
+              grid-auto-flow: column;
+              justify-content: start;
+              gap: 3rem;
+            "
+          >
+            <div class="color-shades">
+              <h4>Primary</h4>
+              <div class="fg100">FG 100</div>
+              <div class="fg200">FG 200</div>
+              <div class="bg600">BG 600</div>
+              <div class="bg700">BG 700</div>
+              <div class="bg800">BG 800</div>
+              <div class="bg900">BG 900</div>
+            </div>
           </article>
-          <footer></footer>
+          <footer>Footer</footer>
         </div>
         <div class="panel">
           <header>Commands</header>

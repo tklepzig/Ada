@@ -1,0 +1,1 @@
+.primary,:root{--fg100: lch(var(--100));--fg200: lch(var(--200));--bg600: lch(var(--600));--bg700: lch(var(--700));--bg800: lch(var(--800));--bg900: lch(var(--900));--panel-background: lch(var(--800) / 0.1)}:root{--bg-body: lch(5 8 260)}.primary,:root{--100: 90 17 260;--200: 70 17 260;--600: 36 36 260;--700: 29 30 260;--800: 26 29 260;--900: 19 23 260}

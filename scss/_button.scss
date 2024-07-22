@@ -2,7 +2,7 @@
 //@mixin button {
 //overflow: hidden;
 //outline: none;
-//color: var(--fg);
+//color: var(--fg100);
 //font-family: inherit;
 //cursor: pointer;
 //user-select: none;
@@ -23,22 +23,22 @@
   text-overflow: ellipsis;
   border-radius: 0.3rem;
   box-shadow: var(--box-shadow);
-  border: var(--border-width-sm) solid var(--light-alpha40);
+  border: var(--border-width-sm) solid var(--bg700);
   background-color: transparent;
   min-height: min-content;
   padding: 0.6rem 1rem;
   font-size: 1.1rem;
 
   &.fill {
-    background-color: var(--default);
+    background-color: var(--bg800);
   }
   &:focus {
-    border: var(--border-width-sm) solid var(--light-alpha70);
+    border: var(--border-width-sm) solid var(--bg600);
   }
   &:hover {
     // stays after click on touch devices
     // TODO: only for non-touch devices
-    // /*background-color: var(--light-alpha40);*/
+    // /*background-color: var(--bg700);*/
   }
   &:active {
     background-color: var(--light);
@@ -59,11 +59,11 @@
     //&.dim {
     //background-color: var(--default-alpha40);
     //&:focus {
-    //border-color: var(--light-alpha40);
+    //border-color: var(--bg700);
     //}
 
     //&:active {
-    //background-color: var(--light-alpha40);
+    //background-color: var(--bg700);
     //}
     //}
 

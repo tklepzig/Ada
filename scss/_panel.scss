@@ -7,6 +7,10 @@
   display: grid;
   grid-template-rows: auto 1fr auto;
   overflow: auto;
+  // This margin is ok here and necessary bc of the box shadow of the panel
+  // without a margin, the box shadow could be cut off if there is no space between panels
+  // so it is the responsibility of the panel to ensure this
+  margin: 0.5rem;
 
   > header {
     position: relative;
@@ -38,7 +42,7 @@
       border-style: solid;
       border-color: transparent;
       border-width: var(--border-width);
-      background: var(--default);
+      background: var(--bg800);
       box-sizing: border-box;
       background-clip: border-box;
     }
@@ -46,7 +50,7 @@
   > footer {
     position: relative;
 
-    color: var(--footer-color);
+    color: var(--fg200);
     padding: 0.4rem 0.6rem;
     font-size: 0.75rem;
     text-align: right;

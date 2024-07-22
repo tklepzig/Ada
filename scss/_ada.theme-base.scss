@@ -1,15 +1,11 @@
 %colourShades {
-  --fg: hsl(var(--h-fg), var(--s-fg), var(--l-fg));
+  --fg100: lch(var(--100));
+  --fg200: lch(var(--200));
 
-  --default: hsl(var(--h), var(--s), var(--l));
-  --default-alpha40: hsla(var(--h), var(--s), var(--l), 0.4);
-  --default-alpha70: hsla(var(--h), var(--s), var(--l), 0.7);
+  --bg600: lch(var(--600));
+  --bg700: lch(var(--700));
+  --bg800: lch(var(--800));
+  --bg900: lch(var(--900));
 
-  --light: hsl(var(--h-light), var(--s-light), var(--l-light));
-  --light-alpha40: hsla(var(--h-light), var(--s-light), var(--l-light), 0.4);
-  --light-alpha70: hsla(var(--h-light), var(--s-light), var(--l-light), 0.7);
-
-  --panel-background: hsla(var(--h), var(--s), var(--l), 0.1);
-  --tile-background: hsla(var(--h), var(--s), var(--l), 0.2);
-  --footer-color: hsla(var(--h-fg), var(--s-fg), var(--l-fg), 0.6);
+  --panel-background: lch(var(--800) / 0.1);
 }

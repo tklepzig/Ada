@@ -1,0 +1,20 @@
+@import "ada.theme-base";
+
+:root {
+  --bg-body: lch(5 8 260);
+
+  //Defaults to primary color
+  @extend .primary;
+}
+
+.primary {
+  @extend %colourShades;
+
+  --100: 90 17 260;
+  --200: 70 17 260;
+
+  --600: 36 36 260;
+  --700: 29 30 260;
+  --800: 26 29 260;
+  --900: 19 23 260;
+}

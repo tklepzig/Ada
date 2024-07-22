@@ -89,11 +89,11 @@
       min-width: 3rem;
 
       &:focus {
-        border-color: var(--light-alpha40);
+        border-color: var(--bg700);
       }
 
       &:active {
-        background-color: var(--light-alpha40);
+        background-color: var(--bg700);
       }
 
       &:last-of-type {

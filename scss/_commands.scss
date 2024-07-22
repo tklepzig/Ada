@@ -16,11 +16,11 @@
   }
 
   &:focus {
-    border-color: var(--light-alpha70);
+    border-color: var(--bg600);
   }
 
   &:active {
-    background-color: var(--light-alpha70);
+    background-color: var(--bg600);
     animation-play-state: paused;
   }
 }
@@ -35,7 +35,7 @@
     box-shadow: var(--box-shadow);
     position: absolute;
     content: "";
-    background: var(--default-alpha70);
+    background: var(--bg900);
   }
 
   &:not(.vertical) {
@@ -107,7 +107,7 @@
   > button,
   > div {
     box-sizing: border-box;
-    background-color: var(--default-alpha70);
+    background-color: var(--bg900);
     box-shadow: var(--box-shadow);
   }
 
@@ -123,6 +123,6 @@
 //Old, has been moved to _command.scss
 //@keyframes flash {
 //50% {
-//background-color: var(--light-alpha70);
+//background-color: var(--bg600);
 //}
 //}
