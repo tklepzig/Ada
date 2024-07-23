@@ -7,10 +7,6 @@
   display: grid;
   grid-template-rows: auto 1fr auto;
   overflow: auto;
-  // This margin is ok here and necessary bc of the box shadow of the panel
-  // without a margin, the box shadow could be cut off if there is no space between panels
-  // so it is the responsibility of the panel to ensure this
-  margin: 0.5rem;
 
   > header {
     position: relative;
