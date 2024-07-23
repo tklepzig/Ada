@@ -1,7 +1,0 @@
-- Introduce tokens as css variables
-  - Spacing
-  - Font Sizes
-- Correctly put `:` for pseudo classes and `::` for pseudo elements
-- Only one disabled style for all colors?
-- headlines w/ or w/o margin?
-- corner light still necessary?

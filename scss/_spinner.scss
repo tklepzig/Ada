@@ -8,7 +8,7 @@
   box-sizing: border-box;
   animation: 6s 0.5s rotate ease-in-out alternate infinite;
 
-  &:before {
+  &::before {
     content: "";
     position: absolute;
     top: 0;
@@ -23,7 +23,7 @@
     box-shadow: 0px 12px 10px -12px #000a, 0px -12px 10px -12px #000a;
   }
 
-  &:after {
+  &::after {
     content: "";
     position: absolute;
     top: 0;
