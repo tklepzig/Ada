@@ -28,7 +28,7 @@
 .commands {
   position: relative;
   display: grid;
-  gap: var(--gap);
+  gap: var(--command-gap);
 
   &:before,
   &:after {
@@ -40,8 +40,8 @@
 
   &:not(.vertical) {
     grid-auto-flow: column;
-    padding-left: calc(1rem + var(--gap));
-    padding-right: calc(1rem + var(--gap));
+    padding-left: calc(1rem + var(--command-gap));
+    padding-right: calc(1rem + var(--command-gap));
 
     &:before,
     &:after {
@@ -68,8 +68,8 @@
   &.vertical {
     grid-auto-flow: row;
     min-width: 12rem;
-    padding-top: calc(1rem + var(--gap));
-    padding-bottom: calc(1rem + var(--gap));
+    padding-top: calc(1rem + var(--command-gap));
+    padding-bottom: calc(1rem + var(--command-gap));
 
     &:before,
     &:after {

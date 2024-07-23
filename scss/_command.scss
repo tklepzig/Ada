@@ -61,7 +61,7 @@
 .compound-commands {
   display: inline-grid;
   grid-auto-flow: column;
-  gap: var(--gap);
+  gap: var(--command-gap);
 
   > .spacer {
     background-color: var(--bg900);
