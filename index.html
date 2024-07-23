@@ -10,7 +10,7 @@
       name="viewport"
       content="user-scalable=yes, initial-scale=1.0, maximum-scale=10.0, width=device-width"
     />
-    <link rel="stylesheet" href="css/ada.blue-new.css" />
+    <link rel="stylesheet" href="css/ada.blue.css" />
     <link rel="stylesheet" href="css/ada.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600"
@@ -56,6 +56,22 @@
         background: var(--fg100);
         color: var(--bg900);
       }
+
+      .typography {
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: var(--spacing);
+        justify-content: start;
+      }
+      .typography > p {
+        grid-column: span 2;
+        display: grid;
+        grid-template-columns: subgrid;
+        gap: var(--spacing);
+      }
+      .typography > p > code {
+        color: var(--fg200);
+      }
     </style>
   </head>
 
@@ -64,34 +80,64 @@
       display: grid;
       grid-template-columns: auto 1fr;
       grid-template-rows: 1fr auto;
-      gap: 0.5rem;
+      column-gap: var(--spacing);
     "
   >
     <div
       class="compound-commands vertical"
-      style="grid-template-rows: auto auto 1fr auto auto; min-width: 10rem"
+      style="display: flex; flex-direction: column"
     >
-      <button class="command">Command</button>
-      <button class="command primary-alt">Command</button>
-      <button class="command accent-alt">Command</button>
-      <button class="command accent">Command</button>
-      <button class="command warn">Command</button>
+      <div class="spacer"></div>
+      <a href="#typography" class="command">Typography</a>
+      <a href="#colors" class="command">Colors</a>
+      <a href="#spacing" class="command">Spacing</a>
+      <a href="#commands" class="command">Commands</a>
+      <a href="#panels" class="command">Panels</a>
+      <a href="#input" class="command">Input</a>
+      <a href="#spinner" class="command">Spinner</a>
+      <div style="flex: 1" class="spacer"></div>
+      <div class="spacer"></div>
     </div>
     <div class="panel">
-      <header></header>
-      <article style="display: grid; grid-auto-rows: max-content">
+      <header><h1>Ada UI Design Guide</h1></header>
+      <article
+        style="display: grid; grid-auto-rows: max-content; gap: var(--spacing)"
+      >
         <div class="panel">
-          <header>Colors</header>
-          <article
-            style="
-              display: grid;
-              grid-auto-flow: column;
-              justify-content: start;
-              gap: 3rem;
-            "
-          >
+          <header><h2 id="typography">Typography</h2></header>
+          <article class="typography">
+            <p style="font-size: var(--scale-3xl)">
+              <code>scale-3xl</code>
+              <span>Headline 1, Text in Compound Commands</span>
+            </p>
+            <p style="font-size: var(--scale-2xl)">
+              <code>scale-2xl</code>
+              <span>Headline 2</span>
+            </p>
+            <p style="font-size: var(--scale-xl)">
+              <code>scale-xl</code>
+              <span>Headline 3</span>
+            </p>
+            <p style="font-size: var(--scale-lg)">
+              <code>scale-lg</code>
+              <span>Command Label, Headline 4</span>
+            </p>
+            <p style="font-size: var(--scale-base)">
+              <code>scale-base</code>
+              <span>Normal Text</span>
+            </p>
+            <p style="font-size: var(--scale-sm)">
+              <code>scale-sm</code>
+              <span>Small Text, Panel Footer</span>
+            </p>
+          </article>
+          <footer></footer>
+        </div>
+        <div class="panel">
+          <header><h2 id="colors">Colors</h2></header>
+          <article style="display: flex; gap: 3rem; flex-wrap: wrap">
             <div class="color-shades">
-              <h4>Primary</h4>
+              <h3>Primary</h3>
               <div class="fg100">FG 100</div>
               <div class="fg200">FG 200</div>
               <div class="bg600">BG 600</div>
@@ -100,7 +146,7 @@
               <div class="bg900">BG 900</div>
             </div>
             <div class="color-shades">
-              <h4>Primary Alt</h4>
+              <h3>Primary Alt</h3>
               <div class="fg100 primary-alt">FG 100</div>
               <div class="fg200 primary-alt">FG 200</div>
               <div class="bg600 primary-alt">BG 600</div>
@@ -109,7 +155,7 @@
               <div class="bg900 primary-alt">BG 900</div>
             </div>
             <div class="color-shades">
-              <h4>Accent</h4>
+              <h3>Accent</h3>
               <div class="fg100 accent">FG 100</div>
               <div class="fg200 accent">FG 200</div>
               <div class="bg600 accent">BG 600</div>
@@ -118,7 +164,7 @@
               <div class="bg900 accent">BG 900</div>
             </div>
             <div class="color-shades">
-              <h4>Accent Alt</h4>
+              <h3>Accent Alt</h3>
               <div class="fg100 accent-alt">FG 100</div>
               <div class="fg200 accent-alt">FG 200</div>
               <div class="bg600 accent-alt">BG 600</div>
@@ -127,7 +173,7 @@
               <div class="bg900 accent-alt">BG 900</div>
             </div>
             <div class="color-shades">
-              <h4>Warn</h4>
+              <h3>Warn</h3>
               <div class="fg100 warn">FG 100</div>
               <div class="fg200 warn">FG 200</div>
               <div class="bg600 warn">BG 600</div>
@@ -139,7 +185,12 @@
           <footer></footer>
         </div>
         <div class="panel">
-          <header>Commands</header>
+          <header><h2 id="spacing">Spacing</h2></header>
+          <article>TODO</article>
+          <footer></footer>
+        </div>
+        <div class="panel">
+          <header><h2 id="commands">Commands</h2></header>
           <article
             style="
               display: inline-grid;
@@ -148,20 +199,20 @@
               gap: 1rem;
             "
           >
-            <h4 style="grid-column: span 5">Default</h4>
+            <h3 style="grid-column: span 5">Default</h3>
             <button class="command">Command</button>
             <button class="command primary-alt">Command</button>
             <button class="command accent-alt">Command</button>
             <button class="command accent">Command</button>
             <button class="command warn">Command</button>
-            <h4 style="grid-column: span 5">Default - Wrapping</h4>
+            <h3 style="grid-column: span 5">Default - Wrapping</h3>
             <button
               style="max-width: 20rem; grid-column: span 5"
               class="command"
             >
               A command with a quite long description.
             </button>
-            <h4 style="grid-column: span 5">Single line with ellipsis</h4>
+            <h3 style="grid-column: span 5">Single line with ellipsis</h3>
             <p style="grid-column: span 5; max-width: 35rem">
               A wrapper element is needed to achieve ellipsis. See page's source
               code for details.
@@ -186,13 +237,13 @@
                 A command with a quite long description.
               </span>
             </button>
-            <h4 style="grid-column: span 5">Outline</h4>
+            <h3 style="grid-column: span 5">Outline</h3>
             <button class="command outline">Command</button>
             <button class="command outline primary-alt">Command</button>
             <button class="command outline accent-alt">Command</button>
             <button class="command outline accent">Command</button>
             <button class="command outline warn">Command</button>
-            <h4 style="grid-column: span 5">Flashing</h4>
+            <h3 style="grid-column: span 5">Flashing</h3>
             <button class="command flash">Command</button>
             <button class="command flash primary-alt">Command</button>
             <button class="command flash accent-alt">Command</button>
@@ -203,7 +254,7 @@
             <button class="command flash outline accent-alt">Command</button>
             <button class="command flash outline accent">Command</button>
             <button class="command flash outline warn">Command</button>
-            <h4 style="grid-column: span 5">Disabled</h4>
+            <h3 style="grid-column: span 5">Disabled</h3>
             <button disabled class="command">Command</button>
             <button disabled class="command primary-alt">Command</button>
             <button disabled class="command accent-alt">Command</button>
@@ -216,50 +267,94 @@
             <button disabled class="command outline accent-alt">Command</button>
             <button disabled class="command outline accent">Command</button>
             <button disabled class="command outline warn">Command</button>
-            <h4 style="grid-column: span 5">Compound</h4>
+            <h3 style="grid-column: span 5">Compound</h3>
             <div style="grid-column: span 5" class="compound-commands">
-              <button class="command outline">Any command</button>
-              <button class="command primary-alt outline"></button>
-              <div class="spacer outline"></div>
+              <button class="command">Command</button>
+              <button class="command"></button>
+              <div class="spacer"></div>
             </div>
+            <h4 style="grid-column: span 5">With Text</h4>
             <div style="grid-column: span 5" class="compound-commands">
               <button class="command">Command</button>
               <div class="text">47</div>
               <div class="spacer"></div>
             </div>
-            <h4 style="grid-column: span 5">Compound Vertical</h4>
+            <h4 style="grid-column: span 5">Vertical</h4>
             <div class="compound-commands vertical">
-              <button class="command">Command</button>
-              <div class="text">47</div>
               <div class="spacer"></div>
+              <button class="command">Command</button>
+              <button class="command"></button>
             </div>
           </article>
           <footer></footer>
         </div>
         <div class="panel">
-          <header>Input</header>
-          <article>
-            <input class="input" />
+          <header><h2 id="panels">Panels</h2></header>
+          <article style="display: grid; gap: var(--spacing)">
+            <h3>Without Header and Footer</h3>
+            <div class="panel">
+              <header></header>
+              <article>Content</article>
+              <footer></footer>
+            </div>
+            <h3>With Header and Footer</h3>
+            <div class="panel">
+              <header>Header</header>
+              <article>Content</article>
+              <footer>Footer</footer>
+            </div>
+            <h3>Stacking</h3>
+            <p>
+              The panel has a translucent background, so when stacking multiple
+              panels the background changes slightly with each level.
+            </p>
+            <div class="panel" style="margin: var(--spacing)">
+              <header></header>
+              <article>
+                <div class="panel" style="margin: var(--spacing)">
+                  <header></header>
+                  <article>
+                    <div class="panel" style="margin: var(--spacing)">
+                      <header></header>
+                      <article>Content</article>
+                      <footer></footer>
+                    </div>
+                  </article>
+                  <footer></footer>
+                </div>
+              </article>
+              <footer></footer>
+            </div>
           </article>
           <footer></footer>
         </div>
         <div class="panel">
-          <header>Spinner</header>
+          <header><h2 id="input">Input</h2></header>
+          <article style="display: grid; gap: var(--spacing)">
+            <h3>Default</h3>
+            <input class="input" />
+            <h3>Disabled</h3>
+            <input disabled class="input" />
+          </article>
+          <footer></footer>
+        </div>
+        <div class="panel">
+          <header><h2 id="spinner">Spinner</h2></header>
           <article>
             <div>
-              <h4>80px</h4>
+              <h3>80px</h3>
               <div class="spinner" style="font-size: 80px"></div>
               <div class="spinner primary-alt" style="font-size: 80px"></div>
               <div class="spinner accent-alt" style="font-size: 80px"></div>
               <div class="spinner accent" style="font-size: 80px"></div>
               <div class="spinner warn" style="font-size: 80px"></div>
-              <h4>32px</h4>
+              <h3>32px</h3>
               <div class="spinner" style="font-size: 32px"></div>
               <div class="spinner primary-alt" style="font-size: 32px"></div>
               <div class="spinner accent-alt" style="font-size: 32px"></div>
               <div class="spinner accent" style="font-size: 32px"></div>
               <div class="spinner warn" style="font-size: 32px"></div>
-              <h4>16px</h4>
+              <h3>16px</h3>
               <div class="spinner" style="font-size: 16px"></div>
               <div class="spinner primary-alt" style="font-size: 16px"></div>
               <div class="spinner accent-alt" style="font-size: 16px"></div>
@@ -271,27 +366,6 @@
         </div>
       </article>
       <footer>Ada Version 5.0.0</footer>
-    </div>
-    <div
-      class="compound-commands"
-      style="
-        grid-template-columns: auto auto 12rem auto auto 1fr auto auto;
-        grid-column: span 2;
-      "
-    >
-      <div class="spacer"></div>
-      <button
-        class="command"
-        style="justify-items: center; align-items: center"
-      >
-        <div class="spinner" style="font-size: 30px"></div>
-      </button>
-      <button class="command accent-alt">Command</button>
-      <button class="command warn">Command</button>
-      <button disabled class="command">Disabled Command</button>
-      <div class="spacer"></div>
-      <div class="text">Ada</div>
-      <div class="spacer"></div>
     </div>
   </body>
 </html>

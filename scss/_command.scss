@@ -24,11 +24,11 @@
   align-items: end;
   justify-items: end;
   text-align: end;
-  font-size: 1.1rem;
+  font-size: var(--scale-lg);
   border-style: solid;
   border-color: transparent;
   border-width: 0 0 0 var(--focus-border-width);
-  padding: 0.25rem 0.6rem;
+  padding: var(--spacing-xs) var(--spacing-sm);
   min-height: 3rem;
   min-width: 3rem;
   border-radius: 0.3rem;
@@ -61,7 +61,7 @@
 .compound-commands {
   display: inline-grid;
   grid-auto-flow: column;
-  gap: var(--command-gap);
+  gap: var(--spacing-sm);
 
   > .spacer {
     background-color: var(--bg900);
@@ -76,13 +76,13 @@
   }
 
   > .text {
-    font-size: 2rem;
-    line-height: 2rem;
+    font-size: var(--scale-3xl);
+    line-height: var(--scale-3xl);
     align-self: center;
-    padding: 0.25rem;
+    padding: var(--spacing-xs);
   }
 
-  > button,
+  > .command,
   .spacer {
     &:first-child {
       border-radius: 0.3rem 0 0 0.3rem;
@@ -104,7 +104,7 @@
       justify-self: center;
     }
 
-    > button,
+    > .command,
     .spacer {
       &:first-child {
         border-radius: 0.3rem 0.3rem 0 0;

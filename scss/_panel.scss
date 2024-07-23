@@ -18,11 +18,10 @@
 
   > header {
     position: relative;
-    //@extend %h3; --> TODO use font-size token
     @extend %header;
-    font-size: 1.5rem;
+    font-size: var(--scale-xl);
 
-    padding: 0.4rem 0.6rem;
+    padding: var(--spacing-sm) var(--spacing);
 
     &:before {
       @extend %corner-base;
@@ -42,7 +41,7 @@
 
   > article {
     z-index: 1;
-    padding: 0 0.6rem;
+    padding: 0 var(--spacing);
     overflow: auto;
 
     &::-webkit-scrollbar {
@@ -63,8 +62,8 @@
     position: relative;
 
     color: var(--fg200);
-    padding: 0.4rem 0.6rem;
-    font-size: 0.75rem;
+    padding: var(--spacing-sm) var(--spacing);
+    font-size: var(--scale-sm);
     text-align: right;
 
     &:before {
