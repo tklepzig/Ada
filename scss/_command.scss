@@ -33,13 +33,6 @@
   min-width: 3rem;
   border-radius: 0.3rem;
 
-  &.single-line {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: inline-block;
-  }
-
   &.flash {
     animation: flash-background 1s ease-in-out infinite;
   }

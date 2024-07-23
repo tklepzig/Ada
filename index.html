@@ -161,12 +161,30 @@
             >
               A command with a quite long description.
             </button>
-            <h4 style="grid-column: span 5">Single Line</h4>
+            <h4 style="grid-column: span 5">Single line with ellipsis</h4>
+            <p style="grid-column: span 5; max-width: 35rem">
+              A wrapper element is needed to achieve ellipsis. See page's source
+              code for details.
+            </p>
+            <p style="grid-column: span 5; max-width: 35rem">
+              Double check if ellipsis is really needed and if yes, that the
+              full text is visible with another interaction (no tooltip, since
+              not mobile friendly and not in the sense of the Ada look and feel)
+            </p>
             <button
               style="max-width: 20rem; grid-column: span 5"
-              class="command single-line"
+              class="command"
             >
-              A command with a quite long description.
+              <span
+                style="
+                  text-overflow: ellipsis;
+                  overflow: hidden;
+                  white-space: nowrap;
+                  width: 100%;
+                "
+              >
+                A command with a quite long description.
+              </span>
             </button>
             <h4 style="grid-column: span 5">Outline</h4>
             <button class="command outline">Command</button>
