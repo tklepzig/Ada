@@ -11,7 +11,7 @@
 .panel {
   background: var(--panel-background);
   box-shadow: var(--box-shadow);
-  border-radius: 0.3rem;
+  border-radius: var(--border-radius);
   display: grid;
   grid-template-rows: auto 1fr auto;
   overflow: auto;
@@ -26,14 +26,14 @@
     &:before {
       @extend %corner-base;
       border-width: var(--border-width) 0 0 var(--border-width);
-      border-radius: 0.3rem 0 0 0;
+      border-radius: var(--border-radius) 0 0 0;
       left: 0;
       top: 0;
     }
     &:after {
       @extend %corner-base;
       border-width: var(--border-width) var(--border-width) 0 0;
-      border-radius: 0 0.3rem 0 0;
+      border-radius: 0 var(--border-radius) 0 0;
       right: 0;
       top: 0;
     }
@@ -69,14 +69,14 @@
     &:before {
       @extend %corner-base;
       border-width: 0 0 var(--border-width) var(--border-width);
-      border-radius: 0 0 0 0.3rem;
+      border-radius: 0 0 0 var(--border-radius);
       left: 0;
       bottom: 0;
     }
     &:after {
       @extend %corner-base;
       border-width: 0 var(--border-width) var(--border-width) 0;
-      border-radius: 0 0 0.3rem 0;
+      border-radius: 0 0 var(--border-radius) 0;
       right: 0;
       bottom: 0;
     }

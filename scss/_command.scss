@@ -31,7 +31,7 @@
   padding: var(--spacing-xs) var(--spacing-sm);
   min-height: 3rem;
   min-width: 3rem;
-  border-radius: 0.3rem;
+  border-radius: var(--border-radius);
 
   &.flash {
     animation: flash-background 1s ease-in-out infinite;
@@ -85,7 +85,7 @@
   > .command,
   .spacer {
     &:first-child {
-      border-radius: 0.3rem 0 0 0.3rem;
+      border-radius: var(--border-radius) 0 0 var(--border-radius);
     }
 
     &:not(:first-child):not(:last-child) {
@@ -93,7 +93,7 @@
     }
 
     &:last-child {
-      border-radius: 0 0.3rem 0.3rem 0;
+      border-radius: 0 var(--border-radius) var(--border-radius) 0;
     }
   }
 
@@ -107,11 +107,11 @@
     > .command,
     .spacer {
       &:first-child {
-        border-radius: 0.3rem 0.3rem 0 0;
+        border-radius: var(--border-radius) var(--border-radius) 0 0;
       }
 
       &:last-child {
-        border-radius: 0 0 0.3rem 0.3rem;
+        border-radius: 0 0 var(--border-radius) var(--border-radius);
       }
     }
   }
