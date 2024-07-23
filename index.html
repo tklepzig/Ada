@@ -83,10 +83,7 @@
       column-gap: var(--spacing);
     "
   >
-    <div
-      class="compound-commands vertical"
-      style="display: flex; flex-direction: column"
-    >
+    <div class="compound-commands vertical">
       <div class="spacer"></div>
       <a href="#typography" class="command primary-alt">Typography</a>
       <a href="#colors" class="command primary-alt">Colors</a>
@@ -101,7 +98,12 @@
     <div class="panel">
       <header><h1>Ada UI Design Guide</h1></header>
       <article
-        style="display: grid; grid-auto-rows: max-content; gap: var(--spacing)"
+        style="
+          display: grid;
+          grid-auto-rows: max-content;
+          gap: var(--spacing);
+          scroll-padding-top: 1rem;
+        "
       >
         <div class="panel">
           <header><h2 id="typography">Typography</h2></header>

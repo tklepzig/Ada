@@ -62,8 +62,7 @@
 }
 
 .compound-commands {
-  display: inline-grid;
-  grid-auto-flow: column;
+  display: inline-flex;
   gap: var(--spacing-sm);
 
   > .spacer {
@@ -101,7 +100,7 @@
   }
 
   &.vertical {
-    grid-auto-flow: row;
+    flex-direction: column;
 
     > .text {
       justify-self: center;
