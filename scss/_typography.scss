@@ -4,8 +4,8 @@ h3,
 h4,
 %header {
   font-weight: 300;
-  text-shadow: 0 0 4px var(--bg700);
-  color: var(--fg100);
+  text-shadow: 0 0 4px lch(var(--400) / 0.5);
+  color: var(--color100-on-light-bg);
 }
 
 h1 {

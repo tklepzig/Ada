@@ -1,11 +1,11 @@
 %colourShades {
-  --fg100: lch(var(--100));
-  --fg200: lch(var(--200));
+  --color100: lch(var(--100));
+  --color100-on-light-bg: lch(var(--100-on-light-bg, var(--100)));
 
-  --bg600: lch(var(--600));
-  --bg700: lch(var(--700));
-  --bg800: lch(var(--800));
-  --bg900: lch(var(--900));
+  --color300: lch(var(--300));
+  --color400: lch(var(--400));
+  --color500: lch(var(--500));
+  --color600: lch(var(--600));
 
-  --panel-background: lch(var(--800) / 0.1);
+  --panel-background: lch(var(--500) / 0.1);
 }
