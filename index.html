@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="height-100">
   <head>
     <meta charset="UTF-8" />
     <title>Ada</title>
@@ -17,6 +17,24 @@
       rel="stylesheet"
     />
     <style>
+      html {
+        scroll-padding-top: 1rem;
+      }
+
+      html.height-100 {
+        height: 100%;
+        min-height: 100%;
+      }
+
+      html.height-100 > body {
+        height: 100%;
+        min-height: 100%;
+      }
+
+      html:not(.height-100) > body {
+        align-items: start;
+      }
+
       .color-shades {
         display: grid;
       }
@@ -83,13 +101,17 @@
       column-gap: var(--spacing);
     "
   >
-    <div class="compound-commands vertical">
+    <div
+      class="compound-commands vertical"
+      style="position: sticky; top: var(--spacing)"
+    >
       <div class="spacer"></div>
       <a href="#typography" class="command primary-alt">Typography</a>
       <a href="#colors" class="command primary-alt">Colors</a>
       <a href="#spacing" class="command primary-alt">Spacing</a>
-      <a href="#commands" class="command">Commands</a>
-      <a href="#panels" class="command">Panels</a>
+      <a href="#page-layout" class="command primary-alt">Page Layout</a>
+      <a href="#commands" class="command accent">Commands</a>
+      <a href="#panels" class="command accent-alt">Panels</a>
       <a href="#input" class="command">Input</a>
       <a href="#spinner" class="command">Spinner</a>
       <div style="flex: 1" class="spacer"></div>
@@ -189,6 +211,20 @@
         <div class="panel">
           <header><h2 id="spacing">Spacing</h2></header>
           <article>TODO</article>
+          <footer></footer>
+        </div>
+        <div class="panel">
+          <header><h2 id="page-layout">Page Layout</h2></header>
+          <article>
+            <p>
+              Choose yourself whether the body should scroll or the body should
+              have a fixed width of 100%. For the latter, you should use one or
+              more top-most panels which then will scroll their content. You can
+              see both options and how to implement them by toggling the class
+              <code>height-100</code> on the <code>html</code> element of this
+              demo page.
+            </p>
+          </article>
           <footer></footer>
         </div>
         <div class="panel">

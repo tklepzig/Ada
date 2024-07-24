@@ -20,20 +20,33 @@
   }
 }
 
+%scrollbar {
+  &::-webkit-scrollbar {
+    width: var(--spacing-sm);
+    background: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    min-width: 1rem;
+    border-style: solid;
+    border-color: transparent;
+    border-width: var(--spacing-sm);
+    background: var(--bg800);
+    box-sizing: border-box;
+    background-clip: border-box;
+  }
+}
+
 html {
   font-family: var(--font-family);
   font-weight: 400;
-}
-
-html,
-body {
   font-size: var(--font-size);
-  height: 100%;
-  min-height: 100%;
 }
 
 body {
+  font-size: 1rem;
   padding: var(--spacing);
   background: var(--bg-body);
   color: var(--fg100);
+
+  @extend %scrollbar;
 }

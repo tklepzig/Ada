@@ -41,22 +41,10 @@
 
   > article {
     z-index: 1;
-    padding: 0 var(--spacing);
+    padding: var(--spacing);
     overflow: auto;
 
-    &::-webkit-scrollbar {
-      width: var(--border-width);
-      background: transparent;
-    }
-    &::-webkit-scrollbar-thumb {
-      min-width: 1rem;
-      border-style: solid;
-      border-color: transparent;
-      border-width: var(--border-width);
-      background: var(--bg800);
-      box-sizing: border-box;
-      background-clip: border-box;
-    }
+    @extend %scrollbar;
   }
   > footer {
     position: relative;
