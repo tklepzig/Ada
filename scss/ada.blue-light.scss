@@ -1,0 +1,72 @@
+@import "ada.theme-base";
+
+:root {
+  --bg-body: lch(95 10 260);
+
+  //Defaults to primary color
+  @extend .primary;
+}
+
+%light-fg {
+  --100-on-light-bg: var(--600);
+}
+
+.primary {
+  @extend %colourShades;
+  @extend %light-fg;
+
+  --100: 90 17 260;
+
+  --300: 44 47 260;
+  --400: 38 41 260;
+  --500: 32 35 260;
+  --600: 26 29 260;
+}
+
+.primary-alt {
+  @extend %colourShades;
+  @extend %light-fg;
+
+  --100: 90 17 246;
+
+  --300: 51 40 246;
+  --400: 44 34 246;
+  --500: 41 33 246;
+  --600: 34 27 246;
+}
+
+.secondary {
+  @extend %colourShades;
+  @extend %light-fg;
+
+  --100: 90 17 152;
+
+  --300: 40 37 152;
+  --400: 33 31 152;
+  --500: 30 30 152;
+  --600: 23 24 152;
+}
+
+.secondary-alt {
+  @extend %colourShades;
+  @extend %light-fg;
+
+  --100: 90 17 206;
+
+  --300: 52 30 206;
+  --400: 45 24 206;
+  --500: 42 23 206;
+  --600: 35 17 206;
+}
+
+.warn {
+  @extend %colourShades;
+  @extend %light-fg;
+
+  --100: 90 17 40;
+
+  --300: 40 75 40;
+  --400: 33 69 40;
+  --500: 30 68 40;
+  --600: 23 62 40;
+}
