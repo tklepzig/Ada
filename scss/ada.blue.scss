@@ -31,7 +31,7 @@
   --900: 34 27 246;
 }
 
-.accent {
+.secondary {
   @extend %colourShades;
 
   --100: 90 17 152;
@@ -43,7 +43,7 @@
   --900: 23 24 152;
 }
 
-.accent-alt {
+.secondary-alt {
   @extend %colourShades;
 
   --100: 90 17 206;
