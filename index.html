@@ -35,8 +35,25 @@
         align-items: start;
       }
 
+      .typography {
+        display: grid;
+        grid-template-columns: repeat(2, auto) 1fr;
+        gap: var(--spacing);
+        justify-content: start;
+      }
+      .typography > p {
+        grid-column: span 3;
+        display: grid;
+        grid-template-columns: subgrid;
+        gap: var(--spacing);
+      }
+
       .color-shades {
         display: grid;
+      }
+
+      .color-shades > h3 {
+        margin-bottom: var(--spacing-sm);
       }
 
       .color-shades > div {
@@ -47,6 +64,17 @@
         height: 3rem;
         box-sizing: border-box;
         color: var(--color100);
+        border-bottom: 1px solid transparent;
+      }
+
+      .color-shades > div:last-of-type {
+        border-bottom: none;
+      }
+
+      .color-shades.usage > div {
+        border-color: var(--color600);
+        width: auto;
+        padding: 0 1rem;
       }
 
       .color-shades > div.color950 {
@@ -74,17 +102,28 @@
         color: var(--color800);
       }
 
-      .typography {
+      .spacing {
         display: grid;
-        grid-template-columns: auto auto;
+        grid-template-columns: repeat(2, auto) 1fr;
         gap: var(--spacing);
-        justify-content: start;
+        align-items: center;
       }
-      .typography > p {
-        grid-column: span 2;
-        display: grid;
-        grid-template-columns: subgrid;
-        gap: var(--spacing);
+
+      .spacing-box {
+        display: inline-block;
+        background: var(--color500);
+        width: var(--spacing);
+        height: var(--spacing);
+      }
+
+      .spacing-box.xs {
+        width: var(--spacing-xs);
+        height: var(--spacing-xs);
+      }
+
+      .spacing-box.sm {
+        width: var(--spacing-sm);
+        height: var(--spacing-sm);
       }
     </style>
   </head>
@@ -92,7 +131,7 @@
   <body
     style="
       display: grid;
-      grid-template-columns: auto 1fr;
+      grid-template-columns: min(12vw) 1fr;
       grid-template-rows: 1fr auto;
       column-gap: var(--spacing);
     "
@@ -103,11 +142,11 @@
     >
       <div class="spacer"></div>
       <a href="#typography" class="command shade1">Typography</a>
-      <a href="#colors" class="command shade1">Colors</a>
       <a href="#spacing" class="command shade1">Spacing</a>
+      <a href="#colors" class="command shade1">Colors</a>
       <a href="#page-layout" class="command shade1">Page Layout</a>
-      <a href="#commands" class="command shade3">Commands</a>
-      <a href="#panels" class="command shade2">Panels</a>
+      <a href="#command" class="command shade3">Command</a>
+      <a href="#panel" class="command shade2">Panel</a>
       <a href="#input" class="command">Input</a>
       <a href="#spinner" class="command">Spinner</a>
       <div style="flex: 1" class="spacer"></div>
@@ -128,34 +167,64 @@
           <article class="typography">
             <p style="font-size: var(--scale-3xl)">
               <code>scale-3xl</code>
+              <span>1.8rem</span>
               <span>Headline 1, Text in Compound Commands</span>
             </p>
             <p style="font-size: var(--scale-2xl)">
               <code>scale-2xl</code>
+              <span>1.6rem</span>
               <span>Headline 2</span>
             </p>
             <p style="font-size: var(--scale-xl)">
               <code>scale-xl</code>
+              <span>1.4rem</span>
               <span>Headline 3</span>
             </p>
             <p style="font-size: var(--scale-lg)">
               <code>scale-lg</code>
+              <span>1.2rem</span>
               <span>Headline 4</span>
             </p>
             <p style="font-size: var(--scale-base)">
               <code>scale-base</code>
+              <span>1rem</span>
               <span>Normal Text, Command Label</span>
             </p>
             <p style="font-size: var(--scale-sm)">
               <code>scale-sm</code>
+              <span>0.85rem</span>
               <span>Small Text, Panel Footer</span>
             </p>
           </article>
           <footer></footer>
         </div>
         <div class="panel">
+          <header><h2 id="spacing">Spacing</h2></header>
+          <article class="spacing">
+            <code>--spacing-xs</code>
+            <span>2px</span>
+            <div class="spacing-box xs shade3"></div>
+            <code>--spacing-sm</code>
+            <span>6px</span>
+            <div class="spacing-box sm shade3"></div>
+            <code>--spacing</code>
+            <span>10px</span>
+            <div class="spacing-box shade3"></div>
+          </article>
+          <footer></footer>
+        </div>
+        <div class="panel">
           <header><h2 id="colors">Colors</h2></header>
-          <article style="display: flex; gap: 3rem; flex-wrap: wrap">
+          <article style="display: flex; gap: var(--spacing); flex-wrap: wrap">
+            <div class="color-shades usage">
+              <h3>&nbsp;</h3>
+              <div>Text Color</div>
+              <div>Active/Focus State</div>
+              <div>Border/Flash Color</div>
+              <div>Corner Color</div>
+              <div>Command Color</div>
+              <div>Background</div>
+            </div>
             <div class="color-shades">
               <h3>Primary</h3>
               <div class="color100">100</div>
@@ -205,11 +274,6 @@
           <footer></footer>
         </div>
         <div class="panel">
-          <header><h2 id="spacing">Spacing</h2></header>
-          <article>TODO</article>
-          <footer></footer>
-        </div>
-        <div class="panel">
           <header><h2 id="page-layout">Page Layout</h2></header>
           <article>
             <p>
@@ -224,7 +288,7 @@
           <footer></footer>
         </div>
         <div class="panel">
-          <header><h2 id="commands">Commands</h2></header>
+          <header><h2 id="command">Command</h2></header>
           <article
             style="
               display: inline-grid;
@@ -316,7 +380,7 @@
           <footer></footer>
         </div>
         <div class="panel">
-          <header><h2 id="panels">Panels</h2></header>
+          <header><h2 id="panel">Panel</h2></header>
           <article style="display: grid; gap: var(--spacing)">
             <h3>Without Header and Footer</h3>
             <div class="panel">
