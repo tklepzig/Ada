@@ -1,11 +1,11 @@
 %colourShades {
-  --color100: lch(var(--100));
-  --color100-on-light-bg: lch(var(--100-on-light-bg, var(--100)));
+  --color100: oklch(var(--100));
+  --color100-on-light-bg: oklch(var(--100-on-light-bg, var(--100)));
 
-  --color300: lch(var(--300));
-  --color400: lch(var(--400));
-  --color500: lch(var(--500));
-  --color600: lch(var(--600));
+  --color300: oklch(var(--300));
+  --color400: oklch(var(--400));
+  --color500: oklch(var(--500));
+  --color600: oklch(var(--600));
 
-  --panel-background: lch(var(--500) / 0.1);
+  --panel-background: oklch(var(--500) / 0.1);
 }
