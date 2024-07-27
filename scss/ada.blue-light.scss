@@ -1,72 +1,41 @@
 @import "ada.theme-base";
 
 :root {
-  --bg-body: oklch(0.96 0.03 245);
-
   //Defaults to primary color
   @extend .primary;
 }
 
 %light-fg {
+  --bg-body-override: var(--color100);
   --fg-body-override: var(--color600);
 }
 
 .primary {
   @extend %colourShades;
   @extend %light-fg;
-
-  --100: 0.91 0.05 246;
-
-  --300: 0.51 0.15 246;
-  --400: 0.46 0.13 246;
-  --500: 0.41 0.11 246;
-  --600: 0.36 0.09 246; //the base color
+  --hue: 246;
 }
 
 .shade1 {
   @extend %colourShades;
   @extend %light-fg;
-
-  --100: 0.91 0.05 236;
-
-  --300: 0.64 0.16 236;
-  --400: 0.59 0.14 236;
-  --500: 0.54 0.12 236;
-  --600: 0.49 0.1 236;
+  --hue: 225;
 }
 
 .accent {
   @extend %colourShades;
   @extend %light-fg;
-
-  --100: 0.91 0.05 154;
-
-  --300: 0.54 0.14 154;
-  --400: 0.49 0.12 154;
-  --500: 0.44 0.1 154;
-  --600: 0.39 0.08 154;
+  --hue: 165;
 }
 
 .shade2 {
   @extend %colourShades;
   @extend %light-fg;
-
-  --100: 0.91 0.05 203;
-
-  --300: 0.64 0.13 203;
-  --400: 0.59 0.11 203;
-  --500: 0.54 0.09 203;
-  --600: 0.49 0.07 203;
+  --hue: 190;
 }
 
 .warn {
   @extend %colourShades;
   @extend %light-fg;
-
-  --100: 0.91 0.05 29;
-
-  --300: 0.56 0.22 29;
-  --400: 0.51 0.2 29;
-  --500: 0.46 0.18 29;
-  --600: 0.41 0.16 29;
+  --hue: 29;
 }
