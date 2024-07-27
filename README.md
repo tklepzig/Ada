@@ -6,15 +6,13 @@ My sci-fi inspired UI components library. Still growing...
 
 ## CDN
 
-    https://cdn.jsdelivr.net/gh/tklepzig/Ada@version/css/ada.min.css
+    https://cdn.jsdelivr.net/gh/tklepzig/Ada@version/css/ada.css
 
 Replace `version` with the version of your desired release, see
-https://github.com/tklepzig/Ada/releases (e.g. `2.9.0`)
+https://github.com/tklepzig/Ada/releases (e.g. `5.0.0`)
 
-> Attention: Beginning with version 3.0, the filenames don't contain `min` any
-> longer. So the URL should be
->
->     https://cdn.jsdelivr.net/gh/tklepzig/Ada@3.0.0/css/ada.css
+> Attention: Prior to version 3.0, the filename need a `min`:
+> https://cdn.jsdelivr.net/gh/tklepzig/Ada@3.0.0/css/ada.min.css
 
 ## Install
 
@@ -30,4 +28,4 @@ Beginning with version 3.0.0, you can choose between different themes. When
 using the CSS, ensure to include the correct theme file before the main one,
 e.g.:
 
-    https://cdn.jsdelivr.net/gh/tklepzig/Ada@3.0.0/css/ada.blue.css
+    https://cdn.jsdelivr.net/gh/tklepzig/Ada@5.0.0/css/ada.blue.css
