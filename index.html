@@ -166,32 +166,32 @@
           <header><h2 id="typography">Typography</h2></header>
           <article class="typography">
             <p style="font-size: var(--scale-3xl)">
-              <code>scale-3xl</code>
+              <code>--scale-3xl</code>
               <span>1.8rem</span>
               <span>Headline 1, Text in Compound Commands</span>
             </p>
             <p style="font-size: var(--scale-2xl)">
-              <code>scale-2xl</code>
+              <code>--scale-2xl</code>
               <span>1.6rem</span>
               <span>Headline 2</span>
             </p>
             <p style="font-size: var(--scale-xl)">
-              <code>scale-xl</code>
+              <code>--scale-xl</code>
               <span>1.4rem</span>
               <span>Headline 3</span>
             </p>
             <p style="font-size: var(--scale-lg)">
-              <code>scale-lg</code>
+              <code>--scale-lg</code>
               <span>1.2rem</span>
               <span>Headline 4</span>
             </p>
             <p style="font-size: var(--scale-base)">
-              <code>scale-base</code>
+              <code>--scale-base</code>
               <span>1rem</span>
               <span>Normal Text, Command Label</span>
             </p>
             <p style="font-size: var(--scale-sm)">
-              <code>scale-sm</code>
+              <code>--scale-sm</code>
               <span>0.85rem</span>
               <span>Small Text, Panel Footer</span>
             </p>
@@ -276,7 +276,7 @@
         <div class="panel">
           <header><h2 id="page-layout">Page Layout</h2></header>
           <article>
-            <p>
+            <p style="grid-column: span 5; max-width: 35rem">
               Choose yourself whether the body should scroll or the body should
               have a fixed width of 100%. For the latter, you should use one or
               more top-most panels which then will scroll their content. You can
@@ -371,7 +371,7 @@
               <div class="spacer"></div>
             </div>
             <h4 style="grid-column: span 5">Vertical</h4>
-            <div class="compound-commands vertical">
+            <div style="grid-column: span 5" class="compound-commands vertical">
               <div class="spacer"></div>
               <button class="command">Command</button>
               <button class="command"></button>
