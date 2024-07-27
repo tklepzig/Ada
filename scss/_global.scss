@@ -18,6 +18,10 @@
   @media screen and (min-width: 768px) {
     --font-size: 14px;
   }
+
+  &.light-theme {
+    --box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.4);
+  }
 }
 
 %scrollbar {
@@ -47,6 +51,7 @@ body {
   padding: var(--spacing);
   background: var(--bg-body);
   color: var(--fg-body);
+  transition: background-color 0.15s ease-in-out;
 
   @extend %scrollbar;
 }

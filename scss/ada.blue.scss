@@ -3,6 +3,12 @@
 :root {
   //Defaults to primary color
   @extend .primary;
+
+  //Set overrides for light theme
+  &.light-theme {
+    --bg-body-override: var(--color100);
+    --fg-body-override: var(--color800);
+  }
 }
 
 .primary {
