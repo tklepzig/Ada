@@ -22,7 +22,7 @@
   --hue: 225;
 }
 
-.accent {
+.shade3 {
   @extend %colourShades;
   @extend %light-fg;
   --hue: 165;
