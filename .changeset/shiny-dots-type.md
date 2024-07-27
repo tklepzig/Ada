@@ -2,4 +2,4 @@
 "ada-ui": major
 ---
 
-Simplified colors and using lch instead of hsl
+Simplified colors and using oklch instead of hsl
