@@ -19,7 +19,7 @@
     border-style: solid;
     border-width: 0.05em;
     border-radius: 50%;
-    border-color: var(--light-alpha40) transparent;
+    border-color: var(--bg700) transparent;
     animation: 6s 0.5s inset1-test ease-in-out infinite;
     box-shadow: 0px 12px 10px -12px #000a, 0px -12px 10px -12px #000a;
   }
@@ -34,7 +34,7 @@
     border-style: solid;
     border-width: 0.05em;
     border-radius: 50%;
-    border-color: transparent var(--light-alpha70);
+    border-color: transparent var(--bg600);
     animation: 6s 0.5s inset2-test ease-in-out infinite;
     box-shadow: 12px 0px 10px -12px #000a, -12px 0px 10px -12px #000a;
   }
@@ -159,7 +159,7 @@ $amount: 0.2em;
     width: 0.6em;
     height: 0.6em;
     border-radius: 50%;
-    background: var(--light-alpha40);
+    background: var(--bg700);
     animation: 1.5s 0.1s swing ease-in-out infinite;
     box-sizing: border-box;
   }
@@ -170,8 +170,8 @@ $amount: 0.2em;
     width: 1em;
     height: 1em;
     border-radius: 50%;
-    box-shadow: $box-shadow;
-    border: 0.1em solid var(--light-alpha70);
+    box-shadow: var(--box-shadow);
+    border: 0.1em solid var(--bg600);
     animation: 1.5s swing ease-in-out infinite;
     box-sizing: border-box;
   }
@@ -197,9 +197,9 @@ $amount: 0.2em;
   border-style: solid;
   border-width: 0.3em;
   border-radius: 50%;
-  border-color: transparent var(--default);
+  border-color: transparent var(--bg800);
   animation: 4s rotateOuter linear infinite;
-  box-shadow: inset $box-shadow;
+  box-shadow: inset var(--box-shadow);
 
   &:before {
     content: "";
@@ -210,10 +210,10 @@ $amount: 0.2em;
     bottom: 0.2em;
     border-style: inherit;
     border-width: inherit;
-    border-color: transparent var(--light-alpha70);
+    border-color: transparent var(--bg600);
     border-radius: inherit;
     animation: 2s rotateInner linear infinite;
-    box-shadow: inset $box-shadow;
+    box-shadow: inset var(--box-shadow);
   }
   &:after {
     content: "";
@@ -224,7 +224,7 @@ $amount: 0.2em;
     bottom: 0.7em;
     border-style: inherit;
     border-width: inherit;
-    border-color: transparent var(--light-alpha40);
+    border-color: transparent var(--bg700);
     border-radius: inherit;
     animation: 4s rotateCenter linear infinite;
   }

@@ -1,0 +1,90 @@
+@import "ada.theme-base";
+
+.primary {
+  @extend %colourShades;
+
+  --h: 105;
+  --s: 50%;
+  --l: 24%;
+  --h-light: 102;
+  --s-light: 72%;
+  //actual, designer-correct
+  //--l-light: 49%;
+  --l-light: 34%;
+
+  --h-fg: var(--h);
+  --s-fg: 100%;
+  --l-fg: 89%;
+}
+
+:root {
+  @extend .primary;
+  --bg: hsl(135, 34%, 12%);
+}
+
+.shade1 {
+  @extend %colourShades;
+  --h: 150;
+  --s: 70%;
+  --l: 20%;
+  --h-light: 133;
+  --s-light: 82%;
+  //actual, designer-correct
+  //--l-light: 43%;
+  --l-light: 30%;
+
+  --h-fg: var(--h);
+  --s-fg: 100%;
+  --l-fg: 89%;
+}
+
+.shade2 {
+  @extend %colourShades;
+  --h: 168;
+  --s: 57%;
+  --l: 32%;
+  --h-light: 167;
+  --s-light: 68%;
+  //actual, designer-correct
+  //--l-light: 59%;
+  --l-light: 40%;
+
+  // darker version
+  //--h: 165;
+  //--s: 66%;
+  //--l: 24%;
+
+  --h-fg: var(--h);
+  --s-fg: 100%;
+  --l-fg: 89%;
+}
+
+.accent {
+  @extend %colourShades;
+
+  --h: 11;
+  --s: 74%;
+  --l: 45%;
+  --h-light: 10;
+  --s-light: 89%;
+  --l-light: 56%;
+
+  --h-fg: var(--h);
+  --s-fg: 100%;
+  --l-fg: 89%;
+}
+
+.warn {
+  @extend %colourShades;
+
+  --h: 0;
+  --s: 100%;
+  --l: 28%;
+  --h-light: 0;
+  --s-light: 85%;
+  --l-light: 48%;
+
+  --h-fg: var(--h);
+  --s-fg: 100%;
+  --l-fg: 89%;
+}

@@ -3,10 +3,13 @@
 .tile {
   @extend .panel;
   background: var(--tile-background);
-  margin: 0.8rem;
 
   > header {
-    @extend %h4;
+    //@extend %h4; --> TODO use font-size token
+    @extend %header;
+    font-weight: 400;
+    font-size: 1.2rem;
+
     &:before {
       @include corner("top-left", "light");
     }
@@ -29,7 +32,7 @@
   }
 
   &.inset {
-    box-shadow: inset $box-shadow;
+    box-shadow: inset var(--box-shadow);
 
     > header {
       text-shadow: none;
@@ -52,12 +55,10 @@
   display: inline-grid;
   grid-template-columns: 1fr auto;
   align-items: stretch;
-  column-gap: 4px;
+  column-gap: var(--gap-sm);
   position: relative;
-  margin: 0.8rem;
 
   > .tile {
-    margin: 0;
     border-radius: 0.3rem 0 0 0.3rem;
 
     > header {
@@ -79,7 +80,7 @@
   > aside {
     display: grid;
     grid-auto-flow: column;
-    gap: 4px;
+    gap: var(--gap-sm);
 
     > button {
       @include command;
@@ -88,11 +89,11 @@
       min-width: 3rem;
 
       &:focus {
-        border-color: var(--light-alpha40);
+        border-color: var(--bg700);
       }
 
       &:active {
-        background-color: var(--light-alpha40);
+        background-color: var(--bg700);
       }
 
       &:last-of-type {

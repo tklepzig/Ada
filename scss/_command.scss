@@ -1,0 +1,141 @@
+.command {
+  background-color: var(--color800);
+  box-shadow: var(--box-shadow);
+  display: grid;
+  align-items: end;
+  justify-items: end;
+  text-align: end;
+  border-style: solid;
+  border-color: transparent;
+  border-width: 0 0 0 var(--focus-border-width);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  min-height: 3rem;
+  min-width: 3rem;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  outline: none;
+  color: var(--color100);
+  font-family: inherit;
+  font-size: var(--scale-base);
+  cursor: pointer;
+  user-select: none;
+  vertical-align: middle;
+  transition: border-color 0.15s ease-in-out, background-color 0.15s ease-in-out;
+
+  &.flash {
+    animation: flash-background 1s ease-in-out infinite;
+  }
+
+  &:disabled {
+    opacity: 0.7;
+    cursor: default;
+    pointer-events: none;
+    background: #6d6d6d;
+    color: #ededed;
+  }
+
+  &.outline {
+    background-color: transparent;
+    border-color: var(--color700);
+    border-width: var(--border-width);
+    color: var(--fg-body);
+
+    &.flash {
+      animation-name: flash-border;
+    }
+
+    &:disabled {
+      background: transparent;
+      border-color: #6d6d6d;
+      color: #6d6d6d;
+    }
+
+    &:focus {
+      border-color: var(--color500);
+    }
+
+    &:active {
+      color: var(--color100);
+    }
+  }
+
+  &:focus {
+    border-left-color: var(--color500);
+  }
+
+  &:active {
+    border-color: var(--color500);
+    background-color: var(--color500);
+    animation-play-state: paused;
+  }
+}
+
+.compound-commands {
+  display: inline-flex;
+  gap: var(--spacing-sm);
+
+  > .spacer {
+    background-color: var(--color800);
+    box-shadow: var(--box-shadow);
+    min-width: 1rem;
+    min-height: 1rem;
+
+    &.outline {
+      background-color: transparent;
+      border: var(--border-width) solid var(--color700);
+    }
+  }
+
+  > .text {
+    font-size: var(--scale-3xl);
+    line-height: var(--scale-3xl);
+    align-self: center;
+    padding: var(--spacing-xs);
+  }
+
+  > .command,
+  .spacer {
+    &:first-child {
+      border-radius: var(--border-radius) 0 0 var(--border-radius);
+    }
+
+    &:not(:first-child):not(:last-child) {
+      border-radius: 0;
+    }
+
+    &:last-child {
+      border-radius: 0 var(--border-radius) var(--border-radius) 0;
+    }
+  }
+
+  &.vertical {
+    flex-direction: column;
+
+    > .text {
+      justify-self: center;
+    }
+
+    > .command,
+    .spacer {
+      &:first-child {
+        border-radius: var(--border-radius) var(--border-radius) 0 0;
+      }
+
+      &:last-child {
+        border-radius: 0 0 var(--border-radius) var(--border-radius);
+      }
+    }
+  }
+}
+
+@keyframes flash-background {
+  50% {
+    background-color: var(--color600);
+  }
+}
+
+@keyframes flash-border {
+  50% {
+    border-color: var(--color500);
+  }
+}

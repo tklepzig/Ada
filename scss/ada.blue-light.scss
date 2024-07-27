@@ -5,27 +5,37 @@
   @extend .primary;
 }
 
+%light-fg {
+  --bg-body-override: var(--color100);
+  --fg-body-override: var(--color800);
+}
+
 .primary {
   @extend %colourShades;
+  @extend %light-fg;
   --hue: 246;
 }
 
 .shade1 {
   @extend %colourShades;
+  @extend %light-fg;
   --hue: 225;
 }
 
 .shade3 {
   @extend %colourShades;
+  @extend %light-fg;
   --hue: 165;
 }
 
 .shade2 {
   @extend %colourShades;
+  @extend %light-fg;
   --hue: 190;
 }
 
 .warn {
   @extend %colourShades;
+  @extend %light-fg;
   --hue: 29;
 }

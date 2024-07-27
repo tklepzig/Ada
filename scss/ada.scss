@@ -1,53 +1,7 @@
-$font-family: "Open Sans", sans-serif !default;
-$box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
-
-@mixin desktop() {
-  @media screen and (min-width: 1200px) {
-    @content;
-  }
-}
-
-@mixin tablet() {
-  @media screen and (max-width: 1199px) {
-    @content;
-  }
-}
-
-*,
-::before,
-::after {
-  box-sizing: border-box;
-}
-
-html {
-  font-size: 14px;
-  font-family: $font-family;
-  font-weight: 400;
-  @include tablet {
-    font-size: 12px;
-  }
-}
-
-html,
-body {
-  height: 100%;
-  min-height: 100%;
-  margin: 0;
-  padding: 0;
-  background: var(--bg);
-  color: var(--fg);
-}
-
-body {
-  font-size: 1rem;
-  -webkit-tap-highlight-color: transparent;
-  padding: 0.5rem;
-}
-
+@import "reset";
+@import "global";
 @import "typography";
-@import "button";
+@import "command";
 @import "input";
 @import "panel";
-@import "commands";
-@import "tile";
 @import "spinner";

@@ -1,0 +1,92 @@
+//Moved to _command.scss
+//@mixin button {
+//overflow: hidden;
+//outline: none;
+//color: var(--fg100);
+//font-family: inherit;
+//cursor: pointer;
+//user-select: none;
+//vertical-align: middle;
+//transition: border-color 0.15s ease-in-out, background-color 0.15s ease-in-out;
+
+//&:disabled {
+//opacity: 0.4;
+//filter: saturate(0.6);
+//cursor: default;
+//pointer-events: none;
+//}
+//}
+
+.button {
+  @include button;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  border-radius: 0.3rem;
+  box-shadow: var(--box-shadow);
+  border: var(--border-width-sm) solid var(--bg700);
+  background-color: transparent;
+  min-height: min-content;
+  padding: 0.6rem 1rem;
+  font-size: 1.1rem;
+
+  &.fill {
+    background-color: var(--bg800);
+  }
+  &:focus {
+    border: var(--border-width-sm) solid var(--bg600);
+  }
+  &:hover {
+    // stays after click on touch devices
+    // TODO: only for non-touch devices
+    // /*background-color: var(--bg700);*/
+  }
+  &:active {
+    background-color: var(--light);
+    border: var(--border-width-sm) solid var(--default-alpha40);
+  }
+}
+
+.button-compound {
+  display: inline-flex;
+  gap: var(--gap-sm);
+  box-shadow: var(--box-shadow);
+
+  & > .button {
+    @extend .fill;
+    box-shadow: none;
+
+    // Use color level from new lch palette instead of alpha
+    //&.dim {
+    //background-color: var(--default-alpha40);
+    //&:focus {
+    //border-color: var(--bg700);
+    //}
+
+    //&:active {
+    //background-color: var(--bg700);
+    //}
+    //}
+
+    &:empty {
+      width: 3rem;
+    }
+
+    &:first-child {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      border-right: none;
+    }
+
+    &:not(:first-child):not(:last-child) {
+      border-radius: 0;
+      border-left: none;
+      border-right: none;
+    }
+
+    &:last-child {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      border-left: none;
+    }
+  }
+}

@@ -1,15 +1,14 @@
 %colourShades {
-  --fg: hsl(var(--h-fg), var(--s-fg), var(--l-fg));
+  --color100: oklch(0.91 0.05 var(--hue));
 
-  --default: hsl(var(--h), var(--s), var(--l));
-  --default-alpha40: hsla(var(--h), var(--s), var(--l), 0.4);
-  --default-alpha70: hsla(var(--h), var(--s), var(--l), 0.7);
+  --color500: oklch(0.46 0.13 var(--hue));
+  --color600: oklch(0.41 0.11 var(--hue));
+  --color700: oklch(0.36 0.09 var(--hue));
+  --color800: oklch(0.31 0.07 var(--hue));
 
-  --light: hsl(var(--h-light), var(--s-light), var(--l-light));
-  --light-alpha40: hsla(var(--h-light), var(--s-light), var(--l-light), 0.4);
-  --light-alpha70: hsla(var(--h-light), var(--s-light), var(--l-light), 0.7);
+  --color950: oklch(0.18 0.03 var(--hue));
 
-  --panel-background: hsla(var(--h), var(--s), var(--l), 0.1);
-  --tile-background: hsla(var(--h), var(--s), var(--l), 0.2);
-  --footer-color: hsla(var(--h-fg), var(--s-fg), var(--l-fg), 0.6);
+  --bg-body: var(--bg-body-override, var(--color950));
+  --fg-body: var(--fg-body-override, var(--color100));
+  --panel-background: oklch(var(--500) / 0.1);
 }

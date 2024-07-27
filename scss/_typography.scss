@@ -1,62 +1,25 @@
-%h1 {
-  @extend %header;
-  font-size: 3rem;
-}
-
-%h2 {
-  @extend %header;
-  font-size: 2rem;
-}
-
-%h3 {
-  @extend %header;
-  font-size: 1.5rem;
-}
-
-%h4 {
-  @extend %header;
-  font-weight: 400;
-  font-size: 1.2rem;
-}
-
+h1,
+h2,
+h3,
+h4,
 %header {
   font-weight: 300;
-  text-shadow: 0 0 4px var(--light-alpha40);
-  color: var(--fg);
+  text-shadow: 0 0 4px oklch(var(--400) / 0.5);
+  color: var(--fg-body);
 }
 
 h1 {
-  @extend %h1;
-  margin: 1rem 0 2rem 0;
-
-  &.m-0 {
-    margin: 0;
-  }
+  font-size: var(--scale-3xl);
 }
 
 h2 {
-  @extend %h2;
-  margin: 1rem 0 1.5rem 0;
-
-  &.m-0 {
-    margin: 0;
-  }
+  font-size: var(--scale-2xl);
 }
 
 h3 {
-  @extend %h3;
-  margin: 0.5rem 0 1.5rem 0;
-
-  &.m-0 {
-    margin: 0;
-  }
+  font-size: var(--scale-xl);
 }
 
 h4 {
-  @extend %h4;
-  margin: 0.5rem 0 0.5rem 0;
-
-  &.m-0 {
-    margin: 0;
-  }
+  font-size: var(--scale-lg);
 }

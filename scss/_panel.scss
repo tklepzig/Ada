@@ -1,67 +1,71 @@
-@import "corner";
+%corner-base {
+  content: "";
+  border-style: solid;
+  border-color: var(--color700);
+  position: absolute;
+  height: 1rem;
+  width: 1rem;
+  z-index: 2;
+}
 
 .panel {
   background: var(--panel-background);
-  box-shadow: $box-shadow;
-  border-radius: 0.3rem;
+  box-shadow: var(--box-shadow);
+  border-radius: var(--border-radius);
   display: grid;
   grid-template-rows: auto 1fr auto;
   overflow: auto;
-  margin: 0.5rem;
 
   > header {
     position: relative;
-    @extend %h3;
-    padding: 0.4rem 0.6rem;
+    @extend %header;
+    font-size: var(--scale-xl);
 
-    &:before {
-      @include corner("top-left");
-    }
-    &:after {
-      @include corner("top-right");
-    }
+    padding: var(--spacing-sm) var(--spacing);
 
-    &:empty {
-      padding: 0.2rem;
+    &::before {
+      @extend %corner-base;
+      border-width: var(--border-width) 0 0 var(--border-width);
+      border-radius: var(--border-radius) 0 0 0;
+      left: 0;
+      top: 0;
+    }
+    &::after {
+      @extend %corner-base;
+      border-width: var(--border-width) var(--border-width) 0 0;
+      border-radius: 0 var(--border-radius) 0 0;
+      right: 0;
+      top: 0;
     }
   }
 
   > article {
     z-index: 1;
-    padding: 0 0.6rem;
+    padding: var(--spacing);
     overflow: auto;
 
-    &::-webkit-scrollbar {
-      width: 2px;
-      background: transparent;
-    }
-    &::-webkit-scrollbar-thumb {
-      min-width: 1rem;
-      border-style: solid;
-      border-color: transparent;
-      border-width: 2px 2px 1px 2px;
-      background: var(--default);
-      box-sizing: border-box;
-      background-clip: border-box;
-    }
+    @extend %scrollbar;
   }
   > footer {
     position: relative;
 
-    color: var(--footer-color);
-    padding: 0.4rem 0.6rem;
-    font-size: 0.75rem;
+    padding: var(--spacing-sm) var(--spacing);
+    font-size: var(--scale-sm);
     text-align: right;
 
-    &:before {
-      @include corner("bottom-left");
+    &::before {
+      @extend %corner-base;
+      border-width: 0 0 var(--border-width) var(--border-width);
+      border-radius: 0 0 0 var(--border-radius);
+      left: 0;
+      bottom: 0;
     }
-    &:after {
-      @include corner("bottom-right");
-    }
-
-    &:empty {
-      padding: 0.2rem;
+    &::after {
+      @extend %corner-base;
+      border-width: 0 var(--border-width) var(--border-width) 0;
+      border-radius: 0 0 var(--border-radius) 0;
+      right: 0;
+      bottom: 0;
     }
   }
 }

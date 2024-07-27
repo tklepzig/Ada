@@ -1,0 +1,52 @@
+:root {
+  --font-family: "Open Sans", sans-serif;
+  --font-size: 16px;
+  --scale-sm: 0.85rem;
+  --scale-base: 1rem;
+  --scale-lg: 1.2rem;
+  --scale-xl: 1.4rem;
+  --scale-2xl: 1.6rem;
+  --scale-3xl: 1.8rem;
+  --box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
+  --spacing-xs: 2px;
+  --spacing-sm: 6px;
+  --spacing: 10px;
+  --border-width: 0.15rem;
+  --focus-border-width: 0.15rem;
+  --border-radius: 0.3rem;
+
+  @media screen and (min-width: 768px) {
+    --font-size: 14px;
+  }
+}
+
+%scrollbar {
+  &::-webkit-scrollbar {
+    width: var(--spacing-sm);
+    background: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    min-width: 1rem;
+    border-style: solid;
+    border-color: transparent;
+    border-width: var(--spacing-sm);
+    background: var(--color700);
+    box-sizing: border-box;
+    background-clip: border-box;
+  }
+}
+
+html {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: var(--font-size);
+}
+
+body {
+  font-size: 1rem;
+  padding: var(--spacing);
+  background: var(--bg-body);
+  color: var(--fg-body);
+
+  @extend %scrollbar;
+}
