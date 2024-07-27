@@ -1,5 +1,5 @@
 .command {
-  background-color: var(--color600);
+  background-color: var(--color800);
   box-shadow: var(--box-shadow);
   display: grid;
   align-items: end;
@@ -36,7 +36,7 @@
 
   &.outline {
     background-color: transparent;
-    border-color: var(--color500);
+    border-color: var(--color700);
     border-width: var(--border-width);
     color: var(--fg-body);
 
@@ -51,7 +51,7 @@
     }
 
     &:focus {
-      border-color: var(--color300);
+      border-color: var(--color500);
     }
 
     &:active {
@@ -60,12 +60,12 @@
   }
 
   &:focus {
-    border-left-color: var(--color300);
+    border-left-color: var(--color500);
   }
 
   &:active {
-    border-color: var(--color300);
-    background-color: var(--color300);
+    border-color: var(--color500);
+    background-color: var(--color500);
     animation-play-state: paused;
   }
 }
@@ -75,14 +75,14 @@
   gap: var(--spacing-sm);
 
   > .spacer {
-    background-color: var(--color600);
+    background-color: var(--color800);
     box-shadow: var(--box-shadow);
     min-width: 1rem;
     min-height: 1rem;
 
     &.outline {
       background-color: transparent;
-      border: var(--border-width) solid var(--color500);
+      border: var(--border-width) solid var(--color700);
     }
   }
 
@@ -130,12 +130,12 @@
 
 @keyframes flash-background {
   50% {
-    background-color: var(--color400);
+    background-color: var(--color600);
   }
 }
 
 @keyframes flash-border {
   50% {
-    border-color: var(--color300);
+    border-color: var(--color500);
   }
 }

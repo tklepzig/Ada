@@ -2,7 +2,7 @@
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
   outline: none;
-  border: var(--border-width) solid var(--color400);
+  border: var(--border-width) solid var(--color600);
   color: var(--fg-body);
   font-family: inherit;
   background-color: transparent;
@@ -11,7 +11,7 @@
   font-size: var(--scale-base);
 
   &:focus {
-    border: var(--border-width) solid var(--color300);
+    border: var(--border-width) solid var(--color500);
   }
   &:disabled {
     opacity: 0.4;
