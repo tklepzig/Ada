@@ -27,7 +27,7 @@ jobs:
         id: changesets
         uses: changesets/action@v1
         with:
-          publish: npm run publish
+          publish: npm run publish-package
           version: npm run version
           commit: Publish Version
           title: Publish Version
