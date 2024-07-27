@@ -29,3 +29,15 @@ using the CSS, ensure to include the correct theme file before the main one,
 e.g.:
 
     https://cdn.jsdelivr.net/gh/tklepzig/Ada@5.0.0/css/ada.blue.css
+
+## Versioning and Publishing
+
+- Releases are created via GitHub Actions using
+  [Changesets](https://github.com/chagets/changesets)
+- When adding changes which needs a version update, add a changeset by running
+  `npm run changeset`
+- When the changes are done, commit/merge your branch which will create/update a
+  Release PR (opened by a bot) that incorporates the changesets to update the
+  changelog and version number
+- When ready for release, merge the Release PR
+- For creating prereleases (snapshots), run `npm run snapshot <prerelease-tag>`
