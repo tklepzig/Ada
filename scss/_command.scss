@@ -38,7 +38,7 @@
     background-color: transparent;
     border-color: var(--color500);
     border-width: var(--border-width);
-    color: var(--color100-on-light-bg);
+    color: var(--fg-body);
 
     &.flash {
       animation-name: flash-border;

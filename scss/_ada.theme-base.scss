@@ -1,11 +1,11 @@
 %colourShades {
   --color100: oklch(var(--100));
-  --color100-on-light-bg: oklch(var(--100-on-light-bg, var(--100)));
 
   --color300: oklch(var(--300));
   --color400: oklch(var(--400));
   --color500: oklch(var(--500));
   --color600: oklch(var(--600));
 
+  --fg-body: var(--fg-body-override, var(--color100));
   --panel-background: oklch(var(--500) / 0.1);
 }
