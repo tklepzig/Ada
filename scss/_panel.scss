@@ -23,6 +23,10 @@
 
     padding: var(--spacing-sm) var(--spacing);
 
+    &:empty {
+      padding: 0;
+    }
+
     &::before {
       @extend %corner-base;
       border-width: var(--border-width) 0 0 var(--border-width);
@@ -52,6 +56,10 @@
     padding: var(--spacing-sm) var(--spacing);
     font-size: var(--scale-sm);
     text-align: right;
+
+    &:empty {
+      padding: 0;
+    }
 
     &::before {
       @extend %corner-base;
