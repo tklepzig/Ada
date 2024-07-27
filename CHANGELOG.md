@@ -1,5 +1,11 @@
 # ada-ui
 
+## 5.1.0
+
+### Minor Changes
+
+- 8877329: Allow changing theme by setting a css class on the html element
+
 ## 5.0.0
 
 ### Major Changes
