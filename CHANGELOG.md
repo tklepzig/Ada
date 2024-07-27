@@ -1,5 +1,11 @@
 # ada-ui
 
+## 5.1.1
+
+### Patch Changes
+
+- 332e233: Remove padding in case of empty footer or header
+
 ## 5.1.0
 
 ### Minor Changes
