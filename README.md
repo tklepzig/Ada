@@ -33,7 +33,7 @@ e.g.:
 ## Versioning and Publishing
 
 - Releases are created via GitHub Actions using
-  [Changesets](https://github.com/chagets/changesets)
+  [Changesets](https://github.com/changesets/changesets)
 - When adding changes which needs a version update, add a changeset by running
   `npm run changeset`
 - When the changes are done, commit/merge your branch which will create/update a
