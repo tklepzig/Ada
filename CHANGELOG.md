@@ -1,5 +1,15 @@
 # ada-ui
 
+## 5.2.0
+
+### Minor Changes
+
+- 1bb7ec4: Add abbreviations for commands to be shown on small screens instead of the default label
+
+### Patch Changes
+
+- d9ec56e: Using whole border as focus state
+
 ## 5.1.1
 
 ### Patch Changes
