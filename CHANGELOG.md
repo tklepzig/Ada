@@ -1,5 +1,15 @@
 # ada-ui
 
+## 5.3.0
+
+### Minor Changes
+
+- 619db2d: Add base values for lightness and chroma which can be overriden for light theme
+
+### Patch Changes
+
+- 619db2d: Fix wrong foreground colors for color variants in light theme
+
 ## 5.2.0
 
 ### Minor Changes
