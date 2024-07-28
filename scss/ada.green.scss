@@ -1,1 +1,20 @@
-//wip
+@import "ada.theme-base";
+
+:root {
+  //Defaults to primary color
+  @extend .primary;
+}
+
+.primary {
+  @extend %colourShades;
+  --hue: 116;
+}
+
+.shade1 {
+  @extend %colourShades;
+  --hue: 116;
+  --l-base: 0.5;
+  --l-base-light: 0.6;
+  --c-base: 0.3;
+  --c-base-light: 0.3;
+}
