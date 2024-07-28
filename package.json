@@ -5,7 +5,6 @@
     "dev": "concurrently -n scss,serve 'sass scss:css --watch' 'alive-server .'",
     "build": "rm -rf css && sass scss:css -s compressed --no-source-map",
     "changeset": "changeset",
-    "snapshot": "f(){ if [ -z \"$1\" ]; then echo \"Error: No tag name specified, exiting.\"; exit 1; fi; npm run build && changeset version --snapshot $1 && changeset publish --no-git-tag --tag $1; }; f",
     "remove-snapshot": "f(){ if [ -z \"$1\" ]; then echo \"Error: No tag name specified, exiting.\"; exit 1; fi; npm dist-tag rm ada-ui $1; }; f",
     "version": "npm run build && changeset version"
   },
