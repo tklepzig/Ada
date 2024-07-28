@@ -44,6 +44,12 @@
       <a href="#input" class="command">Input</a>
       <a href="#spinner" class="command">Spinner</a>
       <div style="flex: 1" class="spacer"></div>
+      <button
+        class="command"
+        onclick="document.documentElement.classList.toggle('light-theme'); this.textContent = this.textContent === 'Dark' ? 'Light' : 'Dark'"
+      >
+        Light
+      </button>
       <div class="spacer"></div>
     </div>
     <div class="panel">
@@ -394,7 +400,7 @@
           <footer></footer>
         </div>
       </article>
-      <footer>Ada Version 5.0.0</footer>
+      <footer>Ada Version 5</footer>
     </div>
   </body>
 </html>

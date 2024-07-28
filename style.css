@@ -111,6 +111,7 @@ body {
   grid-template-columns: repeat(2, auto);
   gap: var(--spacing);
   justify-content: start;
+  align-items: center;
 }
 
 .spacing {
