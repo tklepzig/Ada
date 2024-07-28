@@ -26,6 +26,16 @@
     animation: flash-background 1s ease-in-out infinite;
   }
 
+  &[data-label][data-abbr]::after {
+    content: attr(data-abbr);
+  }
+
+  @media (min-width: 640px) {
+    &[data-label][data-abbr]::after {
+      content: attr(data-label);
+    }
+  }
+
   &:disabled {
     opacity: 0.7;
     cursor: default;

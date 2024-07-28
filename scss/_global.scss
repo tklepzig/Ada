@@ -11,10 +11,11 @@
   --spacing-xs: 2px;
   --spacing-sm: 6px;
   --spacing: 10px;
+  --spacing-lg: 14px;
   --border-width: 2px;
   --border-radius: 0.3rem;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 640px) {
     --font-size: 14px;
   }
 

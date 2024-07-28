@@ -10,143 +10,36 @@
       name="viewport"
       content="user-scalable=yes, initial-scale=1.0, maximum-scale=10.0, width=device-width"
     />
+    <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="css/ada.blue.css" />
     <link rel="stylesheet" href="css/ada.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600"
       rel="stylesheet"
     />
-    <style>
-      html {
-        scroll-padding-top: 1rem;
-      }
-
-      html.height-100 {
-        height: 100%;
-        min-height: 100%;
-      }
-
-      html.height-100 > body {
-        height: 100%;
-        min-height: 100%;
-      }
-
-      html:not(.height-100) > body {
-        align-items: start;
-      }
-
-      .typography {
-        display: grid;
-        grid-template-columns: repeat(2, auto) 1fr;
-        gap: var(--spacing);
-        justify-content: start;
-      }
-      .typography > p {
-        grid-column: span 3;
-        display: grid;
-        grid-template-columns: subgrid;
-        gap: var(--spacing);
-      }
-
-      .color-shades {
-        display: grid;
-      }
-
-      .color-shades > h3 {
-        margin-bottom: var(--spacing-sm);
-      }
-
-      .color-shades > div {
-        display: inline-grid;
-        align-items: center;
-        justify-items: center;
-        width: 8rem;
-        height: 3rem;
-        box-sizing: border-box;
-        color: var(--color100);
-        border-bottom: 1px solid transparent;
-      }
-
-      .color-shades > div:last-of-type {
-        border-bottom: none;
-      }
-
-      .color-shades.usage > div {
-        border-color: var(--color600);
-        color: inherit;
-        width: auto;
-        padding: 0 1rem;
-      }
-
-      .color-shades > div.color950 {
-        background: var(--color950);
-      }
-
-      .color-shades > div.color800 {
-        background: var(--color800);
-      }
-
-      .color-shades > div.color700 {
-        background: var(--color700);
-      }
-
-      .color-shades > div.color600 {
-        background: var(--color600);
-      }
-
-      .color-shades > div.color500 {
-        background: var(--color500);
-      }
-
-      .color-shades > div.color100 {
-        background: var(--color100);
-        color: var(--color800);
-      }
-
-      .spacing {
-        display: grid;
-        grid-template-columns: repeat(2, auto) 1fr;
-        gap: var(--spacing);
-        align-items: center;
-      }
-
-      .spacing-box {
-        display: inline-block;
-        background: var(--color500);
-        width: var(--spacing);
-        height: var(--spacing);
-      }
-
-      .spacing-box.xs {
-        width: var(--spacing-xs);
-        height: var(--spacing-xs);
-      }
-
-      .spacing-box.sm {
-        width: var(--spacing-sm);
-        height: var(--spacing-sm);
-      }
-    </style>
   </head>
 
-  <body
-    style="
-      display: grid;
-      grid-template-columns: minmax(12vw, auto) 1fr;
-      grid-template-rows: 1fr auto;
-      column-gap: var(--spacing);
-    "
-  >
+  <body>
     <div
       class="compound-commands vertical"
       style="position: sticky; top: var(--spacing)"
     >
       <div class="spacer"></div>
-      <a href="#typography" class="command shade1">Typography</a>
+      <a
+        href="#typography"
+        class="command shade1"
+        data-label="Typography"
+        data-abbr="Typo"
+      ></a>
       <a href="#spacing" class="command shade1">Spacing</a>
       <a href="#colors" class="command shade1">Colors</a>
       <a href="#page-layout" class="command shade1">Page Layout</a>
-      <a href="#command" class="command shade3">Command</a>
+      <a
+        href="#command"
+        class="command shade3"
+        data-label="Command"
+        data-abbr="Cmd"
+      ></a>
       <a href="#panel" class="command shade2">Panel</a>
       <a href="#input" class="command">Input</a>
       <a href="#spinner" class="command">Spinner</a>
@@ -157,42 +50,42 @@
       <header><h1>Ada UI Design Guide</h1></header>
       <article
         style="
+          scroll-padding-top: 1rem;
           display: grid;
           grid-auto-rows: max-content;
           gap: var(--spacing);
-          scroll-padding-top: 1rem;
         "
       >
         <div class="panel">
           <header><h2 id="typography">Typography</h2></header>
           <article class="typography">
-            <p style="font-size: var(--scale-3xl)">
-              <code>--scale-3xl</code>
+            <p>
+              <code style="font-size: var(--scale-3xl)">--scale-3xl</code>
               <span>1.8rem</span>
               <span>Headline 1, Text in Compound Commands</span>
             </p>
-            <p style="font-size: var(--scale-2xl)">
-              <code>--scale-2xl</code>
+            <p>
+              <code style="font-size: var(--scale-2xl)">--scale-2xl</code>
               <span>1.6rem</span>
               <span>Headline 2</span>
             </p>
-            <p style="font-size: var(--scale-xl)">
-              <code>--scale-xl</code>
+            <p>
+              <code style="font-size: var(--scale-xl)">--scale-xl</code>
               <span>1.4rem</span>
               <span>Headline 3</span>
             </p>
-            <p style="font-size: var(--scale-lg)">
-              <code>--scale-lg</code>
+            <p>
+              <code style="font-size: var(--scale-lg)">--scale-lg</code>
               <span>1.2rem</span>
               <span>Headline 4</span>
             </p>
-            <p style="font-size: var(--scale-base)">
-              <code>--scale-base</code>
+            <p>
+              <code style="font-size: var(--scale-base)">--scale-base</code>
               <span>1rem</span>
               <span>Normal Text, Command Label</span>
             </p>
-            <p style="font-size: var(--scale-sm)">
-              <code>--scale-sm</code>
+            <p>
+              <code style="font-size: var(--scale-sm)">--scale-sm</code>
               <span>0.85rem</span>
               <span>Small Text, Panel Footer</span>
             </p>
@@ -211,65 +104,76 @@
             <code>--spacing</code>
             <span>10px</span>
             <div class="spacing-box shade3"></div>
+            <code>--spacing-lg</code>
+            <span>14px</span>
+            <div class="spacing-box lg shade3"></div>
           </article>
           <footer></footer>
         </div>
         <div class="panel">
           <header><h2 id="colors">Colors</h2></header>
-          <article style="display: flex; gap: var(--spacing); flex-wrap: wrap">
-            <div class="color-shades usage">
-              <h3>&nbsp;</h3>
-              <div>Text Color</div>
-              <div>Active/Focus State</div>
-              <div>Border/Flash Color</div>
-              <div>Corner Color</div>
-              <div>Command Color</div>
-              <div>Background</div>
+          <article style="display: grid; gap: var(--spacing)">
+            <div class="colors">
+              <div class="color-shades">
+                <h4>Primary</h4>
+                <div class="color100">100</div>
+                <div class="color500">500</div>
+                <div class="color600">600</div>
+                <div class="color700">700</div>
+                <div class="color800">800</div>
+                <div class="color950">950</div>
+              </div>
+              <div class="color-shades">
+                <h4>Shade 1</h4>
+                <div class="color100 shade1">100</div>
+                <div class="color500 shade1">500</div>
+                <div class="color600 shade1">600</div>
+                <div class="color700 shade1">700</div>
+                <div class="color800 shade1">800</div>
+                <div class="color950 shade1">950</div>
+              </div>
+              <div class="color-shades">
+                <h4>Shade 2</h4>
+                <div class="color100 shade2">100</div>
+                <div class="color500 shade2">500</div>
+                <div class="color600 shade2">600</div>
+                <div class="color700 shade2">700</div>
+                <div class="color800 shade2">800</div>
+                <div class="color950 shade2">950</div>
+              </div>
+              <div class="color-shades">
+                <h4>Shade 3</h4>
+                <div class="color100 shade3">100</div>
+                <div class="color500 shade3">500</div>
+                <div class="color600 shade3">600</div>
+                <div class="color700 shade3">700</div>
+                <div class="color800 shade3">800</div>
+                <div class="color950 shade3">950</div>
+              </div>
+              <div class="color-shades">
+                <h4>Warn</h4>
+                <div class="color100 warn">100</div>
+                <div class="color500 warn">500</div>
+                <div class="color600 warn">600</div>
+                <div class="color700 warn">700</div>
+                <div class="color800 warn">800</div>
+                <div class="color950 warn">950</div>
+              </div>
             </div>
-            <div class="color-shades">
-              <h3>Primary</h3>
-              <div class="color100">100</div>
-              <div class="color500">500</div>
-              <div class="color600">600</div>
-              <div class="color700">700</div>
-              <div class="color800">800</div>
-              <div class="color950">950</div>
-            </div>
-            <div class="color-shades">
-              <h3>Shade 1</h3>
-              <div class="color100 shade1">100</div>
-              <div class="color500 shade1">500</div>
-              <div class="color600 shade1">600</div>
-              <div class="color700 shade1">700</div>
-              <div class="color800 shade1">800</div>
-              <div class="color950 shade1">950</div>
-            </div>
-            <div class="color-shades">
-              <h3>Shade 2</h3>
-              <div class="color100 shade2">100</div>
-              <div class="color500 shade2">500</div>
-              <div class="color600 shade2">600</div>
-              <div class="color700 shade2">700</div>
-              <div class="color800 shade2">800</div>
-              <div class="color950 shade2">950</div>
-            </div>
-            <div class="color-shades">
-              <h3>Shade 3</h3>
-              <div class="color100 shade3">100</div>
-              <div class="color500 shade3">500</div>
-              <div class="color600 shade3">600</div>
-              <div class="color700 shade3">700</div>
-              <div class="color800 shade3">800</div>
-              <div class="color950 shade3">950</div>
-            </div>
-            <div class="color-shades">
-              <h3>Warn</h3>
-              <div class="color100 warn">100</div>
-              <div class="color500 warn">500</div>
-              <div class="color600 warn">600</div>
-              <div class="color700 warn">700</div>
-              <div class="color800 warn">800</div>
-              <div class="color950 warn">950</div>
+            <h3>Usage</h3>
+            <div class="color-usages">
+              <code>100</code>
+              <span>Text Color</span>
+              <code>500</code>
+              <span>Active/Focus State</span>
+              <code>600</code>
+              <span>Border/Flash Color</span>
+              <code>700</code>
+              <span>Corner Color</span>
+              <code>800</code>
+              <span>Command Color</span>
+              <code>950</code>
+              <span>Background</span>
             </div>
           </article>
           <footer></footer>
@@ -277,13 +181,15 @@
         <div class="panel">
           <header><h2 id="page-layout">Page Layout</h2></header>
           <article>
-            <p style="grid-column: span 5; max-width: 35rem">
+            <p>
               Choose yourself whether the body should scroll or the body should
               have a fixed width of 100%. For the latter, you should use one or
-              more top-most panels which then will scroll their content. You can
-              see both options and how to implement them by toggling the class
-              <code>height-100</code> on the <code>html</code> element of this
-              demo page.
+              more top-most panels which then will scroll their content.
+            </p>
+            <p>
+              You can see both options and how to implement them by toggling the
+              class <code>height-100</code> on the <code>html</code> element of
+              this demo page.
             </p>
           </article>
           <footer></footer>
@@ -298,56 +204,81 @@
               gap: 1rem;
             "
           >
-            <h3 style="grid-column: span 5">Default</h3>
-            <button class="command">Command</button>
-            <button class="command shade1">Command</button>
-            <button class="command shade2">Command</button>
-            <button class="command shade3">Command</button>
-            <button class="command warn">Command</button>
-            <h3 style="grid-column: span 5">Outline</h3>
-            <button class="command outline">Command</button>
-            <button class="command outline shade1">Command</button>
-            <button class="command outline shade2">Command</button>
-            <button class="command outline shade3">Command</button>
-            <button class="command outline warn">Command</button>
-            <h3 style="grid-column: span 5">Flashing</h3>
-            <button class="command flash">Command</button>
-            <button class="command flash shade1">Command</button>
-            <button class="command flash shade2">Command</button>
-            <button class="command flash shade3">Command</button>
-            <button class="command flash warn">Command</button>
-            <button class="command flash outline">Command</button>
-            <button class="command flash outline shade1">Command</button>
-            <button class="command flash outline shade2">Command</button>
-            <button class="command flash outline shade3">Command</button>
-            <button class="command flash outline warn">Command</button>
-            <h3 style="grid-column: span 5">Disabled</h3>
-            <button disabled class="command">Command</button>
-            <button disabled class="command outline">Command</button>
-            <h3 style="grid-column: span 5">Wrapping</h3>
-            <p style="grid-column: span 5; max-width: 35rem">
+            <h3>Default</h3>
+            <div class="row">
+              <button class="command">Command</button>
+              <button class="command shade1">Command</button>
+              <button class="command shade2">Command</button>
+              <button class="command shade3">Command</button>
+              <button class="command warn">Command</button>
+            </div>
+            <h3>Outline</h3>
+            <div class="row">
+              <button class="command outline">Command</button>
+              <button class="command outline shade1">Command</button>
+              <button class="command outline shade2">Command</button>
+              <button class="command outline shade3">Command</button>
+              <button class="command outline warn">Command</button>
+            </div>
+            <h3>Flashing</h3>
+            <div class="row">
+              <button class="command flash">Command</button>
+              <button class="command flash shade1">Command</button>
+              <button class="command flash shade2">Command</button>
+              <button class="command flash shade3">Command</button>
+              <button class="command flash warn">Command</button>
+            </div>
+            <div class="row">
+              <button class="command flash outline">Command</button>
+              <button class="command flash outline shade1">Command</button>
+              <button class="command flash outline shade2">Command</button>
+              <button class="command flash outline shade3">Command</button>
+              <button class="command flash outline warn">Command</button>
+            </div>
+            <h3>Disabled</h3>
+            <div class="row">
+              <button disabled class="command">Command</button>
+              <button disabled class="command outline">Command</button>
+            </div>
+            <h3>Abbreviations for small screens</h3>
+            <p>
+              When rendered on small screens (&lt;640px) an abbreviation can be
+              used to reduce the space a command needs. When doing so, the text
+              node of the command should be empty and two
+              <code>data-</code> attributes should be used:
+              <code>data-label</code> and <code>data-abbr</code>.
+            </p>
+            <p>
+              In order to see the difference below, reduce/increase the browser
+              window width.
+            </p>
+            <button
+              data-label="Internationalization"
+              data-abbr="i18n"
+              class="command"
+            ></button>
+            <h3>Wrapping</h3>
+            <p>
               The command's text is wrapped by default which increases the
               height of the command.
             </p>
-            <button
-              style="max-width: 20rem; grid-column: span 5"
-              class="command"
-            >
+            <button style="max-width: 20rem" class="command">
               A command with a quite long description.
             </button>
-            <p style="grid-column: span 5; max-width: 35rem">
+            <p>
               If you want to use ellipsis and a single line of text, a wrapper
               element is needed. See page's source code for details.
             </p>
-            <p style="grid-column: span 5; max-width: 35rem">
+            <p
+              class="warn"
+              style="font-size: var(--scale-lg); color: var(--color100)"
+            >
               Double check if ellipsis is really needed and if yes, that the
               full text is visible with another interaction (no tooltip, since
-              not mobile friendly and not in the sense of the Ada look and feel)
+              not mobile friendly and not in the sense of the Ada look and
+              feel).
             </p>
-            <button
-              style="max-width: 20rem; grid-column: span 5"
-              class="command"
-            >
+            <button style="max-width: 20rem" class="command">
               <span
                 style="
                   text-overflow: ellipsis;
@@ -359,20 +290,20 @@
                 A command with a quite long description.
               </span>
             </button>
-            <h3 style="grid-column: span 5">Compound</h3>
-            <div style="grid-column: span 5" class="compound-commands">
+            <h3>Compound</h3>
+            <div class="compound-commands">
               <button class="command">Command</button>
               <button class="command"></button>
               <div class="spacer"></div>
             </div>
-            <h4 style="grid-column: span 5">With Text</h4>
-            <div style="grid-column: span 5" class="compound-commands">
+            <h4>With Text</h4>
+            <div class="compound-commands">
               <button class="command">Command</button>
               <div class="text">47</div>
               <div class="spacer"></div>
             </div>
-            <h4 style="grid-column: span 5">Vertical</h4>
-            <div style="grid-column: span 5" class="compound-commands vertical">
+            <h4>Vertical</h4>
+            <div class="compound-commands vertical">
               <div class="spacer"></div>
               <button class="command">Command</button>
               <button class="command"></button>
