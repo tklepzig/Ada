@@ -7,7 +7,7 @@
   text-align: end;
   border-style: solid;
   border-color: transparent;
-  border-width: 0 0 0 var(--focus-border-width);
+  border-width: var(--border-width);
   padding: var(--spacing-xs) var(--spacing-sm);
   min-height: 3rem;
   min-width: 3rem;
@@ -37,7 +37,6 @@
   &.outline {
     background-color: transparent;
     border-color: var(--color700);
-    border-width: var(--border-width);
     color: var(--fg-body);
 
     &.flash {
@@ -50,17 +49,13 @@
       color: #6d6d6d;
     }
 
-    &:focus {
-      border-color: var(--color500);
-    }
-
     &:active {
       color: var(--color100);
     }
   }
 
   &:focus {
-    border-left-color: var(--color500);
+    border-color: var(--color500);
   }
 
   &:active {
