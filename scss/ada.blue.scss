@@ -1,37 +1,73 @@
 @import "ada.theme-base";
 
+// The whole logic of setting the variables
+// for every class to ensure the colors are all
+// correct for all variants is quite repetitive.
+// This needs improvement
+
+%light-override {
+  //Set overrides for light theme
+  --l-base-override: 0.4;
+  --c-base-override: 0.1;
+  --bg-body-override: var(--color100);
+  --fg-body-override: var(--color800);
+}
+
 :root {
   //Defaults to primary color
   @extend .primary;
 
-  //Set overrides for light theme
   &.light-theme {
-    --bg-body-override: var(--color100);
-    --fg-body-override: var(--color800);
+    @extend %light-override;
   }
 }
 
 .primary {
   @extend %colourShades;
+
+  :root.light-theme & {
+    @extend %light-override;
+  }
+
   --hue: 246;
 }
 
 .shade1 {
   @extend %colourShades;
+
+  :root.light-theme & {
+    @extend %light-override;
+  }
+
   --hue: 225;
 }
 
 .shade3 {
   @extend %colourShades;
+
+  :root.light-theme & {
+    @extend %light-override;
+  }
+
   --hue: 165;
 }
 
 .shade2 {
   @extend %colourShades;
+
+  :root.light-theme & {
+    @extend %light-override;
+  }
+
   --hue: 190;
 }
 
 .warn {
   @extend %colourShades;
+
+  :root.light-theme & {
+    @extend %light-override;
+  }
+
   --hue: 29;
 }
