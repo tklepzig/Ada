@@ -1,6 +1,17 @@
 %colourShades {
-  --l-base: var(--l-base-override, 0.31);
-  --c-base: var(--c-base-override, 0.07);
+  --l-base: 0.31;
+  --c-base: 0.07;
+  --bg-body: var(--color950);
+  --fg-body: var(--color100);
+
+  &.light-theme,
+  :root.light-theme & {
+    --l-base: 0.4;
+    --c-base: 0.1;
+    --bg-body: var(--color100);
+    --fg-body: var(--color800);
+  }
+
   --color100: oklch(0.91 0.05 var(--hue));
 
   --color500: oklch(
@@ -16,7 +27,5 @@
 
   --color950: oklch(0.18 0.03 var(--hue));
 
-  --bg-body: var(--bg-body-override, var(--color950));
-  --fg-body: var(--fg-body-override, var(--color100));
   --panel-background: oklch(var(--500) / 0.1);
 }
