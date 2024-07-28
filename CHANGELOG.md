@@ -1,5 +1,11 @@
 # ada-ui
 
+## 5.3.1
+
+### Patch Changes
+
+- d04cec7: Simplify light theme logic by using a hard-coded light theme lightness and chroma base
+
 ## 5.3.0
 
 ### Minor Changes
