@@ -8,6 +8,8 @@
     "remove-snapshot": "f(){ if [ -z \"$1\" ]; then echo \"Error: No tag name specified, exiting.\"; exit 1; fi; npm dist-tag rm ada-ui $1; }; f",
     "version": "npm run build && changeset version"
   },
+  "bin": "install.js",
+  "type": "module",
   "license": "MIT",
   "exports": {
     ".": "./css/ada.css",
