@@ -1,5 +1,11 @@
 # ada-ui
 
+## 5.4.0
+
+### Minor Changes
+
+- 063ef97: Add npx script to generate one complete css file
+
 ## 5.3.1
 
 ### Patch Changes
