@@ -2,7 +2,8 @@
   "name": "ada-ui",
   "version": "5.6.0",
   "scripts": {
-    "dev": "concurrently -n scss,serve 'sass scss:css --watch' 'alive-server .'",
+    "dev": "concurrently -n scss,serve 'sass scss:css --watch --embed-source-map' 'alive-server .'",
+    "postdev": "git checkout css/*",
     "build": "rm -rf css && sass scss:css -s compressed --no-source-map",
     "changeset": "changeset",
     "remove-snapshot": "f(){ if [ -z \"$1\" ]; then echo \"Error: No tag name specified, exiting.\"; exit 1; fi; npm dist-tag rm ada-ui $1; }; f",
