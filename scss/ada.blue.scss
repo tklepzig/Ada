@@ -2,6 +2,11 @@
 
 :root {
   @extend .default;
+  --l-base: 0.31;
+  --c-base: 0.07;
+
+  --l-light-base: 0.4;
+  --c-light-base: 0.1;
 }
 
 .default {
