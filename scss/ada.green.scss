@@ -1,1 +1,35 @@
-//wip
+@import "ada.theme-base";
+
+:root {
+  @extend .default;
+  --l-base: 0.35;
+  --c-base: 0.1;
+
+  --l-base-light: 0.45;
+  --c-base-light: 0.15;
+}
+
+.default {
+  @extend %colourShades;
+  --hue: 132;
+}
+
+.shade1 {
+  @extend %colourShades;
+  --hue: 121;
+}
+
+.shade2 {
+  @extend %colourShades;
+  --hue: 164;
+}
+
+.shade3 {
+  @extend %colourShades;
+  --hue: 185;
+}
+
+.warn {
+  @extend %colourShades;
+  --hue: 29;
+}
