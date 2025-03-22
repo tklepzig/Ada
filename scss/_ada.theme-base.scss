@@ -7,8 +7,8 @@
 
   &.light-theme,
   :root.light-theme & {
-    --l-base: var(--l-light-base);
-    --c-base: var(--c-light-base);
+    --l-base: var(--l-base-light);
+    --c-base: var(--c-base-light);
     --bg-body: var(--bg-body-light);
     --fg-body: var(--fg-body-light);
   }
