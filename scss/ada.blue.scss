@@ -1,11 +1,15 @@
 @import "ada.theme-base";
 
 :root {
-  //Defaults to primary color
-  @extend .primary;
+  @extend .default;
+  --l-base: 0.26;
+  --c-base: 0.06;
+
+  --l-light-base: 0.4;
+  --c-light-base: 0.1;
 }
 
-.primary {
+.default {
   @extend %colourShades;
   --hue: 246;
 }
@@ -15,14 +19,14 @@
   --hue: 225;
 }
 
-.shade3 {
-  @extend %colourShades;
-  --hue: 165;
-}
-
 .shade2 {
   @extend %colourShades;
   --hue: 190;
+}
+
+.shade3 {
+  @extend %colourShades;
+  --hue: 165;
 }
 
 .warn {

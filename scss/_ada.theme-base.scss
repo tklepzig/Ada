@@ -1,15 +1,16 @@
 %colourShades {
-  --l-base: 0.31;
-  --c-base: 0.07;
   --bg-body: var(--color950);
   --fg-body: var(--color100);
 
+  --bg-body-light: var(--color100);
+  --fg-body-light: var(--color800);
+
   &.light-theme,
   :root.light-theme & {
-    --l-base: 0.4;
-    --c-base: 0.1;
-    --bg-body: var(--color100);
-    --fg-body: var(--color800);
+    --l-base: var(--l-light-base);
+    --c-base: var(--c-light-base);
+    --bg-body: var(--bg-body-light);
+    --fg-body: var(--fg-body-light);
   }
 
   --color100: oklch(0.91 0.05 var(--hue));
