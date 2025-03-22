@@ -1,5 +1,11 @@
 # ada-ui
 
+## 5.6.0
+
+### Minor Changes
+
+- 0ff6670: Added green theme
+
 ## 5.5.1
 
 ### Patch Changes
