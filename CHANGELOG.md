@@ -1,5 +1,11 @@
 # ada-ui
 
+## 5.7.0
+
+### Minor Changes
+
+- 4655a60: Added another green variant
+
 ## 5.6.0
 
 ### Minor Changes
