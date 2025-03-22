@@ -1,5 +1,11 @@
 # ada-ui
 
+## 5.5.1
+
+### Patch Changes
+
+- 5b39b4e: Streamline variable names
+
 ## 5.5.0
 
 ### Minor Changes
