@@ -1,6 +1,6 @@
 {
   "name": "ada-ui",
-  "version": "5.5.0",
+  "version": "5.5.1",
   "scripts": {
     "dev": "concurrently -n scss,serve 'sass scss:css --watch' 'alive-server .'",
     "build": "rm -rf css && sass scss:css -s compressed --no-source-map",
