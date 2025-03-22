@@ -1,5 +1,17 @@
 # ada-ui
 
+## 5.5.0
+
+### Minor Changes
+
+- 0ca0582: Renamed primary color to default
+- 9336950: Aligned input height with command height
+- 462ca48: Made blue theme a bit darker
+
+### Patch Changes
+
+- 5cdd331: Moved base l and c values into specific theme
+
 ## 5.4.0
 
 ### Minor Changes
