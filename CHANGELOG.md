@@ -1,5 +1,11 @@
 # ada-ui
 
+## 5.7.1
+
+### Patch Changes
+
+- b54434c: Updated themes
+
 ## 5.7.0
 
 ### Minor Changes
