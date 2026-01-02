@@ -1,8 +1,7 @@
 name: Release Snapshot
 
 on:
-  issue_comment:
-    types: ["created"]
+  workflow_call:
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
@@ -13,6 +12,9 @@ jobs:
       ${{ github.event.issue.pull_request && github.event.comment.body ==
       '/snapshot' }}
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      pull-requests: write
     steps:
       - name: Add initial reaction
         uses: peter-evans/create-or-update-comment@v4
@@ -63,11 +65,6 @@ jobs:
 
       - name: Build packages
         run: npm run build
-
-      - name: Create .npmrc
-        run:
-          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" >
-          ~/.npmrc
 
       - name: Publish packages
         id: publish
