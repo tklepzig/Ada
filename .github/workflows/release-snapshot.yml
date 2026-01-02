@@ -69,6 +69,9 @@ jobs:
       - name: Create .npmrc
         run: echo "//registry.npmjs.org/:_authToken=" > ~/.npmrc
 
+      - name: Clear another auth token for OIDC
+        run: echo "NODE_AUTH_TOKEN=" >> $GITHUB_ENV
+
       - name: Clear auth token for OIDC
         run: echo "NPM_TOKEN=" >> $GITHUB_ENV
 
