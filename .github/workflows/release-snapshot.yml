@@ -66,6 +66,9 @@ jobs:
       - name: Build packages
         run: npm run build
 
+      - name: Create .npmrc
+        run: echo "//registry.npmjs.org/:_authToken=" > ~/.npmrc
+
       - name: Publish packages
         id: publish
         run: |
