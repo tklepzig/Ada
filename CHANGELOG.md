@@ -1,5 +1,11 @@
 # ada-ui
 
+## 5.7.2
+
+### Patch Changes
+
+- bac39c8: Created a dummy patch release to test the npm trusted publishing configuration
+
 ## 5.7.1
 
 ### Patch Changes
