@@ -11,9 +11,6 @@ My sci-fi inspired UI components library. Still growing...
 Replace `version` with the version of your desired release, see
 https://github.com/tklepzig/Ada/releases (e.g. `5.0.0`)
 
-> Attention: Prior to version 3.0, the filename need a `min`:
-> https://cdn.jsdelivr.net/gh/tklepzig/Ada@3.0.0/css/ada.min.css
-
 ## Install
 
     # Using npm
@@ -40,4 +37,5 @@ e.g.:
   Release PR (opened by a bot) that incorporates the changesets to update the
   changelog and version number
 - When ready for release, merge the Release PR
-- For creating prereleases (snapshots), add a new comment to your PR which contains only `/snapshot`
+- For creating prereleases (snapshots), add a new comment to your PR which
+  contains only `/snapshot`
