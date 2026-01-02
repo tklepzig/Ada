@@ -1,5 +1,11 @@
 # ada-ui
 
+## 5.7.3
+
+### Patch Changes
+
+- 7f8a89a: Updated readme
+
 ## 5.7.2
 
 ### Patch Changes
