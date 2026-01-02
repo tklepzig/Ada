@@ -26,7 +26,7 @@
     "url": "https://github.com/tklepzig/Ada/issues"
   },
   "devDependencies": {
-    "@changesets/cli": "^2.27.1",
+    "@changesets/cli": "^2.29.8",
     "alive-server": "^1.2.9",
     "concurrently": "^8.2.2",
     "sass": "^1.42.1"
