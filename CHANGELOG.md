@@ -1,5 +1,15 @@
 # ada-ui
 
+## 5.8.0
+
+### Minor Changes
+
+- 4ad5251: Added first version of Tile component (WIP)
+
+### Patch Changes
+
+- 4a0440f: Fixed broken panel background due to missing CSS variable
+
 ## 5.7.3
 
 ### Patch Changes
