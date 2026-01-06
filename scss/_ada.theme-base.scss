@@ -13,20 +13,17 @@
     --fg-body: var(--fg-body-light);
   }
 
-  --color100: oklch(0.91 0.05 var(--hue));
+  --100: 0.91 0.05 var(--hue);
+  --500: calc(var(--l-base) + 0.15) calc(var(--c-base) + 0.06) var(--hue);
+  --600: calc(var(--l-base) + 0.1) calc(var(--c-base) + 0.04) var(--hue);
+  --700: calc(var(--l-base) + 0.05) calc(var(--c-base) + 0.02) var(--hue);
+  --800: var(--l-base) var(--c-base) var(--hue);
+  --950: 0.18 0.03 var(--hue);
 
-  --color500: oklch(
-    calc(var(--l-base) + 0.15) calc(var(--c-base) + 0.06) var(--hue)
-  );
-  --color600: oklch(
-    calc(var(--l-base) + 0.1) calc(var(--c-base) + 0.04) var(--hue)
-  );
-  --color700: oklch(
-    calc(var(--l-base) + 0.05) calc(var(--c-base) + 0.02) var(--hue)
-  );
-  --color800: oklch(var(--l-base) var(--c-base) var(--hue));
-
-  --color950: oklch(0.18 0.03 var(--hue));
-
-  --panel-background: oklch(var(--500) / 0.1);
+  --color100: oklch(var(--100));
+  --color500: oklch(var(--500));
+  --color600: oklch(var(--600));
+  --color700: oklch(var(--700));
+  --color800: oklch(var(--800));
+  --color950: oklch(var(--950));
 }
