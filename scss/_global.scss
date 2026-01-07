@@ -9,6 +9,10 @@
   --scale-2xl: 1.6rem;
   --scale-3xl: 1.8rem;
   --box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
+  --padding-xs: 0.15rem;
+  --padding-sm: 0.4rem;
+  --padding: 0.75rem;
+  --padding-lg: 1rem;
   --spacing-xs: 2px;
   --spacing-sm: 6px;
   --spacing: 10px;
@@ -50,7 +54,7 @@ html {
 
 body {
   font-size: 1rem;
-  padding: var(--spacing);
+  padding: var(--padding);
   background: var(--bg-body);
   color: var(--fg-body);
   transition: background-color 0.15s ease-in-out;
