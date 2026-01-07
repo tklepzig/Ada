@@ -22,7 +22,7 @@
   <body>
     <div
       class="compound-commands vertical"
-      style="position: sticky; top: var(--spacing)"
+      style="position: sticky; top: var(--padding)"
     >
       <div class="spacer"></div>
       <a
@@ -31,6 +31,7 @@
         data-label="Typography"
         data-abbr="Typo"
       ></a>
+      <a href="#padding" class="command shade1">Padding</a>
       <a href="#spacing" class="command shade1">Spacing</a>
       <a href="#colors" class="command shade1">Colors</a>
       <a href="#page-layout" class="command shade1">Page Layout</a>
@@ -105,6 +106,29 @@
           <footer></footer>
         </div>
         <div class="panel">
+          <header><h2 id="padding">Padding</h2></header>
+          <article class="padding">
+            <code>--padding-xs</code>
+            <span>0.15rem</span>
+            <div class="padding-box xs shade2"></div>
+            <code>--padding-sm</code>
+            <span>0.4rem</span>
+            <div class="padding-box sm shade2"></div>
+            <code>--padding</code>
+            <span>0.75rem</span>
+            <div class="padding-box shade2"></div>
+            <code>--padding-lg</code>
+            <span>1rem</span>
+            <div class="padding-box lg shade2"></div>
+            <p>&rarr; Paddings are responsive (in rem).</p>
+            <p>
+              Usage: paddings, anything which should grow/shrink with the
+              font-size
+            </p>
+          </article>
+          <footer></footer>
+        </div>
+        <div class="panel">
           <header><h2 id="spacing">Spacing</h2></header>
           <article class="spacing">
             <code>--spacing-xs</code>
@@ -119,6 +143,11 @@
             <code>--spacing-lg</code>
             <span>14px</span>
             <div class="spacing-box lg shade3"></div>
+            <p>&rarr; Spacings are not responsive (in px).</p>
+            <p>
+              Usage: spacings, gaps, anything which should be stable regardless
+              of the font-size
+            </p>
           </article>
           <footer></footer>
         </div>

@@ -8,7 +8,7 @@
   border-style: solid;
   border-color: transparent;
   border-width: var(--border-width);
-  padding: var(--spacing-xs) var(--spacing-sm);
+  padding: var(--padding-xs) var(--padding-sm);
   min-height: 3rem;
   min-width: 3rem;
   border-radius: var(--border-radius);
@@ -95,7 +95,7 @@
     font-size: var(--scale-3xl);
     line-height: var(--scale-3xl);
     align-self: center;
-    padding: var(--spacing-xs);
+    padding: var(--padding-xs);
   }
 
   > .command,
