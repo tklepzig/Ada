@@ -1,5 +1,12 @@
 # ada-ui
 
+## 5.9.0
+
+### Minor Changes
+
+- 2738ce6: Added separate padding tokens that are responsive, unlike the already existing
+  spacing tokens
+
 ## 5.8.0
 
 ### Minor Changes

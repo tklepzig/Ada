@@ -1,6 +1,6 @@
 {
   "name": "ada-ui",
-  "version": "5.8.0",
+  "version": "5.9.0",
   "scripts": {
     "dev": "concurrently -n scss,serve 'sass scss:css --watch --embed-source-map' 'alive-server .'",
     "postdev": "git checkout css/*",
