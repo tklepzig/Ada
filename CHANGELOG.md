@@ -1,5 +1,11 @@
 # ada-ui
 
+## 5.9.1
+
+### Patch Changes
+
+- 9329d75: Streamlined blue theme to be the best of both previously existing blue themes
+
 ## 5.9.0
 
 ### Minor Changes
