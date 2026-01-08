@@ -374,13 +374,13 @@
               The panel has a translucent background, so when stacking multiple
               panels the background changes slightly with each level.
             </p>
-            <div class="panel" style="margin: var(--spacing)">
+            <div class="panel">
               <header></header>
               <article>
-                <div class="panel" style="margin: var(--spacing)">
+                <div class="panel">
                   <header></header>
                   <article>
-                    <div class="panel" style="margin: var(--spacing)">
+                    <div class="panel">
                       <header></header>
                       <article>Content</article>
                       <footer></footer>
@@ -397,31 +397,35 @@
         <div class="panel">
           <header><h2 id="tile">Tile</h2></header>
           <article
-            style="display: grid; grid-auto-flow: column; gap: var(--spacing)"
+            style="
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+              gap: var(--spacing);
+            "
           >
             <div class="tile">
               <header></header>
-              <article>Tile</article>
+              <article>Tile Content</article>
               <footer></footer>
             </div>
             <div class="tile shade1">
               <header></header>
-              <article>Tile</article>
+              <article>Tile Content</article>
               <footer></footer>
             </div>
             <div class="tile shade2">
               <header></header>
-              <article>Tile</article>
+              <article>Tile Content</article>
               <footer></footer>
             </div>
             <div class="tile shade3">
               <header></header>
-              <article>Tile</article>
+              <article>Tile Content</article>
               <footer></footer>
             </div>
             <div class="tile warn">
               <header></header>
-              <article>Tile</article>
+              <article>Tile Content</article>
               <footer></footer>
             </div>
           </article>
