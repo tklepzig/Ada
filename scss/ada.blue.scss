@@ -2,8 +2,8 @@
 
 :root {
   @extend .default;
-  --l-base: 0.26;
-  --c-base: 0.06;
+  --l-base: 0.3;
+  --c-base: 0.1;
 
   --l-base-light: 0.4;
   --c-base-light: 0.1;
@@ -16,17 +16,17 @@
 
 .shade1 {
   @extend %colourShades;
-  --hue: 225;
+  --hue: 220;
 }
 
 .shade2 {
   @extend %colourShades;
-  --hue: 190;
+  --hue: 195;
 }
 
 .shade3 {
   @extend %colourShades;
-  --hue: 165;
+  --hue: 170;
 }
 
 .warn {
