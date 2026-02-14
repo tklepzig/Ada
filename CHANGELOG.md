@@ -1,5 +1,12 @@
 # ada-ui
 
+## 6.0.1
+
+### Patch Changes
+
+- bb5e4ed: Added `flex` class to easily stretch any element inside compound-commands.
+  (Sets `flex: 1`)
+
 ## 6.0.0
 
 ### Major Changes
