@@ -29,7 +29,7 @@
   > header {
     position: relative;
     @extend %header;
-    font-size: var(--scale-2xl);
+    font-size: var(--text-2xl);
 
     padding: var(--padding-sm) var(--padding);
 
@@ -64,7 +64,7 @@
     position: relative;
 
     padding: var(--padding-sm) var(--padding);
-    font-size: var(--scale-sm);
+    font-size: var(--text-sm);
     text-align: right;
 
     &:empty {
@@ -94,10 +94,10 @@
   background: oklch(var(--800) / 0.75);
 
   > header {
-    font-size: var(--scale-lg);
+    font-size: var(--text-lg);
   }
 
   > footer {
-    font-size: var(--scale-xs);
+    font-size: var(--text-xs);
   }
 }

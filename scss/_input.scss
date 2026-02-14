@@ -8,7 +8,7 @@
   background-color: transparent;
   transition: border-color 0.15s ease-in-out;
   padding: var(--padding);
-  font-size: var(--scale-base);
+  font-size: var(--text-base);
 
   &:focus {
     border: var(--border-width) solid var(--color500);
