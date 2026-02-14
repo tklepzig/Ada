@@ -79,6 +79,10 @@
   display: inline-flex;
   gap: var(--spacing-sm);
 
+  > .flex {
+    flex: 1;
+  }
+
   > .spacer {
     background-color: var(--color800);
     box-shadow: var(--box-shadow);
