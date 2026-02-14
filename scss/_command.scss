@@ -9,8 +9,8 @@
   border-color: transparent;
   border-width: var(--border-width);
   padding: var(--padding-xs) var(--padding-sm);
-  min-height: 3rem;
-  min-width: 3rem;
+  min-height: var(--command-min-size);
+  min-width: var(--command-min-size);
   border-radius: var(--border-radius);
   overflow: hidden;
   outline: none;
@@ -82,8 +82,8 @@
   > .spacer {
     background-color: var(--color800);
     box-shadow: var(--box-shadow);
-    min-width: 1rem;
-    min-height: 1rem;
+    min-width: var(--compound-spacer-min-size);
+    min-height: var(--compound-spacer-min-size);
 
     &.outline {
       background-color: transparent;

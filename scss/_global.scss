@@ -21,6 +21,12 @@
   --border-width: 2px;
   --border-radius: 0.3rem;
 
+  --command-min-size: 3rem;
+  --compound-spacer-min-size: 1rem;
+
+  --corner-size: 1rem;
+  --corner-small-size: 0.75rem;
+
   @media screen and (min-width: 640px) {
     --font-size: 14px;
   }
@@ -53,7 +59,7 @@ html {
 }
 
 body {
-  font-size: 1rem;
+  font-size: var(--text-base);
   padding: var(--padding);
   background: var(--bg-body);
   color: var(--fg-body);
