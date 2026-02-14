@@ -1,5 +1,17 @@
 # ada-ui
 
+## 6.0.0
+
+### Major Changes
+
+- 90e86eb: Renamed font-size tokens from `--scale` to `--text`.
+
+### Minor Changes
+
+- 254e3c2: Added possibility to define a scaling factor by setting the CSS class `scaled`
+  and the CSS custom property `--scale` to a number. This allows to easily scale
+  down or up any part of the UI.
+
 ## 5.9.1
 
 ### Patch Changes
