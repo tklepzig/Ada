@@ -9,14 +9,14 @@
   border-color: transparent;
   border-width: var(--border-width);
   padding: var(--padding-xs) var(--padding-sm);
-  min-height: 3rem;
-  min-width: 3rem;
+  min-height: var(--command-min-size);
+  min-width: var(--command-min-size);
   border-radius: var(--border-radius);
   overflow: hidden;
   outline: none;
   color: var(--color100);
   font-family: inherit;
-  font-size: var(--scale-base);
+  font-size: var(--text-base);
   cursor: pointer;
   user-select: none;
   vertical-align: middle;
@@ -82,8 +82,8 @@
   > .spacer {
     background-color: var(--color800);
     box-shadow: var(--box-shadow);
-    min-width: 1rem;
-    min-height: 1rem;
+    min-width: var(--compound-spacer-min-size);
+    min-height: var(--compound-spacer-min-size);
 
     &.outline {
       background-color: transparent;
@@ -92,8 +92,8 @@
   }
 
   > .text {
-    font-size: var(--scale-3xl);
-    line-height: var(--scale-3xl);
+    font-size: var(--text-3xl);
+    line-height: var(--text-3xl);
     align-self: center;
     padding: var(--padding-xs);
   }

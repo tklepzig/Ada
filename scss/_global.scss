@@ -1,25 +1,22 @@
+@function scalable($value) {
+  @return calc(#{$value} * var(--scale, 1));
+}
+
 :root {
   --font-family: "Open Sans", sans-serif;
   --font-size: 16px;
-  --scale-xs: 0.75rem;
-  --scale-sm: 0.85rem;
-  --scale-base: 1rem;
-  --scale-lg: 1.2rem;
-  --scale-xl: 1.4rem;
-  --scale-2xl: 1.6rem;
-  --scale-3xl: 1.8rem;
-  --box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
-  --padding-xs: 0.15rem;
-  --padding-sm: 0.4rem;
-  --padding: 0.75rem;
-  --padding-lg: 1rem;
+
   --spacing-xs: 2px;
   --spacing-sm: 6px;
   --spacing: 10px;
   --spacing-lg: 14px;
+
   --border-width-sm: 1px;
   --border-width: 2px;
-  --border-radius: 0.3rem;
+
+  --box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
+
+  @extend .scaled;
 
   @media screen and (min-width: 640px) {
     --font-size: 14px;
@@ -28,6 +25,29 @@
   &.light-theme {
     --box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.4);
   }
+}
+
+.scaled {
+  --text-xs: #{scalable(0.75rem)};
+  --text-sm: #{scalable(0.85rem)};
+  --text-base: #{scalable(1rem)};
+  --text-lg: #{scalable(1.2rem)};
+  --text-xl: #{scalable(1.4rem)};
+  --text-2xl: #{scalable(1.6rem)};
+  --text-3xl: #{scalable(1.8rem)};
+
+  --padding-xs: #{scalable(0.15rem)};
+  --padding-sm: #{scalable(0.4rem)};
+  --padding: #{scalable(0.75rem)};
+  --padding-lg: #{scalable(1rem)};
+
+  --border-radius: #{scalable(0.3rem)};
+
+  --command-min-size: #{scalable(3rem)};
+  --compound-spacer-min-size: #{scalable(1rem)};
+
+  --corner-size: #{scalable(1rem)};
+  --corner-small-size: #{scalable(0.75rem)};
 }
 
 %scrollbar {
@@ -53,7 +73,7 @@ html {
 }
 
 body {
-  font-size: 1rem;
+  font-size: var(--text-base);
   padding: var(--padding);
   background: var(--bg-body);
   color: var(--fg-body);

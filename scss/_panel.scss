@@ -3,15 +3,15 @@
   border-style: solid;
   border-color: var(--color700);
   position: absolute;
-  height: 1rem;
-  width: 1rem;
+  height: var(--corner-size);
+  width: var(--corner-size);
   z-index: 2;
 
   --thickness: var(--border-width);
 
   .tile > & {
-    height: 0.75rem;
-    width: 0.75rem;
+    height: var(--corner-small-size);
+    width: var(--corner-small-size);
     border-color: var(--color600);
 
     --thickness: var(--border-width-sm);
@@ -29,7 +29,7 @@
   > header {
     position: relative;
     @extend %header;
-    font-size: var(--scale-2xl);
+    font-size: var(--text-2xl);
 
     padding: var(--padding-sm) var(--padding);
 
@@ -57,6 +57,7 @@
     z-index: 1;
     padding: var(--padding);
     overflow: auto;
+    font-size: var(--text-base);
 
     @extend %scrollbar;
   }
@@ -64,7 +65,7 @@
     position: relative;
 
     padding: var(--padding-sm) var(--padding);
-    font-size: var(--scale-sm);
+    font-size: var(--text-sm);
     text-align: right;
 
     &:empty {
@@ -94,10 +95,10 @@
   background: oklch(var(--800) / 0.75);
 
   > header {
-    font-size: var(--scale-lg);
+    font-size: var(--text-lg);
   }
 
   > footer {
-    font-size: var(--scale-xs);
+    font-size: var(--text-xs);
   }
 }
