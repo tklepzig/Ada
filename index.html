@@ -34,6 +34,7 @@
       <a href="#padding" class="command shade1">Padding</a>
       <a href="#spacing" class="command shade1">Spacing</a>
       <a href="#colors" class="command shade1">Colors</a>
+      <a href="#scaling" class="command shade2">Scaling</a>
       <a href="#page-layout" class="command shade1">Page Layout</a>
       <a
         href="#command"
@@ -219,6 +220,24 @@
           </article>
           <footer></footer>
         </div>
+        <div class="panel">
+          <header><h2 id="scaling">Scaling</h2></header>
+          <article style="display: grid; gap: var(--spacing)">
+            <p>
+              By adding the class <code>scaled</code> and setting the CSS custom
+              property <code>--scaled</code> to a number like <code>1.5</code>,
+              every responsive token (sizes, paddings, font-size) is scaled in
+              this scope. See the scaled tile as an example:
+            </p>
+            <div class="tile scaled shade2" style="--scale: 1.5">
+              <header></header>
+              <article>Scaled Tile (factor 1.5)</article>
+              <footer></footer>
+            </div>
+          </article>
+          <footer></footer>
+        </div>
+
         <div class="panel">
           <header><h2 id="page-layout">Page Layout</h2></header>
           <article>
