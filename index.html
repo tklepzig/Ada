@@ -11,8 +11,8 @@
       content="user-scalable=yes, initial-scale=1.0, maximum-scale=10.0, width=device-width"
     />
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="css/ada.jupiter-2.css" />
     <link rel="stylesheet" href="css/ada.css" />
+    <link id="theme-override" rel="stylesheet" href="css/ada.blue.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600"
       rel="stylesheet"
@@ -47,6 +47,9 @@
       <a href="#input" class="command">Input</a>
       <a href="#spinner" class="command">Spinner</a>
       <div class="spacer flex"></div>
+      <button id="theme-toggle" class="command" onclick="cycleTheme()">
+        Green
+      </button>
       <button
         class="command"
         onclick="document.documentElement.classList.toggle('light-theme'); this.textContent = this.textContent === 'Dark' ? 'Light' : 'Dark'"
@@ -488,5 +491,20 @@
       </article>
       <footer>Ada Version 5</footer>
     </div>
+    <script>
+      const themes = [
+        { label: "Blue", href: "css/ada.blue.css" },
+        { label: "Green", href: "css/ada.green.css" },
+        { label: "Jupiter 2", href: "css/ada.jupiter-2.css" },
+      ];
+      let themeIndex = 0;
+
+      function cycleTheme() {
+        themeIndex = (themeIndex + 1) % themes.length;
+        document.getElementById("theme-override").href = themes[themeIndex].href;
+        const nextLabel = themes[(themeIndex + 1) % themes.length].label;
+        document.getElementById("theme-toggle").textContent = nextLabel;
+      }
+    </script>
   </body>
 </html>
