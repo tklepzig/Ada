@@ -24,6 +24,12 @@
   // wash, so the orange corner-trim reads as trim rather than blending in.
   // Variant panels (.panel.shadeN) keep their per-shade tint (from %colourShades).
   --panel-bg: oklch(0.3 0.052 268 / 0.5);
+
+  // Button labels: the accent backgrounds are light (orange L≈0.69), so cream
+  // text only hits ~2.5:1. A near-black navy clears WCAG AA on every shade
+  // (orange 6.6, amber 7.9, steel 7.0, burnt 4.6, warn 4.9). Set on :root so all
+  // buttons inherit it uniformly (no shade class re-sets it).
+  --command-fg: oklch(0.16 0.04 270);
 }
 
 // Vivid orange — primary accent: buttons (800), trim/corners (700),
@@ -71,10 +77,12 @@
   --c-base: 0.06;
 }
 
-// Danger red — kept clearly distinct from the orange accent (#CF4238).
+// Danger red — kept clearly distinct from the orange accent. Lightened to L0.62
+// (#DE4F44) so the dark --command-fg label clears WCAG AA on warn buttons (the
+// old L0.58 red was a mid-tone where no text colour reached 4.5:1).
 .warn {
   @extend %colourShades;
   --hue: 28;
-  --l-base: 0.58;
+  --l-base: 0.62;
   --c-base: 0.18;
 }
