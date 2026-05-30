@@ -14,7 +14,10 @@
   border-radius: var(--border-radius);
   overflow: hidden;
   outline: none;
-  color: var(--color100);
+  // Text colour on the filled (accent) button surface. Themeable via --command-fg
+  // (default --color100). Themes whose button bg is light — e.g. jupiter-2's
+  // orange — set a dark --command-fg so labels stay legible (WCAG AA).
+  color: var(--command-fg, var(--color100));
   font-family: inherit;
   font-size: var(--text-base);
   cursor: pointer;
@@ -60,7 +63,8 @@
     }
 
     &:active {
-      color: var(--color100);
+      // active outline gets the accent (color500) fill — match the filled text colour
+      color: var(--command-fg, var(--color100));
     }
   }
 

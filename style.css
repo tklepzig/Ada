@@ -71,7 +71,10 @@ body {
       width: 6rem;
       height: 3rem;
       box-sizing: border-box;
-      color: var(--color100);
+      /* Accent swatches (500-800) use the theme's on-accent ink: cream for the
+         dark-ramp themes (blue/green, via the fallback) and dark for jupiter-2,
+         whose accent ramp is light. */
+      color: var(--command-fg, var(--color100));
       border-bottom: 1px solid transparent;
 
       &:last-of-type {
@@ -80,6 +83,8 @@ body {
 
       &.color950 {
         background: var(--color950);
+        /* darkest swatch — always needs the light ink */
+        color: var(--color100);
       }
 
       &.color800 {
@@ -100,7 +105,8 @@ body {
 
       &.color100 {
         background: var(--color100);
-        color: var(--color800);
+        /* lightest swatch — always needs the dark ink (color800 is light in jupiter-2) */
+        color: var(--color950);
       }
     }
   }
