@@ -25,11 +25,18 @@
   // Variant panels (.panel.shadeN) keep their per-shade tint (from %colourShades).
   --panel-bg: oklch(0.3 0.052 268 / 0.5);
 
-  // Button labels: the accent backgrounds are light (orange L≈0.69), so cream
-  // text only hits ~2.5:1. A near-black navy clears WCAG AA on every shade
-  // (orange 6.6, amber 7.9, steel 7.0, burnt 4.6, warn 4.9). Set on :root so all
+  // Dark label colour for text on the light accent surfaces. The accent
+  // backgrounds are light (orange L≈0.69), so cream text only hits ~2.5:1.
+  // Pure black clears WCAG AA on every button shade (orange 7.1, amber 8.6,
+  // steel 7.6, burnt 5.0, warn 5.3) and on the lighter tiles too (it needs to be
+  // this dark to clear the mid-tone 75% orange tile at 4.55). Set on :root so all
   // buttons inherit it uniformly (no shade class re-sets it).
-  --command-fg: oklch(0.16 0.04 270);
+  --command-fg: oklch(0 0 0);
+
+  // Tile labels: tiles are color800 at 75% over navy, i.e. mid-tone. Adaptive
+  // contrast — dark text on the lighter tiles (default/amber/steel inherit this);
+  // the darker burnt/warn tiles flip back to cream below.
+  --tile-fg: var(--command-fg);
 }
 
 // Vivid orange — primary accent: buttons (800), trim/corners (700),
@@ -59,6 +66,8 @@
   --hue: 45;
   --l-base: 0.6;
   --c-base: 0.164;
+  // Darker tile surface — cream reads better than dark here.
+  --tile-fg: var(--color100);
 }
 
 // Amber / warning-light gold (#E8A030).
@@ -85,4 +94,6 @@
   --hue: 28;
   --l-base: 0.62;
   --c-base: 0.18;
+  // Darker tile surface — cream reads better than dark here.
+  --tile-fg: var(--color100);
 }

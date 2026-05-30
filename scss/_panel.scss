@@ -95,6 +95,10 @@
   @extend .panel;
 
   background: oklch(var(--800) / 0.75);
+  // Tile label colour, themeable (default --fg-body). A theme with light tile
+  // surfaces can flip this to a dark colour per shade for legibility — see
+  // jupiter-2, which inverts it on its lighter tiles.
+  color: var(--tile-fg, var(--fg-body));
 
   > header {
     font-size: var(--text-lg);
