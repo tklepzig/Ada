@@ -15,7 +15,8 @@
   "exports": {
     ".": "./css/ada.css",
     "./blue": "./css/ada.blue.css",
-    "./green": "./css/ada.green.css"
+    "./green": "./css/ada.green.css",
+    "./jupiter-2": "./css/ada.jupiter-2.css"
   },
   "repository": {
     "type": "git",

@@ -13,6 +13,11 @@
     --fg-body: var(--fg-body-light);
   }
 
+  // Panel surface colour. Lives here (not on :root in each theme) so var(--500)
+  // resolves per shade class — that keeps `.panel.shadeN` tinting its own surface.
+  // Themes can override it (e.g. jupiter-2 sets a flat navy for the base panel).
+  --panel-bg: oklch(var(--500) / 0.1);
+
   --100: 0.91 0.05 var(--hue);
   --500: calc(var(--l-base) + 0.15) calc(var(--c-base) + 0.06) var(--hue);
   --600: calc(var(--l-base) + 0.1) calc(var(--c-base) + 0.04) var(--hue);

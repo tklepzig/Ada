@@ -1,0 +1,80 @@
+@import "ada.theme-base";
+
+// "Jupiter 2" — a deep-space palette: navy hull + vivid warning-orange + cream.
+//
+// This theme is deliberately TWO-HUE. The shade ladder (%colourShades) derives
+// everything from a single --hue, which reads as monochrome for this palette.
+// Here the accent ramp stays orange, but the dark/light ends (--950 bg, --100
+// text) are overridden to navy and cream so the page reads as the full palette:
+// navy (~60%) + orange accents & trim (~30%) + cream text (~10%).
+//
+// Lightness matters: the orange is oklch(0.69 0.179 49). At L≈0.38 orange renders
+// as brown/red, so --l-base sits at 0.69 to land a true orange on --color800.
+:root {
+  @extend .default;
+
+  // Accent base lands a vivid orange (#F07214) exactly on --color800.
+  --l-base: 0.69;
+  --c-base: 0.179;
+
+  --l-base-light: 0.69;
+  --c-base-light: 0.179;
+
+  // Base panel surface is a flat mid navy (#263660) instead of the orange accent
+  // wash, so the orange corner-trim reads as trim rather than blending in.
+  // Variant panels (.panel.shadeN) keep their per-shade tint (from %colourShades).
+  --panel-bg: oklch(0.3 0.052 268 / 0.5);
+}
+
+// Vivid orange — primary accent: buttons (800), trim/corners (700),
+// input border (600), active/focus glow (500). 700/600/500 clamp to vivid
+// pure orange, which reads like panel lighting / warning indicators.
+.default {
+  @extend %colourShades;
+  --hue: 49;
+
+  // Decouple bg/fg from the orange hue (overrides %colourShades' single-hue ends):
+  --950: 0.21 0.055 270; // deep navy — dominant surface (~#0F1631)
+  --100: 0.947 0.007 81; // warm cream — body + button text (#F0EDE8)
+
+  // Light theme would otherwise put orange (color800) text on cream — force navy.
+  --fg-body-light: var(--color950);
+}
+
+// In light theme a translucent navy over cream looks muddy — restore the
+// standard warm wash so the light base panel looks as it would by default.
+:root.light-theme {
+  --panel-bg: oklch(var(--500) / 0.1);
+}
+
+// Deeper burnt orange (#CC5812).
+.shade1 {
+  @extend %colourShades;
+  --hue: 45;
+  --l-base: 0.6;
+  --c-base: 0.164;
+}
+
+// Amber / warning-light gold (#E8A030).
+.shade2 {
+  @extend %colourShades;
+  --hue: 73;
+  --l-base: 0.73;
+  --c-base: 0.16;
+}
+
+// Steel blue-gray — the cool counterpoint that keeps the UI from going
+// all-orange. Lower chroma so it reads as steel, not a loud cornflower (#859DC1).
+.shade3 {
+  @extend %colourShades;
+  --hue: 258;
+  --c-base: 0.06;
+}
+
+// Danger red — kept clearly distinct from the orange accent (#CF4238).
+.warn {
+  @extend %colourShades;
+  --hue: 28;
+  --l-base: 0.58;
+  --c-base: 0.18;
+}

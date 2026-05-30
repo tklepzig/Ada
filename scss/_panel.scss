@@ -19,7 +19,9 @@
 }
 
 .panel {
-  background: oklch(var(--500) / 0.1);
+  // Panel surface colour is a per-theme knob — every theme defines --panel-bg
+  // (blue/green: the translucent accent wash; jupiter-2: navy). See the theme files.
+  background: var(--panel-bg);
   box-shadow: var(--box-shadow);
   border-radius: var(--border-radius);
   display: grid;
