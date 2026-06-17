@@ -7,22 +7,22 @@
 
   &.light-theme,
   :root.light-theme & {
-    --l-base: var(--l-base-light);
-    --c-base: var(--c-base-light);
+    --lightness: var(--lightness-light);
+    --chroma: var(--chroma-light);
     --bg-body: var(--bg-body-light);
     --fg-body: var(--fg-body-light);
   }
 
   // Panel surface colour. Lives here (not on :root in each theme) so var(--500)
-  // resolves per shade class — that keeps `.panel.shadeN` tinting its own surface.
+  // resolves per tone class — that keeps `.panel.tone-N` tinting its own surface.
   // Themes can override it (e.g. jupiter-2 sets a flat navy for the base panel).
   --panel-bg: oklch(var(--500) / 0.1);
 
   --100: 0.91 0.05 var(--hue);
-  --500: calc(var(--l-base) + 0.15) calc(var(--c-base) + 0.06) var(--hue);
-  --600: calc(var(--l-base) + 0.1) calc(var(--c-base) + 0.04) var(--hue);
-  --700: calc(var(--l-base) + 0.05) calc(var(--c-base) + 0.02) var(--hue);
-  --800: var(--l-base) var(--c-base) var(--hue);
+  --500: calc(var(--lightness) + 0.15) calc(var(--chroma) + 0.06) var(--hue);
+  --600: calc(var(--lightness) + 0.1) calc(var(--chroma) + 0.04) var(--hue);
+  --700: calc(var(--lightness) + 0.05) calc(var(--chroma) + 0.02) var(--hue);
+  --800: var(--lightness) var(--chroma) var(--hue);
   --950: 0.18 0.03 var(--hue);
 
   --color100: oklch(var(--100));

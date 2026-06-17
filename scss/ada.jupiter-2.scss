@@ -9,20 +9,20 @@
 // navy (~60%) + orange accents & trim (~30%) + cream text (~10%).
 //
 // Lightness matters: the orange is oklch(0.69 0.179 49). At L≈0.38 orange renders
-// as brown/red, so --l-base sits at 0.69 to land a true orange on --color800.
+// as brown/red, so --lightness sits at 0.69 to land a true orange on --color800.
 :root {
-  @extend .default;
+  @extend .primary;
 
   // Accent base lands a vivid orange (#F07214) exactly on --color800.
-  --l-base: 0.69;
-  --c-base: 0.179;
+  --lightness: 0.69;
+  --chroma: 0.179;
 
-  --l-base-light: 0.69;
-  --c-base-light: 0.179;
+  --lightness-light: 0.69;
+  --chroma-light: 0.179;
 
   // Base panel surface is a flat mid navy (#263660) instead of the orange accent
   // wash, so the orange corner-trim reads as trim rather than blending in.
-  // Variant panels (.panel.shadeN) keep their per-shade tint (from %colourShades).
+  // Variant panels (.panel.tone-N) keep their per-tone tint (from %colourShades).
   --panel-bg: oklch(0.3 0.052 268 / 0.5);
 
   // Dark label colour for text on the light accent surfaces. The accent
@@ -42,7 +42,7 @@
 // Vivid orange — primary accent: buttons (800), trim/corners (700),
 // input border (600), active/focus glow (500). 700/600/500 clamp to vivid
 // pure orange, which reads like panel lighting / warning indicators.
-.default {
+.primary {
   @extend %colourShades;
   --hue: 49;
 
@@ -61,29 +61,29 @@
 }
 
 // Deeper burnt orange (#CC5812).
-.shade1 {
+.tone-1 {
   @extend %colourShades;
   --hue: 45;
-  --l-base: 0.6;
-  --c-base: 0.164;
+  --lightness: 0.6;
+  --chroma: 0.164;
   // Darker tile surface — cream reads better than dark here.
   --tile-fg: var(--color100);
 }
 
 // Amber / warning-light gold (#E8A030).
-.shade2 {
+.tone-2 {
   @extend %colourShades;
   --hue: 73;
-  --l-base: 0.73;
-  --c-base: 0.16;
+  --lightness: 0.73;
+  --chroma: 0.16;
 }
 
 // Steel blue-gray — the cool counterpoint that keeps the UI from going
 // all-orange. Lower chroma so it reads as steel, not a loud cornflower (#859DC1).
-.shade3 {
+.tone-3 {
   @extend %colourShades;
   --hue: 258;
-  --c-base: 0.06;
+  --chroma: 0.06;
 }
 
 // Danger red — kept clearly distinct from the orange accent. Lightened to L0.62
@@ -92,8 +92,8 @@
 .warn {
   @extend %colourShades;
   --hue: 28;
-  --l-base: 0.62;
-  --c-base: 0.18;
+  --lightness: 0.62;
+  --chroma: 0.18;
   // Darker tile surface — cream reads better than dark here.
   --tile-fg: var(--color100);
 }

@@ -27,23 +27,23 @@
       <div class="spacer"></div>
       <a
         href="#typography"
-        class="command shade1"
+        class="command tone-1"
         data-label="Typography"
         data-abbr="Typo"
       ></a>
-      <a href="#padding" class="command shade1">Padding</a>
-      <a href="#spacing" class="command shade1">Spacing</a>
-      <a href="#colors" class="command shade1">Colors</a>
-      <a href="#scaling" class="command shade2">Scaling</a>
-      <a href="#page-layout" class="command shade1">Page Layout</a>
+      <a href="#padding" class="command tone-1">Padding</a>
+      <a href="#spacing" class="command tone-1">Spacing</a>
+      <a href="#colors" class="command tone-1">Colors</a>
+      <a href="#scaling" class="command tone-2">Scaling</a>
+      <a href="#page-layout" class="command tone-1">Page Layout</a>
       <a
         href="#command"
-        class="command shade3"
+        class="command tone-3"
         data-label="Command"
         data-abbr="Cmd"
       ></a>
-      <a href="#panel" class="command shade2">Panel</a>
-      <a href="#tile" class="command shade2">Tile</a>
+      <a href="#panel" class="command tone-2">Panel</a>
+      <a href="#tile" class="command tone-2">Tile</a>
       <a href="#input" class="command">Input</a>
       <a href="#spinner" class="command">Spinner</a>
       <div class="spacer flex"></div>
@@ -114,16 +114,16 @@
           <article class="padding">
             <code>--padding-xs</code>
             <span>0.15rem</span>
-            <div class="padding-box xs shade2"></div>
+            <div class="padding-box xs tone-2"></div>
             <code>--padding-sm</code>
             <span>0.4rem</span>
-            <div class="padding-box sm shade2"></div>
+            <div class="padding-box sm tone-2"></div>
             <code>--padding</code>
             <span>0.75rem</span>
-            <div class="padding-box shade2"></div>
+            <div class="padding-box tone-2"></div>
             <code>--padding-lg</code>
             <span>1rem</span>
-            <div class="padding-box lg shade2"></div>
+            <div class="padding-box lg tone-2"></div>
             <p>&rarr; Paddings are responsive (in rem).</p>
             <p>
               Usage: paddings, anything which should grow/shrink with the root
@@ -137,16 +137,16 @@
           <article class="spacing">
             <code>--spacing-xs</code>
             <span>2px</span>
-            <div class="spacing-box xs shade3"></div>
+            <div class="spacing-box xs tone-3"></div>
             <code>--spacing-sm</code>
             <span>6px</span>
-            <div class="spacing-box sm shade3"></div>
+            <div class="spacing-box sm tone-3"></div>
             <code>--spacing</code>
             <span>10px</span>
-            <div class="spacing-box shade3"></div>
+            <div class="spacing-box tone-3"></div>
             <code>--spacing-lg</code>
             <span>14px</span>
-            <div class="spacing-box lg shade3"></div>
+            <div class="spacing-box lg tone-3"></div>
             <p>&rarr; Spacings are not responsive (in px).</p>
             <p>
               Usage: spacings, gaps, anything which should be stable regardless
@@ -160,7 +160,7 @@
           <article style="display: grid; gap: var(--spacing)">
             <div class="colors">
               <div class="color-shades">
-                <h4>Default</h4>
+                <h4>Primary</h4>
                 <div class="color100">100</div>
                 <div class="color500">500</div>
                 <div class="color600">600</div>
@@ -169,31 +169,31 @@
                 <div class="color950">950</div>
               </div>
               <div class="color-shades">
-                <h4>Shade 1</h4>
-                <div class="color100 shade1">100</div>
-                <div class="color500 shade1">500</div>
-                <div class="color600 shade1">600</div>
-                <div class="color700 shade1">700</div>
-                <div class="color800 shade1">800</div>
-                <div class="color950 shade1">950</div>
+                <h4>Tone 1</h4>
+                <div class="color100 tone-1">100</div>
+                <div class="color500 tone-1">500</div>
+                <div class="color600 tone-1">600</div>
+                <div class="color700 tone-1">700</div>
+                <div class="color800 tone-1">800</div>
+                <div class="color950 tone-1">950</div>
               </div>
               <div class="color-shades">
-                <h4>Shade 2</h4>
-                <div class="color100 shade2">100</div>
-                <div class="color500 shade2">500</div>
-                <div class="color600 shade2">600</div>
-                <div class="color700 shade2">700</div>
-                <div class="color800 shade2">800</div>
-                <div class="color950 shade2">950</div>
+                <h4>Tone 2</h4>
+                <div class="color100 tone-2">100</div>
+                <div class="color500 tone-2">500</div>
+                <div class="color600 tone-2">600</div>
+                <div class="color700 tone-2">700</div>
+                <div class="color800 tone-2">800</div>
+                <div class="color950 tone-2">950</div>
               </div>
               <div class="color-shades">
-                <h4>Shade 3</h4>
-                <div class="color100 shade3">100</div>
-                <div class="color500 shade3">500</div>
-                <div class="color600 shade3">600</div>
-                <div class="color700 shade3">700</div>
-                <div class="color800 shade3">800</div>
-                <div class="color950 shade3">950</div>
+                <h4>Tone 3</h4>
+                <div class="color100 tone-3">100</div>
+                <div class="color500 tone-3">500</div>
+                <div class="color600 tone-3">600</div>
+                <div class="color700 tone-3">700</div>
+                <div class="color800 tone-3">800</div>
+                <div class="color950 tone-3">950</div>
               </div>
               <div class="color-shades">
                 <h4>Warn</h4>
@@ -232,7 +232,7 @@
               every responsive token (sizes, paddings, font-size) is scaled in
               this scope. See the scaled tile as an example:
             </p>
-            <div class="tile scaled shade2" style="--scale: 1.5">
+            <div class="tile scaled tone-2" style="--scale: 1.5">
               <header></header>
               <article>Scaled Tile (factor 1.5)</article>
               <footer></footer>
@@ -269,32 +269,32 @@
           >
             <div class="row">
               <button class="command">Command</button>
-              <button class="command shade1">Command</button>
-              <button class="command shade2">Command</button>
-              <button class="command shade3">Command</button>
+              <button class="command tone-1">Command</button>
+              <button class="command tone-2">Command</button>
+              <button class="command tone-3">Command</button>
               <button class="command warn">Command</button>
             </div>
             <h3>Outline</h3>
             <div class="row">
               <button class="command outline">Command</button>
-              <button class="command outline shade1">Command</button>
-              <button class="command outline shade2">Command</button>
-              <button class="command outline shade3">Command</button>
+              <button class="command outline tone-1">Command</button>
+              <button class="command outline tone-2">Command</button>
+              <button class="command outline tone-3">Command</button>
               <button class="command outline warn">Command</button>
             </div>
             <h3>Flashing</h3>
             <div class="row">
               <button class="command flash">Command</button>
-              <button class="command flash shade1">Command</button>
-              <button class="command flash shade2">Command</button>
-              <button class="command flash shade3">Command</button>
+              <button class="command flash tone-1">Command</button>
+              <button class="command flash tone-2">Command</button>
+              <button class="command flash tone-3">Command</button>
               <button class="command flash warn">Command</button>
             </div>
             <div class="row">
               <button class="command flash outline">Command</button>
-              <button class="command flash outline shade1">Command</button>
-              <button class="command flash outline shade2">Command</button>
-              <button class="command flash outline shade3">Command</button>
+              <button class="command flash outline tone-1">Command</button>
+              <button class="command flash outline tone-2">Command</button>
+              <button class="command flash outline tone-3">Command</button>
               <button class="command flash outline warn">Command</button>
             </div>
             <h3>Disabled</h3>
@@ -386,7 +386,7 @@
               <footer>Footer</footer>
             </div>
             <h3>With another color variant</h3>
-            <div class="panel shade3">
+            <div class="panel tone-3">
               <header>Header</header>
               <article>Content</article>
               <footer>Footer</footer>
@@ -430,17 +430,17 @@
               <article>Tile Content</article>
               <footer></footer>
             </div>
-            <div class="tile shade1">
+            <div class="tile tone-1">
               <header></header>
               <article>Tile Content</article>
               <footer></footer>
             </div>
-            <div class="tile shade2">
+            <div class="tile tone-2">
               <header></header>
               <article>Tile Content</article>
               <footer></footer>
             </div>
-            <div class="tile shade3">
+            <div class="tile tone-3">
               <header></header>
               <article>Tile Content</article>
               <footer></footer>
@@ -468,21 +468,21 @@
             <div>
               <h3>80px</h3>
               <div class="spinner" style="font-size: 80px"></div>
-              <div class="spinner shade1" style="font-size: 80px"></div>
-              <div class="spinner shade2" style="font-size: 80px"></div>
-              <div class="spinner shade3" style="font-size: 80px"></div>
+              <div class="spinner tone-1" style="font-size: 80px"></div>
+              <div class="spinner tone-2" style="font-size: 80px"></div>
+              <div class="spinner tone-3" style="font-size: 80px"></div>
               <div class="spinner warn" style="font-size: 80px"></div>
               <h3>32px</h3>
               <div class="spinner" style="font-size: 32px"></div>
-              <div class="spinner shade1" style="font-size: 32px"></div>
-              <div class="spinner shade2" style="font-size: 32px"></div>
-              <div class="spinner shade3" style="font-size: 32px"></div>
+              <div class="spinner tone-1" style="font-size: 32px"></div>
+              <div class="spinner tone-2" style="font-size: 32px"></div>
+              <div class="spinner tone-3" style="font-size: 32px"></div>
               <div class="spinner warn" style="font-size: 32px"></div>
               <h3>16px</h3>
               <div class="spinner" style="font-size: 16px"></div>
-              <div class="spinner shade1" style="font-size: 16px"></div>
-              <div class="spinner shade2" style="font-size: 16px"></div>
-              <div class="spinner shade3" style="font-size: 16px"></div>
+              <div class="spinner tone-1" style="font-size: 16px"></div>
+              <div class="spinner tone-2" style="font-size: 16px"></div>
+              <div class="spinner tone-3" style="font-size: 16px"></div>
               <div class="spinner warn" style="font-size: 16px"></div>
             </div>
           </article>
