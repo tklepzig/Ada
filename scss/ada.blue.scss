@@ -4,6 +4,6 @@
   --lightness: 0.3;
   --chroma: 0.1;
 
-  --lightness-light: 0.4;
-  --chroma-light: 0.1;
+  // Light theme: lift lightness, keep chroma (0.3 -> 0.4).
+  --lightness-light-shift: 0.1;
 }

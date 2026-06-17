@@ -34,6 +34,13 @@
 
 // --- the shade ladder within one slot ----------------------------------------
 %ladder {
+  // The ladder reads --lightness-resolved / --chroma-resolved so the light theme can
+  // shift them without clobbering a slot's own --lightness/--chroma. In light
+  // mode every slot keeps its own value plus a per-theme shift, so per-slot
+  // overrides survive (they used to be silently dropped in light mode).
+  --lightness-resolved: var(--lightness);
+  --chroma-resolved: var(--chroma);
+
   --bg-body: var(--color950);
   --fg-body: var(--color100);
 
@@ -42,8 +49,8 @@
 
   &.light-theme,
   :root.light-theme & {
-    --lightness: var(--lightness-light);
-    --chroma: var(--chroma-light);
+    --lightness-resolved: calc(var(--lightness) + var(--lightness-light-shift, 0));
+    --chroma-resolved: calc(var(--chroma) + var(--chroma-light-shift, 0));
     --bg-body: var(--bg-body-light);
     --fg-body: var(--fg-body-light);
   }
@@ -54,10 +61,10 @@
   --panel-bg: oklch(var(--500) / 0.1);
 
   --100: 0.91 0.05 var(--hue);
-  --500: calc(var(--lightness) + 0.15) calc(var(--chroma) + 0.06) var(--hue);
-  --600: calc(var(--lightness) + 0.1) calc(var(--chroma) + 0.04) var(--hue);
-  --700: calc(var(--lightness) + 0.05) calc(var(--chroma) + 0.02) var(--hue);
-  --800: var(--lightness) var(--chroma) var(--hue);
+  --500: calc(var(--lightness-resolved) + 0.15) calc(var(--chroma-resolved) + 0.06) var(--hue);
+  --600: calc(var(--lightness-resolved) + 0.1) calc(var(--chroma-resolved) + 0.04) var(--hue);
+  --700: calc(var(--lightness-resolved) + 0.05) calc(var(--chroma-resolved) + 0.02) var(--hue);
+  --800: var(--lightness-resolved) var(--chroma-resolved) var(--hue);
   --950: 0.18 0.03 var(--hue);
 
   --color100: oklch(var(--100));

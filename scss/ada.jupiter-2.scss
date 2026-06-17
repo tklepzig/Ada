@@ -12,9 +12,9 @@
   --base-hue: 49;
   --lightness: 0.69;
   --chroma: 0.179;
-
-  --lightness-light: 0.69;
-  --chroma-light: 0.179;
+  // No light-theme shift: the orange stays put, and every tone keeps its own
+  // lightness/chroma in light mode (previously the absolute light values
+  // silently flattened burnt/steel/warn to the primary's lightness).
 
   // Decouple the primary bg/fg from the orange hue (overrides the ladder's
   // single-hue ends): deep navy surface + warm cream text.
