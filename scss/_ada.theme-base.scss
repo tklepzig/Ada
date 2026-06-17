@@ -1,4 +1,39 @@
-%colourShades {
+// Colour engine. Lives in the base stylesheet (ada.css) so a theme is just
+// custom properties on :root — no SCSS, no @extend needed:
+//
+//   ramp theme    -> set --base-hue (+ --lightness / --chroma). The four tones
+//                    derive from --base-hue by a per-slot offset; warn is fixed.
+//   curated theme -> additionally override --hue / --lightness / --chroma per
+//                    slot, and the --100 / --950 ends to decouple bg/text.
+//
+// The five slots (primary + tone-1..3 + warn) are an INDEPENDENT palette, not
+// shades of one colour. The 100..950 ladder below is the light->dark ramp WITHIN
+// a single slot.
+
+// --- per-slot hue ------------------------------------------------------------
+// :root mirrors primary so no-class elements (body, plain commands) read as the
+// primary colour. The default offsets describe an even ramp; the blue theme
+// lands exactly on them, so it needs no offset overrides. A theme retargets any
+// tone with --tone-N-hue, and warn with --warn-hue.
+:root,
+.primary {
+  --hue: var(--base-hue);
+}
+.tone-1 {
+  --hue: calc(var(--base-hue) + var(--tone-1-hue, -26));
+}
+.tone-2 {
+  --hue: calc(var(--base-hue) + var(--tone-2-hue, -51));
+}
+.tone-3 {
+  --hue: calc(var(--base-hue) + var(--tone-3-hue, -76));
+}
+.warn {
+  --hue: var(--warn-hue, 29);
+}
+
+// --- the shade ladder within one slot ----------------------------------------
+%ladder {
   --bg-body: var(--color950);
   --fg-body: var(--color100);
 
@@ -14,7 +49,7 @@
   }
 
   // Panel surface colour. Lives here (not on :root in each theme) so var(--500)
-  // resolves per tone class — that keeps `.panel.tone-N` tinting its own surface.
+  // resolves per slot — that keeps `.panel.tone-N` tinting its own surface.
   // Themes can override it (e.g. jupiter-2 sets a flat navy for the base panel).
   --panel-bg: oklch(var(--500) / 0.1);
 
@@ -31,4 +66,13 @@
   --color700: oklch(var(--700));
   --color800: oklch(var(--800));
   --color950: oklch(var(--950));
+}
+
+:root,
+.primary,
+.tone-1,
+.tone-2,
+.tone-3,
+.warn {
+  @extend %ladder;
 }

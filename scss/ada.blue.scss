@@ -1,35 +1,9 @@
-@import "ada.theme-base";
-
 :root {
-  @extend .primary;
+  --base-hue: 246;
+
   --lightness: 0.3;
   --chroma: 0.1;
 
   --lightness-light: 0.4;
   --chroma-light: 0.1;
-}
-
-.primary {
-  @extend %colourShades;
-  --hue: 246;
-}
-
-.tone-1 {
-  @extend %colourShades;
-  --hue: 220;
-}
-
-.tone-2 {
-  @extend %colourShades;
-  --hue: 195;
-}
-
-.tone-3 {
-  @extend %colourShades;
-  --hue: 170;
-}
-
-.warn {
-  @extend %colourShades;
-  --hue: 29;
 }
