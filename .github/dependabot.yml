@@ -1,0 +1,14 @@
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+    # Everything here is dev-only tooling (sass, dev server, changesets);
+    # nothing ships in the published package, which is pure CSS. Group all
+    # dev-dependency updates into a single weekly PR to cut the noise.
+    groups:
+      dev-dependencies:
+        dependency-type: development
+        patterns:
+          - "*"
