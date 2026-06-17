@@ -489,7 +489,7 @@
           <footer></footer>
         </div>
       </article>
-      <footer>Ada Version 5</footer>
+      <footer></footer>
     </div>
     <script>
       const themes = [
@@ -501,7 +501,8 @@
 
       function cycleTheme() {
         themeIndex = (themeIndex + 1) % themes.length;
-        document.getElementById("theme-override").href = themes[themeIndex].href;
+        document.getElementById("theme-override").href =
+          themes[themeIndex].href;
         const nextLabel = themes[(themeIndex + 1) % themes.length].label;
         document.getElementById("theme-toggle").textContent = nextLabel;
       }
