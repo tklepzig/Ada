@@ -17,6 +17,13 @@
 // its class, the same way --lightness / --chroma are overridden per slot. warn
 // sits off the ramp at a fixed red. :root mirrors primary so no-class elements
 // (body, plain commands) read as the primary colour.
+//
+// Why --base-hue is the only "base"-prefixed input: hue is the one value
+// derived per slot (tone = base - N), so its anchor must be a SEPARATE variable
+// from the per-slot --hue the ladder consumes — `--hue: calc(var(--hue) - 26)`
+// would be a self-referential cycle (invalid CSS). Lightness/chroma aren't
+// derived, so a single --lightness / --chroma is both the theme default and a
+// per-slot override via the cascade; no separate anchor is needed.
 :root,
 .primary {
   --hue: var(--base-hue);
@@ -40,6 +47,9 @@
   // shift them without clobbering a slot's own --lightness/--chroma. In light
   // mode every slot keeps its own value plus a per-theme shift, so per-slot
   // overrides survive (they used to be silently dropped in light mode).
+  // The shift is itself a cascade input: set --lightness-light-shift on a slot to
+  // lift it more/less than the theme-wide value — it REPLACES the :root shift for
+  // that slot (it does not stack on it).
   --lightness-resolved: var(--lightness);
   --chroma-resolved: var(--chroma);
 
