@@ -1,28 +1,31 @@
-@import "ada.theme-base";
-
 // "Jupiter 2" — a deep-space palette: navy hull + vivid warning-orange + cream.
 //
-// This theme is deliberately TWO-HUE. The shade ladder (%colourShades) derives
-// everything from a single --hue, which reads as monochrome for this palette.
-// Here the accent ramp stays orange, but the dark/light ends (--950 bg, --100
-// text) are overridden to navy and cream so the page reads as the full palette:
-// navy (~60%) + orange accents & trim (~30%) + cream text (~10%).
+// A CURATED theme (not a hue ramp): each slot sets its own LCH rather than
+// deriving from --base-hue. The page reads as the full palette — navy (~60%) +
+// orange accents & trim (~30%) + cream text (~10%) — by overriding the primary's
+// dark/light ends to navy and cream. (Requires ada.css for the engine.)
 //
 // Lightness matters: the orange is oklch(0.69 0.179 49). At L≈0.38 orange renders
-// as brown/red, so --l-base sits at 0.69 to land a true orange on --color800.
+// as brown/red, so --lightness sits at 0.69 to land a true orange on --color800.
 :root {
-  @extend .default;
+  // Primary accent lands a vivid orange (#F07214) exactly on --color800.
+  --base-hue: 49;
+  --lightness: 0.69;
+  --chroma: 0.179;
+  // No light-theme shift: the orange stays put, and every tone keeps its own
+  // lightness/chroma in light mode (previously the absolute light values
+  // silently flattened burnt/steel/warn to the primary's lightness).
 
-  // Accent base lands a vivid orange (#F07214) exactly on --color800.
-  --l-base: 0.69;
-  --c-base: 0.179;
-
-  --l-base-light: 0.69;
-  --c-base-light: 0.179;
+  // Decouple the primary bg/fg from the orange hue (overrides the ladder's
+  // single-hue ends): deep navy surface + warm cream text.
+  --950: 0.21 0.055 270; // dominant surface (~#0F1631)
+  --100: 0.947 0.007 81; // body + button text (#F0EDE8)
+  // Light theme would otherwise put orange (color800) text on cream — force navy.
+  --fg-body-light: var(--color950);
 
   // Base panel surface is a flat mid navy (#263660) instead of the orange accent
   // wash, so the orange corner-trim reads as trim rather than blending in.
-  // Variant panels (.panel.shadeN) keep their per-shade tint (from %colourShades).
+  // Variant panels (.panel.tone-N) keep their per-tone tint (from the ladder).
   --panel-bg: oklch(0.3 0.052 268 / 0.5);
 
   // Dark label colour for text on the light accent surfaces. The accent
@@ -30,28 +33,13 @@
   // Pure black clears WCAG AA on every button shade (orange 7.1, amber 8.6,
   // steel 7.6, burnt 5.0, warn 5.3) and on the lighter tiles too (it needs to be
   // this dark to clear the mid-tone 75% orange tile at 4.55). Set on :root so all
-  // buttons inherit it uniformly (no shade class re-sets it).
+  // buttons inherit it uniformly (no slot re-sets it).
   --command-fg: oklch(0 0 0);
 
   // Tile labels: tiles are color800 at 75% over navy, i.e. mid-tone. Adaptive
-  // contrast — dark text on the lighter tiles (default/amber/steel inherit this);
+  // contrast — dark text on the lighter tiles (primary/amber/steel inherit this);
   // the darker burnt/warn tiles flip back to cream below.
   --tile-fg: var(--command-fg);
-}
-
-// Vivid orange — primary accent: buttons (800), trim/corners (700),
-// input border (600), active/focus glow (500). 700/600/500 clamp to vivid
-// pure orange, which reads like panel lighting / warning indicators.
-.default {
-  @extend %colourShades;
-  --hue: 49;
-
-  // Decouple bg/fg from the orange hue (overrides %colourShades' single-hue ends):
-  --950: 0.21 0.055 270; // deep navy — dominant surface (~#0F1631)
-  --100: 0.947 0.007 81; // warm cream — body + button text (#F0EDE8)
-
-  // Light theme would otherwise put orange (color800) text on cream — force navy.
-  --fg-body-light: var(--color950);
 }
 
 // In light theme a translucent navy over cream looks muddy — restore the
@@ -61,39 +49,35 @@
 }
 
 // Deeper burnt orange (#CC5812).
-.shade1 {
-  @extend %colourShades;
+.tone-1 {
   --hue: 45;
-  --l-base: 0.6;
-  --c-base: 0.164;
+  --lightness: 0.6;
+  --chroma: 0.164;
   // Darker tile surface — cream reads better than dark here.
   --tile-fg: var(--color100);
 }
 
 // Amber / warning-light gold (#E8A030).
-.shade2 {
-  @extend %colourShades;
+.tone-2 {
   --hue: 73;
-  --l-base: 0.73;
-  --c-base: 0.16;
+  --lightness: 0.73;
+  --chroma: 0.16;
 }
 
 // Steel blue-gray — the cool counterpoint that keeps the UI from going
 // all-orange. Lower chroma so it reads as steel, not a loud cornflower (#859DC1).
-.shade3 {
-  @extend %colourShades;
+.tone-3 {
   --hue: 258;
-  --c-base: 0.06;
+  --chroma: 0.06;
 }
 
 // Danger red — kept clearly distinct from the orange accent. Lightened to L0.62
 // (#DE4F44) so the dark --command-fg label clears WCAG AA on warn buttons (the
 // old L0.58 red was a mid-tone where no text colour reached 4.5:1).
 .warn {
-  @extend %colourShades;
   --hue: 28;
-  --l-base: 0.62;
-  --c-base: 0.18;
+  --lightness: 0.62;
+  --chroma: 0.18;
   // Darker tile surface — cream reads better than dark here.
   --tile-fg: var(--color100);
 }

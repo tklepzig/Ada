@@ -1,4 +1,58 @@
-%colourShades {
+// Colour engine. Lives in the base stylesheet (ada.css) so a theme is just
+// custom properties on :root — no SCSS, no @extend needed:
+//
+//   ramp theme    -> set --base-hue (+ --lightness / --chroma). The four tones
+//                    derive from --base-hue by a per-slot offset; warn is fixed.
+//   curated theme -> additionally override --hue / --lightness / --chroma per
+//                    slot, and the --100 / --950 ends to decouple bg/text.
+//
+// The five slots (primary + tone-1..3 + warn) are an INDEPENDENT palette, not
+// shades of one colour. The 100..950 ladder below is the light->dark ramp WITHIN
+// a single slot.
+
+// --- per-slot hue ------------------------------------------------------------
+// --base-hue is the theme's anchor: primary uses it, and the tones offset from
+// it by default (an even ramp — the blue theme lands exactly on these, so it
+// sets nothing but --base-hue). Override any individual slot by setting --hue on
+// its class, the same way --lightness / --chroma are overridden per slot. warn
+// sits off the ramp at a fixed red. :root mirrors primary so no-class elements
+// (body, plain commands) read as the primary colour.
+//
+// Why --base-hue is the only "base"-prefixed input: hue is the one value
+// derived per slot (tone = base - N), so its anchor must be a SEPARATE variable
+// from the per-slot --hue the ladder consumes — `--hue: calc(var(--hue) - 26)`
+// would be a self-referential cycle (invalid CSS). Lightness/chroma aren't
+// derived, so a single --lightness / --chroma is both the theme default and a
+// per-slot override via the cascade; no separate anchor is needed.
+:root,
+.primary {
+  --hue: var(--base-hue);
+}
+.tone-1 {
+  --hue: calc(var(--base-hue) - 26);
+}
+.tone-2 {
+  --hue: calc(var(--base-hue) - 51);
+}
+.tone-3 {
+  --hue: calc(var(--base-hue) - 76);
+}
+.warn {
+  --hue: 29;
+}
+
+// --- the shade ladder within one slot ----------------------------------------
+%ladder {
+  // The ladder reads --lightness-resolved / --chroma-resolved so the light theme can
+  // shift them without clobbering a slot's own --lightness/--chroma. In light
+  // mode every slot keeps its own value plus a per-theme shift, so per-slot
+  // overrides survive (they used to be silently dropped in light mode).
+  // The shift is itself a cascade input: set --lightness-light-shift on a slot to
+  // lift it more/less than the theme-wide value — it REPLACES the :root shift for
+  // that slot (it does not stack on it).
+  --lightness-resolved: var(--lightness);
+  --chroma-resolved: var(--chroma);
+
   --bg-body: var(--color950);
   --fg-body: var(--color100);
 
@@ -7,22 +61,22 @@
 
   &.light-theme,
   :root.light-theme & {
-    --l-base: var(--l-base-light);
-    --c-base: var(--c-base-light);
+    --lightness-resolved: calc(var(--lightness) + var(--lightness-light-shift, 0));
+    --chroma-resolved: calc(var(--chroma) + var(--chroma-light-shift, 0));
     --bg-body: var(--bg-body-light);
     --fg-body: var(--fg-body-light);
   }
 
   // Panel surface colour. Lives here (not on :root in each theme) so var(--500)
-  // resolves per shade class — that keeps `.panel.shadeN` tinting its own surface.
+  // resolves per slot — that keeps `.panel.tone-N` tinting its own surface.
   // Themes can override it (e.g. jupiter-2 sets a flat navy for the base panel).
   --panel-bg: oklch(var(--500) / 0.1);
 
   --100: 0.91 0.05 var(--hue);
-  --500: calc(var(--l-base) + 0.15) calc(var(--c-base) + 0.06) var(--hue);
-  --600: calc(var(--l-base) + 0.1) calc(var(--c-base) + 0.04) var(--hue);
-  --700: calc(var(--l-base) + 0.05) calc(var(--c-base) + 0.02) var(--hue);
-  --800: var(--l-base) var(--c-base) var(--hue);
+  --500: calc(var(--lightness-resolved) + 0.15) calc(var(--chroma-resolved) + 0.06) var(--hue);
+  --600: calc(var(--lightness-resolved) + 0.1) calc(var(--chroma-resolved) + 0.04) var(--hue);
+  --700: calc(var(--lightness-resolved) + 0.05) calc(var(--chroma-resolved) + 0.02) var(--hue);
+  --800: var(--lightness-resolved) var(--chroma-resolved) var(--hue);
   --950: 0.18 0.03 var(--hue);
 
   --color100: oklch(var(--100));
@@ -31,4 +85,13 @@
   --color700: oklch(var(--700));
   --color800: oklch(var(--800));
   --color950: oklch(var(--950));
+}
+
+:root,
+.primary,
+.tone-1,
+.tone-2,
+.tone-3,
+.warn {
+  @extend %ladder;
 }
