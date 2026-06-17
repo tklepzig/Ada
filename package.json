@@ -7,7 +7,7 @@
     "build": "rm -rf css && sass scss:css -s compressed --no-source-map",
     "changeset": "changeset",
     "remove-snapshot": "f(){ if [ -z \"$1\" ]; then echo \"Error: No tag name specified, exiting.\"; exit 1; fi; npm dist-tag rm ada-ui $1; }; f",
-    "version": "npm run build && changeset version"
+    "version": "npm run build && changeset version && npm install --package-lock-only"
   },
   "bin": "install.js",
   "type": "module",
