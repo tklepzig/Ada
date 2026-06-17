@@ -1,8 +1,5 @@
 :root {
   --base-hue: 132;
-  --tone-1-hue: -11; // 121
-  --tone-2-hue: 32; // 164
-  --tone-3-hue: 53; // 185
 
   --lightness: 0.35;
   --chroma: 0.1;
@@ -10,4 +7,14 @@
   // Light theme: lift lightness and chroma (0.35 -> 0.45, 0.1 -> 0.15).
   --lightness-light-shift: 0.1;
   --chroma-light-shift: 0.05;
+}
+
+.tone-1 {
+  --hue: 121;
+}
+.tone-2 {
+  --hue: 164;
+}
+.tone-3 {
+  --hue: 185;
 }

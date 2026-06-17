@@ -11,25 +11,27 @@
 // a single slot.
 
 // --- per-slot hue ------------------------------------------------------------
-// :root mirrors primary so no-class elements (body, plain commands) read as the
-// primary colour. The default offsets describe an even ramp; the blue theme
-// lands exactly on them, so it needs no offset overrides. A theme retargets any
-// tone with --tone-N-hue, and warn with --warn-hue.
+// --base-hue is the theme's anchor: primary uses it, and the tones offset from
+// it by default (an even ramp — the blue theme lands exactly on these, so it
+// sets nothing but --base-hue). Override any individual slot by setting --hue on
+// its class, the same way --lightness / --chroma are overridden per slot. warn
+// sits off the ramp at a fixed red. :root mirrors primary so no-class elements
+// (body, plain commands) read as the primary colour.
 :root,
 .primary {
   --hue: var(--base-hue);
 }
 .tone-1 {
-  --hue: calc(var(--base-hue) + var(--tone-1-hue, -26));
+  --hue: calc(var(--base-hue) - 26);
 }
 .tone-2 {
-  --hue: calc(var(--base-hue) + var(--tone-2-hue, -51));
+  --hue: calc(var(--base-hue) - 51);
 }
 .tone-3 {
-  --hue: calc(var(--base-hue) + var(--tone-3-hue, -76));
+  --hue: calc(var(--base-hue) - 76);
 }
 .warn {
-  --hue: var(--warn-hue, 29);
+  --hue: 29;
 }
 
 // --- the shade ladder within one slot ----------------------------------------
