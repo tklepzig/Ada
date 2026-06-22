@@ -19,13 +19,78 @@ https://github.com/tklepzig/Ada/releases (e.g. `5.0.0`)
     # Using yarn
     yarn add ada-ui
 
-## Select a Theme
+## Theming
 
-Beginning with version 3.0.0, you can choose between different themes. When
-using the CSS, ensure to include the correct theme file before the main one,
-e.g.:
+`ada.css` ships the colour engine but no palette of its own, so it always needs
+a theme alongside it. A theme is just a handful of custom properties on `:root`
+— load it **after** `ada.css` so its values win the cascade:
 
-    https://cdn.jsdelivr.net/gh/tklepzig/Ada@5.0.0/css/ada.blue.css
+    <link rel="stylesheet" href="css/ada.css" />
+    <link rel="stylesheet" href="css/ada.blue.css" />
+
+Or via the CDN:
+
+    https://cdn.jsdelivr.net/gh/tklepzig/Ada@version/css/ada.css
+    https://cdn.jsdelivr.net/gh/tklepzig/Ada@version/css/ada.blue.css
+
+With npm, import the base entry first and the theme second (same cascade rule
+through your bundler):
+
+    import "ada-ui";
+    import "ada-ui/jupiter-2";
+
+### Ready-made themes
+
+| Import             | Theme                                              |
+| ------------------ | -------------------------------------------------- |
+| `ada-ui/blue`      | Blue (the default ramp theme)                      |
+| `ada-ui/green`     | Green                                              |
+| `ada-ui/jupiter-2` | Deep-space navy + warning-orange + cream (curated) |
+
+### The colour slots
+
+The palette is five independent slots, each applied via a class: `primary` (the
+no-class default), `tone-1`, `tone-2`, `tone-3`, and `warn`. They are treated as
+distinct colours, not shades of one. Within a slot, a light→dark `--color100` …
+`--color950` ladder is derived for you.
+
+For a light variant of any theme, add the `.light-theme` class to your root
+element (e.g. `<html class="light-theme">`).
+
+### Rolling your own theme
+
+A custom theme is a small CSS file that sets `:root` properties. There are three
+levels, from least to most control:
+
+1. **Hue ramp** — set `--base-hue`, `--lightness` and `--chroma`. The four tones
+   derive from the base hue by a fixed per-slot offset; `warn` stays at its
+   fixed red. The blue theme lands exactly on the default offsets, so it is
+   just:
+
+   ```css
+   :root {
+     --base-hue: 246;
+     --lightness: 0.3;
+     --chroma: 0.1;
+     --lightness-light-shift: 0.1; /* lift lightness in .light-theme */
+   }
+   ```
+
+2. **Per-slot overrides** — override `--hue` / `--lightness` / `--chroma` on an
+   individual slot class to break it off the ramp:
+
+   ```css
+   .tone-3 {
+     --hue: 258;
+     --chroma: 0.06;
+   }
+   ```
+
+3. **Fully curated** — additionally override the ladder ends (`--100` / `--950`)
+   to decouple background and text from the hue ramp, and the surface/label
+   knobs (`--panel-bg`, `--command-fg`, `--tile-fg`). The **jupiter-2** theme
+   (`scss/ada.jupiter-2.scss`) is authored this way and is the reference
+   example.
 
 ## Versioning and Publishing
 
