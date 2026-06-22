@@ -1,5 +1,25 @@
 # ada-ui
 
+## 7.0.1
+
+### Patch Changes
+
+- 1cd7847: Automated the version pinned in the README's jsDelivr CDN links. The release
+  step now rewrites them to the version being cut, so the docs no longer carry a
+  manual `@version` placeholder for users to swap by hand. Snapshots are
+  unaffected — they don't run the release `version` script.
+- 4d6e15c: Fixed the `npx ada-ui <theme>` bundle generator concatenating the theme before
+  the base stylesheet. A theme is now appended after `ada.css` so its `:root`
+  overrides win the cascade — curated themes (e.g. jupiter-2) that override
+  engine-output variables (`--950`, `--panel-bg`, …) were previously clobbered by
+  the engine defaults and rendered with the wrong palette. Ramp themes (blue,
+  green) were unaffected.
+
+  Updated the README theming section to match the current pure-CSS engine: load a
+  theme after `ada.css`, the available ready-made themes, and how to author a
+  ramp, per-slot, or fully curated theme (all three of `--base-hue`, `--lightness`
+  and `--chroma` are required for a ramp).
+
 ## 7.0.0
 
 ### Major Changes
