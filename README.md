@@ -6,10 +6,10 @@ My sci-fi inspired UI components library. Still growing...
 
 ## CDN
 
-    https://cdn.jsdelivr.net/gh/tklepzig/Ada@version/css/ada.css
+    https://cdn.jsdelivr.net/gh/tklepzig/Ada@7.0.0/css/ada.css
 
-Replace `version` with the version of your desired release, see
-https://github.com/tklepzig/Ada/releases (e.g. `5.0.0`)
+The link points at the latest release. To pin a different one, swap the version
+— see https://github.com/tklepzig/Ada/releases.
 
 ## Install
 
@@ -30,8 +30,8 @@ a theme alongside it. A theme is just a handful of custom properties on `:root`
 
 Or via the CDN:
 
-    https://cdn.jsdelivr.net/gh/tklepzig/Ada@version/css/ada.css
-    https://cdn.jsdelivr.net/gh/tklepzig/Ada@version/css/ada.blue.css
+    https://cdn.jsdelivr.net/gh/tklepzig/Ada@7.0.0/css/ada.css
+    https://cdn.jsdelivr.net/gh/tklepzig/Ada@7.0.0/css/ada.blue.css
 
 With npm, import the base entry first and the theme second (same cascade rule
 through your bundler):
