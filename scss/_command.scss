@@ -25,6 +25,11 @@
   vertical-align: middle;
   transition: border-color 0.15s ease-in-out, background-color 0.15s ease-in-out;
 
+  &.thin {
+    min-height: var(--command-min-size-thin);
+    min-width: var(--command-min-size-thin);
+  }
+
   &.flash {
     animation: flash-background 1s ease-in-out infinite;
   }
@@ -119,6 +124,11 @@
     &:last-child {
       border-radius: 0 var(--border-radius) var(--border-radius) 0;
     }
+  }
+
+  &.thin > .command {
+    min-height: var(--command-min-size-thin);
+    min-width: var(--command-min-size-thin);
   }
 
   &.vertical {
