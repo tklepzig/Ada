@@ -1,5 +1,11 @@
 # ada-ui
 
+## 7.1.0
+
+### Minor Changes
+
+- b2ac13a: Added thin variant of Command
+
 ## 7.0.1
 
 ### Patch Changes
