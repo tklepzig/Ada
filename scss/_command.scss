@@ -19,6 +19,10 @@
   // orange — set a dark --command-fg so labels stay legible (WCAG AA).
   color: var(--command-fg, var(--color100));
   font-family: inherit;
+  // pin the weight: buttons inherit font-weight (reset), so a command docked in
+  // a panel header would otherwise pick up the header's 300 and look lighter
+  // than the same command in a footer
+  font-weight: var(--font-weight);
   font-size: var(--text-base);
   cursor: pointer;
   user-select: none;
@@ -93,15 +97,7 @@
   }
 
   > .spacer {
-    background-color: var(--color800);
-    box-shadow: var(--box-shadow);
-    min-width: var(--compound-spacer-min-size);
-    min-height: var(--compound-spacer-min-size);
-
-    &.outline {
-      background-color: transparent;
-      border: var(--border-width) solid var(--color700);
-    }
+    @extend %spacer;
   }
 
   > .text {
@@ -113,17 +109,7 @@
 
   > .command,
   .spacer {
-    &:first-child {
-      border-radius: var(--border-radius) 0 0 var(--border-radius);
-    }
-
-    &:not(:first-child):not(:last-child) {
-      border-radius: 0;
-    }
-
-    &:last-child {
-      border-radius: 0 var(--border-radius) var(--border-radius) 0;
-    }
+    @extend %bar-segment;
   }
 
   &.thin > .command {
