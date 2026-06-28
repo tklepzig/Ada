@@ -1,5 +1,15 @@
 # ada-ui
 
+## 7.2.0
+
+### Minor Changes
+
+- 93d1688: Added a way to integrate commands in a panel header/footer
+
+### Patch Changes
+
+- bbdf0f9: Added font-weight tokens
+
 ## 7.1.0
 
 ### Minor Changes
