@@ -26,11 +26,21 @@
 .panel > header:has(> .panel-commands),
 .panel > footer:has(> .panel-commands) {
   padding: 0;
+  // Lift above the article (a grid item at z-index 1) so the bar's shadow
+  // lands on the scrolling content instead of being painted over by it.
+  z-index: 2;
 
   &::before,
   &::after {
     display: none;
   }
+}
+
+.panel > footer:has(> .panel-commands) {
+  padding-top: var(--padding-sm);
+}
+.panel > header:has(> .panel-commands) {
+  padding-bottom: var(--padding-sm);
 }
 
 .panel > footer > .panel-commands {
