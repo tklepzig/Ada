@@ -5,6 +5,9 @@
 :root {
   --font-family: "Open Sans", sans-serif;
   --font-size: 16px;
+  --font-weight-light: 300;
+  --font-weight: 400;
+  --font-weight-bold: 600;
 
   --spacing-xs: 2px;
   --spacing-sm: 6px;
@@ -45,7 +48,7 @@
 
   --command-min-size: #{scalable(3rem)};
   --command-min-size-thin: #{scalable(2rem)};
-  --compound-spacer-min-size: #{scalable(1rem)};
+  --spacer-min-size: #{scalable(1rem)};
 
   --corner-size: #{scalable(1rem)};
   --corner-small-size: #{scalable(0.75rem)};
@@ -67,9 +70,33 @@
   }
 }
 
+%spacer {
+  background-color: var(--color800);
+  box-shadow: var(--box-shadow);
+  min-width: var(--spacer-min-size);
+  min-height: var(--spacer-min-size);
+
+  &.outline {
+    background-color: transparent;
+    border: var(--border-width) solid var(--color700);
+  }
+}
+
+%bar-segment {
+  &:first-child {
+    border-radius: var(--border-radius) 0 0 var(--border-radius);
+  }
+  &:not(:first-child):not(:last-child) {
+    border-radius: 0;
+  }
+  &:last-child {
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+  }
+}
+
 html {
   font-family: var(--font-family);
-  font-weight: 400;
+  font-weight: var(--font-weight);
   font-size: var(--font-size);
 }
 

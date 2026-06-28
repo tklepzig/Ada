@@ -1,0 +1,51 @@
+.panel-commands {
+  display: flex;
+  align-items: stretch;
+  gap: var(--spacing-sm);
+  min-height: var(--command-min-size-thin);
+
+  > .command {
+    min-width: var(--command-min-size-thin);
+    min-height: var(--command-min-size-thin);
+  }
+
+  > .spacer {
+    @extend %spacer;
+  }
+
+  > .flex {
+    flex: 1;
+  }
+
+  > .command,
+  .spacer {
+    @extend %bar-segment;
+  }
+}
+
+.panel > header:has(> .panel-commands),
+.panel > footer:has(> .panel-commands) {
+  padding: 0;
+
+  &::before,
+  &::after {
+    display: none;
+  }
+}
+
+.panel > footer > .panel-commands {
+  > :first-child {
+    border-radius: 0 0 0 var(--border-radius);
+  }
+  > :last-child {
+    border-radius: 0 0 var(--border-radius) 0;
+  }
+}
+.panel > header > .panel-commands {
+  > :first-child {
+    border-radius: var(--border-radius) 0 0 0;
+  }
+  > :last-child {
+    border-radius: 0 var(--border-radius) 0 0;
+  }
+}

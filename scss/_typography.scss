@@ -3,7 +3,7 @@ h2,
 h3,
 h4,
 %header {
-  font-weight: 300;
+  font-weight: var(--font-weight-light);
   text-shadow: 0 0 4px oklch(var(--400) / 0.5);
   color: var(--fg-body);
 }
