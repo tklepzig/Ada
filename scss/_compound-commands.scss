@@ -1,0 +1,48 @@
+.compound-commands {
+  display: inline-flex;
+  gap: var(--spacing-sm);
+
+  > .flex {
+    flex: 1;
+  }
+
+  > .spacer {
+    @extend %spacer;
+  }
+
+  > .text {
+    font-size: var(--text-3xl);
+    line-height: var(--text-3xl);
+    align-self: center;
+    padding: var(--padding-xs);
+  }
+
+  > .command,
+  .spacer {
+    @extend %bar-segment;
+  }
+
+  &.thin > .command {
+    min-height: var(--command-min-size-thin);
+    min-width: var(--command-min-size-thin);
+  }
+
+  &.vertical {
+    flex-direction: column;
+
+    > .text {
+      justify-self: center;
+    }
+
+    > .command,
+    .spacer {
+      &:first-child {
+        border-radius: var(--border-radius) var(--border-radius) 0 0;
+      }
+
+      &:last-child {
+        border-radius: 0 0 var(--border-radius) var(--border-radius);
+      }
+    }
+  }
+}
