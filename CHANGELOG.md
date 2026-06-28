@@ -1,5 +1,11 @@
 # ada-ui
 
+## 7.2.1
+
+### Patch Changes
+
+- d04fa63: Fixed not visible separation between panel commands and panel content
+
 ## 7.2.0
 
 ### Minor Changes
