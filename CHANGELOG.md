@@ -1,5 +1,11 @@
 # ada-ui
 
+## 7.2.2
+
+### Patch Changes
+
+- 351bdb9: Fixed missing background color on the html element, causing a color mismatch during overscroll/bounce
+
 ## 7.2.1
 
 ### Patch Changes
