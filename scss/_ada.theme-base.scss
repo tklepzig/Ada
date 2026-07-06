@@ -1,12 +1,12 @@
 // Colour engine. Lives in the base stylesheet (ada.css) so a theme is just
 // custom properties on :root — no SCSS, no @extend needed:
 //
-//   ramp theme    -> set --base-hue (+ --lightness / --chroma). The four tones
+//   ramp theme    -> set --base-hue (+ --lightness / --chroma). The five tones
 //                    derive from --base-hue by a per-slot offset; warn is fixed.
 //   curated theme -> additionally override --hue / --lightness / --chroma per
 //                    slot, and the --100 / --950 ends to decouple bg/text.
 //
-// The five slots (primary + tone-1..3 + warn) are an INDEPENDENT palette, not
+// The six slots (primary + tone-1..4 + warn) are an INDEPENDENT palette, not
 // shades of one colour. The 100..950 ladder below is the light->dark ramp WITHIN
 // a single slot.
 
@@ -36,6 +36,12 @@
 }
 .tone-3 {
   --hue: calc(var(--base-hue) - 76);
+}
+// Double step: the ramp's -25 continuation (-101) would land in the same
+// perceptually compressed band as tone-3 (oklch hue steps are not perceptually
+// even at low chroma — 145 vs 170 both read "green"), so tone-4 skips it.
+.tone-4 {
+  --hue: calc(var(--base-hue) - 130);
 }
 .warn {
   --hue: 29;
@@ -92,6 +98,7 @@
 .tone-1,
 .tone-2,
 .tone-3,
+.tone-4,
 .warn {
   @extend %ladder;
 }
