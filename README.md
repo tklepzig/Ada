@@ -49,8 +49,8 @@ through your bundler):
 
 ### The colour slots
 
-The palette is five independent slots, each applied via a class: `primary` (the
-no-class default), `tone-1`, `tone-2`, `tone-3`, and `warn`. They are treated as
+The palette is six independent slots, each applied via a class: `primary` (the
+no-class default), `tone-1` … `tone-4`, and `warn`. They are treated as
 distinct colours, not shades of one. Within a slot, a light→dark `--color100` …
 `--color950` ladder is derived for you.
 
@@ -62,7 +62,7 @@ element (e.g. `<html class="light-theme">`).
 A custom theme is a small CSS file that sets `:root` properties. There are three
 levels, from least to most control:
 
-1. **Hue ramp** — set `--base-hue`, `--lightness` and `--chroma`. The four tones
+1. **Hue ramp** — set `--base-hue`, `--lightness` and `--chroma`. The five tones
    derive from the base hue by a fixed per-slot offset; `warn` stays at its
    fixed red. The blue theme lands exactly on the default offsets, so it is
    just:

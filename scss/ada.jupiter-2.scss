@@ -71,6 +71,14 @@
   --chroma: 0.06;
 }
 
+// Verdigris sea-green — second cool tone next to steel; muted like it so the
+// warm orange trio stays dominant (#6AAA9B). Ramp fallback (hue 279 at the
+// primary's chroma) would be a bright periwinkle, off-palette.
+.tone-4 {
+  --hue: 178;
+  --chroma: 0.07;
+}
+
 // Danger red — kept clearly distinct from the orange accent. Lightened to L0.62
 // (#DE4F44) so the dark --command-fg label clears WCAG AA on warn buttons (the
 // old L0.58 red was a mid-tone where no text colour reached 4.5:1).

@@ -18,3 +18,8 @@
 .tone-3 {
   --hue: 185;
 }
+// Off the ramp: the default offset (base - 130 = 2) lands next to warn's red.
+// 230 continues the curated green -> teal drift into blue (#004264).
+.tone-4 {
+  --hue: 230;
+}
