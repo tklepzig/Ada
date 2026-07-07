@@ -102,3 +102,16 @@
 .warn {
   @extend %ladder;
 }
+
+// Opt-in reading foreground: softer/near-neutral vs the crisp --100 label white.
+// :root-only (NOT in the ladder) so it resolves once against --hue and stays
+// uniform inside .tone-N/.warn subtrees; theme :root overrides apply everywhere.
+:root {
+  --reading: 0.88 0.02 var(--hue);
+  --reading-light: 0.3 0.02 var(--hue);
+  --fg-reading: oklch(var(--reading));
+
+  &.light-theme {
+    --fg-reading: oklch(var(--reading-light));
+  }
+}
