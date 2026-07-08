@@ -1,0 +1,49 @@
+// "Deep Teal" — a darker, greener sibling of the teal theme: a cyan-green base
+// on near-black with an all-cool green -> cyan -> steel-blue slot set and a deep
+// alert red. Dark-accent regime (L 0.35), pale labels. (Requires ada.css.)
+:root {
+  --base-hue: 180; // cyan-green primary on --color800
+  --lightness: 0.35; // darker than teal (0.42) for a moodier read
+  --chroma: 0.1;
+
+  --950: 0.16 0.03 180; // green-tinted console black
+
+  // Cool near-white text (in-family, hue 180), lifted above the ladder pale so
+  // every solid button clears AAA — the dark L0.35 grounds give big headroom
+  // (dark-mode floor ~9.6). On --100, buttons, tiles. Hardcoded, not var(--100):
+  // var() resolves per element, so tone-classed buttons would take their own --100.
+  --100: 0.98 0.02 180;
+  --command-fg: oklch(0.98 0.02 180);
+  --tile-fg: var(--command-fg);
+}
+
+// All-cool slot set (no warm middle) — the greener character comes from the
+// green/cyan spread.
+.tone-1 {
+  --hue: 155; // green
+  --chroma: 0.12;
+}
+
+.tone-2 {
+  --hue: 135; // spring green
+  --chroma: 0.13;
+}
+
+.tone-3 {
+  --hue: 205; // cyan
+  --chroma: 0.11;
+}
+
+// Steel blue anchor. Close to the primary hue, so separated by lightness (0.30)
+// instead — a cool counterweight to the greens.
+.tone-4 {
+  --hue: 226;
+  --lightness: 0.3;
+  --chroma: 0.09;
+}
+
+// Alert red. L0.38 is the mobile floor (deeper crushes to black on phones).
+.warn {
+  --lightness: 0.38;
+  --chroma: 0.145;
+}
