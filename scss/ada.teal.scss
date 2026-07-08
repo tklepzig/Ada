@@ -17,9 +17,9 @@
   --tile-fg: var(--command-fg);
 }
 
-// Green. Shifted to 158 so hue, not brightness, separates it from the primary.
+// Teal-green. Sits 12° off the primary so hue, not brightness, separates them.
 .tone-1 {
-  --hue: 158;
+  --hue: 168;
   --chroma: 0.12;
 }
 
