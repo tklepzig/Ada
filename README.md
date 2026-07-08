@@ -46,6 +46,7 @@ through your bundler):
 | `ada-ui/blue`      | Blue (the default ramp theme)                      |
 | `ada-ui/green`     | Green                                              |
 | `ada-ui/jupiter-2` | Deep-space navy + warning-orange + cream (curated) |
+| `ada-ui/teal`      | Deep green-teal + chartreuse + gold (curated)      |
 
 ### The colour slots
 
