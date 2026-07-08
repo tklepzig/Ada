@@ -1,67 +1,50 @@
-// "Teal" — a starship helm console: deep teal panels on near-black, chartreuse
-// + gold readouts, deep alert red.
-//
-// Slot hues are sampled from the source frame; lightness sits a notch below the
-// frame's dominant band (L≈0.5) for a moodier read. That lands the theme in the
-// classic dark-accent regime: pale labels everywhere (buttons lifted to
-// near-white for AAA, see --command-fg below), and the L0.42 accents double as
-// AA text on the pale bg in light mode — no light-theme fixups needed.
-// Headroom is one-sided: darker only improves label contrast; the ceiling is
-// L≈0.48 (pale labels on an L0.5 teal drop under AA at 4.3).
+// "Teal" — deep teal on near-black, with chartreuse/gold accents and a deep
+// alert red. Dark-accent regime (L 0.42, pale labels); the accents double as
+// AA text on the pale bg in light mode.
 :root {
-  // Primary lands the console teal (#005A6C) on --color800.
-  --base-hue: 211;
+  --base-hue: 211; // teal #005A6C on --color800
   --lightness: 0.42;
   --chroma: 0.1;
 
-  // Console black: darker than the ladder default (0.18), still teal-tinted.
-  --950: 0.16 0.03 211;
+  --950: 0.16 0.03 211; // darker than the ladder default (0.18), still teal
 
-  // Warm gold-white text (#FDF8DA), like the console's own lettering — the
-  // frame's readouts are gold/chartreuse, not white. Applied to body text
-  // (--100), buttons and tiles; replaces the ladder's cyan-tinted pale
-  // (--color100, L0.91), which read dim on mobile panels and capped the
-  // buttons at AA (5.9–6.4). AAA everywhere in dark mode: body 17.7, buttons
-  // 7.1–9.9, tiles 9.1–12.4. Outline/tone-classed text keeps its slot tint —
-  // the frame mixes text colours the same way.
-  // (Same value as --100, but spelled out: var(--100) inside --command-fg
-  // would resolve per element, and tone-classed buttons would pick up their
-  // own ladder --100 instead of the cream.)
-  --100: 0.975 0.04 100;
-  --command-fg: oklch(0.975 0.04 100);
+  // Cool teal-tinted near-white text, lifted above the ladder pale (L 0.91) so
+  // every solid button clears AAA (the pale capped four at AA). On --100,
+  // buttons, tiles. Hardcoded, not var(--100): var() resolves per element, so
+  // tone-classed buttons would take their own --100.
+  --100: 0.98 0.02 211;
+  --command-fg: oklch(0.98 0.02 211);
   --tile-fg: var(--command-fg);
 }
 
-// Sea-green — the glowing chevrons and edge highlights (#005F55). The frame's
-// glow is a bright cyan at hue 196, but darkened into the slot regime that
-// would twin with the primary — shifted to 185 so hue does the separating.
+// Sea-green #005F55. Shifted to 185 so hue, not brightness, separates it from
+// the primary.
 .tone-1 {
   --hue: 185;
   --chroma: 0.11;
 }
 
-// Chartreuse — the IMPULSE readout and status bars (#2C5B00).
+// Chartreuse #2C5B00.
 .tone-2 {
   --hue: 134;
   --chroma: 0.13;
 }
 
-// Signal gold — the small annotation labels (#584E00).
+// Gold #584E00.
 .tone-3 {
   --hue: 103;
 }
 
-// Steel petrol — the dark secondary panels (#00455C).
+// Steel #00455C. Loops back near the primary hue; separated by lightness (0.36)
+// instead — a cool anchor against the warm middle.
 .tone-4 {
   --hue: 225;
   --lightness: 0.36;
   --chroma: 0.08;
 }
 
-// Alert red, deep like the engine glow (#7E0E09). Below the ramp's lightness
-// so it doesn't outshine the muted slots, but at full in-gamut chroma — the
-// deeper L0.33 looked right on desktop but crushed to near-black on mobile
-// panels.
+// Alert red #7E0E09. Below the ramp lightness so it doesn't outshine the muted
+// slots; L 0.38 is the floor (deeper crushed to black on mobile).
 .warn {
   --lightness: 0.38;
   --chroma: 0.145;
