@@ -23,6 +23,11 @@
   // Light theme would otherwise put orange (color800) text on cream — force navy.
   --fg-body-light: var(--color950);
 
+  // Curated to keep the theme's text identity: cream dark, navy ink light
+  // (derived defaults would lean peach / dark-brown off the orange primary).
+  --reading: 0.88 0.01 81;
+  --reading-light: 0.3 0.03 270;
+
   // Base panel surface is a flat mid navy (#263660) instead of the orange accent
   // wash, so the orange corner-trim reads as trim rather than blending in.
   // Variant panels (.panel.tone-N) keep their per-tone tint (from the ladder).
