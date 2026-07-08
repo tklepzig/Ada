@@ -1,5 +1,21 @@
 # ada-ui
 
+## 7.4.0
+
+### Minor Changes
+
+- 6c7d81f: Added a `--fg-reading` token: a softer, near-neutral foreground for long-form text, opt in via `color: var(--fg-reading)`. Flips per polarity like `--fg-body`; Jupiter-2 curates its own cream/navy values.
+- 31fa39a: Added the `teal` theme (`ada-ui/teal`): deep teal on near-black, with sea-green,
+  chartreuse, signal-gold and steel-petrol tones and a deep alert red. Body text,
+  buttons and tiles cleared WCAG AAA in dark mode.
+
+### Patch Changes
+
+- 03d2821: Fixed the header text glow silently disappearing. The `text-shadow` on
+  headers referenced `--400`, a palette slot that stopped existing after the
+  tone-N rework, which made the whole declaration invalid so no glow rendered.
+  It now uses `--500`, so headers glow again in their tone's own hue.
+
 ## 7.3.0
 
 ### Minor Changes
