@@ -34,7 +34,9 @@
     min-width: var(--command-min-size-thin);
   }
 
-  &.flash {
+  // only flash while interactive — a disabled command keeps its muted
+  // greyed-out surface instead of animating back to the tone colour
+  &.flash:not(:disabled) {
     animation: flash-background 1s ease-in-out infinite;
   }
 
@@ -61,7 +63,7 @@
     border-color: var(--color700);
     color: var(--fg-body);
 
-    &.flash {
+    &.flash:not(:disabled) {
       animation-name: flash-border;
     }
 
