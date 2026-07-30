@@ -1,0 +1,141 @@
+// Ramp silhouette, as an SVG mask stretched over the pseudo-element
+// (preserveAspectRatio="none"), so one path fits any ramp length or command height.
+//
+// x runs 0 to 100 from the command end to the corner end, y from full height to
+// nothing — as written this describes the header path; the footer path mirrors x.
+// The control points' y values are fixed at the extremes: that holds the
+// height progression and keeps the tangent horizontal at both ends, so the curve
+// leaves the bracket line and meets the command without a kink.
+//
+// The two x values are the only knob, and nothing else depends on them — ramp
+// length, the foot, the gutter and the gradient are all independent. Lower values
+// push the swell toward the commands, so the ramp hugs the bracket line for longer
+// and rises late; 40 and 60 give a symmetric S. Mid-height sits at
+// 0.375 * ($swell-start + $swell-end) + 12.5 percent.
+$ramp-swell-start: 30;
+$ramp-swell-end: 40;
+
+// One path per orientation, mirrored in the SVG itself — NOT via a CSS transform
+// on the pseudo-element. A transformed element rasterises as its own layer, and at
+// fractional zoom levels the resampled 2px foot drifts off the corner bracket line
+// (a pixel-snapped border). Untransformed, both snap to the same device pixels.
+//
+// header: commands left, corner right, foot on top.
+// footer: corner left, commands right, foot at bottom.
+$ramp-path-header: "M0,100 C#{$ramp-swell-start},100 #{$ramp-swell-end},0 " +
+  "100,0 L0,0 Z";
+$ramp-path-footer: "M100,0 C#{100 - $ramp-swell-start},0 " +
+  "#{100 - $ramp-swell-end},100 0,100 L100,100 Z";
+
+@function ramp-mask($path) {
+  @return url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' " + "viewBox='0 0 100 100' preserveAspectRatio='none'%3E" + "%3Cpath d='#{$path}' fill='%23fff'/%3E%3C/svg%3E");
+}
+
+.panel-dock {
+  display: grid;
+  grid-auto-flow: column;
+  gap: var(--spacing-xs);
+
+  // ramp length as a multiple of the command height, so it tracks .thin
+  --dock-unit: var(--command-min-size-thin);
+  --dock-ramp-scale: 2.5;
+  --dock-ramp: calc(var(--dock-unit) * var(--dock-ramp-scale));
+
+  &:has(> .command:not(.thin)) {
+    --dock-unit: var(--command-min-size);
+  }
+}
+
+// Docks are for panels only. Needed bc of ".tile @extends .panel"
+.panel:not(.tile) {
+  > header:has(> .panel-dock),
+  > footer:has(> .panel-dock) {
+    --dock-corner: var(--corner-size);
+
+    z-index: 2;
+    display: grid;
+    gap: var(--spacing);
+  }
+
+  > header {
+    &:has(> .panel-dock) {
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: start;
+      padding-inline: var(--padding) var(--dock-corner);
+    }
+
+    > .panel-dock {
+      grid-column: 2;
+      justify-content: end;
+      align-self: start;
+      margin-top: calc(var(--padding-sm) * -1);
+
+      &::after {
+        background-image: linear-gradient(
+          to right,
+          var(--color800),
+          var(--color700)
+        );
+        mask-image: ramp-mask($ramp-path-header), linear-gradient(#000, #000);
+        mask-position: bottom, top;
+      }
+
+      > .command {
+        border-radius: 0;
+
+        &:first-of-type {
+          border-radius: 0 0 0 var(--border-radius);
+        }
+      }
+    }
+  }
+
+  > footer {
+    &:has(> .panel-dock) {
+      grid-template-columns: auto minmax(0, 1fr);
+      align-items: end;
+      padding-inline: var(--dock-corner) var(--padding);
+    }
+
+    > .panel-dock {
+      grid-column: 1;
+      justify-content: start;
+      align-self: end;
+      margin-bottom: calc(var(--padding-sm) * -1);
+
+      &::after {
+        order: -1;
+        background-image: linear-gradient(
+          to right,
+          var(--color700),
+          var(--color800)
+        );
+        mask-image: ramp-mask($ramp-path-footer), linear-gradient(#000, #000);
+        mask-position: top, bottom;
+      }
+
+      > .command {
+        border-radius: 0;
+
+        &:last-of-type {
+          border-radius: 0 var(--border-radius) 0 0;
+        }
+      }
+    }
+  }
+
+  > :is(header, footer) > .panel-dock::after {
+    content: "";
+    width: var(--dock-ramp);
+
+    // mask layers: curve silhouette + border-width foot strip on the bracket side
+    mask-size: 100% calc(100% - var(--border-width)), 100% var(--border-width);
+    mask-repeat: no-repeat, no-repeat;
+  }
+}
+
+@supports not (mask-image: linear-gradient(#000, #000)) {
+  .panel-dock::after {
+    display: none;
+  }
+}

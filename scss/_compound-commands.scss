@@ -7,7 +7,15 @@
   }
 
   > .spacer {
-    @extend %spacer;
+    background-color: var(--color800);
+    box-shadow: var(--box-shadow);
+    min-width: var(--spacer-min-size);
+    min-height: var(--spacer-min-size);
+
+    &.outline {
+      background-color: transparent;
+      border: var(--border-width) solid var(--color700);
+    }
   }
 
   > .text {
@@ -19,7 +27,15 @@
 
   > .command,
   .spacer {
-    @extend %bar-segment;
+    &:first-child {
+      border-radius: var(--border-radius) 0 0 var(--border-radius);
+    }
+    &:not(:first-child):not(:last-child) {
+      border-radius: 0;
+    }
+    &:last-child {
+      border-radius: 0 var(--border-radius) var(--border-radius) 0;
+    }
   }
 
   &.thin > .command {
