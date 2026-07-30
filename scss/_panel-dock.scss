@@ -128,8 +128,13 @@ $ramp-path-footer: "M100,0 C#{100 - $ramp-swell-start},0 " +
     content: "";
     width: var(--dock-ramp);
 
-    // mask layers: curve silhouette + border-width foot strip on the bracket side
-    mask-size: 100% calc(100% - var(--border-width)), 100% var(--border-width);
+    // mask layers: curve silhouette + border-width foot strip on the bracket side.
+    // The curve layer overlaps the strip by 1px: abutting mask edges leave a
+    // half-covered device row at fractional zoom (the border-width boundary lands
+    // mid device pixel at e.g. 1.25), visible as a pale seam on light backgrounds.
+    mask-size:
+      100% calc(100% - var(--border-width) + 1px),
+      100% var(--border-width);
     mask-repeat: no-repeat, no-repeat;
   }
 }
