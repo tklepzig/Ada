@@ -17,7 +17,7 @@ that emits no CSS of its own; every consumer `@use`s it.
 
 ```
 scss/
-  _abstracts.scss      // %spacer, %bar-segment, %scrollbar, %header, scalable(), tokens
+  _abstracts.scss      // %scrollbar, %header, scalable(), tokens
   _global.scss         // @use "abstracts"
   _typography.scss     // @use "abstracts"
   _command.scss        // @use "abstracts"
