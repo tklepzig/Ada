@@ -1,5 +1,12 @@
 # ada-ui
 
+## 8.0.1
+
+### Patch Changes
+
+- af1eb24: Fixed a pale hairline seam in the panel dock ramp at fractional browser zoom
+  levels (e.g. 125%)
+
 ## 8.0.0
 
 ### Major Changes
