@@ -1,5 +1,15 @@
 # ada-ui
 
+## 8.0.0
+
+### Major Changes
+
+- fd90a96: Removed `.panel-commands` — replaced by `.panel-dock`
+
+### Minor Changes
+
+- 2a22bad: Added `.panel-dock` to allow adding commands to a header or footer of a panel
+
 ## 7.4.1
 
 ### Patch Changes
