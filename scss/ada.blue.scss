@@ -4,6 +4,7 @@
   --lightness: 0.3;
   --chroma: 0.1;
 
-  // Light theme: lift lightness, keep chroma (0.3 -> 0.4).
-  --lightness-light-shift: 0.1;
+  // Light theme: lift lightness, keep chroma (0.3 -> 0.35). +0.1 left the
+  // tones at ~6.5:1 on the pale body; +0.05 clears AAA (7.9 worst slot).
+  --lightness-light-shift: 0.05;
 }

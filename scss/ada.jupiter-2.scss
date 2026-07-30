@@ -20,8 +20,6 @@
   // single-hue ends): deep navy surface + warm cream text.
   --950: 0.21 0.055 270; // dominant surface (~#0F1631)
   --100: 0.947 0.007 81; // body + button text (#F0EDE8)
-  // Light theme would otherwise put orange (color800) text on cream — force navy.
-  --fg-body-light: var(--color950);
 
   // Curated to keep the theme's text identity: cream dark, navy ink light
   // (derived defaults would lean peach / dark-brown off the orange primary).
@@ -47,10 +45,29 @@
   --tile-fg: var(--command-fg);
 }
 
+// Light theme would otherwise put the light accents (color800) as text on
+// cream — force dark ink (each slot's own --color950). Declared on the slot
+// classes, not just :root: the ladder re-declares --fg-body-light per slot,
+// which shadows a :root-only override on every tone-classed element.
+:root,
+.primary,
+.tone-1,
+.tone-2,
+.tone-3,
+.tone-4,
+.warn {
+  --fg-body-light: var(--color950);
+}
+
 // In light theme a translucent navy over cream looks muddy — restore the
 // standard warm wash so the light base panel looks as it would by default.
 :root.light-theme {
   --panel-bg: oklch(var(--500) / 0.1);
+  // The accents are light (orange L 0.69), so the default 600/700 lines were
+  // near-invisible on cream (1.8–3.0:1). Darkened per-slot accent (L -0.25)
+  // keeps the hue identity and clears 4.6:1 on the worst slot. var() resolves
+  // per element, so each tone draws its own darkened line colour.
+  --trim: oklch(calc(var(--lightness-resolved) - 0.25) var(--chroma-resolved) var(--hue));
 }
 
 // Deeper burnt orange (#CC5812).

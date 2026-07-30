@@ -60,7 +60,7 @@
 
   &.outline {
     background-color: transparent;
-    border-color: var(--color700);
+    border-color: var(--trim, var(--color700));
     color: var(--fg-body);
 
     &.flash:not(:disabled) {

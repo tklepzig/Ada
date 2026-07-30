@@ -1,7 +1,10 @@
 %corner-base {
   content: "";
   border-style: solid;
-  border-color: var(--color700);
+  // --trim: themeable line colour for borders/corners on the page surface.
+  // Themes whose mid rungs are light (jupiter-2) set a darker value so the
+  // lines stay visible on the pale light-mode body.
+  border-color: var(--trim, var(--color700));
   position: absolute;
   height: var(--corner-size);
   width: var(--corner-size);
@@ -12,7 +15,7 @@
   .tile > & {
     height: var(--corner-small-size);
     width: var(--corner-small-size);
-    border-color: var(--color600);
+    border-color: var(--trim, var(--color600));
 
     --thickness: var(--border-width-sm);
   }
@@ -94,11 +97,11 @@
 .tile {
   @extend .panel;
 
-  background: oklch(var(--800) / 0.75);
-  // Tile label colour, themeable (default --fg-body). A theme with light tile
-  // surfaces can flip this to a dark colour per shade for legibility — see
-  // jupiter-2, which inverts it on its lighter tiles.
-  color: var(--tile-fg, var(--fg-body));
+  // Surface + label come from the ladder (mode-dependent): dark = accent wash
+  // with pale label (--tile-fg themeable — see jupiter-2's adaptive flips),
+  // light = pale tint with --fg-body ink (--tile-fg ignored, it's dark-tuned).
+  background: var(--tile-bg);
+  color: var(--tile-fg-resolved);
 
   > header {
     font-size: var(--text-lg);

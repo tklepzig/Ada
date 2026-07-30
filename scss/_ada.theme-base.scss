@@ -65,12 +65,22 @@
   --bg-body-light: var(--color100);
   --fg-body-light: var(--color800);
 
+  // Tile surface + label. Dark mode: strong accent wash, pale label (themeable
+  // via --tile-fg, e.g. jupiter-2's adaptive flips). Light mode: the wash would
+  // stay dark on a pale page while --fg-body flips to the same dark accent
+  // (dark-on-same-hue, ~1.5:1) — so flip to a pale tint with --fg-body as ink
+  // and ignore --tile-fg, which existing themes tune for the dark composite.
+  --tile-bg: oklch(var(--800) / 0.75);
+  --tile-fg-resolved: var(--tile-fg, var(--fg-body));
+
   &.light-theme,
   :root.light-theme & {
     --lightness-resolved: calc(var(--lightness) + var(--lightness-light-shift, 0));
     --chroma-resolved: calc(var(--chroma) + var(--chroma-light-shift, 0));
     --bg-body: var(--bg-body-light);
     --fg-body: var(--fg-body-light);
+    --tile-bg: oklch(var(--800) / 0.15);
+    --tile-fg-resolved: var(--fg-body);
   }
 
   // Panel surface colour. Lives here (not on :root in each theme) so var(--500)

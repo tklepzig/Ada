@@ -14,7 +14,7 @@
 
     &.outline {
       background-color: transparent;
-      border: var(--border-width) solid var(--color700);
+      border: var(--border-width) solid var(--trim, var(--color700));
     }
   }
 

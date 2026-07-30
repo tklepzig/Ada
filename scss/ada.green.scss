@@ -4,8 +4,9 @@
   --lightness: 0.35;
   --chroma: 0.1;
 
-  // Light theme: lift lightness and chroma (0.35 -> 0.45, 0.1 -> 0.15).
-  --lightness-light-shift: 0.1;
+  // Light theme: lift chroma only (0.1 -> 0.15). The former +0.1 lightness
+  // lift dropped text on the pale body to ~4.9:1; keeping the dark-mode
+  // lightness clears AAA (7.3 worst slot).
   --chroma-light-shift: 0.05;
 }
 
