@@ -21,7 +21,8 @@
 
   @extend .scaled;
 
-  @media screen and (min-width: 640px) {
+  // coarse pointers (touch devices) keep the larger font size at any width
+  @media screen and (min-width: 640px) and (pointer: fine) {
     --font-size: 14px;
   }
 
