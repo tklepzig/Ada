@@ -1,5 +1,12 @@
 # ada-ui
 
+## 8.1.1
+
+### Patch Changes
+
+- c767cb1: Fixed the panel dock ramp's foot line sitting up to 1px off the corner bracket
+  at fractional browser zoom levels
+
 ## 8.1.0
 
 ### Minor Changes
