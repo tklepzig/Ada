@@ -1,5 +1,16 @@
 # ada-ui
 
+## 8.1.0
+
+### Minor Changes
+
+- be36c2f: Extended the larger mobile font size and corresponding control sizes to touch
+  devices at all screen widths
+
+### Patch Changes
+
+- db1cb5c: Reduced text shadow in light theme
+
 ## 8.0.1
 
 ### Patch Changes
