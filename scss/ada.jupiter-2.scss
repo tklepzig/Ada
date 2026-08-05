@@ -22,6 +22,10 @@
   --100: 0.947 0.007 81; // body + button text (#F0EDE8)
   // Light theme would otherwise put orange (color800) text on cream — force navy.
   --fg-body-light: var(--color950);
+  // Same lightness step as the other themes, but held at the cream hue (81) and
+  // low chroma: the base pale builds on --base-hue, and 49 at 0.05 is the accent
+  // orange — the page came out peach. Cream, a shade deeper than --100.
+  --bg-body-light: oklch(0.91 0.02 81);
 
   // Curated to keep the theme's text identity: cream dark, navy ink light
   // (derived defaults would lean peach / dark-brown off the orange primary).
