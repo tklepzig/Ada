@@ -38,8 +38,12 @@ $ramp-path-footer: "M100,0 C#{100 - $ramp-swell-start},0 " +
 
   // ramp length as a multiple of the command height, so it tracks .thin
   --dock-unit: var(--command-min-size-thin);
-  --dock-ramp-scale: 2.5;
+  --dock-ramp-scale: 1.75;
   --dock-ramp: calc(var(--dock-unit) * var(--dock-ramp-scale));
+
+  @media (min-width: 640px) {
+    --dock-ramp-scale: 2.5;
+  }
 
   &:has(> .command:not(.thin)) {
     --dock-unit: var(--command-min-size);
