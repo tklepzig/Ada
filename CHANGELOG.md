@@ -1,5 +1,12 @@
 # ada-ui
 
+## 8.1.2
+
+### Patch Changes
+
+- 4a94781: Improved body fg color in light mode to increase contrast
+- 7b36b48: Fixed poor contrast text colors of the tile component in light mode
+
 ## 8.1.1
 
 ### Patch Changes
