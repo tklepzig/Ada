@@ -41,9 +41,8 @@
   // buttons inherit it uniformly (no slot re-sets it).
   --command-fg: oklch(0 0 0);
 
-  // Tile labels: tiles are color800 at 75% over navy, i.e. mid-tone. Adaptive
-  // contrast — dark text on the lighter tiles (primary/amber/steel inherit this);
-  // the darker burnt/warn tiles flip back to cream below.
+  // Tiles are color800 at 75% — light enough that dark ink wins (8.5-10.0).
+  // tone-1/warn flip by mode, below.
   --tile-fg: var(--command-fg);
 }
 
@@ -58,8 +57,6 @@
   --hue: 45;
   --lightness: 0.6;
   --chroma: 0.164;
-  // Darker tile surface — cream reads better than dark here.
-  --tile-fg: var(--color100);
 }
 
 // Amber / warning-light gold (#E8A030).
@@ -91,6 +88,12 @@
   --hue: 28;
   --lightness: 0.62;
   --chroma: 0.18;
-  // Darker tile surface — cream reads better than dark here.
-  --tile-fg: var(--color100);
+}
+
+// In dark mode these two tones need the root dark ink fo reaching AA contrast
+:root:not(.light-theme) {
+  .tone-1,
+  .warn {
+    --tile-fg: var(--color100);
+  }
 }

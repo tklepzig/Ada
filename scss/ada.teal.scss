@@ -14,7 +14,6 @@
   // element, so tone-classed buttons would take their own --100.
   --100: 0.98 0.02 180;
   --command-fg: oklch(0.98 0.02 180);
-  --tile-fg: var(--command-fg);
 }
 
 // Teal-green. Sits 12° off the primary so hue, not brightness, separates them.
