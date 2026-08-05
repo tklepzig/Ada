@@ -62,7 +62,10 @@
   --bg-body: var(--color950);
   --fg-body: var(--color100);
 
-  --bg-body-light: var(--color100);
+  // Hardcoded pale, NOT var(--color100): themes lift --100 to clear AAA for ink
+  // on solid buttons (teal 0.98, jupiter-2 0.947), and riding on it washed the
+  // page out to near-white. This is the ladder pale, so ramp themes are unchanged.
+  --bg-body-light: oklch(0.91 0.05 var(--hue));
   // Light-mode ink, per tone — headings, .input and .command.outline re-resolve
   // it. L 0.30 (as --reading-light) clears AAA on the pale body. Chroma capped:
   // darker saturated hues leave sRGB, and Chromium's gamut mapping turns
