@@ -1,5 +1,11 @@
 # ada-ui
 
+## 8.1.4
+
+### Patch Changes
+
+- f66e883: Reduced length of panel dock ramp on mobile
+
 ## 8.1.3
 
 ### Patch Changes
