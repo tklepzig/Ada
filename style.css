@@ -197,3 +197,15 @@ body {
 input {
   max-width: 20rem;
 }
+
+@media (width < 640px) {
+  #theme-dock-wide {
+    display: none;
+  }
+}
+
+@media (width >= 640px) {
+  #theme-dock-narrow {
+    display: none;
+  }
+}
