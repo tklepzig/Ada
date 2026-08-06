@@ -81,41 +81,53 @@
     <div class="panel">
       <header>
         <h1>Ada UI</h1>
-        <div class="panel-dock">
+        <div class="panel-dock" id="theme-dock-narrow">
+          <button
+            id="theme-cycle"
+            class="command thin"
+            onclick="cycleTheme()"
+          ></button>
+          <button
+            class="command thin tone-3 mode-toggle"
+            onclick="toggleMode()"
+          ></button>
+        </div>
+        <div class="panel-dock" id="theme-dock-wide">
           <button
             class="command thin tone-4"
             data-theme="teal"
-            data-label="Teal"
-            data-abbr="T"
+            data-short="Te"
             onclick="selectTheme(this)"
-          ></button>
+          >
+            Teal
+          </button>
           <button
             class="command thin"
             data-theme="blue"
-            data-label="Blue"
-            data-abbr="B"
+            data-short="Bl"
             onclick="selectTheme(this)"
-          ></button>
+          >
+            Blue
+          </button>
           <button
             class="command thin"
             data-theme="green"
-            data-label="Green"
-            data-abbr="G"
+            data-short="Gr"
             onclick="selectTheme(this)"
-          ></button>
+          >
+            Green
+          </button>
           <button
             class="command thin"
             data-theme="jupiter-2"
-            data-label="Jupiter 2"
-            data-abbr="J2"
+            data-short="J2"
             onclick="selectTheme(this)"
-          ></button>
+          >
+            Jupiter 2
+          </button>
           <button
-            id="mode-toggle"
-            class="command thin tone-3"
-            data-label="Light"
-            data-abbr="L"
-            onclick="toggleMode(this)"
+            class="command thin tone-3 mode-toggle"
+            onclick="toggleMode()"
           ></button>
         </div>
       </header>
@@ -607,39 +619,59 @@
       <footer></footer>
     </div>
     <script>
+      let currentTheme = storedTheme ?? "teal";
+
+      const themeButtons = () =>
+        document.querySelectorAll("#theme-dock-wide [data-theme]");
+
       function selectTheme(selected) {
-        document.getElementById(
-          "theme-override",
-        ).href = `css/ada.${selected.dataset.theme}.css`;
-        markActiveTheme(selected.dataset.theme);
-        store(THEME_KEY, selected.dataset.theme);
+        applyTheme(selected.dataset.theme);
       }
 
-      function toggleMode(toggle) {
+      function nextThemeButton() {
+        const buttons = [...themeButtons()];
+        const current = buttons.findIndex(
+          (button) => button.dataset.theme === currentTheme,
+        );
+        return buttons[(current + 1) % buttons.length];
+      }
+
+      function cycleTheme() {
+        applyTheme(nextThemeButton().dataset.theme);
+      }
+
+      function applyTheme(theme) {
+        currentTheme = theme;
+        document.getElementById("theme-override").href = `css/ada.${theme}.css`;
+        markActiveTheme(theme);
+        store(THEME_KEY, theme);
+      }
+
+      function toggleMode() {
         const isLight =
           document.documentElement.classList.toggle("light-theme");
-        setModeLabel(toggle, isLight);
+        setModeLabel(isLight);
         store(LIGHT_KEY, isLight);
       }
 
-      function setModeLabel(toggle, isLight) {
-        toggle.dataset.label = isLight ? "Dark" : "Light";
-        toggle.dataset.abbr = isLight ? "D" : "L";
-      }
-
-      function markActiveTheme(theme) {
+      function setModeLabel(isLight) {
         document
-          .querySelectorAll("[data-theme]")
-          .forEach((button) =>
-            button.classList.toggle("tone-4", button.dataset.theme === theme),
+          .querySelectorAll(".mode-toggle")
+          .forEach(
+            (toggle) => (toggle.textContent = isLight ? "Dark" : "Light"),
           );
       }
 
-      markActiveTheme(storedTheme ?? "teal");
-      setModeLabel(
-        document.getElementById("mode-toggle"),
-        document.documentElement.classList.contains("light-theme"),
-      );
+      function markActiveTheme(theme) {
+        themeButtons().forEach((button) =>
+          button.classList.toggle("tone-4", button.dataset.theme === theme),
+        );
+        document.getElementById("theme-cycle").textContent =
+          nextThemeButton().dataset.short;
+      }
+
+      markActiveTheme(currentTheme);
+      setModeLabel(document.documentElement.classList.contains("light-theme"));
     </script>
   </body>
 </html>
