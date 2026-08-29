@@ -1,0 +1,62 @@
+// "Light" — the one light theme: verdigris ink and trim on a bone page, with
+// low-chroma paper surfaces. Curated per slot (every step is a literal), so it
+// needs none of the ramp inputs. Roles hold as in the dark themes: --950 page,
+// --800 control surface, --100 ink, --500 focus/active, --700 panel brackets,
+// --600 rest border. The hue lives in ink, brackets and the focus ring; the
+// surfaces stay near-neutral — saturated pale surfaces read as pastel.
+//
+// Ink on page 14.5, label on command 11.2, tile ink 11.9, focus ring 7.2 against
+// the rest border's 1.8, so focus gains contrast (.input / .command swap --600
+// for --500).
+
+@mixin slot($hue) {
+  --100: 0.25 0.035 #{$hue};
+  --500: 0.42 0.09 #{$hue};
+  --600: 0.78 0.05 #{$hue};
+  --700: 0.52 0.07 #{$hue};
+  --800: 0.88 0.04 #{$hue};
+  --950: 0.97 0.006 170;
+}
+
+[data-theme="light"] {
+  @include slot(185);
+
+  // Dark ink on the pale control surface, and reading text a touch softer.
+  --command-fg: var(--color100);
+  --fg-reading: oklch(0.3 0.02 185);
+  // The 10px dark-mode shadow reads as a smudge on a pale page.
+  --box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.4);
+
+  .primary {
+    @include slot(185);
+  }
+  .tone-1 {
+    @include slot(160); // pine
+  }
+  .tone-2 {
+    @include slot(128); // moss
+  }
+  .tone-3 {
+    @include slot(78); // old gold
+  }
+  .tone-4 {
+    @include slot(248); // slate
+  }
+
+  // Red is the one hue that changes identity when pale: at L 0.88 the sRGB red
+  // channel is already pinned, so chroma only drains green/blue and it reads
+  // pink. Destructive stays heavy instead — dark surface, pale label (7.0) — and
+  // its steps move lighter from the surface as they do in the dark themes.
+  .warn {
+    --100: 0.25 0.035 25;
+    --500: 0.61 0.2 25;
+    --600: 0.56 0.2 25;
+    --700: 0.51 0.2 25;
+    --800: 0.46 0.2 25;
+    --950: 0.97 0.006 170;
+    // Label and tile ink only — NOT --100, which stays the dark ink so outline
+    // commands still read on the page.
+    --command-fg: oklch(0.98 0.02 25);
+    --tile-fg: var(--command-fg);
+  }
+}

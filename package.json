@@ -17,6 +17,7 @@
     "./blue": "./css/ada.blue.css",
     "./green": "./css/ada.green.css",
     "./jupiter-2": "./css/ada.jupiter-2.css",
+    "./light": "./css/ada.light.css",
     "./teal": "./css/ada.teal.css"
   },
   "repository": {
