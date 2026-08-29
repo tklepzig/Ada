@@ -59,7 +59,7 @@ through your bundler):
 | `ada-ui/green`     | Green                                              |
 | `ada-ui/jupiter-2` | Deep-space navy + warning-orange + cream (curated) |
 | `ada-ui/teal`      | Deep green-teal + chartreuse + gold (curated)      |
-| `ada-ui/light`     | The light theme: verdigris ink on bone (curated)   |
+| `ada-ui/light`     | The light theme: deep verdigris on bone (curated)  |
 
 All themes except `light` are dark. There is no light variant of a dark theme;
 an app that offers both loads its dark theme and `light`, and switches between

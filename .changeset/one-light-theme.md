@@ -5,8 +5,8 @@
 Themes are now scoped under `[data-theme="<name>"]` instead of `:root`, so any
 number can be loaded at once and the root attribute picks one; without it
 `ada.css` is themeless, as with no theme file loaded. Added the `light` theme
-(`ada-ui/light`): verdigris ink and trim on a bone page with low-chroma paper
-surfaces, curated per slot.
+(`ada-ui/light`): deep verdigris control surfaces with pale labels on a bone
+page, curated per slot.
 
 Breaking: every consumer must set `data-theme` on its root element. `.light-theme`
 was removed along with the derived light mode — the lifted ramps left saturated
