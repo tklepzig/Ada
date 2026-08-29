@@ -49,38 +49,19 @@
 
 // --- the shade ladder within one slot ----------------------------------------
 %ladder {
-  // The ladder reads --lightness-resolved / --chroma-resolved so the light theme can
-  // shift them without clobbering a slot's own --lightness/--chroma. In light
-  // mode every slot keeps its own value plus a per-theme shift, so per-slot
-  // overrides survive (they used to be silently dropped in light mode).
-  // The shift is itself a cascade input: set --lightness-light-shift on a slot to
-  // lift it more/less than the theme-wide value — it REPLACES the :root shift for
-  // that slot (it does not stack on it).
-  --lightness-resolved: var(--lightness);
+  // Indirection so light mode can shift chroma without clobbering a slot's own.
+  // --chroma-light-shift on a slot REPLACES the :root shift, it does not stack.
+  // Lightness needs no counterpart: the light steps are literals.
   --chroma-resolved: var(--chroma);
 
   --bg-body: var(--color950);
   --fg-body: var(--color100);
 
-  // Hardcoded pale, NOT var(--color100): themes lift --100 to clear AAA for ink
-  // on solid buttons (teal 0.98, jupiter-2 0.947), and riding on it washed the
-  // page out to near-white. This is the ladder pale, so ramp themes are unchanged.
-  --bg-body-light: oklch(0.91 0.05 var(--hue));
-  // Light-mode ink, per tone — headings, .input and .command.outline re-resolve
-  // it. L 0.30 (as --reading-light) clears AAA on the pale body. Chroma capped:
-  // darker saturated hues leave sRGB, and Chromium's gamut mapping turns
-  // jupiter-2's orange red.
+  // The ground follows the ramp — --950 is the page in both modes.
+  --bg-body-light: var(--color950);
+  // Explicit, NOT var(--color100): a theme can opt out of the inversion and keep
+  // --100 as its pale label. Chroma capped, or dark saturated hues leave sRGB.
   --fg-body-light: oklch(0.3 min(var(--chroma-resolved), 0.08) var(--hue));
-
-  &.light-theme,
-  :root.light-theme & {
-    --lightness-resolved: calc(
-      var(--lightness) + var(--lightness-light-shift, 0)
-    );
-    --chroma-resolved: calc(var(--chroma) + var(--chroma-light-shift, 0));
-    --bg-body: var(--bg-body-light);
-    --fg-body: var(--fg-body-light);
-  }
 
   // Panel surface colour. Lives here (not on :root in each theme) so var(--500)
   // resolves per slot — that keeps `.panel.tone-N` tinting its own surface.
@@ -88,13 +69,13 @@
   --panel-bg: oklch(var(--500) / 0.1);
 
   --100: 0.91 0.05 var(--hue);
-  --500: calc(var(--lightness-resolved) + 0.15)
-    calc(var(--chroma-resolved) + 0.06) var(--hue);
-  --600: calc(var(--lightness-resolved) + 0.1)
-    calc(var(--chroma-resolved) + 0.04) var(--hue);
-  --700: calc(var(--lightness-resolved) + 0.05)
-    calc(var(--chroma-resolved) + 0.02) var(--hue);
-  --800: var(--lightness-resolved) var(--chroma-resolved) var(--hue);
+  --500: calc(var(--lightness) + 0.15) calc(var(--chroma-resolved) + 0.06)
+    var(--hue);
+  --600: calc(var(--lightness) + 0.1) calc(var(--chroma-resolved) + 0.04)
+    var(--hue);
+  --700: calc(var(--lightness) + 0.05) calc(var(--chroma-resolved) + 0.02)
+    var(--hue);
+  --800: var(--lightness) var(--chroma-resolved) var(--hue);
   --950: 0.18 0.03 var(--hue);
 
   --color100: oklch(var(--100));
@@ -103,6 +84,32 @@
   --color700: oklch(var(--700));
   --color800: oklch(var(--800));
   --color950: oklch(var(--950));
+
+  &.light-theme,
+  :root.light-theme & {
+    --chroma-resolved: calc(var(--chroma) + var(--chroma-light-shift, 0));
+    --bg-body: var(--bg-body-light);
+    --fg-body: var(--fg-body-light);
+
+    // Lightness flipped end for end; roles hold, so consumers need no light rules.
+    // Absolute, not mirrored from --lightness — that lands in the 0.55-0.65 dead
+    // zone. Wins on specificity, so a theme's --100/--950 are dark-mode only.
+    --100: 0.24 min(var(--chroma-resolved), 0.08) var(--hue);
+    // Must stay darker than --600: .input and .command signal focus by swapping
+    // --600 for --500, so on a pale ground a lighter --500 would make focus
+    // LOWER contrast than rest (2.79 -> 2.42). At 0.56 it rises, 2.71 -> 2.92.
+    --500: 0.56 calc(var(--chroma-resolved) + 0.04) var(--hue);
+    --600: 0.6 0.08 var(--hue);
+    --700: 0.66 0.07 var(--hue);
+    // Chroma 0.12, not the 0.025 a pale end suggests: at 0.9/0.025 the tone slots
+    // separate by 6 against dark mode's 27 — greyscale. This restores 42.
+    --800: 0.76 0.12 var(--hue);
+    --950: 0.965 0.01 var(--hue);
+
+    // Same reason as --fg-body: teal pins a near-white --command-fg, which would
+    // be invisible on a pale button.
+    --command-fg: var(--color100);
+  }
 }
 
 :root,
@@ -123,9 +130,10 @@
   --reading-light: 0.3 0.02 var(--hue);
   --fg-reading: oklch(var(--reading));
 
-  // Tile ink, mode-independent — the tile surface is --800 at 75% in both modes.
-  // :root-only: from %ladder each tone would take its own --100 (0.91) instead of
-  // a theme's lifted value, dropping some themes below AA.
+  // Tile ink follows --100, so it flips with the ramp — as does the tile surface
+  // (--800 at 75%), keeping ink and ground on opposite sides in both modes.
+  // :root-only: from %ladder each tone would take its own --100 instead of a
+  // theme's lifted value, dropping some themes below AA.
   --tile-fg: var(--color100);
 
   &.light-theme {
