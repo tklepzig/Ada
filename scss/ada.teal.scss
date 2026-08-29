@@ -1,7 +1,6 @@
 // "Teal" — a deep green-teal on near-black, with chartreuse/gold accents and a
-// deep alert red. Dark-accent regime (L 0.40, pale labels); the accents double
-// as AA text on the pale bg in light mode.
-:root {
+// deep alert red. Dark-accent regime (L 0.40, pale labels).
+[data-theme="teal"] {
   --base-hue: 180; // green-teal #00584A on --color800
   --lightness: 0.4;
   --chroma: 0.1;
@@ -17,25 +16,25 @@
 }
 
 // Teal-green. Sits 12° off the primary so hue, not brightness, separates them.
-.tone-1 {
+[data-theme="teal"] .tone-1 {
   --hue: 168;
   --chroma: 0.12;
 }
 
 // Chartreuse.
-.tone-2 {
+[data-theme="teal"] .tone-2 {
   --hue: 134;
   --chroma: 0.13;
 }
 
 // Gold.
-.tone-3 {
+[data-theme="teal"] .tone-3 {
   --hue: 103;
 }
 
 // Steel. Close to the primary hue, so separated by lightness (0.34) instead —
 // a cool anchor against the warm middle.
-.tone-4 {
+[data-theme="teal"] .tone-4 {
   --hue: 225;
   --lightness: 0.34;
   --chroma: 0.08;
@@ -43,7 +42,7 @@
 
 // Alert red. Below the ramp lightness so it doesn't outshine the muted slots;
 // L 0.38 is the floor (deeper crushed to black on mobile).
-.warn {
+[data-theme="teal"] .warn {
   --lightness: 0.38;
   --chroma: 0.145;
 }

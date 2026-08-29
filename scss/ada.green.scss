@@ -1,25 +1,21 @@
-:root {
+[data-theme="green"] {
   --base-hue: 132;
 
   --lightness: 0.35;
   --chroma: 0.1;
-
-  // Light theme: lift lightness and chroma (0.35 -> 0.45, 0.1 -> 0.15).
-  --lightness-light-shift: 0.1;
-  --chroma-light-shift: 0.05;
 }
 
-.tone-1 {
+[data-theme="green"] .tone-1 {
   --hue: 121;
 }
-.tone-2 {
+[data-theme="green"] .tone-2 {
   --hue: 164;
 }
-.tone-3 {
+[data-theme="green"] .tone-3 {
   --hue: 185;
 }
 // Off the ramp: the default offset (base - 130 = 2) lands next to warn's red.
 // 230 continues the curated green -> teal drift into blue (#004264).
-.tone-4 {
+[data-theme="green"] .tone-4 {
   --hue: 230;
 }

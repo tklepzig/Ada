@@ -7,30 +7,19 @@
 //
 // Lightness matters: the orange is oklch(0.69 0.179 49). At L≈0.38 orange renders
 // as brown/red, so --lightness sits at 0.69 to land a true orange on --color800.
-:root {
+[data-theme="jupiter-2"] {
   // Primary accent lands a vivid orange (#F07214) exactly on --color800.
   --base-hue: 49;
   --lightness: 0.69;
   --chroma: 0.179;
-  // No light-theme shift: the orange stays put, and every tone keeps its own
-  // lightness/chroma in light mode (previously the absolute light values
-  // silently flattened burnt/steel/warn to the primary's lightness).
 
   // Decouple the primary bg/fg from the orange hue (overrides the ladder's
   // single-hue ends): deep navy surface + warm cream text.
   --950: 0.21 0.055 270; // dominant surface (~#0F1631)
   --100: 0.947 0.007 81; // body + button text (#F0EDE8)
-  // Light theme would otherwise put orange (color800) text on cream — force navy.
-  --fg-body-light: var(--color950);
-  // Same lightness step as the other themes, but held at the cream hue (81) and
-  // low chroma: the base pale builds on --base-hue, and 49 at 0.05 is the accent
-  // orange — the page came out peach. Cream, a shade deeper than --100.
-  --bg-body-light: oklch(0.91 0.02 81);
 
-  // Curated to keep the theme's text identity: cream dark, navy ink light
-  // (derived defaults would lean peach / dark-brown off the orange primary).
+  // Cream reading text, kept off the orange hue (the derived default leans peach).
   --reading: 0.88 0.01 81;
-  --reading-light: 0.3 0.03 270;
 
   // Base panel surface is a flat mid navy (#263660) instead of the orange accent
   // wash, so the orange corner-trim reads as trim rather than blending in.
@@ -41,30 +30,24 @@
   // backgrounds are light (orange L≈0.69), so cream text only hits ~2.5:1.
   // Pure black clears WCAG AA on every button shade (orange 7.1, amber 8.6,
   // steel 7.6, burnt 5.0, warn 5.3) and on the lighter tiles too (it needs to be
-  // this dark to clear the mid-tone 75% orange tile at 4.55). Set on :root so all
+  // this dark to clear the mid-tone 75% orange tile at 4.55). Set on the theme root so all
   // buttons inherit it uniformly (no slot re-sets it).
   --command-fg: oklch(0 0 0);
 
   // Tiles are color800 at 75% — light enough that dark ink wins (8.5-10.0).
-  // tone-1/warn flip by mode, below.
+  // tone-1/warn are darker and take the cream ink instead, below.
   --tile-fg: var(--command-fg);
 }
 
-// In light theme a translucent navy over cream looks muddy — restore the
-// standard warm wash so the light base panel looks as it would by default.
-:root.light-theme {
-  --panel-bg: oklch(var(--500) / 0.1);
-}
-
 // Deeper burnt orange (#CC5812).
-.tone-1 {
+[data-theme="jupiter-2"] .tone-1 {
   --hue: 45;
   --lightness: 0.6;
   --chroma: 0.164;
 }
 
 // Amber / warning-light gold (#E8A030).
-.tone-2 {
+[data-theme="jupiter-2"] .tone-2 {
   --hue: 73;
   --lightness: 0.73;
   --chroma: 0.16;
@@ -72,7 +55,7 @@
 
 // Steel blue-gray — the cool counterpoint that keeps the UI from going
 // all-orange. Lower chroma so it reads as steel, not a loud cornflower (#859DC1).
-.tone-3 {
+[data-theme="jupiter-2"] .tone-3 {
   --hue: 258;
   --chroma: 0.06;
 }
@@ -80,7 +63,7 @@
 // Verdigris sea-green — second cool tone next to steel; muted like it so the
 // warm orange trio stays dominant (#6AAA9B). Ramp fallback (hue 279 at the
 // primary's chroma) would be a bright periwinkle, off-palette.
-.tone-4 {
+[data-theme="jupiter-2"] .tone-4 {
   --hue: 178;
   --chroma: 0.07;
 }
@@ -88,16 +71,14 @@
 // Danger red — kept clearly distinct from the orange accent. Lightened to L0.62
 // (#DE4F44) so the dark --command-fg label clears WCAG AA on warn buttons (the
 // old L0.58 red was a mid-tone where no text colour reached 4.5:1).
-.warn {
+[data-theme="jupiter-2"] .warn {
   --hue: 28;
   --lightness: 0.62;
   --chroma: 0.18;
 }
 
-// In dark mode these two tones need the root dark ink fo reaching AA contrast
-:root:not(.light-theme) {
-  .tone-1,
-  .warn {
-    --tile-fg: var(--color100);
-  }
+// These two surfaces are too dark for the black ink; they take the cream instead.
+[data-theme="jupiter-2"] .tone-1,
+[data-theme="jupiter-2"] .warn {
+  --tile-fg: var(--color100);
 }
