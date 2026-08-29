@@ -98,7 +98,10 @@
     // Must stay darker than --600: .input and .command signal focus by swapping
     // --600 for --500, so on a pale ground a lighter --500 would make focus
     // LOWER contrast than rest (2.79 -> 2.42). At 0.56 it rises, 2.71 -> 2.92.
-    --500: 0.56 calc(var(--chroma-resolved) + 0.04) var(--hue);
+    // Chroma capped: at L 0.56 a high-chroma theme leaves sRGB and Chromium
+    // maps the hue, not just the chroma — jupiter-2 asked for orange 49 at 0.219
+    // and rendered red 35. 0.16 holds every theme's hue within 3 degrees.
+    --500: 0.56 min(calc(var(--chroma-resolved) + 0.04), 0.16) var(--hue);
     --600: 0.6 0.08 var(--hue);
     --700: 0.66 0.07 var(--hue);
     // Chroma 0.12, not the 0.025 a pale end suggests: at 0.9/0.025 the tone slots
