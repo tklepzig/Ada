@@ -22,11 +22,23 @@ The link points at the latest release. To pin a different one, swap the version
 ## Theming
 
 `ada.css` ships the colour engine but no palette of its own, so it always needs
-a theme alongside it. A theme is just a handful of custom properties on `:root`
-— load it **after** `ada.css` so its values win the cascade:
+a theme alongside it. A theme is a handful of custom properties scoped under
+`[data-theme="<name>"]` — load it **after** `ada.css` so its values win the
+cascade, and name it on your root element:
 
-    <link rel="stylesheet" href="css/ada.css" />
-    <link rel="stylesheet" href="css/ada.blue.css" />
+    <html data-theme="blue">
+      <link rel="stylesheet" href="css/ada.css" />
+      <link rel="stylesheet" href="css/ada.blue.css" />
+
+Any number of themes can be loaded at once; the attribute picks one and the
+rest stay inert, so switching (e.g. dark ⇄ light) is a single attribute swap:
+
+    <link rel="stylesheet" href="css/ada.teal.css" />
+    <link rel="stylesheet" href="css/ada.light.css" />
+    <script>document.documentElement.dataset.theme = "light";</script>
+
+Without the attribute `ada.css` is themeless — the same as loading no theme file
+— and you can supply the custom properties yourself.
 
 Or via the CDN:
 
@@ -47,6 +59,11 @@ through your bundler):
 | `ada-ui/green`     | Green                                              |
 | `ada-ui/jupiter-2` | Deep-space navy + warning-orange + cream (curated) |
 | `ada-ui/teal`      | Deep green-teal + chartreuse + gold (curated)      |
+| `ada-ui/light`     | The light theme: verdigris ink on bone (curated)   |
+
+All themes except `light` are dark. There is no light variant of a dark theme;
+an app that offers both loads its dark theme and `light`, and switches between
+the two.
 
 ### The colour slots
 
@@ -55,13 +72,11 @@ no-class default), `tone-1` … `tone-4`, and `warn`. They are treated as
 distinct colours, not shades of one. Within a slot, a light→dark `--color100` …
 `--color950` ladder is derived for you.
 
-For a light variant of any theme, add the `.light-theme` class to your root
-element (e.g. `<html class="light-theme">`).
-
 ### Rolling your own theme
 
-A custom theme is a small CSS file that sets `:root` properties. There are three
-levels, from least to most control:
+A custom theme is a small CSS file that sets properties under
+`[data-theme="<name>"]` (or on `:root`, if it is the only theme you load). There
+are three levels, from least to most control:
 
 1. **Hue ramp** — set `--base-hue`, `--lightness` and `--chroma`. The five tones
    derive from the base hue by a fixed per-slot offset; `warn` stays at its
@@ -69,11 +84,10 @@ levels, from least to most control:
    just:
 
    ```css
-   :root {
+   [data-theme="blue"] {
      --base-hue: 246;
      --lightness: 0.3;
      --chroma: 0.1;
-     --lightness-light-shift: 0.1; /* lift lightness in .light-theme */
    }
    ```
 
@@ -81,7 +95,7 @@ levels, from least to most control:
    individual slot class to break it off the ramp:
 
    ```css
-   .tone-3 {
+   [data-theme="jupiter-2"] .tone-3 {
      --hue: 258;
      --chroma: 0.06;
    }
@@ -91,7 +105,8 @@ levels, from least to most control:
    to decouple background and text from the hue ramp, and the surface/label
    knobs (`--panel-bg`, `--command-fg`, `--tile-fg`). The **jupiter-2** theme
    (`scss/ada.jupiter-2.scss`) is authored this way and is the reference
-   example.
+   example; **light** (`scss/ada.light.scss`) sets every ladder step as a
+   literal and is the reference for a light palette.
 
 ## Versioning and Publishing
 
