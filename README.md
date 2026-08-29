@@ -58,6 +58,18 @@ distinct colours, not shades of one. Within a slot, a light→dark `--color100` 
 For a light variant of any theme, add the `.light-theme` class to your root
 element (e.g. `<html class="light-theme">`).
 
+`.light-theme` **inverts the ladder**: the hue stays, the lightness flips end for
+end, so `--color950` becomes the near-white page and `--color100` the dark ink.
+The roles are unchanged — `--color800` is the control surface in both modes — so
+components need no light-specific rules. Because the light values win on
+specificity, a theme's own `--100` / `--950` overrides apply in **dark mode
+only** — as do `--lightness` and `--command-fg`, for the same reason.
+
+This means a theme stylesheet must be built against the same version as
+`ada.css`. `--color950` is the page ground and `--color100` the ink in *both*
+modes, so a theme that reads `var(--color950)` expecting a dark value gets the
+near-white ground in light mode — pale text on a pale surface.
+
 ### Rolling your own theme
 
 A custom theme is a small CSS file that sets `:root` properties. There are three
@@ -73,7 +85,6 @@ levels, from least to most control:
      --base-hue: 246;
      --lightness: 0.3;
      --chroma: 0.1;
-     --lightness-light-shift: 0.1; /* lift lightness in .light-theme */
    }
    ```
 
@@ -89,7 +100,9 @@ levels, from least to most control:
 
 3. **Fully curated** — additionally override the ladder ends (`--100` / `--950`)
    to decouple background and text from the hue ramp, and the surface/label
-   knobs (`--panel-bg`, `--command-fg`, `--tile-fg`). The **jupiter-2** theme
+   knobs (`--panel-bg`, `--command-fg`, `--tile-fg`). In light mode the engine
+   re-declares `--command-fg` per slot and wins on specificity, so a theme that
+   needs its own must set it at `.light-theme:root` or higher. The **jupiter-2** theme
    (`scss/ada.jupiter-2.scss`) is authored this way and is the reference
    example.
 
