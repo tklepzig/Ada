@@ -7,21 +7,20 @@
 //
 // Lightness matters: the orange is oklch(0.69 0.179 49). At L≈0.38 orange renders
 // as brown/red, so --lightness sits at 0.69 to land a true orange on --color800.
+
 :root {
   // Primary accent lands a vivid orange (#F07214) exactly on --color800.
   --base-hue: 49;
   --lightness: 0.69;
   --chroma: 0.179;
-  // No light-theme shift: the orange stays put, and every tone keeps its own
-  // lightness/chroma in light mode (previously the absolute light values
-  // silently flattened burnt/steel/warn to the primary's lightness).
 
   // Decouple the primary bg/fg from the orange hue (overrides the ladder's
   // single-hue ends): deep navy surface + warm cream text.
   --950: 0.21 0.055 270; // dominant surface (~#0F1631)
   --100: 0.947 0.007 81; // body + button text (#F0EDE8)
-  // Light theme would otherwise put orange (color800) text on cream — force navy.
-  --fg-body-light: var(--color950);
+  // Navy ink on the cream page. Hardcoded, NOT var(--color950): the inverted
+  // light ramp makes --950 the near-white ground, so riding it puts cream on cream.
+  --fg-body-light: oklch(0.3 0.03 270);
   // Same lightness step as the other themes, but held at the cream hue (81) and
   // low chroma: the base pale builds on --base-hue, and 49 at 0.05 is the accent
   // orange — the page came out peach. Cream, a shade deeper than --100.
@@ -50,10 +49,20 @@
   --tile-fg: var(--command-fg);
 }
 
-// In light theme a translucent navy over cream looks muddy — restore the
-// standard warm wash so the light base panel looks as it would by default.
+
 :root.light-theme {
+  // In light theme a translucent navy over cream looks muddy — restore the
+  // standard warm wash so the light base panel looks as it would by default.
   --panel-bg: oklch(var(--500) / 0.1);
+}
+
+// In light mode the inverted ramp equalises lightness, so this slot's 4 degrees of
+// hue off the primary are all that is left and the two read as one peach
+// (separation 9). Half the chroma restores it to 85 — "deeper" in dark mode
+// becomes "duller" in light, the same relationship on the axis that survives.
+.light-theme.tone-1,
+:root.light-theme .tone-1 {
+  --800: 0.76 0.06 var(--hue);
 }
 
 // Deeper burnt orange (#CC5812).

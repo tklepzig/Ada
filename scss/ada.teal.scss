@@ -1,6 +1,6 @@
 // "Teal" — a deep green-teal on near-black, with chartreuse/gold accents and a
-// deep alert red. Dark-accent regime (L 0.40, pale labels); the accents double
-// as AA text on the pale bg in light mode.
+// deep alert red. Dark-accent regime (L 0.40, pale labels). In light mode the
+// engine inverts the ramp, so the values below are the DARK ones.
 :root {
   --base-hue: 180; // green-teal #00584A on --color800
   --lightness: 0.4;

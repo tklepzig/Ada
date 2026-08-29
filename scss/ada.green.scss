@@ -4,8 +4,7 @@
   --lightness: 0.35;
   --chroma: 0.1;
 
-  // Light theme: lift lightness and chroma (0.35 -> 0.45, 0.1 -> 0.15).
-  --lightness-light-shift: 0.1;
+  // Light theme: reaches --500 only (0.14 -> 0.19); the ink is capped at 0.08.
   --chroma-light-shift: 0.05;
 }
 
