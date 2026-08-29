@@ -12,7 +12,11 @@
     />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="css/ada.css" />
-    <link id="theme-override" rel="stylesheet" href="css/ada.teal.css" />
+    <link rel="stylesheet" href="css/ada.teal.css" />
+    <link rel="stylesheet" href="css/ada.blue.css" />
+    <link rel="stylesheet" href="css/ada.green.css" />
+    <link rel="stylesheet" href="css/ada.jupiter-2.css" />
+    <link rel="stylesheet" href="css/ada.light.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600"
       rel="stylesheet"
@@ -21,7 +25,6 @@
       // Restored here, not on DOMContentLoaded: a reload would otherwise paint
       // the default theme first and flash.
       const THEME_KEY = "ada-demo-theme";
-      const LIGHT_KEY = "ada-demo-light";
 
       const readStored = (key) => {
         try {
@@ -37,15 +40,9 @@
         } catch {}
       };
 
+      // All themes are loaded; the root attribute picks one.
       const storedTheme = readStored(THEME_KEY);
-      if (storedTheme) {
-        document.getElementById(
-          "theme-override",
-        ).href = `css/ada.${storedTheme}.css`;
-      }
-      if (readStored(LIGHT_KEY) === "true") {
-        document.documentElement.classList.add("light-theme");
-      }
+      document.documentElement.dataset.theme = storedTheme ?? "teal";
     </script>
   </head>
 
@@ -87,15 +84,11 @@
             class="command thin"
             onclick="cycleTheme()"
           ></button>
-          <button
-            class="command thin tone-3 mode-toggle"
-            onclick="toggleMode()"
-          ></button>
         </div>
         <div class="panel-dock" id="theme-dock-wide">
           <button
             class="command thin tone-4"
-            data-theme="teal"
+            data-select="teal"
             data-short="Te"
             onclick="selectTheme(this)"
           >
@@ -103,7 +96,7 @@
           </button>
           <button
             class="command thin"
-            data-theme="blue"
+            data-select="blue"
             data-short="Bl"
             onclick="selectTheme(this)"
           >
@@ -111,7 +104,7 @@
           </button>
           <button
             class="command thin"
-            data-theme="green"
+            data-select="green"
             data-short="Gr"
             onclick="selectTheme(this)"
           >
@@ -119,16 +112,20 @@
           </button>
           <button
             class="command thin"
-            data-theme="jupiter-2"
+            data-select="jupiter-2"
             data-short="J2"
             onclick="selectTheme(this)"
           >
             Jupiter 2
           </button>
           <button
-            class="command thin tone-3 mode-toggle"
-            onclick="toggleMode()"
-          ></button>
+            class="command thin"
+            data-select="light"
+            data-short="Li"
+            onclick="selectTheme(this)"
+          >
+            Light
+          </button>
         </div>
       </header>
       <article
@@ -622,56 +619,40 @@
       let currentTheme = storedTheme ?? "teal";
 
       const themeButtons = () =>
-        document.querySelectorAll("#theme-dock-wide [data-theme]");
+        document.querySelectorAll("#theme-dock-wide [data-select]");
 
       function selectTheme(selected) {
-        applyTheme(selected.dataset.theme);
+        applyTheme(selected.dataset.select);
       }
 
       function nextThemeButton() {
         const buttons = [...themeButtons()];
         const current = buttons.findIndex(
-          (button) => button.dataset.theme === currentTheme,
+          (button) => button.dataset.select === currentTheme,
         );
         return buttons[(current + 1) % buttons.length];
       }
 
       function cycleTheme() {
-        applyTheme(nextThemeButton().dataset.theme);
+        applyTheme(nextThemeButton().dataset.select);
       }
 
       function applyTheme(theme) {
         currentTheme = theme;
-        document.getElementById("theme-override").href = `css/ada.${theme}.css`;
+        document.documentElement.dataset.theme = theme;
         markActiveTheme(theme);
         store(THEME_KEY, theme);
       }
 
-      function toggleMode() {
-        const isLight =
-          document.documentElement.classList.toggle("light-theme");
-        setModeLabel(isLight);
-        store(LIGHT_KEY, isLight);
-      }
-
-      function setModeLabel(isLight) {
-        document
-          .querySelectorAll(".mode-toggle")
-          .forEach(
-            (toggle) => (toggle.textContent = isLight ? "Dark" : "Light"),
-          );
-      }
-
       function markActiveTheme(theme) {
         themeButtons().forEach((button) =>
-          button.classList.toggle("tone-4", button.dataset.theme === theme),
+          button.classList.toggle("tone-4", button.dataset.select === theme),
         );
         document.getElementById("theme-cycle").textContent =
           nextThemeButton().dataset.short;
       }
 
       markActiveTheme(currentTheme);
-      setModeLabel(document.documentElement.classList.contains("light-theme"));
     </script>
   </body>
 </html>
