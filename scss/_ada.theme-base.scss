@@ -122,6 +122,24 @@
   @extend %ladder;
 }
 
+// Red is the one hue that changes identity when pale: at L 0.76 the sRGB red
+// channel is already pinned, so chroma only drains green/blue and it reads pink.
+// Destructive stays heavy instead — the dark surface and pale label of dark mode.
+.light-theme.warn,
+:root.light-theme .warn {
+  // Warn is a dark-regime slot inside a light theme, so its steps move lighter
+  // from the surface as they do in dark mode. Leaving 500-700 at the pale-end
+  // values made the ladder non-monotonic: --700 ended up lighter than --800.
+  --800: 0.46 0.2 var(--hue);
+  --700: 0.51 0.2 var(--hue);
+  --600: 0.56 0.2 var(--hue);
+  --500: 0.61 0.2 var(--hue);
+  // Label and tile ink only — NOT --100, which stays the ladder's dark end so it
+  // still contrasts with --950.
+  --command-fg: oklch(0.98 0.02 var(--hue));
+  --tile-fg: var(--command-fg);
+}
+
 // Opt-in reading foreground: softer/near-neutral vs the crisp --100 label white.
 // :root-only (NOT in the ladder) so it resolves once against --hue and stays
 // uniform inside .tone-N/.warn subtrees; theme :root overrides apply everywhere.
