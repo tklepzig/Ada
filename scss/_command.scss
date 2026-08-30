@@ -58,7 +58,9 @@
     color: #ededed;
   }
 
-  &.outline {
+  // :where() holds it at .command.outline's specificity, so :focus still wins
+  &.outline,
+  :where(:root.light-theme) &.outline-in-light {
     background-color: transparent;
     border-color: var(--color700);
     color: var(--fg-body);

@@ -12,7 +12,8 @@
     min-width: var(--spacer-min-size);
     min-height: var(--spacer-min-size);
 
-    &.outline {
+    &.outline,
+    :where(:root.light-theme) &.outline-in-light {
       background-color: transparent;
       border: var(--border-width) solid var(--color700);
     }
