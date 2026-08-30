@@ -1,5 +1,17 @@
 # ada-ui
 
+## 8.2.0
+
+### Minor Changes
+
+- 3ffd757: Added the `outline-in-light` variant for having outline commands only in light
+  mode.
+
+### Patch Changes
+
+- 5b9e3b7: Lightened the teal theme in light mode a bit to avoid too dark surfaces when
+  using filled commands
+
 ## 8.1.4
 
 ### Patch Changes
