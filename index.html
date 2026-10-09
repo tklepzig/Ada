@@ -75,6 +75,7 @@
       <a href="#panel" class="command tone-2">Panel</a>
       <a href="#tile" class="command tone-2">Tile</a>
       <a href="#input" class="command">Input</a>
+      <a href="#label" class="command">Label</a>
       <a href="#spinner" class="command tone-4">Spinner</a>
       <div class="spacer flex"></div>
     </div>
@@ -590,6 +591,61 @@
             <input class="input" />
             <h3>Disabled</h3>
             <input disabled class="input" />
+          </article>
+          <footer></footer>
+        </div>
+        <div class="panel">
+          <header><h2 id="label">Label</h2></header>
+          <article
+            style="display: grid; gap: var(--spacing-lg); max-width: 28rem"
+          >
+            <p>
+              A caption for a form field. Wrap the field in the
+              <code>label</code>, or put the class on a wrapper and point an
+              inner <code>&lt;label&gt;</code> at the field with
+              <code>for</code>: the disabled, focus and error states only reach
+              a field inside the element with the class. Write the text in
+              normal case; the uppercase comes from CSS.
+            </p>
+            <label class="label">
+              Email
+              <input class="input" type="email" value="ada@example.com" />
+            </label>
+            <div style="display: grid; gap: var(--spacing-sm)">
+              <label class="label warn">
+                Password
+                <input
+                  class="input"
+                  type="password"
+                  aria-invalid="true"
+                  aria-describedby="label-password-error"
+                />
+              </label>
+              <span id="label-password-error">Use at least 12 characters.</span>
+            </div>
+            <label class="label">
+              Username (locked)
+              <input class="input" value="ada" disabled />
+            </label>
+            <div class="label">
+              <label for="label-nickname">Nickname (optional)</label>
+              <input class="input" id="label-nickname" />
+            </div>
+            <h3>Inline</h3>
+            <label class="label inline">
+              <input type="checkbox" checked />
+              Send a weekly summary
+            </label>
+            <label class="label inline tone-3">
+              <input type="checkbox" />
+              Share anonymous usage data
+            </label>
+            <p>
+              An error is <code>warn</code> on the label, which colours the
+              field. Put the message next to the label, not inside it,
+              and tie it to the field with <code>aria-describedby</code>: inside
+              the label it would also become part of the field's name.
+            </p>
           </article>
           <footer></footer>
         </div>

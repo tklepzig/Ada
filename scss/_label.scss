@@ -1,0 +1,70 @@
+// Block layout keeps inline markup in the caption (a required marker, a link)
+// on the caption's line.
+.label {
+  display: block;
+  font-size: var(--text-sm);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--fg-reading);
+  transition: color 0.15s ease-in-out;
+
+  &:focus-within {
+    color: var(--fg-body);
+  }
+
+  // Light-mode --fg-body matches the caption's lightness, so focus darkens to
+  // the deep end instead.
+  :where(:root.light-theme) &:focus-within {
+    color: var(--color950);
+  }
+
+  // Colour, not opacity: .input:disabled already dims itself, and opacity here
+  // would compound on the field.
+  &:has(:is(input, select, textarea):disabled) {
+    color: color-mix(in oklch, var(--fg-reading) 40%, transparent);
+  }
+
+  // Direct children only, so a field nested in a group keeps that group's
+  // layout. :where() leaves a consumer's single-class field override in charge.
+  > :where(input, select, textarea):not(
+      :where([type="checkbox"], [type="radio"], [hidden])
+    ) {
+    display: block;
+    width: 100%;
+    margin-block-start: var(--spacing-sm);
+    // Fields inherit the caption's smaller size; under 16px iOS zooms on focus.
+    font-size: var(--text-base);
+  }
+
+  &.inline {
+    font-size: var(--text-base);
+    letter-spacing: normal;
+    text-transform: none;
+  }
+}
+
+// Single-class specificity, as for fields. The lightness floor (dark) and
+// ceiling (light) keep the checked fill 3:1 off the ground.
+:where(.label.inline) > :is([type="checkbox"], [type="radio"]) {
+  margin: 0;
+  margin-inline-end: var(--spacing-sm);
+  accent-color: oklch(from var(--color500) max(l, 0.58) c h);
+
+  :where(:root.light-theme) & {
+    accent-color: oklch(from var(--color800) min(l, 0.5) c h);
+  }
+}
+
+// The tile surface sits too close to any tone shade, so a label in a tile takes
+// the tile's ink, which is tuned for it.
+.tile .label {
+  color: inherit;
+
+  &:has(:is(input, select, textarea):disabled) {
+    color: color-mix(in oklch, currentColor 40%, transparent);
+  }
+}
+
+:where(.tile .label.inline) > :is([type="checkbox"], [type="radio"]) {
+  accent-color: currentColor;
+}
