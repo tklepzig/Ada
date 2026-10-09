@@ -77,12 +77,19 @@
   --chroma: 0.06;
 }
 
-// Verdigris sea-green — second cool tone next to steel; muted like it so the
-// warm orange trio stays dominant (#6AAA9B). Ramp fallback (hue 279 at the
-// primary's chroma) would be a bright periwinkle, off-palette.
+// Verdigris sea-green (#5FB7A5), at half the orange trio's chroma so they stay
+// dominant; the ramp fallback would be an off-palette bright periwinkle.
 .tone-4 {
   --hue: 178;
-  --chroma: 0.07;
+  --lightness: 0.72;
+  --chroma: 0.09;
+}
+
+// Light enough for dark ink even inside a .warn or .tone-1 container, whose
+// pale tile ink they would otherwise inherit.
+.tone-2,
+.tone-4 {
+  --tile-fg: var(--command-fg);
 }
 
 // Danger red — kept clearly distinct from the orange accent. Lightened to L0.62
