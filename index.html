@@ -76,6 +76,7 @@
       <a href="#tile" class="command tone-2">Tile</a>
       <a href="#input" class="command">Input</a>
       <a href="#spinner" class="command tone-4">Spinner</a>
+      <a href="#meter" class="command tone-2">Meter</a>
       <div class="spacer flex"></div>
     </div>
     <div class="panel">
@@ -652,6 +653,128 @@
               <div class="spinner tone-2" style="font-size: 16px"></div>
               <div class="spinner tone-3" style="font-size: 16px"></div>
               <div class="spinner warn" style="font-size: 16px"></div>
+            </div>
+          </article>
+          <footer></footer>
+        </div>
+        <div class="panel">
+          <header><h2 id="meter">Meter</h2></header>
+          <article style="display: grid; gap: var(--spacing)">
+            <p>
+              Shows a quantity. Set <code>--value</code> inline to a number
+              between 0 and 1 (out-of-range values are clamped), and give the
+              element <code>role="meter"</code> with its
+              <code>aria-value*</code> attributes, since the fill itself is
+              decoration.
+            </p>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: auto minmax(var(--command-min-size), 1fr);
+                gap: var(--spacing-sm) var(--spacing);
+                align-items: center;
+              "
+            >
+              <span id="meter-battery">Battery</span>
+              <div
+                class="meter"
+                role="meter"
+                aria-labelledby="meter-battery"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                aria-valuenow="72"
+                style="--value: 0.72"
+              ></div>
+              <span id="meter-cpu">CPU load</span>
+              <div
+                class="meter tone-1"
+                role="meter"
+                aria-labelledby="meter-cpu"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                aria-valuenow="45"
+                style="--value: 0.45"
+              ></div>
+              <span id="meter-disk">Free disk space</span>
+              <div
+                class="meter warn"
+                role="meter"
+                aria-labelledby="meter-disk"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                aria-valuenow="8"
+                style="--value: 0.08"
+              ></div>
+            </div>
+            <h3>Segmented</h3>
+            <div
+              class="meter segmented"
+              role="meter"
+              aria-label="Signal strength"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              aria-valuenow="60"
+              style="--value: 0.6"
+            ></div>
+            <div
+              class="meter segmented tone-3"
+              role="meter"
+              aria-label="Volume"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              aria-valuenow="35"
+              style="--value: 0.35"
+            ></div>
+            <h3>Vertical</h3>
+            <p>
+              A vertical meter takes its parent's height, so the parent needs a
+              definite one, or the meter collapses to nothing.
+            </p>
+            <div
+              style="
+                display: grid;
+                grid-auto-flow: column;
+                justify-content: start;
+                gap: var(--spacing);
+                height: 8rem;
+              "
+            >
+              <div
+                class="meter vertical"
+                role="meter"
+                aria-label="Left channel"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                aria-valuenow="64"
+                style="--value: 0.64"
+              ></div>
+              <div
+                class="meter vertical tone-1"
+                role="meter"
+                aria-label="Right channel"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                aria-valuenow="81"
+                style="--value: 0.81"
+              ></div>
+              <div
+                class="meter vertical segmented tone-2"
+                role="meter"
+                aria-label="Bass"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                aria-valuenow="45"
+                style="--value: 0.45"
+              ></div>
+              <div
+                class="meter vertical segmented tone-4"
+                role="meter"
+                aria-label="Treble"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                aria-valuenow="30"
+                style="--value: 0.3"
+              ></div>
             </div>
           </article>
           <footer></footer>
