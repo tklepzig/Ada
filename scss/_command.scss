@@ -38,6 +38,30 @@
   // greyed-out surface instead of animating back to the tone colour
   &.flash:not(:disabled) {
     animation: flash-background 1s ease-in-out infinite;
+
+    // A few slow pulses that end within 5s, then a corner dot keeps the cue
+    // without motion or colour. The outline variant only swaps animation-name,
+    // so it takes the same timing.
+    @media (prefers-reduced-motion: reduce) {
+      animation-duration: 1.5s;
+      animation-iteration-count: 3;
+
+      // Zero specificity, so a consumer's own position still wins.
+      :where(&) {
+        position: relative;
+      }
+
+      // In the very corner, so it sits beside a thin command's label rather
+      // than on it. A border, not a background, so forced colours keep it.
+      &::before {
+        content: "";
+        position: absolute;
+        inset-block-start: 0;
+        inset-inline-end: 0;
+        border: 3px solid;
+        border-radius: 50%;
+      }
+    }
   }
 
   &[data-label][data-abbr]::after {
