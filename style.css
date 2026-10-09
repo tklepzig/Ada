@@ -198,6 +198,36 @@ input {
   max-width: 20rem;
 }
 
+/* Bar list recipe: label, meter and value on one row, with the meter on its
+   own full-width line below the label and value on narrow screens. */
+.bar-list {
+  display: grid;
+  grid-template-columns: auto minmax(var(--command-min-size), 1fr) auto;
+  gap: var(--spacing-sm) var(--spacing);
+  align-items: center;
+  font-variant-numeric: tabular-nums;
+
+  > span:not(.chip) {
+    text-align: end;
+    white-space: nowrap;
+  }
+
+  @media (width < 640px) {
+    grid-template-columns: auto minmax(0, 1fr);
+    grid-auto-flow: row dense;
+    row-gap: var(--spacing-xs);
+
+    > .chip {
+      justify-self: start;
+    }
+
+    > .meter {
+      grid-column: 1 / -1;
+      margin-bottom: var(--spacing-sm);
+    }
+  }
+}
+
 @media (width < 640px) {
   #theme-dock-wide {
     display: none;
