@@ -76,6 +76,9 @@
       <a href="#tile" class="command tone-2">Tile</a>
       <a href="#input" class="command">Input</a>
       <a href="#spinner" class="command tone-4">Spinner</a>
+      <a href="#meter" class="command tone-2">Meter</a>
+      <a href="#chip" class="command tone-2">Chip</a>
+      <a href="#recipes" class="command tone-3">Recipes</a>
       <div class="spacer flex"></div>
     </div>
     <div class="panel">
@@ -653,6 +656,297 @@
               <div class="spinner tone-3" style="font-size: 16px"></div>
               <div class="spinner warn" style="font-size: 16px"></div>
             </div>
+          </article>
+          <footer></footer>
+        </div>
+        <div class="panel">
+          <header><h2 id="meter">Meter</h2></header>
+          <article style="display: grid; gap: var(--spacing)">
+            <p>
+              Shows a quantity. Set <code>--value</code> inline to a number
+              between 0 and 1 (out-of-range values are clamped), and give the
+              element <code>role="meter"</code> with its
+              <code>aria-value*</code> attributes, since the fill itself is
+              decoration.
+            </p>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: auto minmax(var(--command-min-size), 1fr);
+                gap: var(--spacing-sm) var(--spacing);
+                align-items: center;
+              "
+            >
+              <span id="meter-battery">Battery</span>
+              <div
+                class="meter"
+                role="meter"
+                aria-labelledby="meter-battery"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                aria-valuenow="72"
+                style="--value: 0.72"
+              ></div>
+              <span id="meter-cpu">CPU load</span>
+              <div
+                class="meter tone-1"
+                role="meter"
+                aria-labelledby="meter-cpu"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                aria-valuenow="45"
+                style="--value: 0.45"
+              ></div>
+              <span id="meter-disk">Free disk space</span>
+              <div
+                class="meter warn"
+                role="meter"
+                aria-labelledby="meter-disk"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                aria-valuenow="8"
+                style="--value: 0.08"
+              ></div>
+            </div>
+            <h3>Segmented</h3>
+            <div
+              class="meter segmented"
+              role="meter"
+              aria-label="Signal strength"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              aria-valuenow="60"
+              style="--value: 0.6"
+            ></div>
+            <div
+              class="meter segmented tone-3"
+              role="meter"
+              aria-label="Volume"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              aria-valuenow="35"
+              style="--value: 0.35"
+            ></div>
+            <h3>Vertical</h3>
+            <p>
+              A vertical meter takes its parent's height, so the parent needs a
+              definite one, or the meter collapses to nothing.
+            </p>
+            <div
+              style="
+                display: grid;
+                grid-auto-flow: column;
+                justify-content: start;
+                gap: var(--spacing);
+                height: 8rem;
+              "
+            >
+              <div
+                class="meter vertical"
+                role="meter"
+                aria-label="Left channel"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                aria-valuenow="64"
+                style="--value: 0.64"
+              ></div>
+              <div
+                class="meter vertical tone-1"
+                role="meter"
+                aria-label="Right channel"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                aria-valuenow="81"
+                style="--value: 0.81"
+              ></div>
+              <div
+                class="meter vertical segmented tone-2"
+                role="meter"
+                aria-label="Bass"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                aria-valuenow="45"
+                style="--value: 0.45"
+              ></div>
+              <div
+                class="meter vertical segmented tone-4"
+                role="meter"
+                aria-label="Treble"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                aria-valuenow="30"
+                style="--value: 0.3"
+              ></div>
+            </div>
+          </article>
+          <footer></footer>
+        </div>
+        <div class="panel">
+          <header><h2 id="chip">Chip</h2></header>
+          <article style="display: grid; gap: var(--spacing)">
+            <p>
+              A small, non-interactive block for keys, codes, tags and
+              statuses. It uses the command's colours, so its contrast is
+              whatever the theme tunes for commands. Anything clickable should
+              be a <code>command thin</code> instead.
+            </p>
+            <div style="display: flex; flex-wrap: wrap; gap: var(--spacing-sm)">
+              <span class="chip">Draft</span>
+              <span class="chip tone-1">Shipped</span>
+              <span class="chip tone-2">v8.2.0</span>
+              <span class="chip tone-3">Docs</span>
+              <span class="chip tone-4">In review</span>
+              <span class="chip warn">Blocked</span>
+            </div>
+            <p>
+              Inline in text: release <span class="chip tone-2">v8.2.0</span>
+              is <span class="chip warn">Blocked</span> on one review.
+            </p>
+          </article>
+          <footer></footer>
+        </div>
+        <div class="panel">
+          <header><h2 id="recipes">Recipes</h2></header>
+          <article style="display: grid; gap: var(--spacing)">
+            <p>
+              Patterns built from existing components. Ada ships no class for
+              them; the layout is a few lines of grid in your own stylesheet.
+              See the page's source code for details.
+            </p>
+            <h3>Bar List</h3>
+            <p>
+              Labelled values compared at a glance: a chip, a meter and the
+              value. Colour marks a state, the number carries the value.
+            </p>
+            <div class="bar-list" role="group" aria-label="Monthly budget">
+              <span class="chip" id="budget-rent">Rent</span>
+              <div
+                class="meter"
+                role="meter"
+                aria-labelledby="budget-rent"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                aria-valuenow="100"
+                aria-valuetext="950 of 950 euros"
+                style="--value: 1"
+              ></div>
+              <span>€950 of €950</span>
+              <span class="chip" id="budget-groceries">Groceries</span>
+              <div
+                class="meter"
+                role="meter"
+                aria-labelledby="budget-groceries"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                aria-valuenow="82"
+                aria-valuetext="412 of 500 euros"
+                style="--value: 0.82"
+              ></div>
+              <span>€412 of €500</span>
+              <span class="chip" id="budget-transport">Transport</span>
+              <div
+                class="meter"
+                role="meter"
+                aria-labelledby="budget-transport"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                aria-valuenow="80"
+                aria-valuetext="96 of 120 euros"
+                style="--value: 0.8"
+              ></div>
+              <span>€96 of €120</span>
+              <span class="chip warn" id="budget-eating-out">Eating out</span>
+              <div
+                class="meter warn"
+                role="meter"
+                aria-labelledby="budget-eating-out"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                aria-valuenow="100"
+                aria-valuetext="187 of 150 euros, over budget"
+                style="--value: 1.25"
+              ></div>
+              <span>€187 of €150</span>
+              <span class="chip" id="budget-hobbies">Hobbies</span>
+              <div
+                class="meter"
+                role="meter"
+                aria-labelledby="budget-hobbies"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                aria-valuenow="45"
+                aria-valuetext="45 of 100 euros"
+                style="--value: 0.45"
+              ></div>
+              <span>€45 of €100</span>
+            </div>
+            <h3>Status Log</h3>
+            <p>
+              Coded lines in an ordered list. The colour sits in the chip, the
+              text stays in the body colour.
+            </p>
+            <ol
+              role="list"
+              aria-label="Build pipeline"
+              style="
+                display: grid;
+                grid-template-columns: auto minmax(0, 1fr);
+                gap: var(--spacing-sm);
+                align-items: center;
+              "
+            >
+              <li
+                style="
+                  display: grid;
+                  grid-column: 1 / -1;
+                  grid-template-columns: subgrid;
+                  align-items: center;
+                "
+              >
+                <span class="chip">01</span><span>Checkout</span>
+              </li>
+              <li
+                style="
+                  display: grid;
+                  grid-column: 1 / -1;
+                  grid-template-columns: subgrid;
+                  align-items: center;
+                "
+              >
+                <span class="chip">02</span><span>Install dependencies</span>
+              </li>
+              <li
+                style="
+                  display: grid;
+                  grid-column: 1 / -1;
+                  grid-template-columns: subgrid;
+                  align-items: center;
+                "
+              >
+                <span class="chip tone-1">03</span><span>Build</span>
+              </li>
+              <li
+                style="
+                  display: grid;
+                  grid-column: 1 / -1;
+                  grid-template-columns: subgrid;
+                  align-items: center;
+                "
+              >
+                <span class="chip warn">04</span><span>Test: 2 failed</span>
+              </li>
+              <li
+                style="
+                  display: grid;
+                  grid-column: 1 / -1;
+                  grid-template-columns: subgrid;
+                  align-items: center;
+                "
+              >
+                <span class="chip tone-3">05</span
+                ><span>Deploy: skipped</span>
+              </li>
+            </ol>
           </article>
           <footer></footer>
         </div>

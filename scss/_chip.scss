@@ -1,0 +1,18 @@
+// Command colours, but no shadow, min-size or states, so it never reads as a button.
+.chip {
+  display: inline-grid;
+  align-items: center;
+  justify-items: end;
+  text-align: end;
+  background: var(--color800);
+  color: var(--command-fg, var(--color100));
+  // Forced colours drop the background; the border keeps the chip's outline.
+  border: var(--border-width-sm) solid transparent;
+  border-radius: var(--border-radius);
+  padding: var(--padding-xs) var(--padding-sm);
+  // A chip in a heading would otherwise take its light weight.
+  font-weight: var(--font-weight);
+  font-size: var(--text-sm);
+  font-variant-numeric: tabular-nums;
+  line-height: 1.3;
+}

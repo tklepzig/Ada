@@ -1,0 +1,74 @@
+// The consumer sets --value (0 to 1) inline; out-of-range values clamp.
+.meter {
+  display: grid;
+  // Like a native <meter>: visible even where the container sizes to content.
+  min-width: var(--command-min-size);
+  min-height: var(--spacing);
+  // Fill and outline colour. The lightness floor (dark) and ceiling (light)
+  // keep it 3:1 off the page and panel ground in every theme.
+  color: oklch(from var(--color500) max(l, 0.58) c h);
+  background: oklch(var(--800) / 0.15);
+  // Marks the full extent, which the faint track alone doesn't.
+  border: var(--border-width-sm) solid;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+
+  :where(:root.light-theme) & {
+    color: oklch(from var(--color800) min(l, 0.5) c h);
+  }
+
+  // The tile surface sits too close to any tone shade, so take the tile's ink,
+  // which is tuned for it; inherited, since a tone class resets --tile-fg here.
+  .tile & {
+    color: inherit;
+  }
+
+  &::before {
+    content: "";
+    // Start, not stretch: an invalid --value must leave the bar empty, not full.
+    justify-self: start;
+    width: calc(clamp(0, var(--value, 0), 1) * 100%);
+    background: currentColor;
+  }
+
+  // On the fill only, so the outline keeps marking the full extent.
+  &.segmented::before {
+    mask-image: repeating-linear-gradient(
+      to right,
+      #000 0 var(--spacing-sm),
+      transparent 0 calc(var(--spacing-sm) + var(--spacing-xs))
+    );
+  }
+
+  // Takes its parent's height, so the parent needs a definite one.
+  &.vertical {
+    min-width: 0;
+    min-height: 0;
+    width: var(--spacing);
+    height: 100%;
+    grid-template-rows: 1fr;
+    align-items: end;
+
+    &::before {
+      justify-self: stretch;
+      width: auto;
+      height: calc(clamp(0, var(--value, 0), 1) * 100%);
+    }
+
+    &.segmented::before {
+      mask-image: repeating-linear-gradient(
+        to top,
+        #000 0 var(--spacing-xs),
+        transparent 0 calc(var(--spacing-xs) * 2)
+      );
+    }
+  }
+
+  // Forced colours drop backgrounds, which would leave the bar empty.
+  @media (forced-colors: active) {
+    &::before {
+      background: CanvasText;
+      forced-color-adjust: none;
+    }
+  }
+}
