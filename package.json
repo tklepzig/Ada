@@ -2,6 +2,7 @@
   "name": "ada-ui",
   "version": "8.2.0",
   "scripts": {
+    "predev": "sass scss:css --embed-source-map",
     "dev": "concurrently -n scss,serve 'sass scss:css --watch --embed-source-map' 'alive-server .'",
     "postdev": "git checkout css/*",
     "build": "rm -rf css && sass scss:css -s compressed --no-source-map",
