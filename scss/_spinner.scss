@@ -39,6 +39,16 @@
     box-shadow: 12px 0px 10px -12px rgba(0, 0, 0, 0.4),
       -12px 0px 10px -12px rgba(0, 0, 0, 0.4);
   }
+
+  // Slowed, not stopped: a frozen spinner reads as a hang.
+  @media (prefers-reduced-motion: reduce) {
+    animation-duration: 18s;
+
+    &::before,
+    &::after {
+      animation-duration: 12s;
+    }
+  }
 }
 
 @keyframes rotate {
