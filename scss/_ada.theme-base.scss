@@ -123,7 +123,8 @@
   --reading-light: 0.3 0.02 var(--hue);
   --fg-reading: oklch(var(--reading));
 
-  // Tile ink, mode-independent — the tile surface is --800 at 75% in both modes.
+  // Tile ink, mode-independent — the tile surface is the tone's --800 in both
+  // modes (75% in dark mode, opaque in light).
   // :root-only: from %ladder each tone would take its own --100 (0.91) instead of
   // a theme's lifted value, dropping some themes below AA.
   --tile-fg: var(--color100);
