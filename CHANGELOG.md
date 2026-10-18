@@ -1,5 +1,30 @@
 # ada-ui
 
+## 8.3.0
+
+### Minor Changes
+
+- 9543edc: Added the `chip` component, a small non-interactive block for keys, codes,
+  tags and statuses.
+- c5a5baf: Added the `meter` component for showing a quantity, with `segmented` and
+  `vertical` variants.
+- 42cbbf8: Reduced the tile header to the base text size and gave it the tile's text
+  colour, which raises the contrast of headers on light tile surfaces.
+
+### Patch Changes
+
+- 2ff8bcd: Brightened the jupiter-2 `tone-4` verdigris, which lifts its button and tile
+  contrast.
+- af0fd4f: Respected `prefers-reduced-motion`: flashing commands now pulse three times
+  slowly and then keep a corner dot, and the spinner turns at a third of its
+  speed.
+- 9d1c115: Made tiles opaque in light mode, and in dark mode for jupiter-2, whose
+  light-mode tiles keep the translucent surface. Gave every jupiter-2 tile dark
+  ink, including `tone-1` and `warn` tiles in dark mode, which were cream. Tile
+  text now clears AA in every theme.
+- 8ab7d26: Set tile digits to tabular figures, so changing values no longer jitter with a
+  `--font-family` whose default figures are proportional.
+
 ## 8.2.0
 
 ### Minor Changes
