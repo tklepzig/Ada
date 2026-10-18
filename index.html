@@ -46,6 +46,13 @@
       if (readStored(LIGHT_KEY) === "true") {
         document.documentElement.classList.add("light-theme");
       }
+
+      // The theme stylesheet swapped in above can land after the browser's jump
+      // to the URL fragment, leaving the content panel scrolled to the top.
+      addEventListener("load", () => {
+        const id = decodeURIComponent(location.hash.slice(1));
+        document.getElementById(id)?.scrollIntoView();
+      });
     </script>
   </head>
 
