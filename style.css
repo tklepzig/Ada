@@ -198,6 +198,13 @@ input {
   max-width: 20rem;
 }
 
+/* Fourth heading level inside the grouped demo sections. */
+h5 {
+  font-size: var(--text-base);
+  font-weight: var(--font-weight-light);
+  color: var(--fg-body);
+}
+
 /* Bar list recipe: label, meter and value on one row, with the meter on its
    own full-width line below the label and value on narrow screens. */
 .bar-list {
