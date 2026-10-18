@@ -40,13 +40,13 @@
   // Dark label colour for text on the light accent surfaces. The accent
   // backgrounds are light (orange L≈0.69), so cream text only hits ~2.5:1.
   // Pure black clears WCAG AA on every button shade (orange 7.1, amber 8.6,
-  // steel 7.6, burnt 5.0, warn 5.3) and on the lighter tiles too (it needs to be
-  // this dark to clear the mid-tone 75% orange tile at 4.55). Set on :root so all
+  // steel 7.6, burnt 5.0, warn 5.3) and on the tiles too (it needs to be this
+  // dark to clear the burnt-orange tile at 4.97). Set on :root so all
   // buttons inherit it uniformly (no slot re-sets it).
   --command-fg: oklch(0 0 0);
 
-  // Tiles are color800 at 75% — light enough that dark ink wins (8.5-10.0).
-  // tone-1/warn flip by mode, below.
+  // Dark ink on every tile, in both modes; the tile surface below stays light
+  // enough for it.
   --tile-fg: var(--command-fg);
 }
 
@@ -85,13 +85,6 @@
   --chroma: 0.09;
 }
 
-// Light enough for dark ink even inside a .warn or .tone-1 container, whose
-// pale tile ink they would otherwise inherit.
-.tone-2,
-.tone-4 {
-  --tile-fg: var(--command-fg);
-}
-
 // Danger red — kept clearly distinct from the orange accent. Lightened to L0.62
 // (#DE4F44) so the dark --command-fg label clears WCAG AA on warn buttons (the
 // old L0.58 red was a mid-tone where no text colour reached 4.5:1).
@@ -101,10 +94,12 @@
   --chroma: 0.18;
 }
 
-// In dark mode these two tones need the root dark ink fo reaching AA contrast
-:root:not(.light-theme) {
-  .tone-1,
-  .warn {
-    --tile-fg: var(--color100);
-  }
+// The tiles carry dark ink, so the surface runs opposite to the base theme:
+// opaque over the dark navy page, the 75% wash over the pale light page.
+.tile {
+  background: var(--color800);
+}
+
+:where(:root.light-theme) .tile {
+  background: oklch(var(--800) / 0.75);
 }
