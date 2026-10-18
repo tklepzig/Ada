@@ -96,9 +96,19 @@
 
   background: oklch(var(--800) / 0.75);
   color: var(--tile-fg);
+  // Keeps changing values steady even with a --font-family whose default
+  // figures are proportional.
+  font-variant-numeric: tabular-nums;
 
+  // Tile ink, for headings in the header too: the header styles' --fg-body is
+  // tuned for the page and can clash with the tile surface.
   > header {
-    font-size: var(--text-lg);
+    font-size: var(--text-base);
+    color: var(--tile-fg);
+
+    :is(h1, h2, h3, h4) {
+      color: inherit;
+    }
   }
 
   > footer {

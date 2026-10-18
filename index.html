@@ -165,7 +165,7 @@
             <p>
               <code style="font-size: var(--text-base)">--text-base</code>
               <span>1rem</span>
-              <span>Normal Text, Command Label</span>
+              <span>Normal Text, Command Label, Tile Header</span>
             </p>
             <p>
               <code style="font-size: var(--text-sm)">--text-sm</code>
@@ -584,6 +584,30 @@
               <header></header>
               <article>Tile Content</article>
               <footer></footer>
+            </div>
+            <h3 style="grid-column: 1 / -1">With Header</h3>
+            <p style="grid-column: 1 / -1">
+              The header names what the tile shows, the article holds the value.
+            </p>
+            <div class="tile">
+              <header>Storage</header>
+              <article style="font-size: var(--text-2xl)">48.2 GB</article>
+              <footer></footer>
+            </div>
+            <div class="tile tone-1">
+              <header>Uptime</header>
+              <article style="font-size: var(--text-2xl)">99.9%</article>
+              <footer></footer>
+            </div>
+            <div class="tile tone-2">
+              <header>Requests</header>
+              <article style="font-size: var(--text-2xl)">1,284</article>
+              <footer>per minute</footer>
+            </div>
+            <div class="tile warn">
+              <header>Errors</header>
+              <article style="font-size: var(--text-2xl)">23</article>
+              <footer>last hour</footer>
             </div>
           </article>
           <footer></footer>
